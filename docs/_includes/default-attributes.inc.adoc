@@ -1,6 +1,6 @@
 // Meta
-:project-name: Projektthema (T00)
-:project-system-name: Software-Name
+:project-name: HTW-Prüfungsvorbereiter (2.B)
+:project-system-name: Prüfungsvorbereiter
 // Settings:
 :toc:
 :toc-title: Inhaltsverzeichnis

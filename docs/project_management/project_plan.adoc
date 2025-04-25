@@ -21,7 +21,24 @@ include::../_includes/default-attributes.inc.adoc[]
 // Listen Sie hier die Kriterien auf, die ein Product Backlog Item (z.B. User Story) erfüllen muss, damit es bei der Sprint-Planung berücksichtigt werden kann
 
 === Definition of Done
-// Listen Sie hier alle Kritierien auf, damit die Aufgabe eines bestimmten Typs (z.B. Task, User Story) als abgeschlossen gilt.
+1. Akzeptanzkriterien
+* Alle im Issue definierten Kriterien sind erfüllt
+
+2. Code‑Qualität
+* Coding-Standards eingehalten
+* keine unnötigen kommentare (z.b: TODO Nachrichten)
+
+3. Testing
+* Keine Bugs offen
+
+4. Dokumentation
+* Vergleich mit User Stories
+* technische Dokumentation vollständig
+ 
+5. Abnahme
+* in Meeting Review abgenommen
+* Product Owner hat Arbeitsergebnis abgenommen
+* Item auf “Done” verschoben
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.

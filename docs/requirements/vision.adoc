@@ -67,7 +67,24 @@ Siehe <<#glossary, Glossar>>.
 | [Benennung des Stakeholders (als Rolle)]
 | [Kurze Beschreibung des Stakeholders und seiner Ziele]
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+
+|Studeneten
+|Hauptnueri:innen der Anwendung. Effektive und motievierende Prüfungsvorbereitung, Nutzung verschiedener Lernmodi, eigene Fragen hochladen & beantworten. 
+|Verfolgen des Lernfortschritts, Nutzung der App-Funktion, Beteiligung an der Community durch Fragen und Bewertungen
+
+|Professor:in
+|Verantwortlich für modulspezifische Inhalte. Validierung prüfungsrelevanter Fragen,Lernempfelungen, Probeklausuren, Rechtvergabe.
+|Bereitstellung und Kontrolle von Inhalten, Betreuung der Studierenden, Auswertung von Lernfortschritten.
+
+|HTW (Institution)
+|Strategischer und organisatorischer Träger. Zuständig für Datenschutz, Infrastruktur, rechtliche Rahmenbedingung und Systemintegration.
+|Rahmenbedingungen definieren, Datenschutz sicherstellen, Infrastruktur bereitstellen und kontrollieren.
+
+
 |===
+
+
+
 
 Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mittels Personas vorgenommen.
 

@@ -66,17 +66,32 @@ Siehe <<#glossary, Glossar>>.
 
 | [Benennung des Stakeholders (als Rolle)]
 | [Kurze Beschreibung des Stakeholders und seiner Ziele]
-| [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+| [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihre besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
 
-| Assistierende
-| Studentische Hilfskräfte oder (wissenschaftliche) Mitarbeitende
-| gibt didaktische Hinweise, beantwortet Fragen, kann Lösungen korrigieren und steht als Ansprechperson für Probleme und Feedback zur Verfügung
+| Studierende
+| Studierende an der HTW, Hauptnutzer:innen der Anwendung. Effektive und motievierende Prüfungsvorbereitung, Nutzung verschiedener Lernmodi, eigene Fragen hochladen & beantworten.
+| Beobachten des eigenen Lernfortschritts, Nutzung der App-Funktion, Beteiligung an der Community durch Fragen und Bewertungen.
+
+| Dozierende
+| Dozierende an der HTW, Verantwortliche für modulspezifische Inhalte. Studierende effektiver auf Prüfungen vorbereiten.
+| Bereitstellung und Kontrolle von Inhalten, Betreuung der Studierenden, Auswertung von Lernfortschritten. Validierung prüfungsrelevanter Fragen, Lernempfelungen, Probeklausuren, Rechtvergabe.
+
+| Tutor:in / Assistierende
+| Studentische Hilfskräfte oder (wissenschaftliche) Mitarbeitende. Hilfe der Studenten be Prüfungsvorbereitung, der Professoren bei der Verwaltung des Moduls.
+| Gibt didaktische Hinweise, beantwortet Fragen, kann Lösungen korrigieren und steht als Ansprechperson für Probleme und Feedback zur Verfügung.
 
 | Admin
-| Verantwortlicher für Betrieb, Sicherheit und Nutzerverwaltung des Systems
-| Wartet das System, kann Benutzerrechte vergeben / entziehen. Sorgt für Datenkonsistenz und technische Stabilität.
+| Verantwortlicher für Betrieb, Sicherheit und Nutzerverwaltung des Systems. Will eine fehlerfreie und zuverlässige App, die von allen Nutzergruppen problemlos verwendet werden kann.
+| Wartet das System, kann Benutzerrechte vergeben / entziehen. Sorgt für Datenkonsistenz und Sicherstellung der technischen Stabilität und steht für technischen Support zur Verfügung.
+
+| HTW (Institution)
+| Auftraggeber und institutioneller Partner. Unterstützung der Studierenden und Profs bei der Prüfungsvorbereitung.
+| Rahmenbedingungen definieren, Datenschutz sicherstellen, Infrastruktur bereitstellen und kontrollieren.
 
 |===
+
+
+
 
 Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mittels Personas vorgenommen.
 

@@ -1,5 +1,5 @@
 = Vision: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Lara-Sophie Liebold <s86444@htw-dresden.de>; Philipp Burkhardt <s87197@htw-dresden.de>; Tobias Kroll <s87094@htw-dresden.de>; Sebastian Kaufhold <s83831@htw-dresden.de>; Johann Schöley <s86438@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute

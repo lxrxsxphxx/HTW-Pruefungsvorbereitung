@@ -86,10 +86,6 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 |===
 | Name | Beschreibung | Verantwortlichkeiten
 
-| [Benennung des Stakeholders (als Rolle)]
-| [Kurze Beschreibung des Stakeholders und seiner Ziele]
-| [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihre besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
-
 | Studierende
 | Studierende an der HTW, Hauptnutzer:innen der Anwendung. Effektive und motievierende Prüfungsvorbereitung, Nutzung verschiedener Lernmodi, eigene Fragen hochladen & beantworten.
 | Beobachten des eigenen Lernfortschritts, Nutzung der App-Funktion, Beteiligung an der Community durch Fragen und Bewertungen.
@@ -126,7 +122,14 @@ Intelligenter Lernalgo. mit Gamification Elementen
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features / Funktionen | Geplantes Release
-| xx | xx | xx | xx
+| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragen, Multiple-Choice, Freitext, Zuordnung | xx
+| Kollaboratives Lernen |	Mittel | Fragen-Upload, Community-Bewertung, Lerngruppen, Diskussion | xx
+| Adaptive Lernstrategie | Hoch | Lernalgorithmus, Wiederholung schwieriger Inhalte | xx
+| Motivation durch Gamification | Hoch | 	Abzeichen, Highscores, Levelsystem, Wettbewerbe | xx
+| Lernfortschritt-Tracking | Hoch |	Statistiken, Schwächenanalyse, visuelle Darstellung | xx
+| Flexibles Lernen | Mittel |	Offline-Modus, mobile Nutzung | xx
+| Verbindung zu realen Inhalten | Mittel | Verlinkung zu Skripten, Vorlesungsunterlagen, Literatur | xx
+| Dozierenden-Bereich	 | Mittel | Probeklausuren, Inhalte veröffentlichen, Moderation | xx
 |===
 
 
@@ -143,5 +146,11 @@ Hinweise:
 [%header, cols="4,1,1"]
 |===
 | Anforderung | Priorität | Geplantes Release
-| xx | xx | xx
+| Webbasierte Lösung (mobil & Desktop) | Hoch | xx
+| Kompatibel mit HTW-Login & Authentifizierung | Hoch | xx
+| Datensicherheit nach DSGVO | Hoch | xx
+| Benutzerfreundliches Interface | Hoch | xx
+| Skalierbarkeit (neue Module einpflegen) | Mittel | xx
+| Admin-Dashboard zur Nutzerverwaltung | Mittel | xx
+| Dokumentation & Support	 | Mittel | xx
 |===

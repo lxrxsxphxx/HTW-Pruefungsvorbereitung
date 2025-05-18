@@ -62,7 +62,7 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 | eine  | Lernwebsite
 | der / die | intelligenter Lernalgo. mit Gamification Elementen
 | anders als | bpsw. quizlet
-| kann unser Produkt | das Lernen spielerisch gestalten
+| ist unser Produkt | spezialisiert auf die Lerninhalte der HTWD
 |===
 
 

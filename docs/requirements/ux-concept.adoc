@@ -16,6 +16,43 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 
 == Personas
 // Fügen Sie hier als Tabelle oder Bild die Persons der wichtigsten Stakeholder ein
+=== Isabell Berger
+[%hardbreaks]
+*Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
+*Demographie*:
+*Alter*: 25
+*Geschlecht*: weiblich
+*Familienstand*: ledig
+*Wohnort*: Dresden
+*Beruf*: Student der Wirtschaftsinformatik, Werkstudent bei Infineon 
+
+*Verhaltensvariablen*:
+
+introvertiert —————⬤——— extrovertiert
+
+risikoscheu ⬤——————— risikobereit
+
+konservativ ⬤——————— innovativ
+
+Telefon ————⬤———— Chat ———— E-Mail
+
+*Technologische Nutzung*:
+Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren)
+Smartphone nur für Termine und Kommunikation
+Aktiv auf Social Media, hohe Sensibilität für Datenschutz
+Gute Internetkenntnisse, aber zurückhaltend gegenüber neuen Apps
+
+*Bedürfnisse/Ziele:*
+Möchte das Lernen effizienter gestalten. 
+Sie ist der Meinung, dass Lernen auch Spaß machen kann, ihrer Meinung nach haben ihr schulische Einrichtungen den Spaß am Lernen genommen.
+
+*Hindernisse/Frustrationen*:
+Sie hat Angst, dass der HTW-Prüfungsvorbereiter ihr zu langweilig ist und sie keinen Spaß am Lernen hat.
+Legt viel Wert auf Gamification-Elemente.
+
+*Akzeptanzkriterien*:
+Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen, man sollte seinen Fortschritt irgendwo visuell wahrnehmen können (Fortschritt=größte Motivation).
+Es sollen eigene Fragen erstellt werden können, 
 
 == Nutzungskontext
 // Beschreiben Sie die Arbeitsaufgaben, Arbeitsmittel, physische und soziale Umgebung, in der das Produkt genutzt wird. 

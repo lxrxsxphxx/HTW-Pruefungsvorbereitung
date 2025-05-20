@@ -52,7 +52,7 @@ Legt viel Wert auf Gamification-Elemente.
 
 *Akzeptanzkriterien*:
 Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen, man sollte seinen Fortschritt irgendwo visuell wahrnehmen können (Fortschritt=größte Motivation).
-Man kann eigene Fragen erstellen  
+Man kann eigene Fragen erstellen und diese beantworten. 
 
 == Nutzungskontext
 // Beschreiben Sie die Arbeitsaufgaben, Arbeitsmittel, physische und soziale Umgebung, in der das Produkt genutzt wird. 

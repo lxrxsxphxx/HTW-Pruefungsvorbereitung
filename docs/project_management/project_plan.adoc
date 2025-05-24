@@ -7,10 +7,48 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Einführung
 //Kurze Beschreibung und Überblick zum Dokument.
-
+Der Projektplan bietet Überblick darüber, wie unser Projekt aufgebaut ist und abläuft. Er hält fest, wie wir im Team zusammenarbeiten, wer welche Aufgaben übernimmt, welche Tools wir verwenden und wie unsere Sprints organisiert sind. Außerdem beschreibt er, woran wir erkennen, wann eine Aufgabe wirklich fertig ist, und was wir bisher aus der Zusammenarbeit im Team gelernt haben.
 
 == Projektorganisation
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
+=== Teammitglieder und Rollen
+[cols="1,1,4"]
+|===
+| **Name** | **Rolle** | **Zuständigkeitsbereiche**
+|Burkhardt, Philipp    | Product Owner | Pflege des Backlogs, Anforderungsmanagement, Stakeholder-Kommunikation 
+|Liebold, Lara Sophie  | Scrum Master  | Moderation der Meetings, Koordination, Teamkommunikation
+|Kaufhold, Sebastian   | Entwickler    | Entwicklung, technische Umsetzung, Qualitätssicherung
+|Kroll, Tobias         | Entwickler    | Entwicklung, technische Umsetzung, Qualitätssicherung
+|Schöley, Johann       | Entwickler    | Entwicklung, technische Umsetzung, Qualitätssicherung
+|Egle, Frederic Niklas | Entwickler    | Entwicklung, technische Umsetzung, Qualitätssicherung, Architekturkonzept
+|===
+
+
+
+
+=== Iterationsstruktur
+--
+* **Sprintdauer:** 4 Wochen
+* **Sprint Planning:** Donnerstag zu Beginn des Sprints, 1,5 Stunden
+* **Weekly:** Dienstag, einmal pro Woche, 15 Minuten
+* **Sprint Review:** Letzter Donnerstag des Sprints, 1 Stunde
+* **Sprint Retro:** Direkt im Anschluss an das Review, 30 Minuten
+--
+
+
+=== Verwendete Tools
+
+
+[cols="2,1"]
+|===
+| **Zweck**                 | **Tool**
+| Aufgaben- und Projektkoordination | GitHub Projects  
+| Quellcodeverwaltung               | GitHub            
+| Dokumentation                     | GitHub / Discord  
+| Kommunikation                     | Discord / WhatsApp
+| Terminabstimmung & Planung        | Discord    
+|===
+
 
 
 == Praktiken und Bewertung
@@ -21,24 +59,22 @@ include::../_includes/default-attributes.inc.adoc[]
 // Listen Sie hier die Kriterien auf, die ein Product Backlog Item (z.B. User Story) erfüllen muss, damit es bei der Sprint-Planung berücksichtigt werden kann
 
 === Definition of Done
+--
 1. Akzeptanzkriterien
 * Alle im Issue definierten Kriterien sind erfüllt
-
 2. Code‑Qualität
 * Coding-Standards eingehalten
 * keine unnötigen kommentare (z.b: TODO Nachrichten)
-
 3. Testing
 * Keine Bugs offen
-
 4. Dokumentation
 * Vergleich mit User Stories
 * technische Dokumentation vollständig
- 
 5. Abnahme
 * in Meeting Review abgenommen
 * Product Owner hat Arbeitsergebnis abgenommen
 * Item auf “Done” verschoben
+--
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.

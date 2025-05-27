@@ -16,7 +16,7 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 
 == Personas
 
-=== 1. Studierende Isabell Berger
+=== 1. Studierende: Isabell Berger
 [%hardbreaks]
 *Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 

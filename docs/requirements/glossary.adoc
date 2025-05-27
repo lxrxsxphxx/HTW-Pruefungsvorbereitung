@@ -1,4 +1,4 @@
-= Glossar: {project-name}
+= Glossar: HTW-Prüfungsvorbereiter
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -12,7 +12,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme
-//| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+| Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Fach
 | xx | xx | xx
 |===
 

@@ -20,7 +20,7 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 [%hardbreaks]
 *Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 
-**Demographie**
+-Demographie-
 
 *Alter:* 25
 

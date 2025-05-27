@@ -20,7 +20,8 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 === Isabell Berger
 [%hardbreaks]
 *Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
-*Demographie*:
+== Demographie:
+
 *Alter*: 25
 *Geschlecht*: weiblich
 *Familienstand*: ledig

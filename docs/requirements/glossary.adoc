@@ -35,6 +35,9 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Bezeichnung | Definition | Format | Gültigkeitsregeln | Aliase
+| | | | | 
+| | | | | 
+| | | | | 
 
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
@@ -42,11 +45,37 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Emailadresse muss `@`-Zeichen und `.` Punkt enthalten.
 | Login
 
-| xx
-| xx
-| xx
-| xx
-| xx
+| Benutzerdaten
+| Informationen über den Nutzer (Name, ID).
+| String
+| Name darf keine Sonderzeichen enthalten.
+| Userdaten
+
+| Prüfungsdaten
+| Angaben zu Prüfungen (Datum, Modul).
+| JSON
+| Datum im Format YYYY-MM-DD.
+| Klausurinfo
+
+| Statistiken
+| Lernfortschritt und erreichte Punkte.
+| JSON
+| Punkte müssen numerisch sein.
+| Fortschritt
+
+| Fragenkatalog
+| Sammlung von Fragen und Antworten.
+| Array
+| Jede Frage muss mindestens eine Antwort enthalten.
+| Quizfragen
+
+| Moduldaten
+| Informationen zu Modulen (Name, ID, ECTS).
+| JSON
+| ECTS muss eine Ganzzahl sein.
+| Kursdaten
+
+
 |===
 
 == Domänenmodell

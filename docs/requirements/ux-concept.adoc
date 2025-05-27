@@ -54,6 +54,159 @@ Legt viel Wert auf Gamification-Elemente.
 Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen, man sollte seinen Fortschritt irgendwo visuell wahrnehmen können (Fortschritt=größte Motivation).
 Man kann eigene Fragen erstellen und diese beantworten. 
 
+1. Studierende
+Name: Lisa Müller
+Leitspruch: „Lernen muss effizient und flexibel sein.“
+
+Demographie:
+
+Alter: 23
+Geschlecht: weiblich
+Familienstand: ledig
+Wohnort: Berlin
+Beruf: Vollzeitstudentin der Medieninformatik
+Verhaltensvariablen:
+
+Lernstil: Strukturiert —————⬤———— Spontan
+Technologische Offenheit: Skeptisch ———⬤——— Begeistert
+Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
+Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
+Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+Technologische Nutzung:
+
+Nutzt Laptop und Tablet intensiv für Studium und Freizeit.
+Smartphone für Social Media und Organisation.
+Bedürfnisse/Ziele:
+
+Möchte Prüfungen stressfrei bestehen und Wissenslücken gezielt schließen.
+Hindernisse/Frustrationen:
+
+Angst, den Überblick über den Lernfortschritt zu verlieren.
+Akzeptanzkriterien:
+
+Intuitive Bedienung und Gamification-Elemente.
+2. Dozierende
+Name: Prof. Dr. Klaus Becker
+Leitspruch: „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
+
+Demographie:
+
+Alter: 52
+Geschlecht: männlich
+Familienstand: verheiratet
+Wohnort: Dresden
+Beruf: Professor für Wirtschaftsinformatik
+Verhaltensvariablen:
+
+Lernstil: Strukturiert ———⬤——— Spontan
+Technologische Offenheit: Skeptisch ———⬤——— Begeistert
+Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
+Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
+Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+Technologische Nutzung:
+
+Nutzt den Computer hauptsächlich für Lehre und Forschung.
+Bedürfnisse/Ziele:
+
+Möchte Studierende optimal auf Prüfungen vorbereiten.
+Hindernisse/Frustrationen:
+
+Zeitaufwand für die Erstellung und Pflege von Lernmaterialien.
+Akzeptanzkriterien:
+
+Einfache Verwaltung und Erstellung von Fragen.
+3. Tutor:in / Assistierende
+Name: Anna Schmidt
+Leitspruch: „Gemeinsam lernen wir besser.“
+
+Demographie:
+
+Alter: 26
+Geschlecht: weiblich
+Familienstand: in einer Beziehung
+Wohnort: Leipzig
+Beruf: Wissenschaftliche Hilfskraft im Fachbereich Informatik
+Verhaltensvariablen:
+
+Lernstil: Strukturiert ———⬤——— Spontan
+Technologische Offenheit: Skeptisch ———⬤——— Begeistert
+Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
+Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
+Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+Technologische Nutzung:
+
+Laptop und Smartphone für Studium und Arbeit.
+Bedürfnisse/Ziele:
+
+Möchte Studierende bei der Prüfungsvorbereitung unterstützen.
+Hindernisse/Frustrationen:
+
+Zeitdruck durch parallele Aufgaben.
+Akzeptanzkriterien:
+
+Möglichkeit, Fragen zu bewerten und zu bearbeiten.
+4. Admin
+Name: Markus Weber
+Leitspruch: „Stabilität und Sicherheit stehen an erster Stelle.“
+
+Demographie:
+
+Alter: 35
+Geschlecht: männlich
+Familienstand: verheiratet
+Wohnort: Chemnitz
+Beruf: IT-Administrator
+Verhaltensvariablen:
+
+Lernstil: Strukturiert ———⬤——— Spontan
+Technologische Offenheit: Skeptisch —————⬤——— Begeistert
+Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
+Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
+Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+Technologische Nutzung:
+
+Experte für Server- und Systemadministration.
+Bedürfnisse/Ziele:
+
+Sicherstellung eines stabilen und sicheren Systems.
+Hindernisse/Frustrationen:
+
+Sicherheitsrisiken durch unzureichende Verschlüsselung.
+Akzeptanzkriterien:
+
+Stabile und sichere Plattform mit regelmäßigen Updates.
+5. HTW (Institution)
+Name: Dr. Petra Wagner
+Leitspruch: „Exzellenz in Bildung und Lehre.“
+
+Demographie:
+
+Alter: 45
+Geschlecht: weiblich
+Familienstand: verheiratet
+Wohnort: Berlin
+Beruf: Leiterin des Prüfungsamtes
+Verhaltensvariablen:
+
+Lernstil: Strukturiert —————⬤———— Spontan
+Technologische Offenheit: Skeptisch ———⬤——— Begeistert
+Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
+Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
+Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+Technologische Nutzung:
+
+Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
+Bedürfnisse/Ziele:
+
+Unterstützung der Studierenden und Dozierenden bei der Prüfungsvorbereitung.
+Hindernisse/Frustrationen:
+
+Hoher Aufwand für die Integration neuer Systeme.
+Akzeptanzkriterien:
+
+Einhaltung von Datenschutzrichtlinien.
+
+
 == Nutzungskontext
 // Beschreiben Sie die Arbeitsaufgaben, Arbeitsmittel, physische und soziale Umgebung, in der das Produkt genutzt wird. 
 // Eventuell sind Angaben zu Fehlerquellen, Häufigkeiten von Ereignisse sowie Bearbeitungsdauern von Vorgängen relevant

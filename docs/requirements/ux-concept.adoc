@@ -65,6 +65,58 @@ Legt viel Wert auf Gamification-Elemente.
 Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
 Fortschritt sollte visuell wahrnehmbar sein.
 
+=== 1. Studierende: Max König
+[%hardbreaks]
+
+*Leitspruch:* „Lernen heißt nicht nur Wissen anhäufen, sondern Zusammenhänge verstehen.“
+
+*Demographie*
+
+*Alter:* 24
+
+*Geschlecht:* männlich
+
+*Familienstand:* ledig
+
+*Wohnort:* Leipzig
+
+*Beruf:* Student der Elektrotechnik, Teilzeitkraft in einem Ingenieurbüro
+
+*Verhaltensvariablen*
+
+*Lernstil:* Strukturiert ———⬤——— Spontan
+
+*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+
+*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
+
+*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+
+*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
+
+*Technologische Nutzung:*
+
+Nutzt Laptop hauptsächlich für Simulationen, Programmieren und Recherche.
+Smartphone für Organisation und Kommunikation.
+Wenig aktiv auf Social Media, bevorzugt datenschutzfreundliche Apps.
+
+*Bedürfnisse/Ziele:*
+
+Möchte sich gezielt auf Prüfungen vorbereiten und Wissenslücken schließen.
+Sucht nach einer Plattform, die ihm hilft, komplexe Themen zu vereinfachen.
+
+*Hindernisse/Frustrationen:*
+
+Überwältigt von der Menge an Lernmaterialien.
+Angst, sich auf unwichtige Themen zu konzentrieren und Wesentliches zu verpassen.
+
+*Akzeptanzkriterien:*
+
+Der HTW-Prüfungsvorbereiter sollte eine klare Struktur bieten.
+Inhalte müssen zuverlässig und fachlich korrekt sein.
+Fortschrittsanzeige und gezielte Wiederholungen von Schwachpunkten.
+
+
 === 2.Dozierende: Prof. Dr. Klaus Becker
 [%hardbreaks]
 *Leitspruch:* „Gute Vorbereitung ist der Schlüssel zum Erfolg.“

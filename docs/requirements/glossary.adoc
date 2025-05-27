@@ -34,10 +34,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 == Verzeichnis der Datenstrukturen
 [%header]
 |===
-| Bezeichnung | Definition | Format | Gültigkeitsregeln | Aliase
-| | | | | 
-| | | | | 
-| | | | | 
+| Bezeichnung | Definition | Format | Gültigkeitsregeln | Alias
 
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.

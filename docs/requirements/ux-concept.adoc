@@ -20,22 +20,22 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 === Isabell Berger
 [%hardbreaks]
 *Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
-== Demographie:
 
-*Alter*: 25
-*Geschlecht*: weiblich
-*Familienstand*: ledig
-*Wohnort*: Dresden
-*Beruf*: Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
-*Verhaltensvariablen*:
-*Lernstil*: Strukturiert —————⬤———— Spontan
-*Technologische Offenheit*: Skeptisch ———⬤——— Begeistert
-*Kommunikationspräferenz*: Chat ———⬤——— E-Mail ———— Telefon
-*Motivation*: Extern (Noten) ———⬤——— Intern (Interesse)
-*Teamarbeit*: Unabhängig ———⬤——— Kollaborativ
+*Demographie*
+*Alter:* 25
+*Geschlecht:* weiblich
+*Familienstand:* ledig
+*Wohnort:* Dresden
+*Beruf:* Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
 
-*Technologische Nutzung*:
+*Verhaltensvariablen*
+*Lernstil:* Strukturiert —————⬤———— Spontan
+*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
+*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
 
+*Technologische Nutzung:*
 Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren).
 Smartphone nur für Termine und Kommunikation.
 Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
@@ -47,132 +47,141 @@ Ist der Meinung, dass Lernen auch Spaß machen kann.
 *Hindernisse/Frustrationen:*
 Angst, dass der HTW-Prüfungsvorbereiter zu langweilig ist.
 Legt viel Wert auf Gamification-Elemente.
-Akzeptanzkriterien:
 
+*Akzeptanzkriterien:*
 Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
 Fortschritt sollte visuell wahrnehmbar sein.
 
 2.Dozierende
 === Prof. Dr. Klaus Becker
 [%hardbreaks]
-Leitspruch: „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
-Demographie:
-Alter: 52
-Geschlecht: männlich
-Familienstand: verheiratet
-Wohnort: Dresden
-Beruf: Professor für Wirtschaftsinformatik
-Verhaltensvariablen:
-Lernstil: Strukturiert ———⬤——— Spontan
-Technologische Offenheit: Skeptisch ———⬤——— Begeistert
-Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
-Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
-Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+*Leitspruch:* „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
 
-Technologische Nutzung:
+*Demographie*
+*Alter:* 52
+*Geschlecht:* männlich
+*Familienstand:* verheiratet
+*Wohnort:* Dresden
+*Beruf:* Professor für Wirtschaftsinformatik
 
+*Verhaltensvariablen*
+*Lernstil:* Strukturiert ———⬤——— Spontan
+*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
+*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+
+*Technologische Nutzung:*
 Nutzt den Computer hauptsächlich für Lehre und Forschung.
 Smartphone für E-Mails und Kalenderverwaltung.
-Bedürfnisse/Ziele:
 
+*Bedürfnisse/Ziele:*
 Möchte Studierende optimal auf Prüfungen vorbereiten.
 Wert auf qualitativ hochwertige und aktuelle Inhalte.
-Hindernisse/Frustrationen:
 
+*Hindernisse/Frustrationen:*
 Zeitaufwand für die Erstellung und Pflege von Lernmaterialien.
 Skepsis gegenüber der Qualität von Community-generierten Inhalten.
-Akzeptanzkriterien:
 
+*Akzeptanzkriterien:*
 Einfache Verwaltung und Erstellung von Fragen.
 Übersichtliche Statistiken über den Lernfortschritt der Studierenden.
+
+
 Tutor:in / Assistierende
 === Anna Schmidt
 [%hardbreaks]
-Leitspruch: „Gemeinsam lernen wir besser.“
-Demographie:
-Alter: 26
-Geschlecht: weiblich
-Familienstand: in einer Beziehung
-Wohnort: Leipzig
-Beruf: Wissenschaftliche Hilfskraft im Fachbereich Informatik
-Verhaltensvariablen:
-Lernstil: Strukturiert ———⬤——— Spontan
-Technologische Offenheit: Skeptisch ———⬤——— Begeistert
-Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
-Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
-Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+*Leitspruch:* „Gemeinsam lernen wir besser.“
 
-Technologische Nutzung:
+*Demographie*
+*Alter:* 26
+*Geschlecht:* weiblich
+*Familienstand:* in einer Beziehung
+*Wohnort:* Leipzig
+*Beruf:* Wissenschaftliche Hilfskraft im Fachbereich Informatik
 
+*Verhaltensvariablen*
+*Lernstil:* Strukturiert ———⬤——— Spontan
+*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
+*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
+
+*Technologische Nutzung:*
 Laptop und Smartphone für Studium und Arbeit.
 Erfahren im Umgang mit Lernplattformen und digitalen Tools.
-Bedürfnisse/Ziele:
 
+*Bedürfnisse/Ziele:*
 Möchte Studierende bei der Prüfungsvorbereitung unterstützen.
-Hindernisse/Frustrationen:
 
+*Hindernisse/Frustrationen:*
 Zeitdruck durch parallele Aufgaben.
-Akzeptanzkriterien:
 
+*Akzeptanzkriterien:*
 Möglichkeit, Fragen zu bewerten und zu bearbeiten.
 Kollaborative Funktionen für Lerngruppen.
+
+
 Admin
 === Markus Weber
 [%hardbreaks]
-Leitspruch: „Stabilität und Sicherheit stehen an erster Stelle.“
-Demographie:
-Alter: 35
-Geschlecht: männlich
-Familienstand: verheiratet
-Wohnort: Chemnitz
-Beruf: IT-Administrator
-Verhaltensvariablen:
-Lernstil: Strukturiert ———⬤——— Spontan
-Technologische Offenheit: Skeptisch —————⬤——— Begeistert
-Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
-Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
-Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+*Leitspruch:* „Stabilität und Sicherheit stehen an erster Stelle.“
 
-Technologische Nutzung:
+*Demographie*
+*Alter:* 35
+*Geschlecht:* männlich
+*Familienstand:* verheiratet
+*Wohnort:* Chemnitz
+*Beruf:* IT-Administrator
 
+*Verhaltensvariablen*
+*Lernstil:* Strukturiert ———⬤——— Spontan
+*Technologische Offenheit:* Skeptisch —————⬤——— Begeistert
+*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
+*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+
+*Technologische Nutzung:*
 Experte für Server- und Systemadministration.
-Bedürfnisse/Ziele:
 
+*Bedürfnisse/Ziele:*
 Sicherstellung eines stabilen und sicheren Systems.
-Hindernisse/Frustrationen:
 
+*Hindernisse/Frustrationen:*
 Sicherheitsrisiken durch unzureichende Verschlüsselung.
-Akzeptanzkriterien:
 
+*Akzeptanzkriterien:*
 Stabile und sichere Plattform mit regelmäßigen Updates.
+
 HTW (Institution)
 === Dr. Petra Wagner
 [%hardbreaks]
-Leitspruch: „Exzellenz in Bildung und Lehre.“
-Demographie:
-Alter: 45
-Geschlecht: weiblich
-Familienstand: verheiratet
-Wohnort: Berlin
-Beruf: Leiterin des Prüfungsamtes
-Verhaltensvariablen:
-Lernstil: Strukturiert —————⬤———— Spontan
-Technologische Offenheit: Skeptisch ———⬤——— Begeistert
-Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
-Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
-Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+*Leitspruch:* „Exzellenz in Bildung und Lehre.“
 
-Technologische Nutzung:
+*Demographie*
+*Alter:* 45
+*Geschlecht:* weiblich
+*Familienstand:* verheiratet
+*Wohnort:* Berlin
+*Beruf:* Leiterin des Prüfungsamtes
 
+*Verhaltensvariablen*
+*Lernstil:* Strukturiert —————⬤———— Spontan
+*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
+*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+
+*Technologische Nutzung:*
 Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
-Bedürfnisse/Ziele:
 
+*Bedürfnisse/Ziele:*
 Unterstützung der Studierenden und Dozierenden bei der Prüfungsvorbereitung.
-Hindernisse/Frustrationen:
 
+*Hindernisse/Frustrationen:*
 Hoher Aufwand für die Integration neuer Systeme.
-Akzeptanzkriterien:
 
+*Akzeptanzkriterien:*
 Einhaltung von Datenschutzrichtlinien.
 
 

@@ -13,6 +13,9 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 | Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Fach
+| Gamification | Der Einsatz spielerischer Elemente wie Punkte, Abzeichen oder Level, um die Motivation zu steigern. | Spielifizierung
+| Lernalgorithmus | Ein System, das sich an den individuellen Lernfortschritt anpasst, um Wiederholungen und Inhalte gezielt zu steuern. | Anpassungssystem
+| xx | xx | xx
 | xx | xx | xx
 |===
 

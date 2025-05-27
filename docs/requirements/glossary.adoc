@@ -15,8 +15,8 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Fach
 | Gamification | Der Einsatz spielerischer Elemente wie Punkte, Abzeichen oder Level, um die Motivation zu steigern. | Spielifizierung
 | Lernalgorithmus | Ein System, das sich an den individuellen Lernfortschritt anpasst, um Wiederholungen und Inhalte gezielt zu steuern. | Anpassungssystem
-| xx | xx | xx
-| xx | xx | xx
+| Lernmodi | Verschiedene Ansätze zum Lernen, wie Übungsmodus, Blitz-Quiz oder Karteikarten. | Lernansätze
+| Push-Benachrichtigungen | Automatische Erinnerungen für tägliche Lerneinheiten oder anstehende Prüfungen. | Erinnerungen
 |===
 
 
@@ -25,7 +25,10 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Abkürzung | Bedeutung | Erläuterung
 //| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| xx | xx | xx
+| ECTS | European Credit Transfer and Accumulation System | Leistungspunkte
+| HTWD | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
+| WiSe | Wintersemester | Winterhalbjahr eines Jahres
+| SoSe | Sommersemester | Sommerhalbjahr eines Jahres
 |===
 
 == Verzeichnis der Datenstrukturen

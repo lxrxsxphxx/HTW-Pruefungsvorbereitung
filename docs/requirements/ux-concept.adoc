@@ -16,9 +16,9 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 
 == Personas
 
-Studierende
+1. Studierende
 === Isabell Berger
-%hardbreaks
+[%hardbreaks]
 Leitspruch: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 Demographie:
 Alter: 25
@@ -52,7 +52,7 @@ Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
 Fortschritt sollte visuell wahrnehmbar sein.
 Dozierende
 === Prof. Dr. Klaus Becker
-%hardbreaks
+[%hardbreaks]
 Leitspruch: „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
 Demographie:
 Alter: 52
@@ -85,7 +85,7 @@ Einfache Verwaltung und Erstellung von Fragen.
 Übersichtliche Statistiken über den Lernfortschritt der Studierenden.
 Tutor:in / Assistierende
 === Anna Schmidt
-%hardbreaks
+[%hardbreaks]
 Leitspruch: „Gemeinsam lernen wir besser.“
 Demographie:
 Alter: 26
@@ -116,7 +116,7 @@ Möglichkeit, Fragen zu bewerten und zu bearbeiten.
 Kollaborative Funktionen für Lerngruppen.
 Admin
 === Markus Weber
-%hardbreaks
+[%hardbreaks]
 Leitspruch: „Stabilität und Sicherheit stehen an erster Stelle.“
 Demographie:
 Alter: 35
@@ -145,7 +145,7 @@ Akzeptanzkriterien:
 Stabile und sichere Plattform mit regelmäßigen Updates.
 HTW (Institution)
 === Dr. Petra Wagner
-%hardbreaks
+[%hardbreaks]
 Leitspruch: „Exzellenz in Bildung und Lehre.“
 Demographie:
 Alter: 45

@@ -19,38 +19,39 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 1. Studierende
 === Isabell Berger
 [%hardbreaks]
-Leitspruch: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
-Demographie:
-Alter: 25
-Geschlecht: weiblich
-Familienstand: ledig
-Wohnort: Dresden
-Beruf: Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
-Verhaltensvariablen:
-Lernstil: Strukturiert —————⬤———— Spontan
-Technologische Offenheit: Skeptisch ———⬤——— Begeistert
-Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
-Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
-Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+*Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
+*Demographie*:
+*Alter*: 25
+*Geschlecht*: weiblich
+*Familienstand*: ledig
+*Wohnort*: Dresden
+*Beruf*: Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
+*Verhaltensvariablen*:
+*Lernstil*: Strukturiert —————⬤———— Spontan
+*Technologische Offenheit*: Skeptisch ———⬤——— Begeistert
+*Kommunikationspräferenz*: Chat ———⬤——— E-Mail ———— Telefon
+*Motivation*: Extern (Noten) ———⬤——— Intern (Interesse)
+*Teamarbeit*: Unabhängig ———⬤——— Kollaborativ
 
-Technologische Nutzung:
+*Technologische Nutzung*:
 
 Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren).
 Smartphone nur für Termine und Kommunikation.
 Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
-Bedürfnisse/Ziele:
 
+*Bedürfnisse/Ziele:*
 Möchte das Lernen effizienter gestalten.
 Ist der Meinung, dass Lernen auch Spaß machen kann.
-Hindernisse/Frustrationen:
 
+*Hindernisse/Frustrationen:*
 Angst, dass der HTW-Prüfungsvorbereiter zu langweilig ist.
 Legt viel Wert auf Gamification-Elemente.
 Akzeptanzkriterien:
 
 Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
 Fortschritt sollte visuell wahrnehmbar sein.
-Dozierende
+
+2.Dozierende
 === Prof. Dr. Klaus Becker
 [%hardbreaks]
 Leitspruch: „Gute Vorbereitung ist der Schlüssel zum Erfolg.“

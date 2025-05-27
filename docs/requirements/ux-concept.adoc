@@ -15,127 +15,95 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 * Angaben über die Gestaltung der Benutzeroberfläche, z.B. Styling, Bedienbarkeit, ...
 
 == Personas
-// Fügen Sie hier als Tabelle oder Bild die Persons der wichtigsten Stakeholder ein
+
+Studierende
 === Isabell Berger
-[%hardbreaks]
-*Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
-*Demographie*:
-*Alter*: 25
-*Geschlecht*: weiblich
-*Familienstand*: ledig
-*Wohnort*: Dresden
-*Beruf*: Student der Wirtschaftsinformatik, Werkstudent bei Infineon 
-
-*Verhaltensvariablen*:
-
-introvertiert —————⬤——— extrovertiert
-
-risikoscheu ⬤——————— risikobereit
-
-konservativ ⬤——————— innovativ
-
-Telefon ————⬤———— Chat ———— E-Mail
-
-*Technologische Nutzung*:
-Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren)
-Smartphone nur für Termine und Kommunikation
-Aktiv auf Social Media, hohe Sensibilität für Datenschutz
-Gute Internetkenntnisse, aber zurückhaltend gegenüber neuen Apps
-
-*Bedürfnisse/Ziele:*
-Möchte das Lernen effizienter gestalten. 
-Sie ist der Meinung, dass Lernen auch Spaß machen kann, ihrer Meinung nach haben ihr schulische Einrichtungen den Spaß am Lernen genommen.
-
-*Hindernisse/Frustrationen*:
-Sie hat Angst, dass der HTW-Prüfungsvorbereiter ihr zu langweilig ist und sie keinen Spaß am Lernen hat.
-Legt viel Wert auf Gamification-Elemente.
-
-*Akzeptanzkriterien*:
-Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen, man sollte seinen Fortschritt irgendwo visuell wahrnehmen können (Fortschritt=größte Motivation).
-Man kann eigene Fragen erstellen und diese beantworten. 
-
-1. Studierende
-Name: Lisa Müller
-Leitspruch: „Lernen muss effizient und flexibel sein.“
-
+%hardbreaks
+Leitspruch: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 Demographie:
-
-Alter: 23
+Alter: 25
 Geschlecht: weiblich
 Familienstand: ledig
-Wohnort: Berlin
-Beruf: Vollzeitstudentin der Medieninformatik
+Wohnort: Dresden
+Beruf: Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
 Verhaltensvariablen:
-
 Lernstil: Strukturiert —————⬤———— Spontan
 Technologische Offenheit: Skeptisch ———⬤——— Begeistert
 Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
 Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
 Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+
 Technologische Nutzung:
 
-Nutzt Laptop und Tablet intensiv für Studium und Freizeit.
-Smartphone für Social Media und Organisation.
+Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren).
+Smartphone nur für Termine und Kommunikation.
+Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
 Bedürfnisse/Ziele:
 
-Möchte Prüfungen stressfrei bestehen und Wissenslücken gezielt schließen.
+Möchte das Lernen effizienter gestalten.
+Ist der Meinung, dass Lernen auch Spaß machen kann.
 Hindernisse/Frustrationen:
 
-Angst, den Überblick über den Lernfortschritt zu verlieren.
+Angst, dass der HTW-Prüfungsvorbereiter zu langweilig ist.
+Legt viel Wert auf Gamification-Elemente.
 Akzeptanzkriterien:
 
-Intuitive Bedienung und Gamification-Elemente.
-2. Dozierende
-Name: Prof. Dr. Klaus Becker
+Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
+Fortschritt sollte visuell wahrnehmbar sein.
+Dozierende
+=== Prof. Dr. Klaus Becker
+%hardbreaks
 Leitspruch: „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
-
 Demographie:
-
 Alter: 52
 Geschlecht: männlich
 Familienstand: verheiratet
 Wohnort: Dresden
 Beruf: Professor für Wirtschaftsinformatik
 Verhaltensvariablen:
-
 Lernstil: Strukturiert ———⬤——— Spontan
 Technologische Offenheit: Skeptisch ———⬤——— Begeistert
 Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
 Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
 Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+
 Technologische Nutzung:
 
 Nutzt den Computer hauptsächlich für Lehre und Forschung.
+Smartphone für E-Mails und Kalenderverwaltung.
 Bedürfnisse/Ziele:
 
 Möchte Studierende optimal auf Prüfungen vorbereiten.
+Wert auf qualitativ hochwertige und aktuelle Inhalte.
 Hindernisse/Frustrationen:
 
 Zeitaufwand für die Erstellung und Pflege von Lernmaterialien.
+Skepsis gegenüber der Qualität von Community-generierten Inhalten.
 Akzeptanzkriterien:
 
 Einfache Verwaltung und Erstellung von Fragen.
-3. Tutor:in / Assistierende
-Name: Anna Schmidt
+Übersichtliche Statistiken über den Lernfortschritt der Studierenden.
+Tutor:in / Assistierende
+=== Anna Schmidt
+%hardbreaks
 Leitspruch: „Gemeinsam lernen wir besser.“
-
 Demographie:
-
 Alter: 26
 Geschlecht: weiblich
 Familienstand: in einer Beziehung
 Wohnort: Leipzig
 Beruf: Wissenschaftliche Hilfskraft im Fachbereich Informatik
 Verhaltensvariablen:
-
 Lernstil: Strukturiert ———⬤——— Spontan
 Technologische Offenheit: Skeptisch ———⬤——— Begeistert
 Kommunikationspräferenz: Chat ———⬤——— E-Mail ———— Telefon
 Motivation: Extern (Noten) ———⬤——— Intern (Interesse)
 Teamarbeit: Unabhängig ———⬤——— Kollaborativ
+
 Technologische Nutzung:
 
 Laptop und Smartphone für Studium und Arbeit.
+Erfahren im Umgang mit Lernplattformen und digitalen Tools.
 Bedürfnisse/Ziele:
 
 Möchte Studierende bei der Prüfungsvorbereitung unterstützen.
@@ -145,24 +113,24 @@ Zeitdruck durch parallele Aufgaben.
 Akzeptanzkriterien:
 
 Möglichkeit, Fragen zu bewerten und zu bearbeiten.
-4. Admin
-Name: Markus Weber
+Kollaborative Funktionen für Lerngruppen.
+Admin
+=== Markus Weber
+%hardbreaks
 Leitspruch: „Stabilität und Sicherheit stehen an erster Stelle.“
-
 Demographie:
-
 Alter: 35
 Geschlecht: männlich
 Familienstand: verheiratet
 Wohnort: Chemnitz
 Beruf: IT-Administrator
 Verhaltensvariablen:
-
 Lernstil: Strukturiert ———⬤——— Spontan
 Technologische Offenheit: Skeptisch —————⬤——— Begeistert
 Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
 Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
 Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+
 Technologische Nutzung:
 
 Experte für Server- und Systemadministration.
@@ -175,24 +143,23 @@ Sicherheitsrisiken durch unzureichende Verschlüsselung.
 Akzeptanzkriterien:
 
 Stabile und sichere Plattform mit regelmäßigen Updates.
-5. HTW (Institution)
-Name: Dr. Petra Wagner
+HTW (Institution)
+=== Dr. Petra Wagner
+%hardbreaks
 Leitspruch: „Exzellenz in Bildung und Lehre.“
-
 Demographie:
-
 Alter: 45
 Geschlecht: weiblich
 Familienstand: verheiratet
 Wohnort: Berlin
 Beruf: Leiterin des Prüfungsamtes
 Verhaltensvariablen:
-
 Lernstil: Strukturiert —————⬤———— Spontan
 Technologische Offenheit: Skeptisch ———⬤——— Begeistert
 Kommunikationspräferenz: Chat ————⬤——— E-Mail ———— Telefon
 Motivation: Extern (Noten) —————⬤——— Intern (Interesse)
 Teamarbeit: Unabhängig —————⬤——— Kollaborativ
+
 Technologische Nutzung:
 
 Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
@@ -205,6 +172,7 @@ Hoher Aufwand für die Integration neuer Systeme.
 Akzeptanzkriterien:
 
 Einhaltung von Datenschutzrichtlinien.
+
 
 
 == Nutzungskontext

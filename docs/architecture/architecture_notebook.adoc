@@ -18,10 +18,28 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
 
+Der zentrale Ansatz der Architektur ist eine für Web-Anwendungen typische Zweiteilung in Frontend und Backend mit Datenbank.
+Die Sprache des Frontends und des Backends können voneinander unabhängig sein, was Entwickelnden die Flexibilität bietet, sowohl für das Frontend als auch für das Backend einen einfachen Einstieg zu haben, entweder durch leicht erlernbare oder durch bereits bekannte Technologien.
+Zusätzlich können Frontend und Backend zumindest teilweise unabhängig voneinander entwickelt werden.
+
+Für das Frontend wird die Technologie einer Single-Page-Application (SPA) verwendet.
+Das dynamische Nachladen von Inhalten, anstelle eines kompletten Neuladens einer Seite, sorgt für einen nahtloses Erlebnis beim Verwenden der Anwendung, das Nutzer vor allem bereits von nativen Applikationen gewohnt sind.
+Um die zu entwickelnde Anwendung ebenfalls offline verwendbar zu machen wird das Konzept einer Progressiv-Web-App (PWA) verwendet, das Caching von relevanten Daten nutzt.
+Der Nutzer kann somit nach erstmaligem Aufruf der Webseite diese als Applikation installieren und sie außerhalb des Browsers nutzen.
+
+Das Backend kommuniziert mittels eines Object-Relational Mapping (ORM) mit der Datenbank.
+Dieser Ansatz sorgt dafür, dass mithilfe eines Modells der Daten in der gegebenen Programmiersprache einfach mit den Daten interagiert werden kann, da diese wie Objekte der Sprache verwendet werden können.
+Zusätzlich spart dies die manuelle Anpassung von SQL-Abfragen bei Anpassung des Datenmodells, was nicht nur aufwendig sondern auch fehleranfällig sein kann, da gegebenfalls die Anpassung einzelner Stellen vergessen werden können.
+Die Verwendung eines ORMs ermöglicht eine feingranulare Ausgabe der Datensätze, so dass nur notwendige, öffentlich relevante Attribute des Datensatzes ausgegeben werden, während schützenswerte, bpsw. Datenbank-interne, Attribute verborgen bleiben.
+Dies ist besonders dann wichtig, wenn sensible Nutzerdaten, wie bspw. Passwörter, mittels eines Modells gespeichert werden.
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
+* Das Team hat insgesamt wenig Erfahrung mit Webentwicklung
+** Framework mit einfachem Einstieg/flacher Lernkurve
+* Anwendung besitzt zunächst geringen Nutzerumfang
+** Skalierbarkeit ist vorerst nicht notwendig
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -30,9 +48,8 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Entscheidung oder Einschränkung oder Begründung 1
-. Entscheidung oder Einschränkung oder Begründung 2
-
+. Vue.JS als Frontend-Framework, da es mehrfach als besonders leicht für den Einstieg in die Webentwicklung empfohlen wurde und zusätzlich selbst Funktionalitäten einer PWA mitbringt
+. Kommunikation zwischen Frontend und Backend findet via Representational State Transfer (REST) mittels HTTP und JSON statt, da das üblicherweise im Bereich von modernen Webanwendung verwendet wird und somit viele Ressourcen zur Umsetzung zur Verfügung stehen
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
@@ -43,9 +60,55 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 === Kontextabgrenzung
 //Level 1 im C4-Modell
+.Kontext Diagramm
+[plantuml, "{diagramsdir}/Context", svg]
+....
+!include <c4/C4_Context.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Kontextdiagramm für HTW Prüfungsvorbereiter
+
+Person(student, "Student", "Student der sich für Prüfung vorbereiten will")
+Person(prof, "Professor", "Professor der Inhalte für ein Modul anbietet")
+
+System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studenten sich für Prüfungen vorzubereiten, sich in Foren auszutauschen und Inhalte zu prüfen; ermöglicht Professoren Module zu verwalten, Lerninhalte einzustellen, zu überprüfen")
+
+Rel(student, vorbereiter, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
+Rel(prof, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+....
 
 === Container
 //Level 2 im C4-Modell
+.Container Diagramm
+[plantuml, "{diagramsdir}/Container", svg]
+....
+!include <c4/C4_Container.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Containerdiagramm für HTW Prüfungsvorbereiter
+
+Person(student, "Student", "Student der sich für Prüfung vorbereiten will")
+Person(prof, "Professor", "Professor der Inhalte für ein Modul anbietet")
+
+System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
+    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studenten und Professoren über deren Browser bereit")
+    ContainerDb(db, "Datenbank", "", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
+    Container(api, "API App", "", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
+}
+
+Rel(student, spa, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
+Rel(prof, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+
+
+Rel(spa, api, "nutzt", "JSON/HTTP")
+Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "")
+....
 
 === Components
 //Level 3 im C4-Modell

@@ -38,6 +38,14 @@ Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in
 | HTWD | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
 | WiSe | Wintersemester | Winterhalbjahr eines Jahres
 | SoSe | Sommersemester | Sommerhalbjahr eines Jahres
+| B.Sc. | Bachelor of Science	| Ein akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
+| M.Sc. | Master of Science	| Ein weiterführender akademischer Grad, der auf einem Bachelor-Studium aufbaut und in naturwissenschaftlichen und technischen Studiengängen erworben wird.
+| VL | Vorlesung	| Eine Lehrveranstaltungsform, in der Dozierende Inhalte präsentieren und erläutern.
+| SWS	| Semesterwochenstunden | Eine Maßeinheit für den Umfang von Lehrveranstaltungen pro Semester.
+| LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
+| PO | Prüfungsordnung	| Das Regelwerk, das die Anforderungen und Abläufe von Prüfungen festlegt.
+| QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen.
+| IT | Informationstechnik | Ein Fachbereich, der sich mit der Verarbeitung und Übertragung von Informationen befasst.
 |===
 
 == Verzeichnis der Datenstrukturen

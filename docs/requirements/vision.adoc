@@ -70,7 +70,7 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 
 === Zusammenfassung der Stakeholder
 
-[%header, cols="4,3,3"]
+[%header, cols="1,3,3"]
 |===
 | Name | Beschreibung | Verantwortlichkeiten | Ziele 
 

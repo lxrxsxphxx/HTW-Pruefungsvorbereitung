@@ -66,45 +66,38 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 |===
 
 
-//Beispiel
-//[cols="1,3"]
-//|===
-//| Für | Studierende der HTWD
-//| die | zu wenig Zeit in der Mittagspause zum Essen haben
-//| ist   | Flying Burger
-//| ein  | Lieferdient für Burger
-//| der  | per Drohne liefert
-//| anders als | landgestützte Lieferdienste
-//| kann unser Produkt |  durchs Fenster direkt in den Hörsaal liefern.
-//|===
-
 == Stakeholder Beschreibungen
 
 === Zusammenfassung der Stakeholder
 
 [%header, cols="1,3,3"]
 |===
-| Name | Beschreibung | Verantwortlichkeiten
+| Name | Beschreibung | Verantwortlichkeiten | Ziele
 
 | Studierende
 | Studierende an der HTW, Hauptnutzer:innen der Anwendung. Effektive und motievierende Prüfungsvorbereitung, Nutzung verschiedener Lernmodi, eigene Fragen hochladen & beantworten.
 | Beobachten des eigenen Lernfortschritts, Nutzung der App-Funktion, Beteiligung an der Community durch Fragen und Bewertungen.
+| Erfolgreiches Bestehen von Prüfungen durch gezielte und interaktive Vorbereitung.
 
 | Dozierende
 | Dozierende an der HTW, Verantwortliche für modulspezifische Inhalte. Studierende effektiver auf Prüfungen vorbereiten.
 | Bereitstellung und Kontrolle von Inhalten, Betreuung der Studierenden, Auswertung von Lernfortschritten. Validierung prüfungsrelevanter Fragen, Lernempfelungen, Probeklausuren, Rechtvergabe.
+| Effektive Unterstützung der Studierenden bei der Prüfungsvorbereitung und der Vertiefung ihres Wissens.
 
 | Tutor:in / Assistierende
 | Studentische Hilfskräfte oder (wissenschaftliche) Mitarbeitende. Hilfe der Studenten be Prüfungsvorbereitung, der Professoren bei der Verwaltung des Moduls.
 | Gibt didaktische Hinweise, beantwortet Fragen, kann Lösungen korrigieren und steht als Ansprechperson für Probleme und Feedback zur Verfügung.
+| Effektive Unterstützung der Studierenden bei fachlichen Fragen und Problemen.
 
 | Admin
 | Verantwortlicher für Betrieb, Sicherheit und Nutzerverwaltung des Systems. Will eine fehlerfreie und zuverlässige App, die von allen Nutzergruppen problemlos verwendet werden kann.
 | Wartet das System, kann Benutzerrechte vergeben / entziehen. Sorgt für Datenkonsistenz und Sicherstellung der technischen Stabilität und steht für technischen Support zur Verfügung.
+| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform.
 
 | HTW (Institution)
 | Auftraggeber und institutioneller Partner. Unterstützung der Studierenden und Profs bei der Prüfungsvorbereitung.
 | Rahmenbedingungen definieren, Datenschutz sicherstellen, Infrastruktur bereitstellen und kontrollieren.
+| Steigerung der Qualität der Lehre und der Prüfungsergebnisse an der Hochschule.
 
 |===
 

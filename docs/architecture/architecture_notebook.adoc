@@ -50,6 +50,10 @@ Dies ist besonders dann wichtig, wenn sensible Nutzerdaten, wie bspw. Passwörte
 
 . Vue.JS als Frontend-Framework, da es mehrfach als besonders leicht für den Einstieg in die Webentwicklung empfohlen wurde und zusätzlich selbst Funktionalitäten einer PWA mitbringt
 . Kommunikation zwischen Frontend und Backend findet via Representational State Transfer (REST) mittels HTTP und JSON statt, da das üblicherweise im Bereich von modernen Webanwendung verwendet wird und somit viele Ressourcen zur Umsetzung zur Verfügung stehen
+. FastAPI als Backend-Framework, da nach Auswertung von vergleichbaren Implementationen in FastAPI und Spring, FastAPI als besser lesbar und einfacher eingeschätzt wurde im Gegensatz zu Springs Boilerplate, der bereits für eine Minimalanwendung nötig ist
+. SQLModel als ORM, da es eine von FastAPI angepasste Version von SQLAlchemy ist und somit gut in Code mit FastAPI integriert werden kann
+. Für das Package Management werden im Frontend npm und im Backend pip verwendet, da es jeweils der Standard der verwendeten Sprache ist
+. Als Datenbank wird PostgreSQL genutzt, da es Open-Source, stabil und leistungsfähig ist
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
@@ -98,8 +102,8 @@ Person(prof, "Professor", "Professor der Inhalte für ein Modul anbietet")
 
 System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
     Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studenten und Professoren über deren Browser bereit")
-    ContainerDb(db, "Datenbank", "", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
-    Container(api, "API App", "", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
+    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
+    Container(api, "API App", "Python, FastAPI", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
 }
 
 Rel(student, spa, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
@@ -107,7 +111,7 @@ Rel(prof, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene In
 
 
 Rel(spa, api, "nutzt", "JSON/HTTP")
-Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "")
+Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "SQLModel")
 ....
 
 === Components

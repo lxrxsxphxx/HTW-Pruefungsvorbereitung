@@ -5,11 +5,11 @@ from app.models import CardBase, Card
 from app.dependencies import get_session
 
 router = APIRouter(
-    prefix="/cards",
+    prefix="/api/cards",
     tags=["cards"]
 )
 
-@router.post("/api/cards")
+@router.post("/")
 def create_card(cards: list[CardBase], session: Session = Depends(get_session)) -> list[Card]:
     db_cards = []
     for card in cards:
@@ -17,23 +17,23 @@ def create_card(cards: list[CardBase], session: Session = Depends(get_session)) 
         session.add(db_card)
         session.commit()
         session.refresh(db_card)
-        db_cards.append(db_card.copy())
+        db_cards.append(db_card.model_copy())
     return db_cards
 
-@router.get("/api/cards")
+@router.get("/")
 def read_cards(session: Session = Depends(get_session), modul: str | None = None) -> list[Card]:
     if modul:
         return session.exec(select(Card).where(Card.modul == modul)).all()
     return session.exec(select(Card)).all()
 
-@router.get("/api/cards/{id}")
+@router.get("/{id}")
 def read_card(id: int, session: Session = Depends(get_session)) -> Card:
     card = session.get(Card, id)
     if not card:
         raise HTTPException(status_code=404, detail="Card not found")
     return card
 
-@router.put("/api/cards/{id}")
+@router.put("/{id}")
 def read_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> Card:
     db_card = session.get(Card, id)
     if not card:
@@ -45,7 +45,7 @@ def read_card(id: int, card: CardBase, session: Session = Depends(get_session)) 
     session.refresh(db_card)
     return db_card
 
-@router.delete("/api/cards/{id}")
+@router.delete("/{id}")
 def delete_card(id: int, session: Session = Depends(get_session)):
     card = session.get(Card, id)
     if not card:

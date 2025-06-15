@@ -53,6 +53,42 @@ Der Projektplan bietet Überblick darüber, wie unser Projekt aufgebaut ist und 
 
 == Praktiken und Bewertung
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
+=== Way of working
+Im Projekt kommen verschiedene technische und organisatorische Praktiken zum Einsatz, um Codequalität, Zusammenarbeit und Projektfortschritt sicherzustellen:
+
+* **Inkrementelle Entwicklung:**  
+  Die Umsetzung erfolgt in kleinen, abgeschlossenen Teilinkrementen, die am Ende jedes Sprints funktionsfähig und testbar sind.
+
+* **Meetings:**  
+  Alle Scrum-Meetings wie Sprint Planning, Weekly (anstelle des Daily Scrums), Sprint Review und Retro finden regelmäßig mit festgelegter Dauer statt.  
+  Meeting-Notizen werden zentral in Discord dokumentiert.
+
+* **Quellcodeverwaltung mit Git/GitHub:**  
+  GitHub wird für die Versionierung und das Review von Codeänderungen genutzt.
+
+* **Mob Programming:**  
+  Bei komplexeren Aufgaben oder zur Erarbeitung von Konzepten nutzt das Team zeitweise Mob Programming.
+
+* **Testing:**  
+  Funktionstests erfolgen durch die Entwickler selbst. Ergebnisse werden im Review vorgestellt.
+
+* **Produkt-Demonstration:**  
+  Funktionierende Teilprodukte werden regelmäßig im Sprint Review demonstriert.
+
+* **Zusammenarbeit und Kommunikation:**  
+  Der Austausch erfolgt hauptsächlich über Discord.
+
+* **Timeboxing:**  
+  Feste, individuell reservierte Zeitfenster zur Bearbeitung von Aufgaben sollen Überlastung vermeiden und die Produktivität erhöhen.
+
+* **Zeittracking:**  
+  Die tatsächlichen Arbeitszeiten an den Aufgaben werden erfasst, um Aufwandsabschätzungen zu überprüfen und die Produktivität des Teams zu reflektieren.
+
+* **Einbindung realer Anwender:**  
+  Feedback von potenziellen Endanwendern erfolgt derzeit im Rahmen der Sprint Reviews.
+
+* **Happy Index:**  
+  Wöchentliche Umfrage zur Erfassung der Teamzufriedenheit. Ergebnisse können zur Identifikation von Problemen und Ableitung von Verbesserungsmaßnahmen genutzt werden.
 
 
 === Definition of Ready
@@ -78,7 +114,10 @@ Der Projektplan bietet Überblick darüber, wie unser Projekt aufgebaut ist und 
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
-
+Die Bereitstellung der Anwendung erfolgt zukünftig über eine virtuelle Maschine (VM) im internen Netzwerk der HTW Dresden. Die VM wird mit einem aktuellen Ubuntu Server LTS betrieben.
+Das Backend wird als FastAPI-Anwendung auf der VM betrieben. Eine Docker-Lösung für die Datenbank ist aktuell in Verwendung, soll jedoch zukünftig ebenfalls direkt auf der VM betrieben werden.
+Das Deployment erfolgt manuell durch die Entwickler. Ein automatisiertes Deployment ist bisher nicht geplant.
+Die VM dient ausschließlich internen Zwecken (Entwicklung, Test, Präsentation) und wird nicht öffentlich zugänglich gemacht. Ein produktiver Betrieb für externe Nutzer ist aktuell nicht vorgesehen.
 
 == Erkenntnisse (Lessons learned)
 // Führen Sie hier die wesentlichen Erkenntnisse auf, die Sie in den Retrospektiven gewonnen haben. Legen Sie besonderen Fokus auf die Maßnahmen, die Sie getroffen haben um Verbesserungen in den verschiedenen Aspekten des Projekts zu erzielen, z.B. dem Entwicklungsprozess, der technischen und organisatorischen Umgebung oder der Zusammenarbeit im Team.

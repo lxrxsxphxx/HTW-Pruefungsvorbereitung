@@ -1,0 +1,121 @@
+= MEETINGNOTIZ – 20.05.2025
+
+--
+* Typ: Coach 
+* Raum: S216  
+* Dauer: 15:30 – 16:00  
+* Anwesend: Sebastian, Johann, Frederic, Lara, Phillipp + Marlene Winter
+--
+
+== ZIELE DES MEETINGS
+--
+* Offene Fragen aus technischer und organisatorischer Sicht klären
+* Feedback zur bisherigen Umsetzung erhalten
+* Verunsicherungen bezüglich Anforderungen und Erwartungen beseitigen
+* Unterstützung zur Projektstrukturierung und -priorisierung einholen
+--
+
+== TAGESORDNUNG / TODO
+
+**Technische Umsetzung**
+--
+* DBMS-Frage:
+** Wird uns ein Datenbanksystem von der HTW bereitgestellt?
+** Falls nein: Gibt es Empfehlungen oder Einschränkungen hinsichtlich der Wahl?
+
+* Server-Frage:
+** Können/müssen wir einen eigenen Server verwenden? Oder ist Hosting auf HTW-Servern möglich (z. B. studentische Webspaces)?
+
+* Login-Frage:
+** Ist eine Integration des HTW-Logins möglich? 
+** Falls nicht: Welche Alternativen sind zugelassen (z. B. Dummy-Login oder eigenes System)?
+--
+
+**Design & Nutzerkontext**
+--
+* Design-Frage:
+** Welche Anforderungen werden an die Benutzeroberfläche gestellt?
+** Sind barrierefreie Designrichtlinien zu beachten?
+** Wie sinnnvoll ist die Ergänzung der Meeting Templates im Bereich way of working?
+--
+
+**Konzeptuelle & methodische Rückfragen**
+--
+* Unsicherheit bei Aufgabenstellung:
+** Wir haben Schwierigkeiten bei der präzisen Formulierung und Zuweisung der Aufgaben – gibt es Vorlagen oder Beispiele oder andere Hilfestellungen?*
+
+* Zeitplan & Umfang:
+** Liegen wir nach aktuellem Stand im Zeitplan?
+** Was sind Mindestanforderungen für eine "erfolgreiche" Iteration im Sinne der Bewertung?
+
+* Retro-Feedback:
+** Rückmeldung zum bisherigen Vorgehen (Retros, Planning, Backlog) – Sind wir auf dem richtigen Weg oder gibt es Verbesserungsvorschläge?
+--
+
+===  Teamdynamik & Zusammenarbeit
+
+Positives:
+--
+* Freundliches, respektvolles Teamklima
+* Keine Konflikte, gleichmäßige Aufgabenverteilung
+* Unterstützung und Austausch im Team wird aktiv gelebt
+--
+
+Verbesserungsbedarf:
+--
+* Frage: Gibt es Tipps für eine aktivere Meeting-Gestaltung oder Moderation durch Scrum Master?
+* Probleme bei Aufgabenverteilung / Zielklarheit
+** Wie können wir Aufgaben besser strukturieren und priorisieren?
+--
+
+=== 3. Konkrete Anliegen / Entscheidungspunkte
+--
+1. Absegnung der aktuellen Sprint-Ziele & Backlog-Inhalte
+2. Feedback zum bisherigen Stand der Projekt-Dokumente:
+3. Rückmeldung zum Projektplan / Zeitrahmen
+4. Einschätzung zu verwendeten Tools und Technologien
+--
+
+
+== Antworten & Coach Feedback
+**Technische Umsetzung**
+--
+* DBMS:
+** HTW stellt kein DBMS bereit → eigenes System erforderlich
+** Empfehlung: einfache, schnell nutzbare Lösung (z. B. SQLite, PostgreSQL)
+* Server:
+** Eigener Server empfohlen
+** Möglich: Nutzung eines Angebots von Herr Zirkelbach
+** Auch hier möglichst einfache Lösung wählen
+* Login-System:
+** HTW-Login technisch nicht realistisch → zu aufwendig
+** Dummy-Login oder einfache eigene Lösung zulässig
+--
+
+**Design & Nutzerkontext**
+-- 
+* Barrierefreiheit:
+** Kann als Ziel ins Backlog aufgenommen werden, sollte aber nicht priorisiert werden
+* Personas:
+** Empfehlung: 2–3 Personas für die Hauptstakeholder
+** Mindestens 1 Persona pro wesentlichem Stakeholder
+-- 
+
+**Projektstruktur & Bewertung** 
+
+--
+* Architektur:
+** Architekturentscheidungen müssen nachvollziehbar dokumentiert werden (weil es einfach ist oder bekannt ist reicht als begründung)
+** Wichtig: Funktionsnachweis (Proof of Concept), nicht Perfektion des Endprodukts
+** Fokus auf den Prozess, nicht nur das Ergebnis
+
+* Schwerpunkte:
+** Die Features Datenbank, Login und Quiz sollten im aktuellen Semester im Mittelpunkt stehen
+** Alles Weitere kann nachrangig betrachtet werden
+
+* Reflexion:
+** Laufende Reflexion und Dokumentation der Lern- und Arbeitsprozesse sind zentral für die Bewertung
+--
+
+
+

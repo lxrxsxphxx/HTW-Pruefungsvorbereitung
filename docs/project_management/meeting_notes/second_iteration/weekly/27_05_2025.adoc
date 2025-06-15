@@ -1,0 +1,106 @@
+= MEETINGNOTIZ – 27.05.2025
+
+--
+* Typ: Weekly  
+* Raum: S216  
+* Dauer: 15:15 – 15:30  
+* Anwesend: Tobias, Sebastian, Johann, Frederic, Lara
+--
+== TAGESORDNUNG / TO-DO
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+* Aufwandschätzung für Dummy-Login
+* Terminplanung für kommende Meetings (Review, Retro)
+* Diskussion eines Refinement-Meetings
+--
+
+== WEEKLY-FRAGEN
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Weiterarbeit am IT-Beleg  
+* Diese Woche:
+** Voraussichtlich wenig Zeit zur Verfügung
+* Hindernisse:
+** Zeitlicher Stress  
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Karteikarten fast fertiggestellt
+* Diese Woche:
+** Flip-Funktion für Karteikarten
+** Integration von Richtig/Falsch
+* Hindernisse:
+** keine  
+--
+
+=== Tobi:
+--
+* Letzte Woche:
+** keine zeit 
+* Diese Woche:
+** startseite fertig
+** dummy login  
+* Hindernisse:
+** keine  
+--
+
+=== Frederic:
+--
+* Letzte Woche:
+** PoC für Backend fast abgeschlossen
+* Diese Woche:
+** Aktualisierung des Architecture Notebooks
+* Hindernisse:
+** Terminfindung für Architekturabstimmung 
+--
+
+
+=== Lara:
+--
+* Letzte Woche:
+** Vorbereitung der Happy-Index-Auswertung fürs Review
+** Anpassung des Sprint Reviews
+** Aktualisierung des projectplan.adoc
+** Planung der Iteration in GitHub Projects
+** Anpassungen im Discord für Review-Zwecke
+** Risikoboard in GitHub & Miro
+** Austausch mit anderen Projektgruppen
+* Diese Woche:
+** Erstellung von Wireframes
+** Ergänzung der Risikoanalyse
+* Hindernisse:
+** keine 
+--
+
+
+== HINDERNISSE
+
+**Architektur-Terminfindung:** 
+für die gemeinsame Auswertung ist ein zusätzliches Meeting am Dienstag (03.06) um 15.15 Uhr geplant
+
+**Ressourcenplanung:** 
+Uneinigkeit über das Refinement-Meetings, da der Product Owner aktuell abwesend ist
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+* Dummy-Login: Aufwandschätzung: 5 
+* Terminplanung:
+** Sprint Review & Retro: Dienstag, ab 16:15 Uhr
+** Architekturauswertung: Dienstag, ca. 15:15 Uhr
+** Sprint Planning: Donnerstag, ab 15:30 Uhr
+* Refinement-Meeting: Entscheidung vertagt – Bewertung erst möglich, wenn der PO wieder anwesend ist
+--

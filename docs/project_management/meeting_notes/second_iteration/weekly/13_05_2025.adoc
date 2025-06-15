@@ -1,0 +1,119 @@
+= MEETINGNOTIZ – 13.05.2025
+
+--
+* Typ: Weekly  
+* Raum: S216  
+* Dauer: 15:30 – 15:45  
+* Anwesend: Tobias, Sebastian, Johann, Lara, Phillipp
+--
+== TAGESORDNUNG / TO-DO
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Identifikation und Klärung aktueller Hindernisse
+* Status „Happy Index“
+* Bearbeitung offener Punkte aus E-Mails / Kommunikation mit Dozenten / Coach / anderen Gruppen
+--
+
+== WEEKLY-FRAGEN
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+4. Wie ist der aktuelle Stand bei Internettechnologien / Webentwicklung? Welche Schwierigkeiten gibt es? 
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Kein Mob-Work möglich
+** Fortschritte beim IT-Beleg 
+* Diese Woche:
+** Aktuell keine weiteren Maßnahmen – Orientierung erfolgt im anstehenden Planungsmeeting
+* Hindernisse:
+** keine
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Kein Mob-Work möglich
+** Zugangsdaten für IT-Vorlesung bei Prof. Vogt organisiert
+* Diese Woche:
+** Giit Hilfestellung hochladen
+** Aktuell keine weiteren Maßnahmen – Orientierung erfolgt im anstehenden Planungsmeeting
+* Hindernisse:
+** Fehlerhafter Link zur BBB-Konferenz
+--
+
+=== Tobias:
+--
+* Letzte Woche:
+** Kein Mob-Work möglich
+** an Happy Index gedacht/ausgefüllt
+** Absprache mit PO wegen Backlog  
+* Diese Woche:
+** Aktuell keine weiteren Maßnahmen – Orientierung erfolgt im anstehenden Planungsmeeting
+* Hindernisse:
+** keine 
+--
+
+=== Phillipp:
+--
+* Letzte Woche:
+** Backlog überarbeitet
+* Diese Woche:
+** Weiterarbeit am Backlog
+** Zeitplanung erstellen
+** Vorbereitung Planungsdokumente
+* Hindernisse:
+** keine  
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** Kritik am Backlog (Verständnissprobleme festgestellt)
+** Austausch mit anderen Gruppen, vorallem Scrum Mastern
+** Arbeit am Dokument "Hinweise zur ersten Iteration"
+** Coach kontaktiert
+** User Story analysiert und Hilfestellung/Konzept erarbeitet  
+** Scrum Guide gelesen
+* Diese Woche:
+** Überarbeitung der Datei visions.adoc im Git-Repository
+** Anpassung der ToDo-Liste für das Planungsmeeting zur 2. Iteration
+** Wechsel des Umfragetools (Typeform → Alternative, da Paywall/Auswertung unzureichend)
+** Weitere Vertiefung des Scrum Guides
+* Hindernisse:
+** Fehlende Kommunikation mit dem Coach
+** Erschwerte ToDo-Erstellung aufgrund mangelnder Abstimmung im Team  
+--
+
+
+== HINDERNISSE
+
+Fehlerhafter Link für Internettechnologien I (Vorlesung):
+Der bereitgestellte BBB-Link war nicht funktionsfähig. Das Problem konnte kurzfristig geklärt und behoben werden.
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+1. Git-Hilfestellung:
+** Sebastian lädt das entsprechende Dokument bis spätestens 15.05.2025 in das Git-Repository hoch.
+
+2. Dokumente aktualisieren:
+** SM überarbeitet visions.adoc und erstellt eine überarbeitete ToDo-Struktur für die zweite Iteration.
+** Deadline: vor dem nächsten Planning-Meeting am 15.05.2025
+
+3. Toolwechsel zur Feedback-Auswertung:
+** Typeform wird aufgrund von Einschränkungen ersetzt – SM prüft Alternativen.
+
+4. Kommunikationsstruktur verbessern:
+** Abstimmung über festere Kanäle (z. B. gezielte Nachfragen im Discord).
+** Ziel: Vermeidung von ToDo-Blockern durch fehlende Kommunikation.
+
+5. Planning-Meeting vorbereiten:
+** Alle Teammitglieder bereiten sich aktiv auf das nächste Planning vor (Aufgabenstatus, Vorschläge für neue Tasks).
+--
+

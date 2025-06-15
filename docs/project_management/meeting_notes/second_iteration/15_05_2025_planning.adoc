@@ -1,0 +1,137 @@
+= MEETINGNOTIZ – 15.05.2025
+
+--
+* Typ: Planning 
+* Raum: S217  
+* Dauer: 15:30 – 16:30  
+* Anwesend: Tobias, Sebastian, Johann, Lara, Phillipp + Sebastian (SE II als Unterstützung)
+--
+
+== ZIELE DES MEETINGS
+--
+* Planung des bevorstehenden Sprints / Projektabschnitts
+* Festlegung und Priorisierung von Aufgaben
+* Koordination im Team hinsichtlich Zuständigkeiten und Kapazitäten
+* Besprechung relevanter organisatorischer oder technischer Rahmenbedingungen
+--
+
+== TAGESORDNUNG / TODO
+--
+1. **Sprint-Ziel / Planungsrahmen festlegen**
+* Gemeinsame Formulierung des Sprint-Ziels für Iteration 2
+** Was soll bis zum nächsten Review erreicht sein?
+** Abgleich mit den Anforderungen aus der Projektbeschreibung für Iteration 2
+* Klärung der angestrebten Features/Funktionalitäten:
+** Inhalte des Sprint Backlogs
+** Zu entwickelnde Funktionen laut Vision & Backlog
+
+* Berücksichtigung offener Punkte aus Iteration 1:
+** Übermittlung der Repository-Adresse an Coach & Dozent (noch offen?)
+** Way of Working dokumentieren (Projektplan-Dokument)
+** Funktionale Anforderungen & Zusatzanforderungen aus der Vision verfeinern
+
+2. **Aufgabenanalyse & -verteilung**
+
+* Review bestehender User Stories im Product Backlog
+* Verfeinerung und Detaillierung neuer oder unklarer Stories
+* Priorisierung nach fachlicher und technischer Notwendigkeit
+* Aufwandsschätzungen 
+* Zuweisung der Aufgaben an Teammitglieder 
+* Planung von mindestens einer vollständigen User Story 
+
+3. **Organisatorisches & Koordination**
+
+* Abfrage der Verfügbarkeiten im Team für die kommenden 1–2 Wochen
+* Festlegen oder Anpassen von Meeting-Formaten und -Zeiten (Daily, Review, Retro, etc.)
+* Synchronisation mit dem Product Owner (Ziele, Inhalte, Prioritäten)
+* Abstimmung mit Coach oder Dozenten bei Unsicherheiten oder Abnahmen
+* Klärung technischer Grundlagen:
+** Abstimmung zur technischen Lösungsidee (→ Architecture Notebook)
+** Eventuell: Architekturverantwortlichen festlegen
+* Glossar anlegen/bearbeiten: Fachbegriffe & Abkürzungen in glossary.adoc erfassen
+
+4. **Offene Fragen & Sonstiges**
+
+* Welche Punkte sind aus der ersten Iteration unklar geblieben oder wurden aufgeschoben?
+* Gibt es Blocker oder Risiken, die frühzeitig angesprochen werden sollten?
+* Abstimmung zu:
+** Erstellung bzw. Erweiterung des UX-Konzepts (inkl. Persona & Nutzerkontext)
+** Vorbereitung auf das nächste Review
+** Technische Recherche und Aufgaben für das Dev-Team
+** Evtl. Fragen zur Bewertung, zum Umfang oder zur Sprintlänge
+--
+
+== OUTCOME
+--
+* Sprint-Ziel definiert
+* Aufgaben priorisiert und zugewiesen
+* Technische & organisatorische Rahmenbedingungen sind geklärt
+* Offene Fragen identifiziert
+--
+
+
+== FESTLEGUNGEN
+--
+* Sprint-Zeitraum: 15.05 - 05.06
+* Sprint-Ziel: 
+** Login-Prototyp
+** Zwei Lernmodi: Multiple-Choice & Karteikarten
+** Erstellung und Anzeige von Fragen für beide Modi
+--
+
+=== Verantwortlichkeiten
+
+**Technische Umsetzung**
+[cols="2,3,1"]
+|===
+| **Bereich** | **Task** | **Zuständigkeit**
+|Login | Einbettung/Dummy Login | Tobi
+|UI-Design | Gestaltung der Oberfläche | Tobi
+|Karteikarten-Modus | Texteingabe | Sebastian
+|Karteikarten-Modus | Speicherung | Sebastian
+|Karteikarten-Modus | Textausgabe | Sebastian
+|Multiple-Choice-Modus | Texteingabe | Johann
+|Multiple-Choice-Modus | Speicherung | Johann
+|Multiple-Choice-Modus | Textausgabe | Johann
+|===
+
+
+**Dokumentation**
+[cols="2,3,1"]
+|===
+| **Dokument** | **Aufgabe** | **Zuständigkeit**
+|vision.adoc | Überarbeitung Produktvision | Phillipp
+|vision.adoc | Überarbeitung Stakeholder | Phillipp
+|ux-concept.adoc | Erstellung einer Persona | Phillipp
+|glossary.adoc | Erstellung und Erweiterung | Phillipp
+|architecture-notebook.adoc | erste Entwürfe einer Architektur | Frederic
+|project_plan.adoc | Aktualisierung & Way of Working dokumentieren | Lara
+|===
+
+
+**Kommunikation & Organisation**
+[cols="3,1"]
+|===
+| **Aufgabe** | **Zuständigkeit**
+|Teamname festlegen | Phillipp
+|Vorbereitung des Treffens mit dem Coach | Lara
+|Vorbereitung des Sprint Reviews | Lara
+|Git-Projektadresse an Professor senden | Tobi
+|===
+
+
+--
+* Blocker / Risiken: 
+** Technische Klärung: Kann der HTW-Login eingebunden werden? Welche Daten haben wir zur Verfügung?
+* Nächste Meilensteine / Termine: 
+** Termin mit Coach: 20.05.2025
+** Review: 03.06
+** Retro: 03.06
+--
+
+== NÄCHSTE SCHRITTE
+--
+1. Umsetzung der geplanten Aufgaben
+2. Regelmäßige Synchronisation im Weekly / Discord
+3. Bearbeitung identifizierter Blocker 
+--

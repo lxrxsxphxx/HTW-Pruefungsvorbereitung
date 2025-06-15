@@ -1,0 +1,107 @@
+= MEETINGNOTIZ – 03.06.2025
+
+--
+* Typ: Weekly  
+* Raum: B 302a  
+* Dauer: 15:30 – 15:45  
+* Anwesend: Tobias, Johann, Frederic, Lara, Phillipp
+--
+== TAGESORDNUNG / TO-DO
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+--
+
+== WEEKLY-FRAGEN
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+4. Zeittracking Ergebnisse
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Eingabeformular für Quiz erstellt
+** Bearbeitung der Quiz-Lösungslogik begonnen 
+* Diese Woche:
+** Einführung in Vue.js
+** Quiz-Funktionalität fertigstellen  
+* Hindernisse:
+** keine  
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Karteikarten-Funktionalität abgeschlossen  
+* Diese Woche:
+** Visuelle Verbesserungen
+* Hindernisse:
+** keine  
+--
+
+=== Tobias:
+--
+* Letzte Woche:
+** Startseite umgesetzt
+** Dummy-Login fertiggestellt
+* Diese Woche:
+** Login-Mechanismus verbessern
+* Hindernisse:
+** keine  
+--
+
+=== Frederic:
+--
+* Letzte Woche:
+** Drei Beispielimplementierungen für das Backend abgeschlossen
+** API-Struktur ausgearbeitet
+** Architecture Notebook aktualisiert
+** Diagramme vorgestellt 
+* Diese Woche:
+** Struktur des Projektsordners überarbeiten
+*+ src-Verzeichnis vorbereiten
+* Hindernisse:
+** keine  
+--
+
+
+=== Phillip:
+--
+* Letzte Woche:
+**  Dokumente analysiert 
+* Diese Woche:
+** Ziele und Nutzerkontext in die Personas ergänzen
+** Backlog überarbeiten
+* Hindernisse:
+** keine 
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** Wireframes erstellt
+** Riskboard erweitert 
+* Diese Woche:
+** Planung des nächsten Sprint-Meetings
+** neues Sprint Review vorbereiten
+* Hindernisse:
+** Keine neuen Risiken identifiziert
+** Terminverschiebung des Reviews erforderlich
+--
+
+
+== HINDERNISSE
+
+Keine neuen Hindernisse bekannt
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+
+** Review-Termin muss neu abgestimmt werden
+** Weiterarbeit an offenen Aufgaben laut individueller Planung

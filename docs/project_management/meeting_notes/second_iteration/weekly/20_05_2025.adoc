@@ -1,0 +1,117 @@
+= MEETINGNOTIZ – 20.05.2025
+
+--
+* Typ: Weekly  
+* Raum: S216  
+* Dauer: 16:00  –  16:10  
+* Anwesend: Sebastian, Johann, Frederic, Lara, Phillip
+--
+== TAGESORDNUNG / TO-DO
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+--
+
+== WEEKLY-FRAGEN
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+4. Wie weit seid ihr mit Internettechnologien/Webprogrammierung? Welche Probleme treten auf? 
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Arbeit am Internettechnologien-Beleg
+** Einarbeitung in HTML, CSS & JS
+** Erste Ideen zur Funktionalität von Multiple-Choice-Quizzen
+* Diese Woche:
+** Weiterarbeit am Internettechnologien-Beleg 
+* Hindernisse:
+** keine  
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Grundlagenarbeit in HTML, CSS & JS
+* Diese Woche:
+** Planung und Umsetzung der Karteikarten-Funktion  
+* Hindernisse:
+** keine 
+--
+
+=== Tobias (schriftlich) :
+--
+* Letzte Woche:
+** Beginn der Umsetzung der Website  
+* Diese Woche:
+** Fertigstellung des Grundgerüsts der Website
+* Hindernisse:
+** keine
+--
+
+=== Frederic:
+--
+* Letzte Woche:
+** Einarbeitung in Projektkontext & bestehende Unterlagen
+** Erarbeitung des Context-/Container-Diagramms
+** Beginn eines Proof of Concept (PoC) zur Architektur
+* Diese Woche:
+** Weiterentwicklung des PoC
+** Unterstützung bei Architekturentscheidungen
+** Abstimmung mit Dev-Team zu technischen Rahmenbedingungen
+* Hindernisse:
+** keine  
+--
+
+=== Phillipp:
+--
+* Letzte Woche:
+** Aktualisierung des Visionsdokuments
+** Erstellung einer ersten Persona
+** Entwicklung eines Teamnamens
+* Diese Woche:
+** Ergänzung weiterer Personas
+** Aufbau des Product Backlogs
+** Überarbeitung des glossary.adoc
+* Hindernisse:
+** Unsicherheit bei Umfang & Inhalt des Glossars
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** Austausch mit Frederic
+** Ausarbeitung des „Way of Working“
+** Integration mehrer User Story in Miro
+** Vorbereitung des Coach-Meetings
+** Vorbereitung des Sprint Reviews
+* Diese Woche:
+** Anpassung Sprint Review an aktuelle Iteration
+** Übertragung und Auswertung des Happy Index im neuen Tool
+** Iterationsplanung im GitHub-Repository
+** Bearbeitung des projektplan.adoc
+* Hindernisse:
+** keine  
+--
+
+
+== HINDERNISSE
+
+**glossary.adoc** 
+Unsicherheit bzgl. Umfang und Inhalt des Glossars bestand anfangs, konnte jedoch im Austausch mit dem Coach geklärt werden. Weitere Bearbeitung durch Phillip im Verlauf der Woche.
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+*  Frederic übernimmt die Verantwortung für technische Architektur
+* Erstellung und Pflege der Architektur-Dokumentation im architecture-notebook.adoc begonnen
+* Teamaufgaben klar verteilt, kein akutes Hindernis im Ablauf
+* Glossar und Personas werden im Laufe der Woche vollständig erarbeitet
+--
+

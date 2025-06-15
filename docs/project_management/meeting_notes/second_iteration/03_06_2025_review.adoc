@@ -1,0 +1,74 @@
+= MEETINGNOTIZ – Datum
+
+--
+* Typ: Review  
+* Raum: Discord  
+* Dauer: 20.00 - 20.45   
+* Anwesend: Tobias, Sebastian, Johann, Frederic Lara, Phillipp + Team 3.C
+--
+
+== ZIELE DES MEETINGS
+--
+- Vorstellung der abgeschlossenen Arbeiten des Sprints
+- Abnahme durch den Product Owner
+- Feedback der Stakeholder 
+- Überprüfung, ob Sprintziel erreicht wurde
+--
+== VORGEHENSWEISE
+--
+1. Vorstellung der umgesetzten Product Backlog Items
+2. Live-Demo oder Erläuterung der Funktionalitäten
+3. Feedback-Runde von PO und Stakeholdern
+4. Diskussion über aufgetretene Probleme oder Änderungen
+5. Abnahmeentscheidung des PO
+--
+
+== UMGESETZTE ITEMS (Übersicht)
+--
+- [ ] Startseite: Landing Page
+- [ ] Login: Möglichkeit des einloggens der Nutzer um auf persönlichen Bereich zugreifen
+- [ ] Karteikarten: Karteikarten als Lernmodus mit den Fähigkeiten zur Erstellung und Beantwortung dieser mit Progressbar
+- [ ] Multiple Choice Quiz: Multiple Choice als Lernmodus mit den Fähigkeiten zur Erstellung und Beantwortung dieser mit Progressbar
+--
+
+== FEEDBACK DER STAKEHOLDER
+--
+* **gewünschte Features:**
+** Progressbar
+** Gruppieren von Themen
+** mehrere Lernmodi
+
+* **UX:**
+** Farben anpassen (HTW)
+** Darkmode
+** simples modernes Design
+
+
+* **Startseite:** 
+** UX: 
+*** Relation Icon zum Rest unpassend
+*** Buttons nicht intuitiv
+
+* **Karteikarten:**
+** bei Moduleingabe in Liste nach Modul suchen/scrollen
+** Abfrage random
+** UX:
+*** Design an rest anpassen
+
+* MC-Quiz:
+** UX:
+ *** Design an Rest anpassen
+--
+
+== ABNAHME DURCH PRODUCT OWNER
+
+- [ ] Ja, alle Items wurden abgenommen
+- [ ] Nein, folgende Items wurden nicht abgenommen
+
+== FAZIT UND NÄCHSTE SCHRITTE
+
+- Erreichtes Sprintziel:  [ ] Ja /  [ ] Nein
+- Konkrete Learnings aus dem Sprint:
+- Offene Punkte für nächste Meetings:
+
+

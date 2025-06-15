@@ -1,0 +1,97 @@
+= MEETINGNOTIZ – 03.06.2025
+
+--
+* Typ: Retro  
+* Raum: B 302a 
+* Dauer: 16:30 – 17:30  
+* Anwesend: Tobias, Johann, Frederic, Lara, Phillipp
+--
+
+== ZIELE DES MEETINGS
+--
+* Reflektion der Zusammenarbeit im letzten Sprint
+* Identifikation von positiven Aspekten und Verbesserungsbereichen
+* Ableitung konkreter Maßnahmen zur Optimierung der Teamarbeit
+--
+
+== VORGEHENSWEISE
+--
+1. Rückblick auf Sprint-Ziel und Stimmung im Team durch Happy Index
+2. Sammlung der Erfahrungen in drei Kategorien:
+   * Was lief gut?
+   * Was lief nicht gut?
+   * Was wollen wir verbessern?
+3. Diskussion über Ursachen und Lösungen
+4. Festlegung konkreter Verbesserungsmaßnahmen
+--
+
+== RÜCKBLICK
+
+=== Was lief gut?
+--
+* angenehmes Teamklima
+* keine Konflikte im Team
+* konstruktive Kritik und hilfreiche Hinweise
+* gute Zusammenarbeit und Hilfsbereitschaft untereinander
+* strukturierte Organisation der Meetings
+--
+
+=== Was lief nicht gut?
+--
+* unregelmäßige Anwesenheit in Meetings
+* zeitmangel aufgrund von Prüfungsstress
+* kurzfristige Absagen, die die Planung erschweren
+* Missverständnisse in der schriftlichen Kommunikation
+--
+
+=== Was wollen wir verbessern?
+--
+* Anwesenheit bei Meetings erhöhen
+* frühzeitige Kommunikation bei Abwesenheit
+* klarere und aktivere Kommunikation 
+* bewussterer Fragen stellen
+--
+
+== BESCHLÜSSE UND MASSNAHMEN
+
+
+[cols="4,2,1,1"]
+|===
+| **Maßnahme** | **Ziel** | **Zuständigkeit** | **Deadline**
+| Weekly-Meeting auf Donnerstag, 20:00 Uhr verschieben      | Höhere Anwesenheit          | Lara | ab sofort
+| Beibehaltung längerer Meetings donnerstags um 15:30 Uhr   | Höhere Anwesenheit          | Lara | -
+| Frühzeitiges Mitteilen von Abwesenheiten                  | Verbesserte Planbarkeit     | Alle | kontinuierlich
+| Nutzung fester Zeitslots für Aufgabenbearbeitung          | Erhöhung der Produktivität  | Alle | kontinuierlich
+| Aktives Fragenstellen bei Unklarheiten                    | Verbesserte Kommunikation   | Alle | kontinuierlich
+| Klare und eindeutige Kommunikation, besonders im Chat     | Verbesserte Kommunikation   | Alle | kontinuierlich
+|===
+
+
+== STIMMUNGSBILD / HAPPY INDEX
+
+**Bewertung der gesamten Iteration:**
+[cols="1,2"]
+|===
+| **Kategorie** | **Bewertungen** (1 = schlecht/wenig, 10 = gut/viel)
+|Kommunikation	    |      8, 8, 8, 8
+|Aufgabenklarheit	 |      10, 10, 9, 9
+|Stresslevel	    |      2, 5, 4,5, 3,5
+|===
+
+
+**Anmerkungen zum Teamklima:**
+--
+* Freundliche und respektvolle Kommunikation
+* Keine Konflikte oder zwischenmenschlichen Probleme festgestellt
+--
+
+== FAZIT
+
+**Allgemeine Bewertung des Sprints:** 
+
+Insgesamt stabiler Sprintverlauf mit guter Aufgabenbewältigung und einem funktionierenden Miteinander. Im Vergleich zum letzten Sprint wurde eine deutliche Verbesserung der Aufgabenklarheit festgestellt – alle Teammitglieder kennen nun ihre Rollen und Aufgabenbereiche klarer. Die im letzten Retro beschlossenen Maßnahmen wurden als sinnvoll bewertet und sollen weiterhin fortgeführt werden.
+
+Herausforderungen bestanden weiterhin im Bereich der Abstimmungen und Verfügbarkeiten aufgrund der aktuellen Prüfungsphase sowie in einer insgesamt noch ausbaufähigen Produktivität. Hier wurde erkannt, dass trotz klarer Aufgabenverteilung in der Umsetzung teilweise Effizienzpotenziale ungenutzt blieben.
+
+Die Fortsetzung und konsequente Anwendung der bisherigen Maßnahmen wurde von allen Teammitgliedern befürwortet, um die Produktivität im nächsten Sprint weiter zu steigern.
+

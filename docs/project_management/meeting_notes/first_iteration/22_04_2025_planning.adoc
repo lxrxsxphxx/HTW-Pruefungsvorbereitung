@@ -1,0 +1,73 @@
+= MEETINGNOTIZ – 22.04.2025
+
+--
+* Typ: Planning 
+* Raum: S216  
+* Dauer: 15:15 – 16:00  
+* Anwesend: Tobias, Sebastian, Johann, Lara, Phillipp
+--
+
+
+== TAGESORDNUNG / TODO
+--
+1. **Vorstellung durch Product Owner:**
+    * Stakeholder identifizieren und dokumentieren
+    * Vision-Statement formulieren
+    * Projektziele und grobe Projektschritte festhalten
+    * Sammlung und Diskussion zentraler Produktfunktionen
+
+2. **Planung**
+    * Vorstellung des GitHub Projects durch den Scrum Master
+
+3. **Dev-Team**
+    * Einigung auf technische Standards
+--
+
+=== HAUPTFRAGEN / DISKUSSIONSPUNKTE
+--
+* Welche Tools und Programmiersprache sollen verwendet werden?
+* Welche Programmierstandards müssen eingehalten werden?
+* Erstes Backlog in konkrete Tasks zerlegen
+* Erste Aufgaben zuweisen
+* Definition of Done anpassen
+--
+
+=== SCRUM-ABLÄUFE
+--
+* Meetings bislang in Präsenz 
+* Für Dailys/Weeklys zusätzlich Online-Option prüfen
+-* Planning, Review und Retrospektive weiterhin in Präsenz
+* Wöchentliche Vorbereitung: Bis Sonntagabend To-Do-Liste aktualisieren
+* Einführung eines "Happy Index":
+** Bewertungsfragen mit numerischen Antworten
+** Verlauf visuell darstellbar
+--
+
+== OUTCOME
+--
+* Meeting-Format: Präsenz bevorzugt; Online-Option für Weekly akzeptiert
+* "Happy Index" wird eingeführt
+* Stakeholder vom Product Owner vorgestellt
+* Definition of Done wird überarbeitet
+* Programmiersprache: Java
+* Projektsprache & Dokumentation: Deutsch
+* GitHub Project-Views: „Impediment“, „Risk“ eingeführt
+--
+
+== NÄCHSTE SCHRITTE
+--
+* **Dev-Team (Mob Work)**
+** Gemeinsame Entwicklung des Lernalgorithmus
+** Entwurf der grundlegenden Architektur & Schnittstellen
+
+* Product Owner
+** Recherche zu gamifizierten Features mit Suchtpotenzial aus anderen Spielen
+
+* Scrum Master
+** „Happy Index“ entwickeln
+** Ressourcen zum Lernalgorithmus bis Donnerstag bereitstellen
+** Erste Issues im GitHub Project anlegen
+** Separaten Discord-Channel für das Dev-Team einrichten
+** Visionsdokument überarbeiten
+--
+

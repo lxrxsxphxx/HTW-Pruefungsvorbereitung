@@ -1,0 +1,116 @@
+= MEETINGNOTIZ – 15.04.2025
+
+--
+* Typ: Planning 
+* Raum: B302b  
+* Dauer: 15:15 – 16:15  
+* Anwesend: Tobias, Sebastian, Johann, Lara, Phillipp
+--
+
+== TAGESORDNUNG / TODO
+--
+1. Teamstruktur & Rollen
+   * Stärken, Schwächen, Interessen und Motivation der Teammitglieder
+   * Teamstruktur festlegen
+
+2. Kommunikation & Organisation
+   * Kommunikationswege und Tools festlegen
+   * GitHub Project anlegen
+   * Terminserien vereinbaren:
+   ** Weekly
+   ** Planning
+   ** Review
+   ** Retro
+
+3. Projektplanung
+   * Stakeholder identifizieren
+   * Projektziele und -schritte definieren
+   * Vision entwickeln
+   * Projektplan erstellen
+   * Wesentliche Merkmale/Funktionen des Produkts festlegen
+--
+
+== OUTCOME
+--
+* Alle Punkte der To-Do-Liste wurden erfolgreich und vollständig bearbeitet oder verteilt
+* Persönliches Kennenlernen der Teammitglieder  
+--
+
+=== INDIVIDUELLE BEITRÄGE
+
+==== Johann:
+--
+* Stärken: 
+** Datenbankmanagementsystem
+** Programmierung
+** rationale Denkweise  
+* Schwächen: 
+** Erlernen neuer Fertigkeiten
+--
+
+=== Sebastian:
+--
+* Stärken: 
+** Datenbankmanagementsystem
+** rationale Denkweise  
+* Schwächen: 
+** Programmierung
+--
+
+=== Tobias:
+--
+* Stärken: 
+** Programmierung
+** Generalist
+** Entscheidungskompetenz  
+--
+
+=== Phillipp:
+--
+* Stärken: 
+** Programmierung
+** Generalist
+--
+
+=== Lara:
+--
+* Stärken: 
+** Struktur
+** theoretische & empathische Denkweise 
+* Schwächen: 
+** Umsetzung/Implementierung von Ideen
+--
+
+=== FESTLEGUNGEN
+
+==== Teamstruktur / Rollen:
+--
+   * *Product Owner:* Phillipp  
+   * *Scrum Master:* Lara  
+   * *Dev-Team:* Johann, Sebastian, Tobias
+--
+
+==== Kommunikationstools:
+   - Discord wird weiterhin genutzt
+   - Zusätzlich wird Whatsapp zur schnellen Kommunikation eingerichtet
+
+
+== NÄCHSTE SCHRITTE
+1. Einrichtung der Projektinfrastruktur:
+   - GitHub Project anlegen (inkl. Repositories, Issues, Boards)
+
+2. Projektvorbereitung:
+   - Stakeholder identifizieren und dokumentieren
+   - Vision-Statement ausformulieren
+   - Projektziele und grobe Projektschritte festhalten
+   - Erste Skizze des Projektplans (Meilensteine, Zeitrahmen) erstellen
+
+3. Inhaltliche Planung:
+   - Diskussion und Sammlung der Kernfunktionen des Produkts
+   - Erste User Stories und Use Cases formulieren
+   - Priorisierung der Features
+   - Product Owner bereitet initiales Product Backlog vor
+   - Scrum Master erstellt Übersicht zu Scrum-Abläufen für das Team
+   - Dev-Team startet mit technischer Recherche / Vorbereitungen
+   - Tobias versucht Coach zu erreichen
+

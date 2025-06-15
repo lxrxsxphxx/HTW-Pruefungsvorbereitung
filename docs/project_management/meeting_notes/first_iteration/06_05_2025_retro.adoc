@@ -1,0 +1,134 @@
+= MEETINGNOTIZ – 06.05.2025
+
+--
+* Typ: Retro  
+* Raum: S207  
+* Dauer: 15:30 – 16:15  
+* Anwesend: Tobias, Sebastian, Johann, Lara
+--
+
+== ZIELE DES MEETINGS
+--
+* Reflektion der Zusammenarbeit im letzten Sprint
+* Identifikation von positiven Aspekten und Verbesserungsbereichen
+* Ableitung konkreter Maßnahmen zur Optimierung der Teamarbeit
+--
+
+== VORGEHENSWEISE
+--
+1. Rückblick auf Sprint-Ziel und Stimmung im Team durch Happy Index
+2. Sammlung der Erfahrungen in drei Kategorien:
+   ** Was lief gut?
+   ** Was lief nicht gut?
+   ** Was wollen wir verbessern?
+3. Diskussion über Ursachen und Lösungen
+4. Festlegung konkreter Verbesserungsmaßnahmen
+--
+
+== RÜCKBLICK
+
+=== Was lief gut?
+--
+* Kommunikationsstil und Umgang im Team
+* Genutzte Kommunikationskanäle
+* Entwickler-Meetings in Kombination mit der Mob-Programming-Arbeitsweise
+--
+
+=== Was lief nicht gut?
+--
+* Unregelmäßige Teilnahme an Meetings
+* Mangelnde Direktheit in der Kommunikation
+* Unklare Aufgabenteilung
+* Unpräzise bzw. undeutliche Aufgabenstellungen
+* Unzufriedenheit mit dem bisherigen Ablaufplan
+* Unsicherheiten im Umgang mit Git
+* Unsicherheiten im Umgang mit Webentwicklung
+--
+
+=== Was wollen wir verbessern?
+--
+* Bessere Anwesenheit bei Meetings
+* Vertiefung der Kenntnisse im Umgang mit Git
+* Verbesserung des Verständnisses für Webentwicklung und Internettechnologien
+* Klarere Kommunikation, insbesondere bei Aufgabenverteilung und -stellung
+* Konsequente Nutzung des Happy Index zur Stimmungsreflexion
+--
+
+== BESCHLÜSSE UND MASSNAHMEN
+--
+* **Längere Meetings (z. B. Planning) donnerstags um 15:30 Uhr**
+** Ziel: Erhöhung der Anwesenheit 
+** Verantwortlich: Scrum Master 
+** Deadline: 05.06.2025
+
+* **Git-Hilfestellung**
+** Maßnahme: Bereitstellung eines Hilfsdokuments für Git  
+** Verantwortlich: Sebastian  
+** Deadline: 10.05.2025
+
+* **Vorlesungsunterlagen erarbeiten**
+** Ziel: Besseres Verständnis der theoretischen Grundlagen (z. B. WP/IT1) 
+** Verantwortlich: Developer & Scrum Master
+** Deadline: keine
+
+* **Markierung und Datierung von Iterationshinweisen**
+** Ziel: Bessere Aufgabenverteilung durch gezielte Hinweise 
+** Verantwortlich: Scrum Master 
+** Deadline: 05.06.2025
+
+* **Anpassung der Entscheidungsbefugnisse**
+** Maßnahme: Reihenfolge der Tasks wird von den Developern festgelegt 
+** Verantwortlich: Developer
+** Deadline: 05.06.2025
+
+* **Überarbeitung der Task-Formulierungen**
+** Ziel: Klare und eindeutige Aufgabenbeschreibungen 
+** Verantwortlich: Scrum Master 
+** Deadline: 05.06.2025
+
+* **Wöchentliche Erinnerung an den Happy Index**
+** Maßnahme: Erinnerung jeden Samstag um 20:00 Uhr  
+** Verantwortlich: Scrum Master
+
+* **Einführung von Einzelarbeitsphasen**
+** Ziel: Verstärkte individuelle Verantwortung im späteren Projektverlauf und Produktivitätsteigerung 
+** Verantwortlich: Developer  
+** Deadline: nächste Iteration
+--
+
+== STIMMUNGSBILD / HAPPY INDEX
+
+Hinweis: Keine vollständige Analyse möglich, da zu geringe Teilnahme
+--
+**Bewertung der gesamten Iteration:**
+[cols="1,2"]
+|===
+| **Kategorie** | **Bewertungen** (1 = schlecht/wenig, 10 = gut/viel)
+|Kommunikation	    |      8, 7, 7, 6
+|Aufgabenklarheit	 |      5, 7, 7, 6
+|Stresslevel	    |      2, 2, 1, 2
+|===
+-- 
+
+**Anmerkungen zum Teamklima:**
+--
+* Freundliche und respektvolle Kommunikation wurde positiv hervorgehoben
+* Keine Konflikte oder zwischenmenschlichen Probleme festgestellt
+* Gleichmäßige Aufgabenverteilung wurde als gegeben empfunden
+* Häufig stille Phasen während der Meetings
+--
+
+== FAZIT
+
+**Allgemeine Bewertung des Sprints:** 
+--
+* Gute Einarbeitung in die grundlegenden Scrum-Abläufe
+* Angenehmes und unterstützendes Teamklima
+* Deutliche Probleme bei der Aufgabenstellung und -verteilung
+* Bedenken hinsichtlich des Zeitplans und Produktivität
+* Unsicherheit, ob die Aufgaben im Sinne der Projektanforderungen korrekt umgesetzt werden
+* Die Retro in dieser Form wird als sinnvoll und zielführend eingeschätzt
+--
+
+
+

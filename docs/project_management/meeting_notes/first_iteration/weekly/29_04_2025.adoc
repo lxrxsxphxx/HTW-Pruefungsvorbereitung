@@ -1,0 +1,98 @@
+= MEETINGNOTIZ – 29.04.2025
+
+--
+* Typ: Weekly  
+* Raum: S216  
+* Dauer: 15:30 – 15:45  
+* Anwesend: Tobias, Sebastian, Johann, Lara, Phillipp (online)
+--
+== TAGESORDNUNG / TO-DO
+
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Disskusion zum „Happy Index“
+
+== WEEKLY-FRAGEN
+
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Erstellung einer Projektübersicht  
+* Diese Woche:
+** Entwurf des ERM-Modells  
+* Hindernisse:
+** keine  
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Erstellung einer Projektübersicht  
+* Diese Woche:
+** Entwurf des ERM-Modells  
+* Hindernisse:
+** keine  
+--
+
+=== Tobias:
+--
+* Letzte Woche:
+** Erstellung einer Projektübersicht  
+* Diese Woche:
+** Entwurf des ERM-Modells
+** Kontakt Coach  
+* Hindernisse:
+** Design-Frage
+** Klärung der Datenbankbereitstellung  
+** Unklarheiten zum Serverzugang
+--
+
+=== Phillipp:
+--
+* Letzte Woche:
+** Erstellung von Roadmap und Product Backlog   
+* Diese Woche:
+** Weiterentwicklung des Backlogs  
+* Hindernisse:
+** keine  
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** „Happy Index“ entwickelt 
+** Bearbeitung der Metadaten im Git-Repository 
+** Veröffentlichung der Definition of Done
+* Diese Woche:
+** Visionsdokument vervollständigen
+** Ansichten für „Hindernisse“ und „Risiken“ im Git-Projekt anlegen 
+** Lösungsfindung für Design-, Server- und DBMS-Fragen  
+* Hindernisse:
+** keine 
+--
+
+== HINDERNISSE
+
+**Design**  
+Wie soll das visuelle und strukturelle Design der Anwendung konkret aussehen?
+
+**DBMS**
+Wird uns ein Datenbanksystem von der HTW zur Verfügung gestellt oder müssen wir eines eigenständig einrichten?
+
+**Server**
+Welcher Server kann für das Hosting der Webanwendung verwendet werden? Ist die Nutzung eines HTW-Servers zulässig?
+
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+* Weekly-Format funktioniert effizient in Kurzform  
+* Hindernisse wurden klar benannt und werden gezielt weiterverfolgt   
+* Arbeit am ERM-Modell wird durch das Dev-Team fortgesetzt   
+--

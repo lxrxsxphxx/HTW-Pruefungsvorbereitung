@@ -1,0 +1,219 @@
+:root {
+    --dark-background: #444444;
+    --dark-button: #666666;
+    --dark-button-hover: #585858;
+    --dark-button-active: #555555;
+    --dark-aside: #555555;
+    --dark-aside-hover: #4b4b4b;
+    --dark-text-color: white;
+
+    --light-background: #eeeeee;
+    --light-button: #a0a0a0;
+    --light-button-hover: #b0b0b0;
+    --light-button-active: #a8a8a8;
+    --light-aside: #d0d0d0;
+    --light-aside-hover: #d0d0d0;
+    --light-text-color: black;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--dark-background);
+    color: var(--dark-text-color);
+    width: 100%;
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    border: 0;
+    margin-left: 1em;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--dark-text-color);
+}
+
+button {
+    font-size: 1em;
+    color: var(--dark-text-color);
+    background-color: var(--dark-button);
+
+    border: none;
+    border-radius: 0.25em;
+}
+button:hover {background-color: var(--dark-button-hover);}
+button:active {background-color: var(--dark-button-active);}
+
+main {
+    display: flex;
+}
+
+main > * {
+    border: 2px solid black;
+    margin: 0.25em;
+    border-radius: 0.5em;
+}
+
+#input {
+    order: 1;
+    padding: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    flex: 2 2 0%;
+}
+#input-container {
+    order: 1;
+    display: inline;
+}
+#input-container > div {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5em;
+}
+label {
+    order: 1;
+}
+
+#error-message {
+    color: #f20;
+    height: 1em;
+}
+
+.input-field {
+    color: var(--dark-text-color);
+    background-color: var(--dark-aside);
+    font-size: 1em;
+    order: 2;
+    flex: 1 1 0%;
+    width: 100%;
+    border: 0;
+    border-radius: 0.25em;
+    margin-left: 1em;
+}
+#question {
+    width: 75%;
+}
+
+#correct_answers-container {
+    width: auto;
+    display: inline;
+}
+#correct_answers {
+    width: 6em;
+    max-width: 6em;
+    margin-right: 0.5em;
+}
+#example {
+    order: 3;
+}
+
+
+#control-button-container {
+    order: 2;
+    display: flex;
+}
+.control-button {
+    background-color: var(--dark-button);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    width: 33%;
+    padding: 0.5em;
+    border: 0px;
+    border-radius: 0.25em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.control-button:hover {background-color: var(--dark-button-hover);}
+.control-button:active {background-color: var(--dark-button-active);}
+
+#cancel-popup {
+    background-color: #353535;
+    position: fixed;
+    left: 33%;
+    top: 16em;
+    transform: translate(-50%, -50%);
+    display: none;
+    
+    border: 2px solid black;
+    border-radius: 0.5em;
+}
+#cancel-popup-text {
+    text-align: center;
+    padding: 2em;
+    padding-bottom: 1.5em;
+}
+#cancel_button_container {
+    display: flex;
+    flex-direction: row;
+}
+.cancel_option {
+    width: 50%;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+#commit_cancel {margin-right: 0.25em;}
+/*#commit_cancel:hover {background-color: #c20;}
+#commit_cancel:active {background-color: #b20;}*/
+
+#cancel_cancel {margin-left: 0.25em;}
+/*#cancel_cancel:hover {background-color: #290;}
+#cancel_cancel:active {background-color: #280;}*/
+
+
+aside {
+    background-color: var(--dark-aside);
+    order: 2;
+    flex: 1 1 0%;
+    max-width: calc(33.33% - 0.5em - 8px);
+}
+aside > h3 {
+    padding: 0.5em;
+    margin: 0;
+    text-align: left;
+}
+
+
+.entered_question {
+    display: flex;
+    flex-direction: row;
+
+    padding: 0.2em;
+}
+.entered_question:hover {background-color: var(--dark-aside-hover);}
+.question_text{
+    flex: 1 1 0%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+.entered_question > button {
+    flex: 0 0 2em;
+    border-radius: 0;
+}
+
+
+@media (max-width: 1000px) {
+    body {width: 100%;}
+    main {flex-direction: column;}
+    #input-container > div {width: 100%;}
+    #question {width: 100%;}
+    #control-button-container {
+        flex-direction: column;
+    }
+    .control-button {
+        width: 100%;
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #cancel-popup {left: 50%;}
+    aside {max-width: 100%}
+}

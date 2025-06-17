@@ -351,7 +351,7 @@ Zukünftige Plattform (MVP):
 Webbasierte Anwendung: Zugriff über moderne Browser
 Cross-Platform: Funktioniert auf Windows, macOS, Linux, Android, iOS
 Technische Basis: Moderne Web-Technologien für optimale Performance
-5. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
+=== 5. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
 Im MVP keine Integrationen geplant - Fokus auf eigenständige Funktionalität:
 
 Studierende können manuell ihre Module auswählen

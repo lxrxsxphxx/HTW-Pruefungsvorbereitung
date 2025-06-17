@@ -303,10 +303,10 @@ Einhaltung von Datenschutzrichtlinien.
 
 
 
-Nutzungskontext
+==Nutzungskontext
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
-1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
+*1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?*
 Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. Im MVP konzentrieren wir uns auf diese individuelle Nutzung:
 
 Einzelnutzung: Studierende bearbeiten selbstständig Multiple-Choice-Quizzes und Karteikarten
@@ -314,7 +314,7 @@ Modulspezifisches Lernen: Jeder Student wählt seine eigenen Module aus und lern
 Personalisierte Lernerfahrung: Anmeldung und Profilverwaltung ermöglichen individuelle Lernfortschritte
 Zukünftige Erweiterungen (nicht im MVP): Kollaboratives Fragenmanagement, Lerngruppen und Dozierenden-Integration sind für spätere Versionen geplant.
 
-2. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
+*2. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?*
 Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien an. Das MVP unterstützt flexible Lernzeiten:
 
 Anmeldung und Setup: 2-5 Minuten (einmalig pro Semester)
@@ -324,7 +324,7 @@ Reguläre Lernphasen: 15-45 Minuten für umfangreichere Übungseinheiten
 Intensive Vorbereitung: 60-90 Minuten vor wichtigen Prüfungen
 Die Nutzungsfrequenz ändert sich stark im Semesterverlauf - von sporadischer Nutzung zu Beginn bis zu täglicher intensiver Nutzung vor Prüfungen.
 
-3. Gibt es besondere Umgebungsbedingungen?
+*3. Gibt es besondere Umgebungsbedingungen?*
 Die Anwendung muss flexibel in verschiedenen Lernumgebungen nutzbar sein:
 
 Mobile Nutzung:
@@ -340,7 +340,7 @@ In der Hochschule zwischen Vorlesungen
 In Lernräumen und Bibliotheken
 Zukünftige Anforderungen (nicht im MVP): Offline-Modus und erweiterte Barrierefreiheit sind für spätere Versionen geplant.
 
-4. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
+*4. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?*
 Aktuell genutzte Systeme:
 
 Analoge Materialien: Vorlesungsskripte, handschriftliche Mitschriften

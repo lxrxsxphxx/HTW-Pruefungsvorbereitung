@@ -303,78 +303,65 @@ Einhaltung von Datenschutzrichtlinien.
 
 
 
-== Nutzungskontext
-// Beschreiben Sie die Arbeitsaufgaben, Arbeitsmittel, physische und soziale Umgebung, in der das Produkt genutzt wird. 
-// Eventuell sind Angaben zu Fehlerquellen, Häufigkeiten von Ereignisse sowie Bearbeitungsdauern von Vorgängen relevant
-
-//Hier sind einige Anregungen:
-
-//Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-#. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
-
-Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. Jedoch fördern mehrere Kernfunktionen der Anwendung die Beteiligung einer größeren und wechselnden Anzahl von Personen:
-
-
-Kollaboratives Fragenmanagement: Studierende können gemeinsam Fragen erstellen, bearbeiten und die Qualität der Inhalte durch ein Community-basiertes System bewerten.
-
-Lerngruppen: Die Anwendung ermöglicht es, Lerngruppen zu bilden, um gemeinsam Quizze zu bearbeiten und zu diskutieren.
-Dozierende: In einem moderierten Admin-Bereich können Dozierende offizielle Prüfungsfragen beisteuern.
-
-#. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
-
-Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien der Studierenden an. Die Lernphasen ändern sich typischerweise im Laufe des Semesters, mit einer Intensivierung zur Prüfungszeit. Die Anwendung unterstützt verschiedene Lernszenarien mit unterschiedlichem Zeitaufwand:
-
-Kurze Lerneinheiten: Ein "Blitz-Quiz" oder das Lernen mit Karteikarten kann wenige Minuten in Anspruch nehmen.
-Regelmäßiges Üben: Der "Übungsmodus" eignet sich für Lerneinheiten von 15 bis 30 Minuten.
-Intensive Vorbereitung: Eine "Prüfungssimulation" kann die Dauer einer echten Prüfung von 90 bis 120 Minuten abbilden.
-
-#. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
-
-Die Anwendung muss flexibel in verschiedenen Umgebungen nutzbar sein:
-
-Mobile Nutzung & Touchbedienung: Da Studierende die Plattform auf Smartphones und Tablets (z.B. in öffentlichen Verkehrsmitteln, zwischen Vorlesungen) nutzen, ist eine intuitive Touch-Bedienung unerlässlich.
-Offline-Fähigkeit: Ein explizit geforderter "Offline-Modus mit Synchronisationsmöglichkeit" soll das Lernen auch ohne ständige Internetverbindung ermöglichen.
-Barrierefreiheit: Obwohl nicht explizit gefordert, ist die Berücksichtigung von Standards der Barrierefreiheit (z.B. für sehbeeinträchtigte Personen) für eine öffentliche Bildungseinrichtung wie die HTW Dresden relevant.
-
-#. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
-
-Absolut. Basierend auf den von Ihnen bereitgestellten Dokumenten habe ich den Text für den Abschnitt "Nutzungskontext" in der Datei ux-concept.adoc formuliert. Die Antworten auf die Leitfragen stützen sich auf die Details aus der Projektbeschreibung und den Anforderungen für die zweite Iteration.
-
 Nutzungskontext
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
 1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
+Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. Im MVP konzentrieren wir uns auf diese individuelle Nutzung:
 
-Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. Jedoch fördern mehrere Kernfunktionen der Anwendung die Beteiligung einer größeren und wechselnden Anzahl von Personen:
+Einzelnutzung: Studierende bearbeiten selbstständig Multiple-Choice-Quizzes und Karteikarten
+Modulspezifisches Lernen: Jeder Student wählt seine eigenen Module aus und lernt gezielt für seine Prüfungen
+Personalisierte Lernerfahrung: Anmeldung und Profilverwaltung ermöglichen individuelle Lernfortschritte
+Zukünftige Erweiterungen (nicht im MVP): Kollaboratives Fragenmanagement, Lerngruppen und Dozierenden-Integration sind für spätere Versionen geplant.
 
-
-Kollaboratives Fragenmanagement: Studierende können gemeinsam Fragen erstellen, bearbeiten und die Qualität der Inhalte durch ein Community-basiertes System bewerten.
-
-Lerngruppen: Die Anwendung ermöglicht es, Lerngruppen zu bilden, um gemeinsam Quizze zu bearbeiten und zu diskutieren.
-Dozierende: In einem moderierten Admin-Bereich können Dozierende offizielle Prüfungsfragen beisteuern.
 2. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
+Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien an. Das MVP unterstützt flexible Lernzeiten:
 
-Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien der Studierenden an. Die Lernphasen ändern sich typischerweise im Laufe des Semesters, mit einer Intensivierung zur Prüfungszeit. Die Anwendung unterstützt verschiedene Lernszenarien mit unterschiedlichem Zeitaufwand:
+Anmeldung und Setup: 2-5 Minuten (einmalig pro Semester)
+Modulauswahl: 1-2 Minuten (zu Semesterbeginn)
+Kurze Lerneinheiten: 5-15 Minuten für einzelne Quizzes oder Karteikarten-Sessions
+Reguläre Lernphasen: 15-45 Minuten für umfangreichere Übungseinheiten
+Intensive Vorbereitung: 60-90 Minuten vor wichtigen Prüfungen
+Die Nutzungsfrequenz ändert sich stark im Semesterverlauf - von sporadischer Nutzung zu Beginn bis zu täglicher intensiver Nutzung vor Prüfungen.
 
-Kurze Lerneinheiten: Ein "Blitz-Quiz" oder das Lernen mit Karteikarten kann wenige Minuten in Anspruch nehmen.
-Regelmäßiges Üben: Der "Übungsmodus" eignet sich für Lerneinheiten von 15 bis 30 Minuten.
-Intensive Vorbereitung: Eine "Prüfungssimulation" kann die Dauer einer echten Prüfung von 90 bis 120 Minuten abbilden.
-3. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+3. Gibt es besondere Umgebungsbedingungen?
+Die Anwendung muss flexibel in verschiedenen Lernumgebungen nutzbar sein:
 
-Die Anwendung muss flexibel in verschiedenen Umgebungen nutzbar sein:
+Mobile Nutzung:
 
-Mobile Nutzung & Touchbedienung: Da Studierende die Plattform auf Smartphones und Tablets (z.B. in öffentlichen Verkehrsmitteln, zwischen Vorlesungen) nutzen, ist eine intuitive Touch-Bedienung unerlässlich.
-Offline-Fähigkeit: Ein explizit geforderter "Offline-Modus mit Synchronisationsmöglichkeit" soll das Lernen auch ohne ständige Internetverbindung ermöglichen.
-Barrierefreiheit: Obwohl nicht explizit gefordert, ist die Berücksichtigung von Standards der Barrierefreiheit (z.B. für sehbeeinträchtigte Personen) für eine öffentliche Bildungseinrichtung wie die HTW Dresden relevant.
+Responsive Design für Smartphones und Tablets
+Touch-optimierte Bedienung für Multiple-Choice-Auswahl und Karteikarten-Navigation
+Nutzung in öffentlichen Verkehrsmitteln, Bibliotheken, zu Hause
+Verschiedene Lernorte:
+
+Zuhause am Desktop/Laptop
+Unterwegs auf mobilen Geräten
+In der Hochschule zwischen Vorlesungen
+In Lernräumen und Bibliotheken
+Zukünftige Anforderungen (nicht im MVP): Offline-Modus und erweiterte Barrierefreiheit sind für spätere Versionen geplant.
+
 4. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
+Aktuell genutzte Systeme:
 
-Aktuell nutzen Studierende eine Kombination aus analogen und digitalen Werkzeugen wie Vorlesungsskripte, Mitschriften, Literatur und eventuell die Lernplattform der HTW. Die zukünftige Plattform, der "HTW-Prüfungsvorbereiter", wird eine zentrale, webbasierte Anwendung sein, die über Browser auf allen gängigen Betriebssystemen (Windows, macOS, Linux, Android, iOS) zugänglich ist. Die technische Basis könnten moderne Frameworks wie Vue.js oder Flask bilden.
+Analoge Materialien: Vorlesungsskripte, handschriftliche Mitschriften
+Digitale Dokumente: PDFs, Präsentationen
+Bestehende HTW-Systeme: Lernplattformen, Vorlesungsverzeichnis
+Zukünftige Plattform (MVP):
 
-. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
+Webbasierte Anwendung: Zugriff über moderne Browser
+Cross-Platform: Funktioniert auf Windows, macOS, Linux, Android, iOS
+Technische Basis: Moderne Web-Technologien für optimale Performance
+5. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
+Im MVP keine Integrationen geplant - Fokus auf eigenständige Funktionalität:
 
-Studierende nutzen diverse Systeme. Eine Integration mit dem "HTW-Vorlesungsverzeichnis" ist explizit vorgesehen, um aktuelle und modulspezifische Inhalte zu gewährleisten. Zudem soll die Anwendung Verweise auf Lehrmaterialien wie Skripte oder Vorlesungsfolien enthalten, die sich typischerweise im Lernmanagementsystem (LMS) der Hochschule befinden. Eine Exportfunktion für Lernnotizen und Fragenkataloge deutet zudem auf die Notwendigkeit hin, mit anderen persönlichen Lernwerkzeugen kompatibel zu sein.
+Studierende können manuell ihre Module auswählen
+Lerninhalte werden direkt in der Anwendung verwaltet
+Keine externe Datenquellen oder APIs erforderlich
+Zukünftige Integrationen (nicht im MVP):
 
-Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
+HTW-Vorlesungsverzeichnis für automatische Modulaktualisierung
+Lernmanagementsystem (LMS) für Lehrmaterialien
+Exportfunktionen für externe Lernwerkzeuge
 
 == Wireframes und Wireflow
 // Fügen Sie Wireframes als Bilder oder als Link (z.B. zu einem Miroboard) ein

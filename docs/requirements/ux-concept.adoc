@@ -307,57 +307,75 @@ Einhaltung von Datenschutzrichtlinien.
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
 === 1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
-Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. Im MVP konzentrieren wir uns auf diese individuelle Nutzung:
+Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. *Im MVP konzentrieren wir uns auf diese individuelle Nutzung:*
 
-Einzelnutzung: Studierende bearbeiten selbstständig Multiple-Choice-Quizzes und Karteikarten
-Modulspezifisches Lernen: Jeder Student wählt seine eigenen Module aus und lernt gezielt für seine Prüfungen
-Personalisierte Lernerfahrung: Anmeldung und Profilverwaltung ermöglichen individuelle Lernfortschritte
-Zukünftige Erweiterungen (nicht im MVP): Kollaboratives Fragenmanagement, Lerngruppen und Dozierenden-Integration sind für spätere Versionen geplant.
+*Einzelnutzung:* Studierende bearbeiten selbstständig Multiple-Choice-Quizzes und Karteikarten
+
+*Modulspezifisches Lernen:* Jeder Student wählt seine eigenen Module aus und lernt gezielt für seine Prüfungen
+
+*Personalisierte Lernerfahrung:* Anmeldung und Profilverwaltung ermöglichen individuelle Lernfortschritte
+
+*Zukünftige Erweiterungen (nicht im MVP):* Kollaboratives Fragenmanagement, Lerngruppen und Dozierenden-Integration sind für spätere Versionen geplant.
 
 === 2. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
-Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien an. Das MVP unterstützt flexible Lernzeiten:
+Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien an. *Das MVP unterstützt flexible Lernzeiten:*
 
-Anmeldung und Setup: 2-5 Minuten (einmalig pro Semester)
-Modulauswahl: 1-2 Minuten (zu Semesterbeginn)
-Kurze Lerneinheiten: 5-15 Minuten für einzelne Quizzes oder Karteikarten-Sessions
-Reguläre Lernphasen: 15-45 Minuten für umfangreichere Übungseinheiten
-Intensive Vorbereitung: 60-90 Minuten vor wichtigen Prüfungen
+*Anmeldung und Setup:* 2-5 Minuten (einmalig pro Semester)
+
+*Modulauswahl:* 1-2 Minuten (zu Semesterbeginn)
+
+*Kurze Lerneinheiten:* 5-15 Minuten für einzelne Quizzes oder Karteikarten-Sessions
+
+*Reguläre Lernphasen:* 15-45 Minuten für umfangreichere Übungseinheiten
+
+*Intensive Vorbereitung:* 60-90 Minuten vor wichtigen Prüfungen
+
 Die Nutzungsfrequenz ändert sich stark im Semesterverlauf - von sporadischer Nutzung zu Beginn bis zu täglicher intensiver Nutzung vor Prüfungen.
 
 === 3. Gibt es besondere Umgebungsbedingungen?
-Die Anwendung muss flexibel in verschiedenen Lernumgebungen nutzbar sein:
+*Die Anwendung muss flexibel in verschiedenen Lernumgebungen nutzbar sein:*
 
-Mobile Nutzung:
+*Mobile Nutzung:*
 
 Responsive Design für Smartphones und Tablets
 Touch-optimierte Bedienung für Multiple-Choice-Auswahl und Karteikarten-Navigation
 Nutzung in öffentlichen Verkehrsmitteln, Bibliotheken, zu Hause
-Verschiedene Lernorte:
+
+*Verschiedene Lernorte:*
 
 Zuhause am Desktop/Laptop
 Unterwegs auf mobilen Geräten
 In der Hochschule zwischen Vorlesungen
 In Lernräumen und Bibliotheken
-Zukünftige Anforderungen (nicht im MVP): Offline-Modus und erweiterte Barrierefreiheit sind für spätere Versionen geplant.
+
+*Zukünftige Anforderungen (nicht im MVP):*
+
+Offline-Modus und erweiterte Barrierefreiheit sind für spätere Versionen geplant.
 
 === 4. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
-Aktuell genutzte Systeme:
+*Aktuell genutzte Systeme:*
 
-Analoge Materialien: Vorlesungsskripte, handschriftliche Mitschriften
-Digitale Dokumente: PDFs, Präsentationen
-Bestehende HTW-Systeme: Lernplattformen, Vorlesungsverzeichnis
-Zukünftige Plattform (MVP):
+*Analoge Materialien:* Vorlesungsskripte, handschriftliche Mitschriften
 
-Webbasierte Anwendung: Zugriff über moderne Browser
-Cross-Platform: Funktioniert auf Windows, macOS, Linux, Android, iOS
-Technische Basis: Moderne Web-Technologien für optimale Performance
+*Digitale Dokumente:* PDFs, Präsentationen
+
+*Bestehende HTW-Systeme:* Lernplattformen, Vorlesungsverzeichnis
+
+*Zukünftige Plattform (MVP):*
+
+*Webbasierte Anwendung:* Zugriff über moderne Browser
+
+*Cross-Platform:* Funktioniert auf Windows, macOS, Linux, Android, iOS
+
+*Technische Basis:* Moderne Web-Technologien für optimale Performance
 === 5. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
-Im MVP keine Integrationen geplant - Fokus auf eigenständige Funktionalität:
+*Im MVP keine Integrationen geplant - Fokus auf eigenständige Funktionalität:*
 
 Studierende können manuell ihre Module auswählen
 Lerninhalte werden direkt in der Anwendung verwaltet
 Keine externe Datenquellen oder APIs erforderlich
-Zukünftige Integrationen (nicht im MVP):
+
+*Zukünftige Integrationen (nicht im MVP):*
 
 HTW-Vorlesungsverzeichnis für automatische Modulaktualisierung
 Lernmanagementsystem (LMS) für Lehrmaterialien

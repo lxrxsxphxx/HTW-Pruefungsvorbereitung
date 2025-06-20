@@ -15,9 +15,19 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 * Angaben über die Gestaltung der Benutzeroberfläche, z.B. Styling, Bedienbarkeit, ...
 
 == Personas
-
+//Struktur und Lesefluss:
+//Eine etwas klarere Unterteilung (z. B. nach Stakholder, und Name) könnte den Lesefluss verbessern und die Verständlichkeit der Personas erhöhen.
+//Wohnorte:
+//Die Wahl der Wohnorte wirkt momentan eher beliebig – eventuell könnten wir hier realistischere oder für die Nutzung der App relevantere Angaben wählen, oder Wohnorte ganz weglassen, falls sie keinen Mehrwert bieten.
+//Verhaltensvariablen:
+//Die Verhaltensvariablen scheinen bei allen Personas sehr ähnlich zu sein – vielleicht könnten wir diese stärker differenzieren oder besser an die jeweilige Persona anpassen, damit sie die Vielfalt der späteren Nutzer:innen besser abbilden.
+//Akzeptanzkriterien:
+//Akzeptanzkriterien gehören nicht in die Beschreibung der Persona – diese sollten besser im Kontext von User Stories definiert werden.
+//Studierende aus nicht-technischem Bereich:
+//Es könnte sinnvoll sein, auch eine Persona aus einem nicht-technischen Studiengang (z. B. Sozialwissenschaften, BWL, Design) einzubauen
 === 1. Studierende: Isabell Berger
 [%hardbreaks]
+// Technologische Nutzung mit den Bedürfnissen und Zielen nicht konform
 *Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 
 *Demographie*
@@ -258,6 +268,10 @@ Sicherheitsrisiken durch unzureichende Verschlüsselung.
 Stabile und sichere Plattform mit regelmäßigen Updates.
 
 === 5.HTW (Institution): Dr. Petra Wagner
+//Interesse an Noten:
+//Diese Persona hat wirklich keine Relevanz für Noten
+//Integration neuer Systeme:
+//Die Integration von neuen Systemen scheint für diese Persona nicht direkt relevant zu sein – eventuell passt dieses Thema eher zu einer technischen oder administrativen Persona
 [%hardbreaks]
 *Leitspruch:* „Exzellenz in Bildung und Lehre.“
 
@@ -304,6 +318,22 @@ Einhaltung von Datenschutzrichtlinien.
 
 
 == Nutzungskontext
+//Zu technisch und MVP-lastig:
+//Der Nutzungskontext beschreibt überwiegend den technischen Stand und MVP-Abgrenzungen, eigentlich sollte er den realen Nutzungskontext der Zielgruppe im Alltag erklären (Was machen die Studierenden? In welcher Situation? Mit welchem Ziel?).
+//Wenig nutzerzentriert:
+//Der Fokus liegt momentan sehr stark auf der System- und Plattformbeschreibung, anstatt auf dem tatsächlichen Verhalten, den Bedürfnissen und der Umgebung der Nutzer:innen (z.B. wann, wo, warum lernen sie? Welche Hürden gibt es dabei?).
+//Redundanz & Aufblähung:
+//Viele Punkte wiederholen sich unnötig (z. B. "Lernen zu Hause, unterwegs, in Bibliotheken") – hier könnte man kürzer und klarer zusammenfassen, ohne dabei Informationen zu verlieren.
+//MVP-Abgrenzungen unnötig im Nutzungskontext:
+//Hinweise wie „nicht im MVP“ gehören besser in die Roadmap – im Nutzungskontext verwirren sie eher und lenken vom eigentlichen Verständnis der Nutzung ab.
+//Fehlende echte Nutzungsszenarien:
+//Es fehlt der Blick auf typische Lernsituationen:
+//z. B. "Vor der Vorlesung kurz Karteikarten lernen", "in der Bib mit Kommilitonen Quiz machen", "abends vor der Prüfung gezielt Modul XY durchgehen".
+//Solche konkreten Bilder helfen, den Nutzungskontext greifbarer zu machen.
+//Systemplattformen und Integration:
+//Dieser Teil ist zu detailliert für den Nutzungskontext – was Studierende bisher nutzen, könnte in den "bestehenden Hilfsmitteln" kurz erwähnt werden, aber nicht als technische Aufzählung.
+
+
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
 === 1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?

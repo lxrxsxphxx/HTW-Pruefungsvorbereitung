@@ -9,6 +9,21 @@ include::../_includes/default-attributes.inc.adoc[]
 In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der <Projektthema-Systems> definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
 
 == Begriffe
+//Übungsmodus und Blitz-Quiz:
+//Aktuell gibt es in unserem Konzept noch keinen Übungsmodus oder Blitz-Quiz – vielleicht sollten wir das nochmal gemeinsam klären, ob wir diese Features wirklich vorsehen möchten.
+//Push-Benachrichtigungen:
+//Push-Benachrichtigungen sind an sich keine täglichen Erinnerungen – hier wäre es gut, den Unterschied zwischen Funktion und technischer Umsetzung noch etwas klarer zu trennen.
+//Kollaboratives Lernen:
+//Die Beschreibung zum kollaborativen Lernen ist vielleicht noch etwas zu ausführlich – eventuell könnten wir das Ziel hier präziser und kürzer formulieren.
+//High Score:
+//Das Thema High Score haben wir bisher noch nicht genauer besprochen – eventuell ist es für unser Konzept noch gar nicht relevant oder kann später betrachtet werden.
+//Adaptiver Lernmodus / Lernalgorithmus:
+//Diese beiden Begriffe meinen vermutlich dasselbe – wir könnten sie vielleicht zusammenfassen.
+//Freitextfragen:
+//Freitextfragen sind vielleicht nicht der beste Lernmodus für unsere App – lass uns dazu gerne nochmal über alternative Lernformate sprechen.
+//Quiz-App:
+//Quiz App wirkt aktuell noch etwas allgemein für einen Glossareintrag – eventuell könnten wir hier eine genauere Definition überlegen oder dieses Wort entfernen.
+
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme
@@ -30,6 +45,7 @@ Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in
 
 
 == Abkürzungen und Akronyme
+// ist die Abkürzung IT notwendig?
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
@@ -49,6 +65,7 @@ Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in
 |===
 
 == Verzeichnis der Datenstrukturen
+// Die Ausarbeitung der Datenstruktur wäre vermutlich besser von den Developern in Abstimmung mit dem Domänenmodell zu erstellen
 [%header]
 |===
 | Bezeichnung | Definition | Format | Gültigkeitsregeln | Alias

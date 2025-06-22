@@ -34,7 +34,7 @@ def read_card(id: int, session: Session = Depends(get_session)) -> Card:
     return card
 
 @router.put("/{id}")
-def read_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> Card:
+def update_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> Card:
     db_card = session.get(Card, id)
     if not card:
         raise HTTPException(status_code=404, detail="Card not found")

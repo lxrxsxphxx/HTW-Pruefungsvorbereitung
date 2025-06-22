@@ -1,27 +1,23 @@
 <template>
   <div class="container">
     <section class="intro">
-      <h1>HTW-Prüfungsvorbereiter</h1>
-      <p>Bereit für die Prüfung – mit deiner HTW-Lernplattform.</p>
+      <h1>Lernmodus auswählen</h1>
     </section>
 
     <section class="features">
-      <div class="btn-links">
-        <button>
-          <img src="@/assets/img/Kurse.png" alt="Kursbutton" class="kurs-button" />
-        </button>
-      </div>
-      <div class="btn-mitte">
-        <RouterLink to="/lernen">
+      <div>
+        <RouterLink to="/karteikarten">
           <button>
-            <img src="@/assets/img/jetztLernen.png" alt="LernenButton" class="lernen-button" />
+            <img src="@/assets/img/Karteikarten.png" alt="Karteikartenbutton" class="karteikarten-button" />
           </button>
         </RouterLink>
       </div>
-      <div class="btn-rechts">
-        <button>
-          <img src="@/assets/img/Statistiken.png" alt="StatistikenButton" class="statistiken-button" />
-        </button>
+      <div>
+        <RouterLink to="/multiplechoice">
+          <button>
+            <img src="@/assets/img/MultipleChoice.png" alt="MultipleChoiceButton" class="multipleChoice-button" />
+          </button>
+        </RouterLink>
       </div>
     </section>
   </div>
@@ -29,11 +25,10 @@
 
 <script>
 export default {
-  name: "Startseite"
+  name: "Jetztlernen"
 };
+
 </script>
-
-
 
 <style scoped>
 .container {
@@ -57,12 +52,6 @@ export default {
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
-}
-
-.intro p {
-  font-size: 20px;
-  color: black;
-  margin: 0px;
 }
 
 .features {
@@ -95,13 +84,16 @@ export default {
   cursor: pointer;
 }
 
-.lernen-button,
-.kurs-button,
-.statistiken-button {
+.karteikarten-button,
+.multipleChoice-button {
   width: 100%;
   height: auto;
+  max-width: 250px;
   margin-bottom: 10px;
   background: white;
   border-radius: 10px;
 }
+
+
+
 </style>

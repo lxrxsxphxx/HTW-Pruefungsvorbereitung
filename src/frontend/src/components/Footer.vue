@@ -15,14 +15,16 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 5%;
   background-color: #f99b20;
   text-align: center;
-  padding: 10px 0;
+  padding: 3px 0;
 }
 
 .footer a {
   color: white;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
+  
 }
 </style>

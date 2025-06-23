@@ -74,9 +74,13 @@
 
 
 <script setup>
-"use strict";
 
 import { ref } from 'vue';
+
+</script>
+
+<script>
+"use strict";
 
 let m;
 let p;

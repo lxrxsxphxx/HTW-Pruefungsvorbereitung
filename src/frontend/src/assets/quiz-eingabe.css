@@ -1,25 +1,36 @@
 :root {
     --dark-background: #444444;
+    --light-popup: #8d4000;
+    --dark-menu: #cd5c00;
+    --dark-menu-hover: #e58435;
+    --dark-menu-active: #e3761d;
     --dark-button: #666666;
     --dark-button-hover: #585858;
     --dark-button-active: #555555;
     --dark-aside: #555555;
-    --dark-aside-hover: #4b4b4b;
     --dark-text-color: white;
+    --dark-red: #ad0a0a;
+    --dark-green: #269200;
 
-    --light-background: #eeeeee;
-    --light-button: #a0a0a0;
-    --light-button-hover: #b0b0b0;
-    --light-button-active: #a8a8a8;
-    --light-aside: #d0d0d0;
-    --light-aside-hover: #d0d0d0;
+    --light-background: rgba(249, 155, 32, 0.308);
+    --light-popup: orange;
+    --light-menu: orange;
+    --light-menu-hover: #ffbb61;
+    --light-menu-active: #fda633;
+    --light-button: white;
+    --light-button-hover: #fff6e9;
+    --light-button-active: #fdc781;
+    --light-aside: #ffaa0077;
     --light-text-color: black;
+    --light-h-text-color: orange;
+    --light-red: rgb(255, 42, 0);
+    --light-green: rgb(124, 232, 0);
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--dark-background);
-    color: var(--dark-text-color);
+    background-color: var(--light-background);
+    color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
 }
@@ -32,26 +43,26 @@ h1 {
 hr {
     border: 0;
     height: 1px;
-    background-color: var(--dark-text-color);
+    background-color: var(--light-text-color);
 }
 
 button {
     font-size: 1em;
-    color: var(--dark-text-color);
-    background-color: var(--dark-button);
+    color: var(--light-text-color);
+    background-color: var(--light-button);
 
     border: none;
     border-radius: 0.25em;
 }
-button:hover {background-color: var(--dark-button-hover);}
-button:active {background-color: var(--dark-button-active);}
+button:hover {background-color: var(--light-button-hover);}
+button:active {background-color: var(--light-button-active);}
 
 main {
     display: flex;
 }
 
 main > * {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     margin: 0.25em;
     border-radius: 0.5em;
 }
@@ -85,8 +96,8 @@ label {
 }
 
 .input-field {
-    color: var(--dark-text-color);
-    background-color: var(--dark-aside);
+    color: var(--light-text-color);
+    background-color: var(--light-aside);
     font-size: 1em;
     order: 2;
     flex: 1 1 0%;
@@ -118,7 +129,7 @@ label {
     display: flex;
 }
 .control-button {
-    background-color: var(--dark-button);
+    background-color: var(--light-button);
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -129,11 +140,11 @@ label {
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
-.control-button:hover {background-color: var(--dark-button-hover);}
-.control-button:active {background-color: var(--dark-button-active);}
+.control-button:hover {background-color: var(--light-button-hover);}
+.control-button:active {background-color: var(--light-button-active);}
 
 #cancel-popup {
-    background-color: #353535;
+    background-color: var(--light-menu);
     position: fixed;
     left: 33%;
     top: 16em;
@@ -167,7 +178,7 @@ label {
 
 
 aside {
-    background-color: var(--dark-aside);
+    background-color: var(--light-aside);
     order: 2;
     flex: 1 1 0%;
     max-width: calc(33.33% - 0.5em - 8px);
@@ -185,7 +196,7 @@ aside > h3 {
 
     padding: 0.2em;
 }
-.entered_question:hover {background-color: var(--dark-aside-hover);}
+.entered_question:hover {background-color: var(--light-aside-hover);}
 .question_text{
     flex: 1 1 0%;
     overflow: hidden;

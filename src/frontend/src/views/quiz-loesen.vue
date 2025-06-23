@@ -53,7 +53,15 @@
 
 
 <script setup>
+
 import { ref } from "vue";
+
+</script>
+
+
+
+<script>
+"use strict";
 
 let m;
 let p;
@@ -325,11 +333,11 @@ class View{
             this.pressed = true;
 
             if(success){
-                event.target.style.backgroundColor = "#269200";
+                event.target.style.backgroundColor = "var(--light-green)";
                 task.value = "Richtig!";
             }
             else {
-                event.target.style.backgroundColor = "#ad0a0a";
+                event.target.style.backgroundColor = "var(--light-red)";
                 task.value = "Falsch!";
             }
         }

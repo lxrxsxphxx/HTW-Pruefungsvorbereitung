@@ -1,0 +1,119 @@
+= MEETINGNOTIZ – 12.06.2025
+
+--
+* Typ: Weekly  
+* Raum: online 
+* Dauer: 20.00 – 20.15  
+* Anwesend: Tobias, Sebastian, Johann, Frederic, Lara, Phillipp
+--
+== TAGESORDNUNG / TO-DO
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+--
+
+== WEEKLY-FRAGEN
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+4. Absprache mit Marlene erwähnen - Finales Datum bis zur Fertigstellung aller Dokumente 24.06.2025
+5. Reflexion Erinnerung
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Quiz beantworten angepasst
+** Mit Vue beschäftigt
+** MS umstrukturiert und an Vue angepasstE  
+* Diese Woche:
+** Weitere Anpassung   
+* Hindernisse:
+** keine  
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Design überarbeitet / Anpassungen anhand Review Feedback 
+* Diese Woche:
+** Karteikarten-Ansicht verbessern 
+* Hindernisse:
+** keine 
+--
+
+=== Tobias:
+--
+* Letzte Woche:
+** Mit JavaScript beschäftigt
+* Diese Woche:
+** Einstieg in Vue 
+* Hindernisse:
+** Prüfungsstress
+--
+
+=== Frederic:
+--
+* Letzte Woche:
+** Architecture Notebook aktualisiert
+** Frontend: Basisprojekt in Vue erstellt
+** Backend: Endpunkt für Karteikarten entwickelt
+** Docker inkl. Datenbank eingerichtet
+* Diese Woche:
+** Backend: Multiple-Choice-Fragen umsetzen
+* Hindernisse:
+** keine   
+--
+
+
+=== Phillipp:
+--
+* Letzte Woche:
+** Vision-Dokument überarbeitet
+** UX-Konzept ausgearbeitet
+** Nutzungskontext definiert
+** Erste 4 User Stories geschrieben
+* Diese Woche:
+** User Stories vervollständigen
+** Personas verfeinern
+** Miro-Board ergänzen
+** Backlog erstellen 
+* Hindernisse:
+** keine  
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** Tasks in Git gepflegt
+** Meeting-Notizen für Retro und Planung fertiggestellt
+** Lesson Learned begonnen
+** Präsentation begonnen
+** Projektplan finalisiert
+** Risikoanalyse abgeschlossen
+* Diese Woche:
+** Lesson Learned fertigstellen
+** Präsentation fertigstellen
+** Wireframes überarbeiten/verschönern
+* Hindernisse:
+** Lesson Learned
+** Unklarheiten bezüglich der Präsentationsinhalte 
+
+--
+
+== HINDERNISSE
+
+**Lesson Learned:** bisher nur eigene Sicht, allgemeines Feedback fehlt – Terminabfrage notwendig
+**Unklarheiten bezüglich der Präsentationsinhalte:** Welche Punkte sollen konkret angesprochen werden?
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+* Abstimmung Präsentationsinhalte: Klärung im Team bis unklar
+* Lesson Learned: Terminfindung für Teamfeedback bis unklar
+--
+

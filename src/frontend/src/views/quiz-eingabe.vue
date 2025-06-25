@@ -373,3 +373,8 @@ class View{
 
 
 </script>
+
+
+<style scoped>
+@import '@/assets/quiz-eingabe.css';
+</style>

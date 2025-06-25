@@ -1,33 +1,7 @@
-:root {
-    --dark-background: #444444;
-    --dark-menu: #cd5c00;
-    --dark-menu-hover: #e58435;
-    --dark-menu-active: #e3761d;
-    --dark-button: #666666;
-    --dark-button-hover: #585858;
-    --dark-button-active: #555555;
-    --dark-aside: #555555;
-    --dark-text-color: white;
-    --dark-red: #ad0a0a;
-    --dark-green: #269200;
 
-    --light-background: rgba(249, 155, 32, 0.308);
-    --light-menu: orange;
-    --light-menu-hover: #ffbb61;
-    --light-menu-active: #fda633;
-    --light-button: white;
-    --light-button-hover: #fff6e9;
-    --light-button-active: #fdc781;
-    --light-aside: #ffaa00cc;
-    --light-text-color: black;
-    --light-h-text-color: orange;
-    --light-red: rgb(255, 42, 0);
-    --light-green: rgb(124, 232, 0);
-}
 
-body {
+#mc-quiz-body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--light-background);
     color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
@@ -62,7 +36,7 @@ button:active {background-color: var(--light-button-active);}
 .control-button {cursor: pointer;}
 
 
-main > * {
+#mc-quiz-container > * {
     margin: 0.25em;
 }
 
@@ -173,14 +147,14 @@ aside div {
 #new-task-button {
     width: 25%;
     font-size: 1.1em;
-    order: 3;
+    order: 4;
     border: 0;
     background-color: var(--light-menu);
 
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
+    margin-bottom: 4em;
 }
 #new-task-button:hover {background-color: var(--light-menu-hover);}
 #new-task-button:active {background-color: var(--light-menu-active);}
@@ -190,12 +164,11 @@ aside div {
     font-size: 1.1em;
 
     display: block;
-    position: fixed;
-    /*order: 5;*/
+    order: 5;
 
-    left: 50%;
-    bottom: 4%;
-    transform: translate(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4em;
 }
 
 
@@ -206,11 +179,11 @@ aside div {
 
 
 @media (max-width: 1000px) {
-    body {width: 100%; margin-bottom: 3em;}
+    #mc-quiz-body {width: 100%; margin-bottom: 3em;}
     #question-container {order: 3; padding-left: 1em; padding-right: 1em;}
     #statistic {text-align: left; padding-left: 1em; padding-right: 1em;}
     #answer-buttons {flex-direction: column; align-items: stretch;}
     .answer-button {order: 0; width: 100%;margin-left: 0; margin-right: 0; margin-top: 0.25em; margin-bottom: 0.25em;}
-    #new-task-button {width: 80%;}
+    #new-task-button {width: 80%; margin-bottom: 1em;}
     #cancel-quiz-button {width: 80%;}
 }

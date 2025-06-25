@@ -1,11 +1,11 @@
 <template>
-    <body>
-        <header>
+    <div id="mc-quiz-body">
+        <div id="mc-quiz-header">
             <h1>Quiz lösen</h1>
             <hr>
-        </header>
+        </div>
 
-        <main>
+        <div id="mc-quiz-container">
             <div id="menu">
                 <div id="quiz-choice-container">
                     <p>Wähle ein Quiz aus:</p>
@@ -51,8 +51,8 @@
 
                 <button id="new-task-button" @click="v.newTask">{{ new_task }}</button>
             </div>
-        </main>
-    </body>
+        </div>
+    </div>
 </template>
 
 
@@ -210,13 +210,13 @@ class Presenter{
         }
     }
 
-    evaluate(answer){
-        console.log("Presenter -> Antwort: " + answer);
+    evaluate(answer_nr){
+        console.log("Presenter -> Antwort: " + answer_nr);
 
         this.view.block_new_task = true;
 
-        console.log("correct answers: " + this.task_set[this.current_task_nr].correct);
-        let success = this.task_set[this.current_task_nr].correct.includes(answer.toString());
+        let success = this.task_set[this.current_task_nr].answers[answer_nr].correct;
+        console.log(success);
         if(success) this.updateProgress(1);
         else this.updateProgress(0);
 
@@ -315,10 +315,10 @@ class View{
         answer_order = answer_order.sort((a, b) => 0.5 - Math.random());
 
 
-        button_1.value = answers[answer_order[0]];
-        button_2.value = answers[answer_order[1]];
-        button_3.value = answers[answer_order[2]];
-        button_4.value = answers[answer_order[3]];
+        button_1.value = answers[answer_order[0]].answer;
+        button_2.value = answers[answer_order[1]].answer;
+        button_3.value = answers[answer_order[2]].answer;
+        button_4.value = answers[answer_order[3]].answer;
 
 
         question.value = text;
@@ -446,6 +446,6 @@ class View{
 </script>
 
 
-<style>
-@import '../assets/quiz-loesen.css';
+<style scoped>
+@import '@/assets/quiz-loesen.css';
 </style>

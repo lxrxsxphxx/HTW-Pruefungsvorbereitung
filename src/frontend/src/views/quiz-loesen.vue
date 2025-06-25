@@ -1,51 +1,58 @@
 <template>
-    <header>
-        <h1>Quiz lösen</h1>
-        <hr>
-    </header>
+    <body>
+        <header>
+            <h1>Quiz lösen</h1>
+            <hr>
+        </header>
 
-    <main>
-        <div id="menu">
-            <div id="quiz-choice-container">
-                <p>Wähle ein Quiz aus:</p>
-                <div id="quiz-choice">
-                    <button v-for="(key,index) in keys" :key="index" @click="v.quizChoice" v-bind:id="key">{{ key }}</button>
+        <main>
+            <div id="menu">
+                <div id="quiz-choice-container">
+                    <p>Wähle ein Quiz aus:</p>
+                    <div id="quiz-choice">
+                        <button v-for="(key,index) in keys" :key="index" @click="v.quizChoice" v-bind:id="key">{{ key }}</button>
+                    </div>
                 </div>
+                <RouterLink v-slot="{navigate, isActive}" to="/multiplechoice/erstellen" custom>
+                    <button id="new-quiz-button" @click="navigate" :class="{active: isActive}">Quiz erstellen</button>
+                </RouterLink>
+                <RouterLink v-slot="{navigate, isActive}" to="/lernen" custom>
+                    <button class="control-button" id="change-learning-mode-button" @click="navigate" :class="{active: isActive}">Lernmodus wechseln</button>
+                </RouterLink>
             </div>
-            <button class="control-button" id="change-learning-mode-button">Lernmodus wechseln</button>
-        </div>
 
-        <div id="middle">
-            <button class="control-button" id="cancel-quiz-button" @click="v.cancelQuiz">{{ cancel_quiz }}</button>
-            <div id="progress-bar-container">
-                <p id="progress-text">{{ progress_percent }}</p>
-                <div id="progress-bar">
-                    <div id="progress" :style="{ width: progress_percent }"></div>
+            <div id="middle">
+                <button class="control-button" id="cancel-quiz-button" @click="v.cancelQuiz">{{ cancel_quiz }}</button>
+                <div id="progress-bar-container">
+                    <p id="progress-text">{{ progress_percent }}</p>
+                    <div id="progress-bar">
+                        <div id="progress" :style="{ width: progress_percent }"></div>
+                    </div>
                 </div>
-            </div>
-            <div id="question-container">
-                <p id="task">{{ task }}</p>
-                <p>Frage:</p>
-                <p id="question">{{ question }}</p> <br/><br/>
+                <div id="question-container">
+                    <p id="task">{{ task }}</p>
+                    <p>Frage:</p>
+                    <p id="question">{{ question }}</p> <br/><br/>
 
-                <div class="answer-container" id="answer-buttons">
-                    <button class="answer-button" id="answer-button_0" v-bind:number="button_1_number" @click="v.evaluate">{{ button_1 }}</button>
-                    <button class="answer-button" id="answer-button_1" v-bind:number="button_2_number" @click="v.evaluate">{{ button_2 }}</button>
-                    <button class="answer-button" id="answer-button_2" v-bind:number="button_3_number" @click="v.evaluate">{{ button_3 }}</button>
-                    <button class="answer-button" id="answer-button_3" v-bind:number="button_4_number" @click="v.evaluate">{{ button_4 }}</button>
+                    <div class="answer-container" id="answer-buttons">
+                        <button class="answer-button" id="answer-button_0" v-bind:number="button_1_number" @click="v.evaluate">{{ button_1 }}</button>
+                        <button class="answer-button" id="answer-button_1" v-bind:number="button_2_number" @click="v.evaluate">{{ button_2 }}</button>
+                        <button class="answer-button" id="answer-button_2" v-bind:number="button_3_number" @click="v.evaluate">{{ button_3 }}</button>
+                        <button class="answer-button" id="answer-button_3" v-bind:number="button_4_number" @click="v.evaluate">{{ button_4 }}</button>
+                    </div>
                 </div>
-            </div>
-            <div id="statistic">
-                <div v-for="(text, index) in statistic" :key="index" v-text="text"></div>
-                <br/>
-                <div>Richtig beantwortet: ✅<br/></div>
-                <div>Falsch beantwortet: ❌<br/></div>
-                <div>Nicht beantwortet: 🚫<br/></div>
-            </div>
+                <div id="statistic">
+                    <div v-for="(text, index) in statistic" :key="index" v-text="text"></div>
+                    <br/>
+                    <div>Richtig beantwortet: ✅<br/></div>
+                    <div>Falsch beantwortet: ❌<br/></div>
+                    <div>Nicht beantwortet: 🚫<br/></div>
+                </div>
 
-            <button id="new-task-button" @click="v.newTask">{{ new_task }}</button>
-        </div>
-    </main>
+                <button id="new-task-button" @click="v.newTask">{{ new_task }}</button>
+            </div>
+        </main>
+    </body>
 </template>
 
 
@@ -109,11 +116,33 @@ document.addEventListener("DOMContentLoaded", function(){
 // ======================================= Model =======================================
 class Model{
     constructor(){
-        this.file_path = "./quiz.json"
+        this.file_path = "./quiz.json";
+        this.url = "localhost:8000/api/questions/";
+    }
+
+
+    async getQuestion(id){
+        const url = this.url;
+        if(id) url += id;
+
+        try {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), 5000);
+
+            const response = await fetch(url, {method: "GET", signal: controller.signal});
+            if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
+
+            const data = await response.json();
+            return data;
+        }
+        catch (error) {
+            console.error(error.message);
+            return null;
+        }
     }
 
     getJson(){
-        let response = '{"lustiges quiz 123":[{"txt":"klicke die 1 an", "answers":["1","2","3","4"],"correct":["0"]},{"txt":"Welcher ist der am Weitesten von der Sonne entfernte Planet im Sonnensystem?", "answers":["Ankara","Banane","Rucola","Schachbrettmuster"],"correct":["0","2"]}],"quiz 2":[{"txt":"hallo", "answers":["1","2","3","4"],"correct":["0"]},{"txt":"eine andere Frage als im lustigen Quiz", "answers":["Ankara","Banane","Rucola","Schachbrettmuster"],"correct":["0","2"]}]}'
+        let response = '{"lustiges quiz 123":[{"question":"klicke die 1 an", "answers":[{"answer":"1", "correct":true},{"answer":"2", "correct":false},{"answer":"3", "correct":false},{"answer":"4", "correct":false}]},{"question":"Welcher ist der am Weitesten von der Sonne entfernte Planet im Sonnensystem?", "answers":[{"answer":"Ankara", "correct":true},{"answer":"Banane", "correct":false},{"answer":"Rucola", "correct":true},{"answer":"Schachbrettmuster", "correct":false}]}]}'
         const data = JSON.parse(response);
 
         console.log(data);
@@ -276,7 +305,7 @@ class View{
         
         task.value = "Aufgabe " + nr;
 
-        let text = data.txt;
+        let text = data.question;
         console.log("Task: " + text);
 
         let answers = data.answers;
@@ -405,7 +434,7 @@ class View{
         document.getElementById("statistic").style.display = "block";
 
         for(let i = 0; i < task_set.length; i++){
-            let text = String(task_set[i].txt);
+            let text = String(task_set[i].question);
             text = text.replaceAll("<br/>", ", ");
 
             statistic.value.push((i + 1) + ": " + statistic_data[i] + " " + text);
@@ -415,3 +444,8 @@ class View{
     }
 }
 </script>
+
+
+<style>
+@import '../assets/quiz-loesen.css';
+</style>

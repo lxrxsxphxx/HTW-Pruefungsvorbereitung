@@ -94,6 +94,10 @@ main > * {
 #quiz-choice > button:not(#change-learning-mode-button):active {background-color: var(--light-menu-active);}
 
 #change-learning-mode-button {
+    position: relative;
+    left: 50%;
+    top: 2em;
+    transform: translate(-50%);
     width: 16em;
 }
 

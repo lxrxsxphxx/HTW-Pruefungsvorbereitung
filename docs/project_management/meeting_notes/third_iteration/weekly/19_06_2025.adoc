@@ -1,0 +1,122 @@
+= MEETINGNOTIZ – 19.06.2025
+
+--
+* Typ: Weekly  
+* Raum: online  
+* Dauer: 22.00 – 22.30  
+* Anwesend: Tobias, Sebastian, Johann, Frederic Lara, Phillipp
+--
+== TAGESORDNUNG / TO-DO
+--
+* Ansprache durch Phillipp 
+* Klärung offener Fragen zu Vue (Frederic)
+* lesson learned Terminfindung
+* Präsentationsinhalte Terminfindung
+* Dokumentation der Entwickler? 
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+--
+
+== WEEKLY-FRAGEN
+
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+--
+* Letzte Woche:
+** Quiz erstellen und lösen in Vue, in Git versioniert
+** Erstellte Quizze bearbeitbar gemacht   
+* Diese Woche:
+** Styling-Anpassungen  
+* Hindernisse:
+** API-Abstimmungen mit Frederic steht aus 
+--
+
+=== Sebastian:
+--
+* Letzte Woche:
+** Karteikarten-Komponente in Vue umgesetzt
+** Erste Styling-Anpassungen vorgenommen  
+* Diese Woche:
+** API-Anbindung
+* Hindernisse:
+** Krankheit 
+--
+
+=== Tobi:
+--
+* Letzte Woche:
+** Startseite in Vue umgesetzt
+** Menü in Vue erstellt
+* Diese Woche:
+** API-Anbindung 
+* Hindernisse:
+** Prüfungsstress 
+--
+
+=== Frederic:
+--
+* Letzte Woche:
+** Beispiel in README ergänzt
+** Kleine Fixes in der API
+** API für Multiple-Choice-Fragen vorbereitet
+* Diese Woche:
+** Architecture Notebook finalisieren
+** Vorbereitung der Präsentation
+** Einrichtung der VM (Herr Zirkelback)
+* Hindernisse:
+** keine
+--
+
+
+=== Phillip:
+--
+* Letzte Woche:
+** Nutzungskontext angepasst
+** User Stories verfeinert
+** Backlog erstellt
+** User Story Task Map erstellt  
+* Diese Woche:
+** Verbesserung der User Stories
+** Ergänzungen im Backlog
+* Hindernisse:
+** Unsicherheit im Umgang mit GitHub 
+--
+
+=== Lara:
+--
+* Letzte Woche:
+** Wireframes finalisiert → im Miro-Board zur Ansicht bereit 
+** Meeting-Notizen in Git ergänzt 
+** Präsentation fertiggestellt
+** Beleghinweise & 3. Iteration datiert
+** Dokumente final reviewed
+** Zuweisen der Risiken
+* Diese Woche:
+** Happy Index Diagramme in Git inkludieren 
+* Hindernisse:
+** keine  
+--
+
+
+== HINDERNISSE
+--
+* **Johann:** API-Anfrage an Frederic offen
+* **Philipp:** Unsicherheit im Umgang mit GitHub
+--
+
+== BESCHLÜSSE UND NÄCHSTE SCHRITTE
+--
+* **Präsentationsinhalte:** Abstimmung und finale Klärung am 24.06.2025
+* **Lesson Learned:** Termin für Teamfeedback am 24.06.2025
+* **Abstimmung Dokumentation:** am 24.06
+* **API-Integration:** Abstimmung Johann/Frederic bis 24.06.2025
+* **Feedback Wireframes:** Review nicht gewünscht
+* **Rückmeldung zu README-Dateien:** positives Feedback - wird beibehalten
+-- 

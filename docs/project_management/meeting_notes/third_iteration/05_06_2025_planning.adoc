@@ -1,0 +1,132 @@
+= MEETINGNOTIZ – 05.06.2025
+
+--
+* Typ: Planning 
+* Raum: Z211
+* Dauer: 15:30 – 16:30  
+* Anwesend: Tobias, Sebastian, Johann, Frederic, Lara, Phillipp
+--
+
+== ZIELE DES MEETINGS
+--
+* Planung des bevorstehenden Sprints / Projektabschnitts
+* Festlegung und Priorisierung von Aufgaben
+* Koordination im Team hinsichtlich Zuständigkeiten und Kapazitäten
+* Besprechung relevanter organisatorischer oder technischer Rahmenbedingungen
+--
+
+== TAGESORDNUNG / TODO
+--
+1. **Sprint-Ziel / Planungsrahmen festlegen**
+
+   * Was soll bis zum nächsten Review erreicht werden?
+   * Welche Aufgaben sind notwendig, um dieses Ziel zu erreichen?
+
+2. **Aufgabenanalyse & -verteilung**
+
+   * Durchsicht vorhandener oder neuer User Stories
+   * Priorisierung der Aufgaben
+   * Aufwandsschätzung
+   * Verteilung der Aufgaben auf Teammitglieder
+
+3. **Organisatorisches & Koordination**
+
+   * Verfügbarkeiten im Team
+   * Absprachen zu Meetings, Fristen, Blockern
+   * Synchronisation mit Product Owner
+   * Technische oder methodische Abstimmungen
+
+4. **Offene Fragen & Sonstiges**
+
+   * Klärung von Unsicherheiten oder Unklarheiten
+   * Vorbereitung von Folgeaufgaben oder Abhängigkeiten
+--
+
+
+== OUTCOME
+--
+* Sprint-Ziel definiert
+* Aufgaben priorisiert und zugewiesen
+* Technische & organisatorische Rahmenbedingungen sind geklärt
+* Offene Fragen identifiziert
+--
+
+
+== FESTLEGUNGEN
+--
+* Sprint-Zeitraum: 02.06. – 24.06.
+* Sprint-Ziel: lauffähiger Prototyp 
+
+* Blocker / Risiken: keine
+
+* Nächste Meilensteine / Termine: 
+** Präsentation üben / Prototyp testen:  24.06
+** Weekly: Donnerstag 20.00 Uhr online
+** Refinement: Donnerstag 20.15 Uhr online
+** Termin mit Coach: [Datum noch festlegen]
+** Sprint Review: [Datum noch festlegen]
+** Retro: [Datum noch festlegen]
+--
+
+=== Verantwortlichkeiten
+**Technische Umsetzung**
+[cols="2,3,1"]
+|===
+| **Bereich** | **Task** | **Zuständigkeit**
+| API  | API erstellen                                   | Frederic
+| API  | Karteikarten auf API anpassen                   | Sebastian
+| API  | Multiple Choice Quiz auf API anpassen           | Johann
+| Menü | zur Auswahl zwischen Karteikarten und MC-Quiz   | Tobias
+| Vue  | Karteikarten an unser Framework (Vue) anpassen  | Sebastian
+| Vue  | MC-Quiz an unser Framework (Vue) anpassen       | Johann
+| Vue  | Startseite an unser Framework (Vue) anpassen    | Tobias
+
+|===
+
+**Dokumentation**
+[cols="2,3,1"]
+|===
+| **Dokument** | **Aufgabe** | **Zuständigkeit**
+| vision.adoc | Stakeholder Ziele ergänzen                               | Phillipp
+| vision.adoc | Personas mit Zielen und Nutzerkontext erweitern          | Phillipp
+| vision.adoc | Vision verfeinern mithilfe des Feedbacks der Stakeholder | Phillipp
+|===
+
+**Kommunikation & Organisation**
+[cols="3,1"]
+|===
+| **Aufgabe** | **Zuständigkeit**
+| User Stories              | Phillipp
+| Backlog erarbeiten        | Phillipp
+| Backlog priorisieren      | Phillipp
+| GitRepo Ordner anpassen   | Frederic
+| Sprint Review durchführen | Lara
+|===
+
+
+**Präsentation und Abgabe**
+[cols="3,1"]
+|===
+| **Aufgabe** | **Zuständigkeit**
+| Präsentation erstellen      | Lara
+| Live-Demo vorbereiten       | Dev-Team
+| Präsentation                | Phillipp, Frederic
+| vision.adoc                 | Phillipp
+| Produkt Backlog             | Phillipp
+| Glossar                     | Phillipp
+| Domänenmodell               | Tobias
+| projektplan.adoc            | Lara
+| architecture_notebook.adoc  | Frederic
+| UX-Konzept                  | Lara 
+|===
+
+
+
+== NÄCHSTE SCHRITTE
+--
+1. Umsetzung der geplanten Aufgaben
+2. Regelmäßige Synchronisation im Weekly / Discord
+3. Bearbeitung identifizierter Blocker 
+--
+
+

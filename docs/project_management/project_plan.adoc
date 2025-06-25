@@ -29,16 +29,14 @@ Der Projektplan bietet Überblick darüber, wie unser Projekt aufgebaut ist und 
 === Iterationsstruktur
 --
 * **Sprintdauer:** 4 Wochen
-* **Sprint Planning:** Donnerstag zu Beginn des Sprints, 1,5 Stunden
-* **Weekly:** Dienstag, einmal pro Woche, 15 Minuten
-* **Sprint Review:** Letzter Donnerstag des Sprints, 1 Stunde
-* **Sprint Retro:** Direkt im Anschluss an das Review, 30 Minuten
+* **Sprint Planning:** Jeweils zu Sprintbeginn (donnerstags), 1,5 Stunden
+* **Weekly:** Jeden Dienstag, 15 Minuten
+* **Sprint Review:** Jeweils zu Sprintende (donnerstags), 1 Stunde
+* **Sprint Retro:** Jeweils zu Sprintende (donnerstags), 30 Minuten
 --
 
 
 === Verwendete Tools
-
-
 [cols="2,1"]
 |===
 | **Zweck**                 | **Tool**
@@ -56,12 +54,15 @@ Der Projektplan bietet Überblick darüber, wie unser Projekt aufgebaut ist und 
 === Way of working
 Im Projekt kommen verschiedene technische und organisatorische Praktiken zum Einsatz, um Codequalität, Zusammenarbeit und Projektfortschritt sicherzustellen:
 
+==== Aktuell angewandte Praktiken
+--
 * **Inkrementelle Entwicklung:**  
   Die Umsetzung erfolgt in kleinen, abgeschlossenen Teilinkrementen, die am Ende jedes Sprints funktionsfähig und testbar sind.
 
 * **Meetings:**  
-  Alle Scrum-Meetings wie Sprint Planning, Weekly (anstelle des Daily Scrums), Sprint Review und Retro finden regelmäßig mit festgelegter Dauer statt.  
+  Alle Scrum-Meetings wie Sprint Planning, Weekly, Sprint Review und Retro finden regelmäßig mit festgelegter Dauer statt.  
   Meeting-Notizen werden zentral in Discord dokumentiert.
+  Die Verwendung von Templates sorgt für eine einheitliche und strukturierte Dokumentation.
 
 * **Quellcodeverwaltung mit Git/GitHub:**  
   GitHub wird für die Versionierung und das Review von Codeänderungen genutzt.
@@ -79,17 +80,30 @@ Im Projekt kommen verschiedene technische und organisatorische Praktiken zum Ein
   Der Austausch erfolgt hauptsächlich über Discord.
 
 * **Timeboxing:**  
-  Feste, individuell reservierte Zeitfenster zur Bearbeitung von Aufgaben sollen Überlastung vermeiden und die Produktivität erhöhen.
+  Feste, individuell reservierte Zeitfenster zur Bearbeitung von Aufgaben sollen Überlastung vermeiden und die Produktivität erhöhen. Die Methode wurde testweise angewendet, jedoch nicht dauerhaft übernommen.
 
 * **Zeittracking:**  
-  Die tatsächlichen Arbeitszeiten an den Aufgaben werden erfasst, um Aufwandsabschätzungen zu überprüfen und die Produktivität des Teams zu reflektieren.
+  Die tatsächlichen Arbeitszeiten an den Aufgaben werden erfasst, um Aufwandsabschätzungen zu überprüfen und die Produktivität des Teams zu reflektieren. Die Methode wurde testweise angewendet, jedoch nicht dauerhaft übernommen.
 
 * **Einbindung realer Anwender:**  
   Feedback von potenziellen Endanwendern erfolgt derzeit im Rahmen der Sprint Reviews.
 
 * **Happy Index:**  
-  Wöchentliche Umfrage zur Erfassung der Teamzufriedenheit. Ergebnisse können zur Identifikation von Problemen und Ableitung von Verbesserungsmaßnahmen genutzt werden.
+  Wöchentliche Umfrage zur Erfassung der Teamzufriedenheit. Ergebnisse können zur Identifikation von Problemen und Ableitung von Verbesserungsmaßnahmen genutzt werden. Die Auswertung erfolgt im Retro, bei akuten Problemen auch im Weekly.
+--
 
+==== Geplante Methoden
+Die folgenden Methoden sollen im weiteren Projektverlauf (Wintersemester 2025/2026) angewendet werden:
+--
+* **Branching-Modell:**
+  Einführung von Branches zur besseren  Qualitätssicherung des Codes. 
+
+* **Codevorstellung im Weekly:**
+  Kurze Präsentation aktueller Entwicklungen im Weekly zur Transparenz.
+
+* **The Core Protocols (V. 3.1):**
+  Einsatz ausgewählter Kommunikationspraktiken (z. B. „Check-In“, „Ask For Help“), um Teamdynamik und Zusammenarbeit zu stärken.
+--
 
 === Definition of Ready
 // Listen Sie hier die Kriterien auf, die ein Product Backlog Item (z.B. User Story) erfüllen muss, damit es bei der Sprint-Planung berücksichtigt werden kann

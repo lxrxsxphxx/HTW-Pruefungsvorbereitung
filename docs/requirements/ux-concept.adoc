@@ -414,3 +414,5 @@ Exportfunktionen für externe Lernwerkzeuge
 == Wireframes und Wireflow
 // Fügen Sie Wireframes als Bilder oder als Link (z.B. zu einem Miroboard) ein
 // Beziehen Sie ihre Wireframes auf konkrete User Stories oder Epics.
+Die Wireframes sind im Miro-Board dokumentiert und können unter folgendem Link eingesehen werden: 
+link:https://miro.com/app/board/xyz123456[Wireframes auf Miro]

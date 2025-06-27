@@ -1,3 +1,4 @@
+:imagesdir: ../../images
 = MEETINGNOTIZ – 06.05.2025
 
 --
@@ -109,6 +110,12 @@ Hinweis: Keine vollständige Analyse möglich, da zu geringe Teilnahme
 |Stresslevel	    |      2, 2, 1, 2
 |===
 -- 
+
+Tool: link:https://www.empirio.de/s/kcHkkt=aXX[empirio]
+
+image::kom_1.png[Kommunikation]
+image::auf_1.png[Aufgabenklarheit]
+image::str_1.png[Stresslevel]
 
 **Anmerkungen zum Teamklima:**
 --

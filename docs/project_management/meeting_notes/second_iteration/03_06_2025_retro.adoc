@@ -1,3 +1,4 @@
+:imagesdir: ../../images
 = MEETINGNOTIZ – 03.06.2025
 
 --
@@ -78,6 +79,11 @@
 |Stresslevel	    |      2, 5, 4,5, 3,5
 |===
 
+Tool: link:https://www.empirio.de/s/kcHkkt=aXX[empirio]
+
+image::kom_2.png[Kommunikation]
+image::auf_2.png[Aufgabenklarheit]
+image::str_2.png[Stresslevel]
 
 **Anmerkungen zum Teamklima:**
 --

@@ -107,6 +107,29 @@ Die folgenden Methoden sollen im weiteren Projektverlauf (Wintersemester 2025/20
 
 === Definition of Ready
 // Listen Sie hier die Kriterien auf, die ein Product Backlog Item (z.B. User Story) erfüllen muss, damit es bei der Sprint-Planung berücksichtigt werden kann
+--
+1. Beschreibung
+* Die User Story ist klar und verständlich formuliert
+* Ziel des Items sind ersichtlich
+
+2. Akzeptanzkriterien
+* Konkrete und überprüfbare Akzeptanzkriterien sind definiert
+
+3. Abhängigkeiten
+* Abhängigkeiten zu anderen Stories sind dokumentiert
+
+4. Schätzung
+* Das Item ist vom Team geschätzt (Aufwandschätzung)
+* Item ist in einem Sprint realistisch umsetzbar
+
+5. UI/UX 
+* Notwendige Wireframes oder Designvorgaben liegen vor
+
+6. Technische Klarheit
+* Technische Umsetzung ist grob geklärt
+* Keine offenen technischen Blocker
+--
+
 
 === Definition of Done
 --

@@ -135,3 +135,74 @@ Die VM dient ausschließlich internen Zwecken (Entwicklung, Test, Präsentation)
 
 == Erkenntnisse (Lessons learned)
 // Führen Sie hier die wesentlichen Erkenntnisse auf, die Sie in den Retrospektiven gewonnen haben. Legen Sie besonderen Fokus auf die Maßnahmen, die Sie getroffen haben um Verbesserungen in den verschiedenen Aspekten des Projekts zu erzielen, z.B. dem Entwicklungsprozess, der technischen und organisatorischen Umgebung oder der Zusammenarbeit im Team.
+=== Erreichte Erfolge
+
+==== Teamkommunikation & Zusammenarbeit
+--
+* Durchgängig positives, respektvolles und konfliktfreies Teamklima.
+* Gegenseitige Hilfsbereitschaft und konstruktives Feedback waren selbstverständlich.
+* Einführung des Happy Index trug zur Sensibilisierung für Teamdynamiken bei, sofern die Beteiligung ausreichend war.
+--
+
+==== Scrum-Prozess & Methodenanwendung
+--
+* Ein solides Grundverständnis der Scrum-Abläufe wurde aufgebaut und über die Iterationen hinweg gefestigt.
+* Retros wurden als besonders wertvoll empfunden und führten zu konkreten Verbesserungen.
+* Die Klarheit der Aufgabenformulierung stieg deutlich an, belegbar durch eine Steigerung im Happy Index von 6,25 auf 9,5.
+--
+
+==== Fachliche Weiterentwicklung
+--
+* Technische Unsicherheiten, insbesondere im Umgang mit Git, konnten durch Erfahrung und gegenseitige Unterstützung reduziert werden.
+* Die Auseinandersetzung mit den Vorlesungsinhalten sowie deren Anwendung im Projekt förderte das fachliche Verständnis.
+* Die Nutzung konkreter Framework-Beispiele erwies sich als hilfreiches Mittel zum Transfer theoretischen Wissens in die Praxis.
+--
+
+==== Kontinuierliche Verbesserung
+--
+* Im Verlauf des Projekts war in nahezu allen Aspekten (Kommunikation, Struktur, Organisation) eine erkennbare Entwicklung zu beobachten.
+* Die Teamstruktur wurde mit der Zeit klarer und stabiler, was sich auch positiv auf die Aufgabenverteilung auswirkte.
+--
+
+=== Misserfolge & Herausforderungen
+
+==== Meeting-Anwesenheit & Verfügbarkeit
+--
+* Die regelmäßige Teilnahme an Meetings war trotz flexibler Terminplanung nicht durchgängig gegeben.
+* Abwesenheiten wurden häufig erst kurzfristig bekannt, was die Planbarkeit beeinträchtigte.
+* Der hohe individuelle Prüfungsstress führte insgesamt zu eingeschränkter Verfügbarkeit und verringerter Abstimmung.
+--
+
+==== Kommunikation
+--
+* Die schriftliche Kommunikation war teils zu allgemein oder unpräzise, was zu Missverständnissen führte.
+* In Meetings kam es trotz positiver Grundstimmung gelegentlich zu stillen Phasen, ein aktiverer Austausch hätte Potenziale besser nutzen können.
+* Die Kommunikation blieb durchgehend konfliktfrei, jedoch wurden kritische Diskussionen eher vermieden, was zu fehlender Tiefe führte.
+--
+
+==== Zeitmanagement & Produktivität
+--
+* Die Nutzung von Zeitmanagement-Methoden (z. B. Zeittracking, Timeboxing) wurde nicht umgesetzt.
+* Die anfängliche Aufgabenverteilung war zu unklar, was zu Unsicherheiten in der individuellen Bearbeitung führte.
+* Insgesamt blieben trotz klarer Aufgabenzuweisung einige Potenziale hinsichtlich Produktivität und Eigeninitiative ungenutzt.
+--
+
+==== Git-Nutzung & Transparenz
+--
+* Die Git-Nutzung war zu Beginn zu zurückhaltend, was zu fehlender Transparenz im Arbeitsstand führte.
+* Zu wenige Commits erschwerten die Nachvollziehbarkeit von Fortschritten und erschütterten teilweise das Vertrauen in den tatsächlichen Arbeitsstand.
+--
+
+==== Nutzung des Happy Index
+--
+* Die wöchentliche Erinnerung an die Teilnahme wurde häufig vergessen.
+* Die Beteiligung verbesserte sich zwar im Verlauf, blieb jedoch hinter den Erwartungen zurück, was die Aussagekraft der Ergebnisse einschränkte.
+--
+
+=== Fazit
+Im Verlauf des Projekts konnten wir in vielen Bereichen, insbesondere Kommunikation, Struktur und Organisation, spürbare Fortschritte machen. 
+Anfangs hat uns die unklare Aufgabenverteilung noch gebremst, aber mit ein paar gezielten Anpassungen konnten wir das schnell verbessern. Besonders wertvoll waren unsere Retros, die immer wieder zu konkreten Verbesserungen geführt haben. Auch fachlich sind wir gewachsen: Der Umgang mit Git wurde sicherer und wir konnten theoretisches Wissen erfolgreich in die Praxis übertragen.
+Trotzdem gab es Schwierigkeiten. Die Teilnahme an Meetings war oft unzuverlässig, was durch kurzfristige Absagen zusätzlich erschwert wurde. Auch unsere Git-Nutzung hätte transparenter sein können, mehr Commits hätten den Projektfortschritt für alle besser nachvollziehbar gemacht. Beim Zeitmanagement gibt es ebenfalls noch Luft nach oben. Und obwohl wir Konflikte vermieden haben, wären offenere und kritischere Diskussionen manchmal hilfreicher gewesen.
+Unterm Strich nehmen wir viel mit, vor allem ein besseres Verständnis für Teamarbeit, technische Abläufe und unsere eigenen Arbeitsweisen. 
+Unsere Zusammenarbeit hat an mehreren Stellen nicht so funktioniert, wie wir es uns gewünscht hätten und einige dieser Schwierigkeiten werden auch im weiteren Projektverlauf spürbar bleiben.
+

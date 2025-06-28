@@ -4,6 +4,9 @@
       <button @click="showSection('create')">Neue Karteikarte erstellen</button>
       <button @click="showSection('cards')">Erstellte Karteikarten</button>
       <button @click="showSection('quiz')">Abfrage starten</button>
+      <RouterLink v-slot="{navigate, isActive}" to="/lernen" custom>
+                    <button class="control-button" id="change-learning-mode-button" @click="navigate" :class="{active: isActive}">Lernmodus wechseln</button>
+                </RouterLink>
     </nav>
 
     <section v-show="currentSection === 'create'" id="createSection">
@@ -100,7 +103,7 @@
       <div
         id="quizCard"
         v-show="quizCards.length > 0 && quizCardVisible"
-        :class="{ flipped: isFlipped }"
+        :class="[cardResultColor, { flipped: isFlipped }]"
       >
         <div id="cardInner">
           <div class="card-front" id="quizQuestion">
@@ -149,7 +152,7 @@ export default {
     // Karten laden oder leeres Array
     const storedCards = localStorage.getItem("flashcards");
     const cards = ref(storedCards ? JSON.parse(storedCards) : []);
-
+    const cardResultColor = ref(""); // '' | 'correct' | 'incorrect'
     // Aktuelle Sektion: 'create', 'cards', 'quiz'
     const currentSection = ref("create");
 
@@ -368,39 +371,40 @@ export default {
 
     // Antwort prüfen
     function checkAnswer() {
-      if (waitingForFlipBack.value) return;
-      if (!userAnswer.value.trim()) return;
+  if (waitingForFlipBack.value) return;
+  if (!userAnswer.value.trim()) return;
 
-      isFlipped.value = true;
-      waitingForFlipBack.value = true;
+  isFlipped.value = true;
+  waitingForFlipBack.value = true;
 
-      // Vergleich Antwort - einfache Groß-/Kleinschreibung ignorieren
-      const correct = currentQuizCard.value.answer
-        .trim()
-        .toLowerCase()
-        .includes(userAnswer.value.trim().toLowerCase());
+  const correct = currentQuizCard.value.answer
+    .trim()
+    .toLowerCase()
+    .includes(userAnswer.value.trim().toLowerCase());
 
-      if (correct) {
-        correctCount.value++;
-      } else {
-        incorrectCount.value++;
-      }
+  if (correct) {
+    correctCount.value++;
+    cardResultColor.value = "correct";
+  } else {
+    incorrectCount.value++;
+    cardResultColor.value = "incorrect";
+  }
 
-      // 1,5 Sekunden warten, Karte zurückdrehen, nächste Karte laden
-      setTimeout(() => {
-        isFlipped.value = false;
-        waitingForFlipBack.value = false;
-        userAnswer.value = "";
-        currentIndex.value++;
-        if (currentIndex.value >= quizCards.value.length) {
-          // Quiz Ende
-          quizCardVisible.value = false;
-          answerInputVisible.value = false;
-          progressVisible.value = false;
-        }
-      }, 1500);
+  setTimeout(() => {
+    isFlipped.value = false;
+    waitingForFlipBack.value = false;
+    cardResultColor.value = "";
+    userAnswer.value = "";
+    currentIndex.value++;
+
+    if (currentIndex.value >= quizCards.value.length) {
+      quizCardVisible.value = false;
+      answerInputVisible.value = false;
+      progressVisible.value = false;
     }
-
+  }, 1500);
+}
+    
     // Quiz komplett zurücksetzen
     function resetQuiz() {
       quizCards.value = [];
@@ -573,6 +577,15 @@ form button:hover {
   perspective: 1000px;
   margin: 20px 0;
 }
+#quizCard.correct #cardInner {
+  background-color: #e0f7e0;
+  border: 2px solid #2e7d32;
+}
+
+#quizCard.incorrect #cardInner {
+  background-color: #fdecea;
+  border: 2px solid #c62828;
+}
 
 #cardInner {
   position: relative;
@@ -611,7 +624,6 @@ form button:hover {
 
 .card-back {
   transform: rotateY(180deg);
-  background-color: #e0f7e0;
   font-weight: bold;
 }
 

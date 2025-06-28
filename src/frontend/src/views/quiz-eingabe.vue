@@ -1,75 +1,77 @@
 <template>
-    <header>
-        <h1>gib eine Quizfrage und die Lösungen ein</h1>
-        <hr>
-    </header>
-    <main>
-        <div id="input">
-            <div id="input-container">
-                <div>
-                    <label for="quiz_name">Quizname:</label>
-                    <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="quiz_name"><br>
-                </div>
-                <hr style="border: 0;">
-                <div id="error-message"></div>
-                <div>
-                    <label for="question">Frage:</label>
-                    <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question"><br>
-                </div>
-                <br>
-
-                <div id="answer_1-container" class="answer-container">
-                    <label for="answer_1" class="txt_answer">Antwort 1:</label>
-                    <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1"><br>
-                </div>
-                <div id="answer_2-container" class="answer-container">
-                    <label for="answer_2" class="txt_answer">Antwort 2:</label>
-                    <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2"><br>
-                </div>
-                <div id="answer_3-container" class="answer-container">
-                    <label for="answer_3" class="txt_answer">Antwort 3:</label>
-                    <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3"><br>
-                </div>
-                <div id="answer_4-container" class="answer-container">
-                    <label for="answer_4" class="txt_answer">Antwort 4:</label>
-                    <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4"><br>
-                </div>
-                <br>
-                <div id="correct_answers-container">
-                    <label for="correct_answers">richtige Antworten: </label>
-                    <input type="text" id="correct_answers" name="correct_answers" class="input-field" ref="correct_answers_input" v-model="correct_answers">
-                    <div id="example">z.B.: 1, 4</div>
-                </div>
-                <br>
-            </div>
-
-            <div id="control-button-container">
-                <button class="control-button" id="add_question" v-text="add_text" @click="v.addQuestion"></button>
-                <button class="control-button" id="save_quiz" v-text="save_text" @click="v.saveQuiz"></button>
-                <button class="control-button" id="cancel" v-text="cancel_text" @click="v.showCancelPopup"></button>
-            </div>
-
-            <div id="cancel-popup" ref="cancel_popup">
-                <div id="cancel-popup-text">
-                    <div style="margin-bottom: 1em;">Achtung, alle Fragen werden gelöscht.</div><div>Wirklich Abbrechen?</div>
-                </div>
-                <div id="cancel_button_container">
-                    <button id="commit_cancel" class="cancel_option" ref="commit_cancel" @click="v.commitCancel">Ja</button>
-                    <button id="cancel_cancel" class="cancel_option" ref="cancel_cancel" @click="v.cancelCancel">Nein</button>
-                </div>
-            </div>
+    <div id="mc-quiz-entry-body">
+            <div id="mc-quiz-entry-header">
+            <h1>gib eine Quizfrage und die Lösungen ein</h1>
+            <hr>
         </div>
+        <div id="mc-quiz-entry-main">
+            <div id="input">
+                <div id="input-container">
+                    <div>
+                        <label for="quiz_name">Quizname:</label>
+                        <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="quiz_name"><br>
+                    </div>
+                    <hr style="border: 0;">
+                    <div id="error-message"></div>
+                    <div>
+                        <label for="question">Frage:</label>
+                        <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question"><br>
+                    </div>
+                    <br>
 
-        <aside id="aside">
-            <!--Hier werden die eingegebenen Fragen stehen-->
-            <h3>Eingegebene Fragen:<br/></h3>
-            <div class="entered_question" v-for="(question, index) in entered_questions" :key="index">
-                <div class="question_text" v-text="(index+1) + ': ' + question"></div>
-                <button class="delete_question" @click="v.deleteQuestion(index)">löschen</button>
-                <button class="edit_question" @click="v.editQuestion(index)">bearbeiten</button>
+                    <div id="answer_1-container" class="answer-container">
+                        <label for="answer_1" class="txt_answer">Antwort 1:</label>
+                        <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1"><br>
+                    </div>
+                    <div id="answer_2-container" class="answer-container">
+                        <label for="answer_2" class="txt_answer">Antwort 2:</label>
+                        <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2"><br>
+                    </div>
+                    <div id="answer_3-container" class="answer-container">
+                        <label for="answer_3" class="txt_answer">Antwort 3:</label>
+                        <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3"><br>
+                    </div>
+                    <div id="answer_4-container" class="answer-container">
+                        <label for="answer_4" class="txt_answer">Antwort 4:</label>
+                        <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4"><br>
+                    </div>
+                    <br>
+                    <div id="correct_answers-container">
+                        <label for="correct_answers">richtige Antworten: </label>
+                        <input type="text" id="correct_answers" name="correct_answers" class="input-field" ref="correct_answers_input" v-model="correct_answers">
+                        <div id="example">z.B.: 1, 4</div>
+                    </div>
+                    <br>
+                </div>
+
+                <div id="control-button-container">
+                    <button class="control-button" id="add_question" v-text="add_text" @click="v.addQuestion"></button>
+                    <button class="control-button" id="save_quiz" v-text="save_text" @click="v.saveQuiz"></button>
+                    <button class="control-button" id="cancel" v-text="cancel_text" @click="v.showCancelPopup"></button>
+                </div>
+
+                <div id="cancel-popup" ref="cancel_popup">
+                    <div id="cancel-popup-text">
+                        <div style="margin-bottom: 1em;">Achtung, alle Fragen werden gelöscht.</div><div>Wirklich Abbrechen?</div>
+                    </div>
+                    <div id="cancel_button_container">
+                        <button id="commit_cancel" class="cancel_option" ref="commit_cancel" @click="v.commitCancel">Ja</button>
+                        <button id="cancel_cancel" class="cancel_option" ref="cancel_cancel" @click="v.cancelCancel">Nein</button>
+                    </div>
+                </div>
             </div>
-        </aside>
-    </main>
+
+            <aside id="aside">
+                <!--Hier werden die eingegebenen Fragen stehen-->
+                <h3>Eingegebene Fragen:<br/></h3>
+                <div class="entered_question" v-for="(question, index) in entered_questions" :key="index">
+                    <div class="question_text" v-text="(index+1) + ': ' + question"></div>
+                    <button class="delete_question" @click="v.deleteQuestion(index)">löschen</button>
+                    <button class="edit_question" @click="v.editQuestion(index)">bearbeiten</button>
+                </div>
+            </aside>
+        </div>
+    </div>
 </template>
 
 
@@ -140,6 +142,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 class Model{
     constructor(){
         this.file_path = "./quiz.json"
+        this.url = "http://localhost:8000/api/questions/";
     }
 
     async writeSetToFile(str){
@@ -154,6 +157,33 @@ class Model{
         catch (err) {
             console.error(err.name, err.message);
             return -1;
+        }
+    }
+
+    async postQuestion(question_str){
+        const url = this.url;
+        const postHeader = new Headers();
+        postHeader.set("accept", "application/json");
+        postHeader.set("Content-Type", "application/json");
+
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), 5000);
+
+        try {
+            const response = await fetch(url, {method: "POST",
+                                               headers: postHeader,
+                                               body: question_str,
+                                               signal: controller.signal});
+            if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
+
+            clearTimeout(id);
+
+            const data = await response.json();
+            return data;
+        }
+        catch (error) {
+            console.error(error.message);
+            return null;
         }
     }
 }
@@ -173,7 +203,7 @@ class Presenter{
         this.view = v;
     }
 
-    makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
+    /*makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
         console.log(correct_answers);
         let correct_answers_str = correct_answers.toString();
         correct_answers_str.replaceAll(" ","");
@@ -190,6 +220,37 @@ class Presenter{
         if(correct_str === '') correct_str = '"0"';
 
         json_str += correct_str + ']}';
+
+        return json_str;
+    }*/
+    makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers) {
+        let correct_answers_str = correct_answers.toString();
+        correct_answers_str.replaceAll(" ","");
+
+        let arr = correct_answers_str.split(",");
+        let correct_answers_arr = [];
+        let i;
+        for(i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+            if(parseInt(arr[i]) >= 1 && parseInt(arr[i]) <= 4) correct_answers_arr.push(parseInt(arr[i]));
+        }
+        if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
+
+        console.log(correct_answers_arr);
+
+
+        let answers = [answer_1, answer_2, answer_3, answer_4];
+
+        let json_str = '{"question":{"question":"' + question_text + '"}, "answers":[';
+
+        for(i = 0; i < 4; i++){
+            json_str += '{"answer":"' + answers[i] + '","correct":';
+            if(correct_answers_arr.includes((i+1))) json_str += 'true}';
+            else json_str += 'false}';
+            if(i !== 3) json_str += ',';
+        }
+
+        json_str += ']}';
 
         return json_str;
     }
@@ -210,23 +271,15 @@ class Presenter{
 
     async saveQuiz(quiz_name){
         if(this.question_set.length > 0){
-            let json_str = '{\n\t"quiz_name": "' + quiz_name +  '",\n\t"questions": [\n';
 
-            let max_index = this.question_set.length - 1;
-            for(let i = 0; i < max_index; i++){
-                json_str += '\t\t' + this.question_set[i] + ',\n';
+            for(let i = 0; i < this.question_set.length; i++){
+                let ret = await this.model.postQuestion(this.question_set[i]);
+                console.log(ret);
             }
-            json_str += '\t\t' + this.question_set[max_index] + '\n\t]\n}';
-            console.log(json_str);
-
-            let ret_val = await this.model.writeSetToFile(json_str);
-            if(ret_val == -1){
-                return false;
-            }
-            else{
+            /*else{
                 this.deleteQuestionSet();
                 return true;
-            }
+            }*/
         }
     }
     deleteQuestion(index){
@@ -254,7 +307,7 @@ class View{
     constructor(p){
         this.presenter = p;
         this.setAction(0);
-        quiz_name_input.value.focus();
+        if(quiz_name_input.value) quiz_name_input.value.focus();
     }
 
 

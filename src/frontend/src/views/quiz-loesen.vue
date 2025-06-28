@@ -5,7 +5,7 @@
             <hr>
         </div>
 
-        <div id="mc-quiz-container">
+        <div id="mc-quiz-main">
             <div id="menu">
                 <div id="quiz-choice-container">
                     <p>Wähle ein Quiz aus:</p>
@@ -102,13 +102,13 @@ let button_4_number = ref(4);
 
 
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", async function(){
     m = new Model();
     p = new Presenter();
     v = new View(p);
 
     p.setModelAndView(m, v);
-    p.start();
+    await p.start();
 });
 
 
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function(){
 class Model{
     constructor(){
         this.file_path = "./quiz.json";
-        this.url = "localhost:8000/api/questions/";
+        this.url = "http://localhost:8000/api/questions/";
     }
 
 
@@ -130,6 +130,7 @@ class Model{
             const id = setTimeout(() => controller.abort(), 5000);
 
             const response = await fetch(url, {method: "GET", signal: controller.signal});
+            console.log(response);
             if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
             const data = await response.json();
@@ -158,11 +159,15 @@ class Presenter{
         this.view = v;
     }
 
-    start(){
-        this.data = this.model.getJson();
+    async start(){
+        this.data = await this.model.getQuestion();
+        console.log(this.data);
 
-        keys.value = Object.keys(this.data);
-        console.log("Keys: " + keys.value);
+        if(this.data !== null){
+            keys.value = Object.keys(this.data);
+            console.log("Keys: " + keys.value);
+        }
+        
 
         this.view.showQuizChoice();
     }

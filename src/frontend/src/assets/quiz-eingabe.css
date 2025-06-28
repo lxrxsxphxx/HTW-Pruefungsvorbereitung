@@ -1,6 +1,6 @@
-:root {
+/*:root {
     --dark-background: #444444;
-    --light-popup: #8d4000;
+    --dark-popup: #8d4000;
     --dark-menu: #cd5c00;
     --dark-menu-hover: #e58435;
     --dark-menu-active: #e3761d;
@@ -25,11 +25,11 @@
     --light-h-text-color: orange;
     --light-red: rgb(255, 42, 0);
     --light-green: rgb(124, 232, 0);
-}
+}*/
 
-body {
+#mc-quiz-entry-body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--light-background);
+    /*background-color: var(--light-background);*/
     color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
@@ -57,11 +57,11 @@ button {
 button:hover {background-color: var(--light-button-hover);}
 button:active {background-color: var(--light-button-active);}
 
-main {
+#mc-quiz-entry-main {
     display: flex;
 }
 
-main > * {
+#mc-quiz-entry-main > * {
     /*border: 2px solid black;*/
     margin: 0.25em;
     border-radius: 0.5em;
@@ -97,7 +97,7 @@ label {
 
 .input-field {
     color: var(--light-text-color);
-    background-color: var(--light-aside);
+    background-color: var(--light-input);
     font-size: 1em;
     order: 2;
     flex: 1 1 0%;
@@ -144,7 +144,7 @@ label {
 .control-button:active {background-color: var(--light-button-active);}
 
 #cancel-popup {
-    background-color: var(--light-menu);
+    background-color: var(--light-popup);
     position: fixed;
     left: 33%;
     top: 16em;
@@ -211,8 +211,8 @@ aside > h3 {
 
 
 @media (max-width: 1000px) {
-    body {width: 100%;}
-    main {flex-direction: column;}
+    #mc-quiz-entry-body {width: 100%;}
+    #mc-quiz-entry-main {margin-bottom: 4em; flex-direction: column;}
     #input-container > div {width: 100%;}
     #question {width: 100%;}
     #control-button-container {

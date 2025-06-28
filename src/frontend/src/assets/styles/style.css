@@ -1,5 +1,6 @@
 :root {
   --dark-background: #444444;
+  --dark-popup: #8d4000;
   --dark-menu: #cd5c00;
   --dark-menu-hover: #e58435;
   --dark-menu-active: #e3761d;
@@ -7,11 +8,13 @@
   --dark-button-hover: #585858;
   --dark-button-active: #555555;
   --dark-aside: #555555;
+  --dark-input: var(--dark-aside);
   --dark-text-color: white;
   --dark-red: #ad0a0a;
   --dark-green: #269200;
 
   --light-background: rgba(249, 155, 32, 0.308);
+  --light-popup: orange;
   --light-menu: orange;
   --light-menu-hover: #ffbb61;
   --light-menu-active: #fda633;
@@ -19,6 +22,7 @@
   --light-button-hover: #fff6e9;
   --light-button-active: #fdc781;
   --light-aside: #ffaa00cc;
+  --light-input: white;
   --light-text-color: black;
   --light-h-text-color: orange;
   --light-red: rgb(255, 42, 0);

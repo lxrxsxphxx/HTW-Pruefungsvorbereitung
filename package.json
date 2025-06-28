@@ -1,0 +1,22 @@
+{
+  "name": "htw-pruefungsvorbereitung",
+  "version": "1.0.0",
+  "description": "Das Repository enthält die Vorlage einer Projektstruktur und Template-Dokumente\r im AsciiDoc-Format. Dies wird für die Bearbeitung der Belegarbeit in Software\r Engineering I und II benötigt. Im Detail sind das:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxrxsxphxx/HTW-Pruefungsvorbereitung.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lxrxsxphxx/HTW-Pruefungsvorbereitung/issues"
+  },
+  "homepage": "https://github.com/lxrxsxphxx/HTW-Pruefungsvorbereitung#readme"
+}

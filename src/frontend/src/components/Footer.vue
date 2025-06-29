@@ -19,12 +19,12 @@ export default {
   background-color: #f99b20;
   text-align: center;
   padding: 3px 0;
+  
 }
 
 .footer a {
   color: white;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
-  
 }
 </style>

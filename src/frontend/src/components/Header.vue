@@ -54,8 +54,10 @@ header {
 }
 
 header img {
-  width: 250px;
+  width: 100%;
+  max-width: 150px;
   height: auto;
+  max-height: 50px;
 }
 
 .login-wrapper button {

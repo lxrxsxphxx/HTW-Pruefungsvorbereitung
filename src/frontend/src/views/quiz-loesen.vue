@@ -10,7 +10,8 @@
                 <div id="quiz-choice-container">
                     <p>Wähle ein Quiz aus:</p>
                     <div id="quiz-choice">
-                        <button v-for="(key,index) in keys" :key="index" @click="v.quizChoice" v-bind:id="key">{{ key }}</button>
+                        <!--button v-for="(key,index) in keys" :key="index" @click="v.quizChoice" v-bind:id="key">{{ key }}</button-->
+                        <button id="start-quiz-button" @click="p.start">Quiz starten</button>
                     </div>
                 </div>
                 <RouterLink v-slot="{navigate, isActive}" to="/multiplechoice/erstellen" custom>
@@ -108,7 +109,6 @@ document.addEventListener("DOMContentLoaded", async function(){
     v = new View(p);
 
     p.setModelAndView(m, v);
-    await p.start();
 });
 
 
@@ -167,9 +167,11 @@ class Presenter{
             keys.value = Object.keys(this.data);
             console.log("Keys: " + keys.value);
         }
+
+        this.view.quizChoice();
         
 
-        this.view.showQuizChoice();
+        //this.view.showQuizChoice();
     }
 
     getTaskSet(){
@@ -177,14 +179,9 @@ class Presenter{
 
         this.view.block_new_task = true;
 
-        let task_set = this.data[this.quiz];
+        let task_set = this.data;
         console.log(task_set);
-
-        this.view.block_new_task = false;
-
-
         const shuffled_task_set = task_set.sort((a, b) => 0.5 - Math.random());
-
         console.log(shuffled_task_set);
 
         this.task_set = shuffled_task_set;
@@ -195,6 +192,8 @@ class Presenter{
             this.statistic.push("🚫");
         }
 
+        this.view.block_new_task = false;
+        
         this.view.showTask(this.task_set[this.current_task_nr], this.current_task_nr + 1);
         this.view.setProgress(0);
     }
@@ -291,12 +290,19 @@ class View{
         document.getElementById("middle").style.display = "none";
     }
 
-    quizChoice(event){
+    /*quizChoice(event){
         let key = event.target.id;
         console.log(key);
 
         this.presenter.setTask(key);
 
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("middle").style.display = "flex";
+
+        this.presenter.getTaskSet();
+        this.setAction(0);
+    }*/
+    quizChoice(){
         document.getElementById("menu").style.display = "none";
         document.getElementById("middle").style.display = "flex";
 
@@ -424,7 +430,7 @@ class View{
     cancelQuiz(){
         this.setAction(2);
         this.newTask();
-        this.presenter.start();
+        this.showQuizChoice();
     }
 
 

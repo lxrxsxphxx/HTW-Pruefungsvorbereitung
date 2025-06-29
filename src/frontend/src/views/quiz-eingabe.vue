@@ -358,11 +358,13 @@ class View{
 
 
     async saveQuiz(){
-        if(quiz_name.value !== ""){
+        //if(quiz_name.value !== ""){
             let ret = await this.presenter.saveQuiz(quiz_name.value);
             if(ret)this.clearEnteredQuestions();
-        }
+        //}
         quiz_name_input.value.focus();
+
+        window.location.href = './';
     }
 
 
@@ -375,6 +377,8 @@ class View{
 
         quiz_name_input.value.focus();
         cancel_popup.value.style.display = "none";
+
+        window.location.href = './';
     }
     cancelCancel(){
         cancel_popup.value.style.display = "none";
@@ -410,15 +414,19 @@ class View{
 
         let question_obj = JSON.parse(question_json);
 
-        question.value = question_obj.txt;
+        question.value = question_obj.question.question;
 
-        answer_1.value = question_obj.answers[0];
-        answer_2.value = question_obj.answers[1];
-        answer_3.value = question_obj.answers[2];
-        answer_4.value = question_obj.answers[3];
+        answer_1.value = question_obj.answers[0].answer;
+        answer_2.value = question_obj.answers[1].answer;
+        answer_3.value = question_obj.answers[2].answer;
+        answer_4.value = question_obj.answers[3].answer;
 
-        correct_answers.value = (parseInt(question_obj.correct[0]) + 1);
-        for(let i = 1; i < question_obj.correct.length; i++) correct_answers.value += ', ' + (parseInt(question_obj.correct[i]) + 1);
+
+        let correct = [];
+        for(let i = 0; i < 4; i++) if(question_obj.answers[i].correct) correct.push(i);
+
+        correct_answers.value = (correct[0] + 1);
+        for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
 
         this.setAction(1);
     }

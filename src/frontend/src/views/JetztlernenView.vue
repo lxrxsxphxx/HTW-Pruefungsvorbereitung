@@ -47,7 +47,7 @@ export default {
 
 .intro h1 {
   margin-top: -5px;
-  color: orange;
+  color: #ec852c;
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 30px;
@@ -93,9 +93,74 @@ export default {
   background: white;
   border-radius: 10px;
 }
+.features img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  background: white;
+  border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.features img:hover {
+  transform: scale(1.20);
+}
 
 
+/* Large: Desktop */
+@media screen and (min-width: 1080px) and (max-width: 1479px) {
+  .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+}
 
+/* Extra Large: Große Monitore */
+@media screen and (min-width: 1480px) {
+
+
+.container{
+  height: 2000px;
+  width: 2000px;
+}
+
+.intro{
+  margin-top: 100px;
+  height: auto;
+  width: 150%;
+  margin-left: -25%;
+}
+
+.intro h1{
+  font-size: 80px;
+}
+
+.features > div {
+    margin-top: 100px;
+    width: 100%;    
+  }
+
+.features{
+    gap: 5rem;
+  }
+
+.features img{
+    width: 90%;
+    height: 90%;
+    max-width: none;
+  }
+
+.karteikarten-button,
+.multipleChoice-button {
+width: 100%;
+max-width: none;
+
+}
+
+}
 
 
 </style>

@@ -53,7 +53,7 @@ export default {
 
 .intro h1 {
   font-size: 2.5rem;
-  color: orange;
+  color: #ec852c;
   font-weight: bold;
   margin-bottom: 1rem;
 }

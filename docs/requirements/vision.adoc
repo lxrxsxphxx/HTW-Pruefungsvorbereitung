@@ -9,7 +9,7 @@ include::../_includes/default-attributes.inc.adoc[]
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems HTW-Prüfungsvorbereiter überblicksartig zu beschreiben. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System {project-system-name} diese Bedarfe erfüllt, werden durch User Stories im Product Backlog sowie dem UX-Konzept beschrieben.
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
+Ziel dieses Dokuments ist es, das System konsequent aus Nutzersicht zu denken und die Anforderungen so zu formulieren, dass sie den realen Studienalltag widerspiegeln.
 
 === Gültigkeitsbereich (Scope)
 Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, strukturierte, modulspezifische und spielerisch unterstützte Lerninhalte zu nutzen, um damit die individuelle Prüfungsvorbereitung zu verbessern, Lernfortschritte zu analysieren und in einer Community Wissen zu teilen und zu validieren.
@@ -58,13 +58,13 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 
 [cols="1,3"]
 |===
-| Für | Studenten der HTWD
-| der / die | Vorbereitung auf Prüfungen
+| Für | Studierende der HTW Dresden
+| die | sich auf Prüfungen vorbereiten möchten
 | ist der  | HTW-Prüfungsvorbereiter
-| eine  | Lernwebsite
-| der / die | intelligenter Lernalgo. mit Gamification Elementen
+| eine  | webbasierte Lernplattform
+| die durch | einen Lernalgorithmus und Gamification Elementen
 | anders als | bpsw. quizlet
-| ist unser Produkt | spezialisiert auf die Lerninhalte der HTWD
+| speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
 
 
@@ -90,32 +90,26 @@ spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermögl
 | Name | Beschreibung | Verantwortlichkeiten | Ziele 
 
 | Studierende
-| Studierende an der HTW, Hauptnutzer:innen der Anwendung. Effektive und motievierende Prüfungsvorbereitung, Nutzung verschiedener Lernmodi, eigene Fragen hochladen & beantworten.
-| Beobachten des eigenen Lernfortschritts, Nutzung der App-Funktion, Beteiligung an der Community durch Fragen und Bewertungen.
-| Erfolgreiches Bestehen von Prüfungen durch gezielte und interaktive Vorbereitung.
+| Studierende an der HTW, Hauptnutzer:innen der Anwendung, die sich auf Prüfungen vorbereiten 
+| Nutzung der Lernplattform zur Vorbereitung auf Prüfungen, Interaktion mit Inhalten (Fragen erstellen, beantworten, bewerten), Analyse des Lernfortschritts, Teilnahme an spielerischen Formaten
+| Erfolgreiches Bestehen von Prüfungen, Wissenslücken gezielt schließen,
 
-| Dozierende
-| Dozierende an der HTW, Verantwortliche für modulspezifische Inhalte. Studierende effektiver auf Prüfungen vorbereiten.
-| Bereitstellung und Kontrolle von Inhalten, Betreuung der Studierenden, Auswertung von Lernfortschritten. Validierung prüfungsrelevanter Fragen, Lernempfelungen, Probeklausuren, Rechtvergabe.
-| Effektive Unterstützung der Studierenden bei der Prüfungsvorbereitung und der Vertiefung ihres Wissens.
+| Dozierende / Tutor:in / Assistierende
+| Lehrende der HTW, die Inhalte verantworten, aber nicht operativ in das System eingreifen
+| Bereitstellung und Kontrolle von Inhalten, Rolle eher beratend oder unterstützend im Hintergrund
+| indirekte Qualitätskontrolle der Inhalte
 
-| Tutor:in / Assistierende
-| Studentische Hilfskräfte oder (wissenschaftliche) Mitarbeitende. Hilfe der Studenten be Prüfungsvorbereitung, der Professoren bei der Verwaltung des Moduls.
-| Gibt didaktische Hinweise, beantwortet Fragen, kann Lösungen korrigieren und steht als Ansprechperson für Probleme und Feedback zur Verfügung.
-| Effektive Unterstützung der Studierenden bei fachlichen Fragen und Problemen.
 
 | Admin
-| Verantwortlicher für Betrieb, Sicherheit und Nutzerverwaltung des Systems. Will eine fehlerfreie und zuverlässige App, die von allen Nutzergruppen problemlos verwendet werden kann.
-| Wartet das System, kann Benutzerrechte vergeben / entziehen. Sorgt für Datenkonsistenz und Sicherstellung der technischen Stabilität und steht für technischen Support zur Verfügung.
-| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform.
+| Technisch Verantwortliche für Betrieb, Sicherheit und Benutzerverwaltung
+| Systemwartung, Rollenmanagement, Monitoring der Systemstabilität, technischer Support
+| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform, Minimaler Wartungsaufwand bei maximaler Nutzbarkeit
 
-| HTW (Institution)
-| Auftraggeber und institutioneller Partner. Unterstützung der Studierenden und Profs bei der Prüfungsvorbereitung.
-| Rahmenbedingungen definieren, Datenschutz sicherstellen, Infrastruktur bereitstellen und kontrollieren.
-| Steigerung der Qualität der Lehre und der Prüfungsergebnisse an der Hochschule.
-
+| HTWD (Institution)
+| Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
+| Stellt Infrastruktur bereit, achtet auf Datenschutz und rechtliche Konformität
+| Förderung digitaler Bildung, Verbesserung von Lernqualität und Prüfungsergebnissen an der HTW
 |===
-
 
 
 
@@ -127,17 +121,17 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 === Bedarfe und Hauptfunktionen
 Intelligenter Lernalgo. mit Gamification Elementen 
 
-[%header, cols="4,1,4,1"]
-|===
-| Bedarf | Priorität | Features / Funktionen | Geplantes Release
-| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragen, Multiple-Choice, Freitext, Zuordnung | xx
-| Kollaboratives Lernen |	Mittel | Fragen-Upload, Community-Bewertung, Lerngruppen, Diskussion | xx
-| Adaptive Lernstrategie | Hoch | Lernalgorithmus, Wiederholung schwieriger Inhalte | xx
-| Motivation durch Gamification | Hoch | 	Abzeichen, Highscores, Levelsystem, Wettbewerbe | xx
-| Lernfortschritt-Tracking | Hoch |	Statistiken, Schwächenanalyse, visuelle Darstellung | xx
-| Flexibles Lernen | Mittel |	Offline-Modus, mobile Nutzung | xx
-| Verbindung zu realen Inhalten | Mittel | Verlinkung zu Skripten, Vorlesungsunterlagen, Literatur | xx
-| Dozierenden-Bereich	 | Mittel | Probeklausuren, Inhalte veröffentlichen, Moderation | xx
+[%header, cols="4,1,4,1"] 
+|=== 
+| Bedarf | Priorität | Features / Funktionen | Geplantes Release 
+| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragenkataloge, Multiple-Choice-Verfahren, Freitextantworten mit automatischer Bewertung, Zuordnungsaufgaben mit Drag-and-Drop-Funktionalität | Version 1.0 
+| Kollaboratives Lernen | Mittel | Benutzer-generierte Fragen mit Upload-Funktion, Community-basierte Bewertung von Fragenqualität (1-5 Sterne), Lerngruppen mit Chat-Funktionalität, moderierte Diskussionsforen pro Modul | Version 1.2 
+| Adaptiver Lernalgorithmus | Hoch | Spaced-Repetition-System basierend auf Ebbinghaus-Vergessenskurve, automatische Wiederholung schwieriger Inhalte nach 1, 3, 7 und 14 Tagen, personalisierte Lernpfade basierend auf individuellen Schwächen | Version 1.0 
+| Motivation durch Gamification | Hoch | Abzeichen-System für erreichte Meilensteine (Bronze/Silber/Gold), Highscore-Listen pro Modul und Semester, Levelsystem mit Erfahrungspunkten für korrekte Antworten, semesterweite Wettbewerbe mit Ranglisten | Version 1.1 
+| Lernfortschritt-Tracking | Hoch | Detaillierte Statistiken über Antwortgenauigkeit, Schwächenanalyse mit Empfehlungen für Vertiefung, visuelle Darstellung des Fortschritts durch Diagramme und Heatmaps, Export-Funktion für persönliche Lernberichte | Version 1.0 
+| Flexibles Lernen | Mittel | Offline-Modus mit Synchronisation bei Internetverbindung, responsive Design für mobile Endgeräte, Progressive Web App (PWA) für App-ähnliche Nutzung | Version 1.3 
+| Verknüpfung mit offiziellen Lehrmaterialien | Mittel | Direkte Verlinkung zu HTW-Skripten im Moodle-System, Integration von Vorlesungsunterlagen als PDF-Viewer, Literaturverweise mit ISBN-Nummern und Bibliothekslinks | Version 1.2 
+| Dozierenden-Bereich | Mittel | Erstellung und Verwaltung von Probeklausuren, Veröffentlichung modulspezifischer Inhalte, Moderationstools für Community-Beiträge, Einsicht in Lernstatistiken der Studierenden | Version 1.4 
 |===
 
 
@@ -151,14 +145,16 @@ Hinweise:
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen.
 . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 
-[%header, cols="4,1,1"]
-|===
-| Anforderung | Priorität | Geplantes Release
-| Webbasierte Lösung (mobil & Desktop) | Hoch | xx
-| Kompatibel mit HTW-Login & Authentifizierung | Hoch | xx
-| Datensicherheit nach DSGVO | Hoch | xx
-| Benutzerfreundliches Interface | Hoch | xx
-| Skalierbarkeit (neue Module einpflegen) | Mittel | xx
-| Admin-Dashboard zur Nutzerverwaltung | Mittel | xx
-| Dokumentation & Support	 | Mittel | xx
+[%header, cols="4,1,1"] 
+|=== 
+| Anforderung | Priorität | Geplantes Release 
+| Webbasierte Lösung (mobil und Desktop) | Hoch | Version 1.0 
+| Kompatibilität mit HTW-Login und Authentifizierung (Single Sign-On) | Hoch | Version 1.0 
+| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | Version 1.0 
+| Benutzerfreundliches Interface mit Barrierefreiheit (WCAG 2.1) | Hoch | Version 1.0 
+| Skalierbarkeit für neue Module und Studiengänge | Mittel | Version 1.1 
+| Administrator-Dashboard zur Benutzer- und Inhaltsverwaltung | Mittel | Version 1.1 
+| Umfassende Dokumentation und technischer Support | Mittel | Version 1.0 
+| Application Programming Interface (API) für Drittanbieter-Integration | Niedrig | Version 2.0 
+| Mehrsprachige Unterstützung (Deutsch/Englisch) | Niedrig | Version 1.5 
 |===

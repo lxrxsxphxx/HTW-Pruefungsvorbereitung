@@ -157,8 +157,8 @@ export default {
   }
 
   .features img{
-    width: auto;
-    height: auto;
+    width: 90%;
+    height: 90%;
   }
 }
 </style>

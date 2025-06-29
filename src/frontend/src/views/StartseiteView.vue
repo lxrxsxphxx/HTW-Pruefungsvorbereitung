@@ -148,6 +148,18 @@ export default {
     width: 90%;
     margin-left: 5%;
   }
+  .intro h1{
+    font-size: 80px;
+  }
+
+  .intro p{
+    font-size:2.0rem ;
+  }
+
+  .features img{
+    width: auto;
+    height: auto;
+  }
 }
 </style>
 

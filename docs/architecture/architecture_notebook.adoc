@@ -1,5 +1,5 @@
 = Architecture Notebook: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Frederic_Niklas Egle <s86431@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -18,38 +18,44 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
 
-Der zentrale Ansatz der Architektur ist eine für Web-Anwendungen typische Zweiteilung in Frontend und Backend mit Datenbank.
-Die Sprache des Frontends und des Backends können voneinander unabhängig sein, was Entwickelnden die Flexibilität bietet, sowohl für das Frontend als auch für das Backend einen einfachen Einstieg zu haben, entweder durch leicht erlernbare oder durch bereits bekannte Technologien.
-Zusätzlich können Frontend und Backend zumindest teilweise unabhängig voneinander entwickelt werden.
+Trennung von Frontend und Backend::
+* Die Trennung von Frontend und Backend bringt den Vorteil, dass diese teilweise unabhängig voneinander entwickelt werden können.
+* Die Sprache des Frontends und des Backends können voneinander unabhängig sein, was Entwickelnden die Flexibilität bietet, sowohl für das Frontend als auch für das Backend einen einfachen Einstieg zu haben, entweder durch leicht erlernbare oder durch bereits bekannte Technologien.
+* Die Trennung erhöht die Wartbarkeit der Anwendung durch die klare Aufgabenteilung innerhalb des Systems.
 
-Für das Frontend wird die Technologie einer Single-Page-Application (SPA) verwendet.
-Das dynamische Nachladen von Inhalten, anstelle eines kompletten Neuladens einer Seite, sorgt für einen nahtloses Erlebnis beim Verwenden der Anwendung, das Nutzer vor allem bereits von nativen Applikationen gewohnt sind.
-Um die zu entwickelnde Anwendung ebenfalls offline verwendbar zu machen wird das Konzept einer Progressiv-Web-App (PWA) verwendet, das Caching von relevanten Daten nutzt.
-Der Nutzer kann somit nach erstmaligem Aufruf der Webseite diese als Applikation installieren und sie außerhalb des Browsers nutzen.
+User-Experience::
+* Das dynamische Nachladen von Inhalten, anstelle eines kompletten Neuladens einer Seite, sorgt für einen nahtloses Erlebnis beim Verwenden der Anwendung, das Nutzer vor allem bereits von nativen Applikationen gewohnt sind.
+* Responsive Design für flexible Nutzung auf unterschiedlichen Endgräten
+* Nutzung auf unterschiedlichen Plattformen (iOS, Android, PC)
 
-Das Backend kommuniziert mittels eines Object-Relational Mapping (ORM) mit der Datenbank.
-Dieser Ansatz sorgt dafür, dass mithilfe eines Modells der Daten in der gegebenen Programmiersprache einfach mit den Daten interagiert werden kann, da diese wie Objekte der Sprache verwendet werden können.
-Zusätzlich spart dies die manuelle Anpassung von SQL-Abfragen bei Anpassung des Datenmodells, was nicht nur aufwendig sondern auch fehleranfällig sein kann, da gegebenfalls die Anpassung einzelner Stellen vergessen werden können.
-Die Verwendung eines ORMs ermöglicht eine feingranulare Ausgabe der Datensätze, so dass nur notwendige, öffentlich relevante Attribute des Datensatzes ausgegeben werden, während schützenswerte, bpsw. Datenbank-interne, Attribute verborgen bleiben.
-Dies ist besonders dann wichtig, wenn sensible Nutzerdaten, wie bspw. Passwörter, mittels eines Modells gespeichert werden.
+Offline-Nutzung::
+* Nutzung an unterschiedlichen Orten
+* Caching von Inhalten
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
+* Das Projekt ist eine Neuentwicklung und hängt nicht von Legacy-Systemen ab
 * Das Team hat insgesamt wenig Erfahrung mit Webentwicklung
 ** Framework mit einfachem Einstieg/flacher Lernkurve
 * Anwendung besitzt zunächst geringen Nutzerumfang
 ** Skalierbarkeit ist vorerst nicht notwendig
+* Hosting erfolgt in einer von der HTW bereitgestellten VM
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 
+* Erstellen von Datenmodellen mithilfe des ORM
+* Aufruf der API im Frontend einbinden
+* ORM in API einbinden
+* CRUD Methoden als RESTful API Schnittstellen mit FastAPI umsetzen
+* Einzelne Seiten als Views mit Vue erstellen
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
 . Vue.JS als Frontend-Framework, da es mehrfach als besonders leicht für den Einstieg in die Webentwicklung empfohlen wurde und zusätzlich selbst Funktionalitäten einer PWA mitbringt
-. Kommunikation zwischen Frontend und Backend findet via Representational State Transfer (REST) mittels HTTP und JSON statt, da das üblicherweise im Bereich von modernen Webanwendung verwendet wird und somit viele Ressourcen zur Umsetzung zur Verfügung stehen
+. Kommunikation zwischen Frontend und Backend findet nach den Prinzipien von REST mittels HTTP und JSON statt, da das üblicherweise im Bereich von modernen Webanwendung verwendet wird und somit viele Ressourcen zur Umsetzung zur Verfügung stehen
 . FastAPI als Backend-Framework, da nach Auswertung von vergleichbaren Implementationen in FastAPI und Spring, FastAPI als besser lesbar und einfacher eingeschätzt wurde im Gegensatz zu Springs Boilerplate, der bereits für eine Minimalanwendung nötig ist
 . SQLModel als ORM, da es eine von FastAPI angepasste Version von SQLAlchemy ist und somit gut in Code mit FastAPI integriert werden kann
 . Für das Package Management werden im Frontend npm und im Backend pip verwendet, da es jeweils der Standard der verwendeten Sprache ist
@@ -58,6 +64,31 @@ Dies ist besonders dann wichtig, wenn sensible Nutzerdaten, wie bspw. Passwörte
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
 
+Der zentrale Ansatz der Architektur ist eine für Web-Anwendungen typische Drei-Schichten-Architektur mit Präsentationsschicht (Frontend), Logikschicht (Backend) und Datenhaltungsschicht (Datenbank).
+Damit ist das System durch diese Schichten klar strukturiert.
+
+Präsentationsschicht::
+
+Für das Frontend wird die Technologie einer Single-Page-Application (SPA) verwendet.
+Um die zu entwickelnde Anwendung ebenfalls offline verwendbar zu machen wird das Konzept einer Progressiv-Web-App (PWA) verwendet, das Caching von relevanten Daten nutzt.
+Der Nutzer kann somit nach erstmaligem Aufruf der Webseite diese als Applikation installieren und sie außerhalb des Browsers nutzen.
+Das Frontend kommuniziert nach den Prinzipien von REST mit dem Backend.
+
+Logikschicht::
+
+Das Backend wird als RESTful API implementiert.
+Diese API antwortet auf die Anfragen des Frontends und gibt die geforderten persistenten Ressourcen zurück bzw. legt diese an.
+Das Backend kommuniziert mittels eines Object-Relational Mapping (ORM) mit der Datenbank.
+Dieser Ansatz sorgt dafür, dass mithilfe eines Modells der Daten in der gegebenen Programmiersprache einfach mit den Daten interagiert werden kann, da diese wie Objekte der Sprache verwendet werden können.
+Zusätzlich spart dies die manuelle Anpassung von SQL-Abfragen bei Anpassung des Datenmodells, was nicht nur aufwendig sondern auch fehleranfällig sein kann, da gegebenenfalls die Anpassung einzelner Stellen vergessen werden können.
+Die Verwendung eines ORMs ermöglicht eine feingranulare Ausgabe der Datensätze, so dass nur notwendige, öffentlich relevante Attribute des Datensatzes ausgegeben werden, während schützenswerte, bspw. Datenbank-interne, Attribute verborgen bleiben.
+Dies ist besonders dann wichtig, wenn sensible Nutzerdaten, wie bspw. Passwörter, mittels eines Modells gespeichert werden.
+
+Datenhaltungsschicht::
+
+Die Datenhaltungsschicht wird mittels einer SQL Datenbank abgebildet.
+Diese wird von dem Backend angesprochen.
+Für zusätzliche Einsicht in die Datenbank steht ein Webinterface zur Verfügung.
 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
@@ -83,6 +114,14 @@ System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studenten sich für
 Rel(student, vorbereiter, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
 Rel(prof, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
 ....
+
+Das Kontext Diagramm zeigt die Beziehungen zwischen dem zu entwickelnden System und den Nutzergruppen "Studierende" und "ProfessorInnen".
+
+Studierende interagieren mit dem System, um mit Karteikarten oder Multiple-Choice Fragen zu lernen, sich mit anderen Studierenden über Inhalte auszutauschen oder den eigenen Lernstand zu überprüfen.
+
+ProfessorInnen interagieren mit dem System, um Inhalte eigener Module einzustellen, vorhandene Inhalte auf Korrektheit zu prüfen oder sich über Lernstände zu informieren.
+
+Das zu entwickelnde System interagiert nicht mit externen Systemen.
 
 === Container
 //Level 2 im C4-Modell
@@ -113,6 +152,16 @@ Rel(prof, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene In
 Rel(spa, api, "nutzt", "JSON/HTTP")
 Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "SQLModel")
 ....
+
+Das Container Diagramm zeigt den internen Aufbau des zu entwickelnden Systems.
+
+Die Nutzenden interagieren mit einer Single-Page Application, welche die nötigen Funktionalitäten für Studierende und ProfessorInnen in deren Browser bereitstellt.
+
+Die Single-Page Application kommuniziert nach den Prinzipien von REST mittels HTTP und JSON mit einer API Application.
+Diese API Application stellt Schnittstellen zum Speichern von Daten und Abfragen bereits persistenter Daten zur Verfügung.
+
+Die API Application wiederum kommuniziert mittels eines ORMs mit der Datenbank.
+Die Datenbank wird für die persistente Speicherung von Daten wie Karteikarten verwendet.
 
 === Components
 //Level 3 im C4-Modell

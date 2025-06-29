@@ -36,72 +36,125 @@ export default {
 
 
 <style scoped>
+/* Basiseinstellungen */
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 1rem;
 }
 
 .intro {
   background-color: rgba(249, 155, 32, 0.308);
   border-radius: 10px;
-  padding: 30px 20px;
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .intro h1 {
-  margin-top: -5px;
+  font-size: 2.5rem;
   color: orange;
-  font-size: 48px;
   font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .intro p {
-  font-size: 20px;
-  color: black;
-  margin: 0px;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 .features {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
-  background: transparent;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .features > div {
-  flex: 1;
-  background: transparent;
-  padding: 20px;
-  border-radius: 10px;
   text-align: center;
-  min-height: 280px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .features button {
   background: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
   cursor: pointer;
+  width: 100%;
 }
 
-.lernen-button,
-.kurs-button,
-.statistiken-button {
+.features img {
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  background: white;
+  object-fit: contain;
+}
+
+.features img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   background: white;
   border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.features img:hover {
+  transform: scale(1.20);
+}
+
+
+
+/* Large: Desktop */
+@media screen and (min-width: 1080px) and (max-width: 1479px) {
+  .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+  
+  .features > div {
+    width: 30%;
+  }
+}
+
+/* Extra Large: Große Monitore */
+@media screen and (min-width: 1480px) {
+
+
+  
+  .intro {
+    margin-top: 90px;
+  }
+  .container {
+  
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 1rem;
+  
+}
+  .features > div {
+    margin-top: 100px;
+    width: 25%;
+    
+  }
+
+  .features{
+    gap: 5rem;
+  }
+
+  .intro{
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 </style>
+
+
+
+
+
+
+
+

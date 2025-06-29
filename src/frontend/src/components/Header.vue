@@ -44,7 +44,8 @@ export default {
 </script>
 
 <style scoped>
-  header {
+/* Basis-Layout */
+header {
   margin-top: 2px;
   display: flex;
   justify-content: space-between;
@@ -80,4 +81,37 @@ header img {
   border: 1px solid #ccc;
 }
 
+
+
+/* Mittlere Bildschirme (Tablet) */
+@media screen and (min-width: 769px) and (max-width: 1079px) {
+  header {
+    padding: 25px 30px;
+  }
+
+  header img {
+    width: 220px;
+  }
+
+  .login-wrapper button {
+    padding: 9px 18px;
+    font-size: 1rem;
+  }
+}
+
+/* Große Bildschirme (Desktop & größer) */
+@media screen and (min-width: 1080px) {
+  header {
+    padding: 30px 50px;
+  }
+
+  header img {
+    width: 250px;
+  }
+
+  .login-wrapper button {
+    padding: 10px 20px;
+    font-size: 1.05rem;
+  }
+}
 </style>

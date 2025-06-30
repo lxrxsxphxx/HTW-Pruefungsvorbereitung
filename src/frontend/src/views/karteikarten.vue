@@ -483,7 +483,7 @@ section {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 6px;
-  background: #f9f9f9;
+  background: #ffefc4;
 }
 
 form label {
@@ -513,7 +513,7 @@ form button {
   margin-top: 15px;
   padding: 10px 16px;
   font-size: 1rem;
-  background-color: #0077cc;
+  background-color: #cc7a00;
   color: white;
   border: none;
   border-radius: 4px;
@@ -521,7 +521,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #005fa3;
+  background-color: #9e6207;
 }
 
 /* Kartenliste */
@@ -645,7 +645,7 @@ form button:hover {
 #answerInputArea button {
   padding: 8px 16px;
   font-size: 1rem;
-  background-color: #0077cc;
+  background-color: #cc7a00;
   color: white;
   border: none;
   border-radius: 4px;
@@ -653,7 +653,7 @@ form button:hover {
 }
 
 #answerInputArea button:disabled {
-  background-color: #9fc0e6;
+  background-color: #9c5c08;
   cursor: default;
 }
 
@@ -669,7 +669,7 @@ form button:hover {
 
 #progressBar {
   height: 100%;
-  background-color: #0077cc;
+  background-color: #cc7a00;;
   width: 0%;
   transition: width 0.3s ease;
 }

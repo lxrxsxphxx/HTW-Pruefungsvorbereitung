@@ -21,14 +21,7 @@
           type="text"
         />
 
-        <label for="topicInput">Lerngebiet:</label>
-        <input
-          id="topicInput"
-          v-model="form.topic"
-          required
-          placeholder="z.B. Algebra"
-          type="text"
-        />
+        <!-- Lerngebiet-Feld entfernt, da nicht im Backend verfügbar -->
 
         <label for="questionInput">Frage:</label>
         <textarea
@@ -59,24 +52,17 @@
             {{ subject }}
           </option>
         </select>
-
-        <label for="filterTopic">Lerngebiet filtern:</label>
-        <select id="filterTopic" v-model="filter.topic">
-          <option value="">-- Alle Lerngebiete --</option>
-          <option v-for="topic in filteredTopics" :key="topic" :value="topic">
-            {{ topic }}
-          </option>
-        </select>
+        <!-- Lerngebiet-Filter entfernt, da nicht im Backend verfügbar -->
       </div>
 
       <div id="cardsList">
+        <div v-if="loading" class="loading">Lade Karteikarten...</div>
         <div
           v-for="(card, index) in filteredCards"
-          :key="index"
+          :key="card.id || index"
           class="card-item"
         >
           <strong>Fach:</strong> {{ card.subject }} <br />
-          <strong>Lerngebiet:</strong> {{ card.topic }} <br />
           <strong>Frage:</strong> {{ card.question }} <br />
           <strong>Antwort:</strong> {{ card.answer }}
           <div class="card-actions">
@@ -144,15 +130,19 @@
 </template>
 
 <script>
-import { ref, reactive, computed, watch } from "vue";
+import { ref, reactive, computed, watch, onMounted } from "vue";
 
 export default {
   name: "KarteikartenApp",
   setup() {
-    // Karten laden oder leeres Array
-    const storedCards = localStorage.getItem("flashcards");
-    const cards = ref(storedCards ? JSON.parse(storedCards) : []);
+    // API Base URL
+    const API_BASE = "http://localhost:8000/api/cards";
+    
+    // Karten aus der API laden
+    const cards = ref([]);
+    const loading = ref(false);
     const cardResultColor = ref(""); // '' | 'correct' | 'incorrect'
+    
     // Aktuelle Sektion: 'create', 'cards', 'quiz'
     const currentSection = ref("create");
 
@@ -169,7 +159,81 @@ export default {
     // Filter für Karten-Liste
     const filter = reactive({
       subject: "",
-      topic: "",
+    });
+
+    // API Funktionen
+    async function loadCards() {
+      loading.value = true;
+      try {
+        const response = await fetch(API_BASE);
+        if (!response.ok) throw new Error('Failed to load cards');
+        const apiCards = await response.json();
+        
+        // Backend-Format zu Frontend-Format konvertieren
+        cards.value = apiCards.map(card => ({
+          id: card.id,
+          subject: card.modul,
+          topic: "", // Topic ist nicht im Backend verfügbar
+          question: card.front,
+          answer: card.back
+        }));
+      } catch (error) {
+        console.error('Error loading cards:', error);
+        alert('Fehler beim Laden der Karten!');
+      }
+      loading.value = false;
+    }
+
+    async function saveCardToAPI(cardData) {
+      try {
+        // Frontend-Format zu Backend-Format konvertieren
+        const apiCard = {
+          front: cardData.question,
+          back: cardData.answer,
+          modul: cardData.subject
+        };
+
+        const response = await fetch(API_BASE, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify([apiCard]) // Backend erwartet Array
+        });
+
+        if (!response.ok) throw new Error('Failed to save card');
+        
+        // Karten neu laden
+        await loadCards();
+        return true;
+      } catch (error) {
+        console.error('Error saving card:', error);
+        alert('Fehler beim Speichern der Karte!');
+        return false;
+      }
+    }
+
+    async function deleteCardFromAPI(cardId) {
+      try {
+        const response = await fetch(`${API_BASE}/${cardId}`, {
+          method: 'DELETE'
+        });
+
+        if (!response.ok) throw new Error('Failed to delete card');
+        
+        // Karten neu laden
+        await loadCards();
+        return true;
+      } catch (error) {
+        console.error('Error deleting card:', error);
+        alert('Fehler beim Löschen der Karte!');
+        return false;
+      }
+    }
+
+    // Beim Start Karten laden
+    onMounted(() => {
+      loadCards();
     });
 
     // Liste aller eindeutigen Fächer
@@ -177,23 +241,12 @@ export default {
       return [...new Set(cards.value.map((c) => c.subject))].sort();
     });
 
-    // Liste der Lerngebiete gefiltert nach Fach
-    const filteredTopics = computed(() => {
-      if (!filter.subject) return [];
-      return [
-        ...new Set(
-          cards.value.filter((c) => c.subject === filter.subject).map((c) => c.topic)
-        ),
-      ].sort();
-    });
+    // Note: filteredTopics entfernt, da Topic-Feld nicht im Backend verfügbar
 
-    // Karten gefiltert nach Fach und Lerngebiet
+    // Karten gefiltert nach Fach
     const filteredCards = computed(() => {
       return cards.value.filter((c) => {
-        return (
-          (!filter.subject || c.subject === filter.subject) &&
-          (!filter.topic || c.topic === filter.topic)
-        );
+        return (!filter.subject || c.subject === filter.subject);
       });
     });
 
@@ -232,10 +285,9 @@ export default {
     });
 
     // Karte speichern (neu oder editieren)
-    function onSubmit() {
+    async function onSubmit() {
       if (
         !form.subject.trim() ||
-        !form.topic.trim() ||
         !form.question.trim() ||
         !form.answer.trim()
       ) {
@@ -251,12 +303,17 @@ export default {
       };
 
       if (editIndex.value !== null) {
-        cards.value.splice(editIndex.value, 1, newCard);
+        // Update über API (vereinfacht - löschen und neu erstellen)
+        const cardToUpdate = cards.value[editIndex.value];
+        if (cardToUpdate.id) {
+          await deleteCardFromAPI(cardToUpdate.id);
+        }
+        await saveCardToAPI(newCard);
         editIndex.value = null;
       } else {
-        cards.value.push(newCard);
+        await saveCardToAPI(newCard);
       }
-      saveCards();
+      
       resetForm();
       showSection("cards");
     }
@@ -268,17 +325,11 @@ export default {
       form.answer = "";
     }
 
-    function saveCards() {
-      localStorage.setItem("flashcards", JSON.stringify(cards.value));
-    }
-
     function showSection(section) {
       currentSection.value = section;
 
       if (section === "cards") {
-        // Filter zurücksetzen (optional)
-        // filter.subject = "";
-        // filter.topic = "";
+        loadCards(); // Karten beim Wechsel zur cards-Sektion neu laden
       }
       if (section === "quiz") {
         prepareQuizSubjects();
@@ -292,15 +343,15 @@ export default {
       // find original index in cards.value (because filteredCards is filtered)
       const originalIndex = cards.value.findIndex(
         (card) =>
-          card.subject === c.subject &&
-          card.topic === c.topic &&
+          card.id === c.id ||
+          (card.subject === c.subject &&
           card.question === c.question &&
-          card.answer === c.answer
+          card.answer === c.answer)
       );
       if (originalIndex !== -1) {
         editIndex.value = originalIndex;
         form.subject = c.subject;
-        form.topic = c.topic;
+        form.topic = c.topic || "";
         form.question = c.question;
         form.answer = c.answer;
         showSection("create");
@@ -308,24 +359,15 @@ export default {
     }
 
     // Karte löschen
-    function deleteCard(index) {
+    async function deleteCard(index) {
       const c = filteredCards.value[index];
       if (
         confirm(
-          `Karteikarte zu Fach "${c.subject}", Lerngebiet "${c.topic}" wirklich löschen?`
+          `Karteikarte zu Fach "${c.subject}" wirklich löschen?`
         )
       ) {
-        // Karte im Original-Array finden und löschen
-        const originalIndex = cards.value.findIndex(
-          (card) =>
-            card.subject === c.subject &&
-            card.topic === c.topic &&
-            card.question === c.question &&
-            card.answer === c.answer
-        );
-        if (originalIndex !== -1) {
-          cards.value.splice(originalIndex, 1);
-          saveCards();
+        if (c.id) {
+          await deleteCardFromAPI(c.id);
         }
       }
     }
@@ -371,39 +413,39 @@ export default {
 
     // Antwort prüfen
     function checkAnswer() {
-  if (waitingForFlipBack.value) return;
-  if (!userAnswer.value.trim()) return;
+      if (waitingForFlipBack.value) return;
+      if (!userAnswer.value.trim()) return;
 
-  isFlipped.value = true;
-  waitingForFlipBack.value = true;
+      isFlipped.value = true;
+      waitingForFlipBack.value = true;
 
-  const correct = currentQuizCard.value.answer
-    .trim()
-    .toLowerCase()
-    .includes(userAnswer.value.trim().toLowerCase());
+      const correct = currentQuizCard.value.answer
+        .trim()
+        .toLowerCase()
+        .includes(userAnswer.value.trim().toLowerCase());
 
-  if (correct) {
-    correctCount.value++;
-    cardResultColor.value = "correct";
-  } else {
-    incorrectCount.value++;
-    cardResultColor.value = "incorrect";
-  }
+      if (correct) {
+        correctCount.value++;
+        cardResultColor.value = "correct";
+      } else {
+        incorrectCount.value++;
+        cardResultColor.value = "incorrect";
+      }
 
-  setTimeout(() => {
-    isFlipped.value = false;
-    waitingForFlipBack.value = false;
-    cardResultColor.value = "";
-    userAnswer.value = "";
-    currentIndex.value++;
+      setTimeout(() => {
+        isFlipped.value = false;
+        waitingForFlipBack.value = false;
+        cardResultColor.value = "";
+        userAnswer.value = "";
+        currentIndex.value++;
 
-    if (currentIndex.value >= quizCards.value.length) {
-      quizCardVisible.value = false;
-      answerInputVisible.value = false;
-      progressVisible.value = false;
+        if (currentIndex.value >= quizCards.value.length) {
+          quizCardVisible.value = false;
+          answerInputVisible.value = false;
+          progressVisible.value = false;
+        }
+      }, 1500);
     }
-  }, 1500);
-}
     
     // Quiz komplett zurücksetzen
     function resetQuiz() {
@@ -434,10 +476,10 @@ export default {
       form,
       onSubmit,
       cards,
+      loading,
       filter,
       filteredCards,
       subjects,
-      filteredTopics,
       editCard,
       deleteCard,
       // Quiz
@@ -454,6 +496,7 @@ export default {
       progressPercent,
       statsText,
       resetQuiz,
+      cardResultColor,
     };
   },
 };
@@ -679,5 +722,13 @@ form button:hover {
   text-align: center;
   font-weight: bold;
   margin-top: 5px;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #666;
 }
 </style>

@@ -364,7 +364,7 @@ class View{
         //}
         quiz_name_input.value.focus();
 
-        window.location.href = './';
+        window.location.href = '/multiplechoice';
     }
 
 
@@ -378,7 +378,7 @@ class View{
         quiz_name_input.value.focus();
         cancel_popup.value.style.display = "none";
 
-        window.location.href = './';
+        window.location.href = '/multiplechoice';
     }
     cancelCancel(){
         cancel_popup.value.style.display = "none";

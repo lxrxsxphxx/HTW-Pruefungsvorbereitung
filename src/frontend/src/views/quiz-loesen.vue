@@ -2,7 +2,7 @@
     <div id="mc-quiz-body">
         <div id="mc-quiz-header">
             <h1>Quiz lösen</h1>
-            <hr>
+            <!--hr-->
         </div>
 
         <div id="mc-quiz-main">
@@ -359,7 +359,7 @@ class View{
 
 
     setProgress(width){
-        progress_percent.value = width + "%";
+        progress_percent.value = parseFloat(width).toFixed(0)  + "%";
     }
 
     evaluate(event){

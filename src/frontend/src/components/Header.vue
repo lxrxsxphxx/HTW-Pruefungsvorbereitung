@@ -19,6 +19,13 @@
 
 <script>
 export default {
+  /**
+   * - email: Benutzer-E-Mail für Login
+   * - password: Passwort für Login
+   * - showLogin: Steuert, ob das Login-Formular angezeigt wird
+   * - isLoggedIn: Gibt an, ob der Benutzer eingeloggt ist
+   * - username: Wird gesetzt wenn der Login erfolgreich war
+   */
   name: 'Header',
   data() {
     return {
@@ -30,6 +37,12 @@ export default {
     };
   },
   methods: {
+    /**
+     * Führt einen einfachen Login durch.
+     * Prüft, ob E-Mail und Passwort korrekt sind.
+     * Setzt Zustände (isLoggedIn, username, showLogin).
+     * Zeigt eine Fehlermeldung, bei falschen Zugangsdaten.
+     */
     login() {
       if (this.email === 'test@htw.de' && this.password === '1234') {
         this.isLoggedIn = true;

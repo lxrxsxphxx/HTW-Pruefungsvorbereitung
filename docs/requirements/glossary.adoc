@@ -113,4 +113,4 @@ Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in
 // Fügen Sie hier eine Abbildung mit ihrem Domänenmodell ein
 
 
-image::requirements/images/Uml-Diagram.png[height=600, title="Domänenmodell"] 
+image::Uml-Diagram.png[height=600, title="Domänenmodell"] 

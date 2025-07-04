@@ -38,21 +38,19 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 
 *Familienstand:* ledig
 
-*Wohnort:* Dresden
-
-*Beruf:* Studentin der Wirtschaftsinformatik, Werkstudentin bei Infineon
+*Beruf:* Studentin der Wirtschaftsingenieurswesen, Werkstudentin bei Infineon
 
 *Verhaltensvariablen*
 
-*Lernstil:* Strukturiert —————⬤———— Spontan
+*Lernstil:* Strukturiert ——————⬤—— Spontan
 
 *Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
 
-*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
+*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
 
 *Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
 
-*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
+*Teamarbeit:* Unabhängig —⬤————— Kollaborativ
 
 *Technologische Nutzung:*
 
@@ -70,11 +68,6 @@ Ist der Meinung, dass Lernen auch Spaß machen kann.
 Angst, dass der HTW-Prüfungsvorbereiter zu langweilig ist.
 Legt viel Wert auf Gamification-Elemente.
 
-*Akzeptanzkriterien:*
-
-Der HTW-Prüfungsvorbereiter soll Spaß machen beim Benutzen.
-Fortschritt sollte visuell wahrnehmbar sein.
-
 === 1. Studierende: Max König
 [%hardbreaks]
 
@@ -87,8 +80,6 @@ Fortschritt sollte visuell wahrnehmbar sein.
 *Geschlecht:* männlich
 
 *Familienstand:* ledig
-
-*Wohnort:* Leipzig
 
 *Beruf:* Student der Elektrotechnik, Teilzeitkraft in einem Ingenieurbüro
 
@@ -120,11 +111,6 @@ Sucht nach einer Plattform, die ihm hilft, komplexe Themen zu vereinfachen.
 Überwältigt von der Menge an Lernmaterialien.
 Angst, sich auf unwichtige Themen zu konzentrieren und Wesentliches zu verpassen.
 
-*Akzeptanzkriterien:*
-
-Der HTW-Prüfungsvorbereiter sollte eine klare Struktur bieten.
-Inhalte müssen zuverlässig und fachlich korrekt sein.
-Fortschrittsanzeige und gezielte Wiederholungen von Schwachpunkten.
 
 
 === 2.Dozierende: Prof. Dr. Klaus Becker
@@ -139,21 +125,19 @@ Fortschrittsanzeige und gezielte Wiederholungen von Schwachpunkten.
 
 *Familienstand:* verheiratet
 
-*Wohnort:* Dresden
-
-*Beruf:* Professor für Wirtschaftsinformatik
+*Beruf:* Professor für Psychologie
 
 *Verhaltensvariablen*
 
-*Lernstil:* Strukturiert ———⬤——— Spontan
+*Lernstil:* Strukturiert —⬤————— Spontan
 
 *Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
 
-*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
 
-*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
+*Motivation:* Extern (Noten) ———————⬤— Intern (Interesse)
 
-*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+*Teamarbeit:* Unabhängig ——————⬤— Kollaborativ
 
 *Technologische Nutzung:*
 
@@ -170,10 +154,6 @@ Wert auf qualitativ hochwertige und aktuelle Inhalte.
 Zeitaufwand für die Erstellung und Pflege von Lernmaterialien.
 Skepsis gegenüber der Qualität von Community-generierten Inhalten.
 
-*Akzeptanzkriterien:*
-
-Einfache Verwaltung und Erstellung von Fragen.
-Übersichtliche Statistiken über den Lernfortschritt der Studierenden.
 
 
 === 3.Tutor:in / Assistierende: Anna Schmidt
@@ -188,21 +168,19 @@ Einfache Verwaltung und Erstellung von Fragen.
 
 *Familienstand:* in einer Beziehung
 
-*Wohnort:* Leipzig
-
-*Beruf:* Wissenschaftliche Hilfskraft im Fachbereich Informatik
+*Beruf:* Wissenschaftliche Hilfskraft im Fachbereich Kryotechnik 
 
 *Verhaltensvariablen*
 
 *Lernstil:* Strukturiert ———⬤——— Spontan
 
-*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+*Technologische Offenheit:* Skeptisch —————⬤— Begeistert
 
 *Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
 
-*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+*Motivation:* Extern (Noten) ——————⬤— Intern (Interesse)
 
-*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
+*Teamarbeit:* Unabhängig —⬤————— Kollaborativ
 
 *Technologische Nutzung:*
 
@@ -217,11 +195,6 @@ Möchte Studierende bei der Prüfungsvorbereitung unterstützen.
 
 Zeitdruck durch parallele Aufgaben.
 
-*Akzeptanzkriterien:*
-
-Möglichkeit, Fragen zu bewerten und zu bearbeiten.
-Kollaborative Funktionen für Lerngruppen.
-
 
 === 4. Admin: Markus Weber
 [%hardbreaks]
@@ -235,8 +208,6 @@ Kollaborative Funktionen für Lerngruppen.
 
 *Familienstand:* verheiratet
 
-*Wohnort:* Chemnitz
-
 *Beruf:* IT-Administrator
 
 *Verhaltensvariablen*
@@ -245,11 +216,11 @@ Kollaborative Funktionen für Lerngruppen.
 
 *Technologische Offenheit:* Skeptisch —————⬤——— Begeistert
 
-*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
 
 *Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
 
-*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+*Teamarbeit:* Unabhängig ———————⬤— Kollaborativ
 
 *Technologische Nutzung:*
 
@@ -263,9 +234,6 @@ Sicherstellung eines stabilen und sicheren Systems.
 
 Sicherheitsrisiken durch unzureichende Verschlüsselung.
 
-*Akzeptanzkriterien:*
-
-Stabile und sichere Plattform mit regelmäßigen Updates.
 
 === 5.HTW (Institution): Dr. Petra Wagner
 //Interesse an Noten:
@@ -283,21 +251,19 @@ Stabile und sichere Plattform mit regelmäßigen Updates.
 
 *Familienstand:* verheiratet
 
-*Wohnort:* Berlin
-
 *Beruf:* Leiterin des Prüfungsamtes
 
 *Verhaltensvariablen*
 
-*Lernstil:* Strukturiert —————⬤———— Spontan
+*Lernstil:* Strukturiert ——⬤—————— Spontan
 
 *Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
 
-*Kommunikationspräferenz:* Chat ————⬤——— E-Mail ———— Telefon
+*Kommunikationspräferenz:* Chat —⬤—————— E-Mail ———— Telefon
 
 *Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
 
-*Teamarbeit:* Unabhängig —————⬤——— Kollaborativ
+*Teamarbeit:* Unabhängig ——————⬤— Kollaborativ
 
 *Technologische Nutzung:*
 
@@ -336,80 +302,53 @@ Einhaltung von Datenschutzrichtlinien.
 
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
-=== 1. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
-Die zentrale Aufgabe, die Prüfungsvorbereitung, wird primär von einer einzelnen Person (dem Studierenden) durchgeführt. *Im MVP konzentrieren wir uns auf diese individuelle Nutzung:*
+=== 1. Wer nutzt die Anwendung, und wie?
+Die Anwendung richtet sich in erster Linie an einzelne Studierende, die sich selbstständig auf Prüfungen vorbereiten. Sie nutzen das Tool, um gezielt für einzelne Module zu lernen, ihren Lernfortschritt zu verfolgen und Wissenslücken zu schließen. Die Nutzung erfolgt meist individuell, sowohl zuhause als auch unterwegs oder in der Hochschule.
 
-*Einzelnutzung:* Studierende bearbeiten selbstständig Multiple-Choice-Quizzes und Karteikarten
+*Typische Situationen:*
 
-*Modulspezifisches Lernen:* Jeder Student wählt seine eigenen Module aus und lernt gezielt für seine Prüfungen
+Kurz vor der Vorlesung: Studierende wiederholen auf dem Smartphone noch schnell ein paar Karteikarten, um vorbereitet in die Veranstaltung zu gehen.
 
-*Personalisierte Lernerfahrung:* Anmeldung und Profilverwaltung ermöglichen individuelle Lernfortschritte
+Gemeinsam lernen: In der Bibliothek oder in Lerngruppen werden Quizfragen genutzt, um sich gegenseitig abzufragen und Wissen zu festigen.
 
-*Zukünftige Erweiterungen (nicht im MVP):* Kollaboratives Fragenmanagement, Lerngruppen und Dozierenden-Integration sind für spätere Versionen geplant.
+Abends vor der Prüfung: Studierende gehen gezielt schwierige Module oder Themenbereiche durch, um sich optimal vorzubereiten.
 
-=== 2. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
-Die Dauer der Nutzung ist sehr variabel und passt sich den individuellen Lernstrategien an. *Das MVP unterstützt flexible Lernzeiten:*
+=== 2. Wie lange und wie oft wird die Anwendung genutzt?
+*Die Nutzungsdauer ist flexibel und orientiert sich an den individuellen Lernbedürfnissen:*
 
-*Anmeldung und Setup:* 2-5 Minuten (einmalig pro Semester)
+Kurze Lerneinheiten (5–15 Minuten): Für das Wiederholen einzelner Themen, z.B. in der Bahn oder zwischen Vorlesungen.
 
-*Modulauswahl:* 1-2 Minuten (zu Semesterbeginn)
+Regelmäßige Lernphasen (15–45 Minuten): Für gezielte Übungseinheiten an Schwerpunktthemen.
 
-*Kurze Lerneinheiten:* 5-15 Minuten für einzelne Quizzes oder Karteikarten-Sessions
+Intensive Vorbereitung (bis zu 90 Minuten): Besonders in der Prüfungsphase, wenn viele Inhalte wiederholt werden müssen.
 
-*Reguläre Lernphasen:* 15-45 Minuten für umfangreichere Übungseinheiten
+Die Nutzungshäufigkeit variiert im Semesterverlauf: Anfangs wird die App sporadisch genutzt, vor Prüfungen steigt die Intensität deutlich an.
 
-*Intensive Vorbereitung:* 60-90 Minuten vor wichtigen Prüfungen
 
-Die Nutzungsfrequenz ändert sich stark im Semesterverlauf - von sporadischer Nutzung zu Beginn bis zu täglicher intensiver Nutzung vor Prüfungen.
+=== 3. In welchen Umgebungen wird gelernt?
+*Studierende nutzen die Anwendung in ganz unterschiedlichen Kontexten:*
 
-=== 3. Gibt es besondere Umgebungsbedingungen?
-*Die Anwendung muss flexibel in verschiedenen Lernumgebungen nutzbar sein:*
+Zuhause am Laptop, um konzentriert längere Lerneinheiten durchzuführen.
 
-*Mobile Nutzung:*
+Unterwegs auf dem Smartphone, z.B. in Bus und Bahn oder in Wartezeiten.
 
-Responsive Design für Smartphones und Tablets
-Touch-optimierte Bedienung für Multiple-Choice-Auswahl und Karteikarten-Navigation
-Nutzung in öffentlichen Verkehrsmitteln, Bibliotheken, zu Hause
+In der Hochschule, etwa in Pausen zwischen Vorlesungen oder in Lernräumen und Bibliotheken.
 
-*Verschiedene Lernorte:*
+Die Anwendung ist so gestaltet, dass sie sich flexibel an verschiedene Endgeräte und Lernorte anpasst.
 
-Zuhause am Desktop/Laptop
-Unterwegs auf mobilen Geräten
-In der Hochschule zwischen Vorlesungen
-In Lernräumen und Bibliotheken
+=== 4. Welche Hilfsmittel und Plattformen werden genutzt?
+*Studierende kombinieren digitale und analoge Hilfsmittel:*
 
-*Zukünftige Anforderungen (nicht im MVP):*
+Vorlesungsskripte, Mitschriften und Bücher als Basis.
 
-Offline-Modus und erweiterte Barrierefreiheit sind für spätere Versionen geplant.
+PDFs, Präsentationen und Lernplattformen der HTW zur Informationsbeschaffung.
 
-=== 4. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
-*Aktuell genutzte Systeme:*
+Der Prüfungsvorbereiter ergänzt diese Materialien durch interaktive Lernformate wie Quizfragen und Karteikarten.
 
-*Analoge Materialien:* Vorlesungsskripte, handschriftliche Mitschriften
+=== 5. Integration mit anderen Systemen?
+*Im aktuellen Stand ist die Anwendung eigenständig nutzbar;*
 
-*Digitale Dokumente:* PDFs, Präsentationen
-
-*Bestehende HTW-Systeme:* Lernplattformen, Vorlesungsverzeichnis
-
-*Zukünftige Plattform (MVP):*
-
-*Webbasierte Anwendung:* Zugriff über moderne Browser
-
-*Cross-Platform:* Funktioniert auf Windows, macOS, Linux, Android, iOS
-
-*Technische Basis:* Moderne Web-Technologien für optimale Performance
-=== 5. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
-*Im MVP keine Integrationen geplant - Fokus auf eigenständige Funktionalität:*
-
-Studierende können manuell ihre Module auswählen
-Lerninhalte werden direkt in der Anwendung verwaltet
-Keine externe Datenquellen oder APIs erforderlich
-
-*Zukünftige Integrationen (nicht im MVP):*
-
-HTW-Vorlesungsverzeichnis für automatische Modulaktualisierung
-Lernmanagementsystem (LMS) für Lehrmaterialien
-Exportfunktionen für externe Lernwerkzeuge
+Studierende wählen ihre Module und Lerninhalte selbst aus. Für die Zukunft sind Integrationen mit bestehenden Hochschulsystemen (z.B. automatischer Import von Moduldaten) denkbar, stehen aber nicht im Vordergrund des aktuellen Nutzungskontexts.
 
 == Wireframes und Wireflow
 // Fügen Sie Wireframes als Bilder oder als Link (z.B. zu einem Miroboard) ein

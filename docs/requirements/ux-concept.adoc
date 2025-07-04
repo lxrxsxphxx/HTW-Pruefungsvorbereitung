@@ -277,11 +277,6 @@ Unterstützung der Studierenden und Dozierenden bei der Prüfungsvorbereitung.
 
 Hoher Aufwand für die Integration neuer Systeme.
 
-*Akzeptanzkriterien:*
-
-Einhaltung von Datenschutzrichtlinien.
-
-
 
 == Nutzungskontext
 //Zu technisch und MVP-lastig:

@@ -34,23 +34,6 @@ Vorlesungsskript Software Engineering I I152
 Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Plattform soll Lernen strukturierter, interaktiver und motivierender gestalten.
 
 === Produktvision
-//Absätze verwirrend
-// warum zweimal fast dasselbe?
-Für
-Studierende der HTWD,
-die
-eine effektive Prüfungsvorbereitung benötigen,
-ist der
-HTW-Prüfungsvorbereiter
-eine
-webbasierte Lernplattform,
-die durch
-einen intelligenten Lernalgorithmus mit Gamification-Elementen
-anders als
-bestehende Tools wie Quizlet
-das
-spielerische, kollaborative und adaptive Lernen speziell für HTW-Module ermöglicht.
-
 
 [cols="1,3"]
 |===
@@ -115,7 +98,7 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 == Produktüberblick
 
 === Bedarfe und Hauptfunktionen
-Intelligenter Lernalgo. mit Gamification Elementen 
+Intelligenter Lernalgorithmus mit Gamification Elementen 
 
 [%header, cols="4,1,4,1"] 
 |=== 

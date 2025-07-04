@@ -32,20 +32,18 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Lernalgorithmus | Ein System, das sich an den individuellen Lernfortschritt anpasst, um Wiederholungen und Inhalte gezielt zu steuern. | Anpassungssystem
 | Lernmodi | Verschiedene Ansätze zum Lernen, wie Übungsmodus, Blitz-Quiz oder Karteikarten. | Lernansätze
 | Push-Benachrichtigungen | Automatische Erinnerungen für tägliche Lerneinheiten oder anstehende Prüfungen. | Erinnerungen
-|Kollaboratives Lernen	| Ein Ansatz, bei dem Studierende in Gruppen zusammenarbeiten, um Wissen gemeinsam aufzubauen, zu teilen und zu validieren, wodurch die Qualität der Lerninhalte kontinuierlich verbessert wird und ein modulübergreifendes Verständnis komplexer Zusammenhänge gefördert wird. |Gemeinschaftliches Lernen
-| Prüfungssimulation	|Ein Lernmodus, der eine reale Prüfungssituation nachstellt, um Studierenden die Möglichkeit zu geben, sich unter prüfungsähnlichen Bedingungen zu testen. | Klausursimulation|
-Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in verschiedenen Kategorien (z.B. Tages-, Wochen-, Semesterbesten) anzeigt, um den Wettbewerb und die Motivation zu fördern. | Bestenliste
-|Adaptiver Lernmodus	| 	Ein Lernmodus, der Wissenslücken bei den Studierenden erkennt und gezielt Wiederholungsfragen generiert, um diese Lücken zu schließen.| Anpassbarer Lernmodus
+|Kollaboratives Lernen| Studierende arbeiten in Gruppen zusammen, tauschen Wissen aus und lösen Aufgaben gemeinsam.|Gemeinschaftliches Lernen
+|Prüfungssimulation	|Ein Lernmodus, der eine reale Prüfungssituation nachstellt, um Studierenden die Möglichkeit zu geben, sich unter prüfungsähnlichen Bedingungen zu testen. | Klausursimulation
 |Freitextfragen	|Ein Fragetyp, bei dem die Studierenden ihre Antworten in freier Textform eingeben müssen, im Gegensatz zu vorgegebenen Auswahlmöglichkeiten. |Offene Fragen
 |Zuordnungsfragen	| Ein Fragetyp, bei dem Elemente aus zwei Listen einander richtig zugeordnet werden müssen. | Matching-Fragen
 |Moderierter Admin-Bereich	| Ein geschützter Bereich für Dozierende, um offizielle Prüfungsfragen zu erstellen und die Lerninhalte zu verwalten. |Dozentenbereich
 |Lernfortschrittsanalyse|Die Auswertung von Daten, die zeigen, wie weit ein Studierender in seinem Lernprozess fortgeschritten ist, oft mit visuellen Darstellungen der eigenen Stärken und Schwächen. | Fortschrittsverfolgung
-|Quiz-App	| Eine Anwendung, in der Nutzer Fragen beantworten und Punkte sammeln können, oft zur spielerischen Prüfungsvorbereitung. |Quiz-Anwendung
+|webbasierte Lernplattform 	| Online-Zugang zu Lerninhalten und Übungen. | Online Lernen
 |===
 
 
 == Abkürzungen und Akronyme
-// ist die Abkürzung IT notwendig?
+
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
@@ -61,7 +59,6 @@ Highscore-Liste	| 	Eine Rangliste, die die besten Ergebnisse von Studierenden in
 | LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
 | PO | Prüfungsordnung	| Das Regelwerk, das die Anforderungen und Abläufe von Prüfungen festlegt.
 | QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen.
-| IT | Informationstechnik | Ein Fachbereich, der sich mit der Verarbeitung und Übertragung von Informationen befasst.
 |===
 
 == Verzeichnis der Datenstrukturen

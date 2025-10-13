@@ -1,0 +1,122 @@
+= MEETINGNOTIZ – 12.10.2025
+
+--
+* Typ: irregular/first meeting 
+* Raum: online  
+* Dauer: 15.00 – 16.00  
+* Anwesend: Tobias, Johann, Phillipp, Frederic, Marius, Lara
+--
+
+== ZIELE DES MEETINGS
+--
+* Planung des bevorstehenden Projektabschnitts
+* Festlegung und Priorisierung von Aufgaben
+* Koordination im Team hinsichtlich Zuständigkeiten und Kapazitäten
+* Besprechung relevanter organisatorischer oder technischer Rahmenbedingungen
+--
+
+== TAGESORDNUNG / TODO
+--
+1. **Rückblick & Reflexion**
+* Kurze Auswertung des letzten Semesters
+* Fragen zur Retro:
+** Was lief gut in der letzten Iteration?
+** Was hat uns gehindert?
+** Was sollten wir im nächsten Sprint anders machen?
+
+
+2. **Product Owner / User Stories / Refinement** 
+* Klarheit über PO-Verfügbarkeit & Verantwortlichkeiten
+* Wer führt Refinements durch? Rhythmus & Template vereinbaren 
+* Stories, die sofort priorisiert/refined werden müssen
+* Maßnahmen:
+** Refinement-Termin ansetzen: mind. 1 Session vor Planning
+** Einführung „Definition of Ready“ + Regel: Stories 1–2 Iterationen vorher detaillieren 
+
+
+3. **Professor-Feedback: Maßnahmen & Prioritäten**
+* Risiken korrekt markieren 
+* User Stories überarbeiten
+* Refinement-Prozess: Stories rechtzeitig ausarbeiten, Termine wählen
+* Glossar/Domänenmodell überarbeiten
+* Architektur-Notizen: Trennung Anforderung vs. Entwurfsentscheidung; Konsistenz bei Stakeholder-Bezeichnungen
+* UX-Konzept: Personas mit konkreten Zielen/Hindernissen auf System-Ebene ergänzen
+* Review der User stories (bei bedarf schließen)
+
+
+4. **Offene Tasks / Status im Board**
+* Aktuellen Stand durchgehen 
+* Klärung, ob noch „New“-Risiken offen sind
+
+ 
+5. **Kommunikation & Tools** 
+* Miro mehr benutzen (vorallem bei online meetings)
+
+
+6. **Meeting-Rhythmus & Regeln**
+* Wöchentliche Meetings fixieren
+* Termin festlegen für:
+** Planning
+** Review
+** Retrospektive
+** Coach
+--
+
+
+
+== RÜCKBLICK
+
+=== Was lief gut?
+* Sehr gute Teamzusammenarbeit
+* Angenehmer und respektvoller Umgangston
+* Klare Aufgabenverteilung und Zuständigkeiten
+
+
+=== Was lief nicht gut?
+* Teilweise unorganisierte Arbeitsweise (insbesondere im Product Backlog)
+* Kommunikation hätte direkter und strukturierter sein können
+* Kein separates Refinement durchgeführt (teilweise während des Plannings abgearbeitet)
+* Planungsmeetings waren teils unstrukturiert
+
+
+=== Was wollen wir verbessern?
+* Umsetzung der Kritik des Professors
+* Besser organisierte Planungsmeetings und regelmäßige Refinements
+* Steigerung der Produktivität
+* Häufigere Online-Meetings
+* Vorstellung der Arbeitsergebnisse in den Weeklys (visuell)
+
+
+
+== OUTCOME
+
+[Entwickler, Architekt, Tester, Product Owner, Scrum Master]
+
+[cols="3,1"]
+|===
+| **Name**  | **Rolle** 
+|Tobias     |   Entwickler
+|Phillipp   |   Product Owner
+|Johann     |   Entwickler + Tester
+|Frederic   |   Entwickler + Architekt
+|Marius     |   Entwickler + Tester   
+|Lara       |   Scrum Master
+|===
+
+
+
+
+== FESTLEGUNGEN
+**Kommunikation & Organisation**
+[cols="3,1"]
+|===
+| **Aufgabe** | **Name**
+| Review der User stories               |   Johann + Tobias + Phillipp
+| Glossar/Domänenmodell überarbeiten    |   Tobias mit Hilfestellung von Marlene Winter
+| User Stories überarbeiten             |   Phillipp
+| UX-Konzept überarbeiten               |   Phillipp
+| Architektur-Notizen überarbeiten      |   Frederic mit Hilfestellung von Marlene Winter
+| Risiken korrekt markieren             |   Lara
+|===
+
+

@@ -60,13 +60,11 @@ Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
 
 *Bedürfnisse/Ziele:*
 
-Möchte das Lernen effizienter gestalten.
-Ist der Meinung, dass Lernen auch Spaß machen kann.
+Möchte, dass das System effiziente Lernmethoden unterstützt, z.B. durch kurze interaktive Lernmodule und Gamification-Elemente, um Motivation und Spaß zu fördern.
 
 *Hindernisse/Frustrationen:*
 
-Angst, dass der HTW-Prüfungsvorbereiter zu langweilig ist.
-Legt viel Wert auf Gamification-Elemente.
+Wäre frustriert, wenn das System zu monoton ist oder zu lange Lernabschnitte bietet, da dies ihr effizientes Lernen behindert. Außerdem könnte mangelnde Datenschutzsicherheit ihr Vertrauen beeinträchtigen.
 
 === 1. Studierende: Max König
 [%hardbreaks]
@@ -103,13 +101,11 @@ Wenig aktiv auf Social Media, bevorzugt datenschutzfreundliche Apps.
 
 *Bedürfnisse/Ziele:*
 
-Möchte sich gezielt auf Prüfungen vorbereiten und Wissenslücken schließen.
-Sucht nach einer Plattform, die ihm hilft, komplexe Themen zu vereinfachen.
+Braucht eine klare Strukturierung der Lerninhalte, die das System einfach zugänglich macht und komplexe Themen verständlich erklärt. Funktion wie personalisierte Lernpfade oder gezielte Prüfungsfragen wären wichtig.
 
 *Hindernisse/Frustrationen:*
 
-Überwältigt von der Menge an Lernmaterialien.
-Angst, sich auf unwichtige Themen zu konzentrieren und Wesentliches zu verpassen.
+Verliert die Motivation, wenn das System ihn mit zu vielen oder irrelevanten Inhalten überfordert oder die Navigation unübersichtlich ist.
 
 
 
@@ -146,8 +142,7 @@ Smartphone für E-Mails und Kalenderverwaltung.
 
 *Bedürfnisse/Ziele:*
 
-Möchte Studierende optimal auf Prüfungen vorbereiten.
-Wert auf qualitativ hochwertige und aktuelle Inhalte.
+Erwartet, dass die bereitgestellten Inhalte schnell und unkompliziert eingepflegt werden können, um Studierende effizient zu prüfen.
 
 *Hindernisse/Frustrationen:*
 
@@ -228,12 +223,11 @@ Experte für Server- und Systemadministration.
 
 *Bedürfnisse/Ziele:*
 
-Sicherstellung eines stabilen und sicheren Systems.
+Erwartet eine möglichst einfache, wartbare Systemlösung, die während des Projekts stabil läuft und keine komplexen administrativen Eingriffe erfordert.
 
 *Hindernisse/Frustrationen:*
 
-Sicherheitsrisiken durch unzureichende Verschlüsselung.
-
+Mögliche Unsicherheit bezüglich der Systemstabilität.
 
 === 5.HTW (Institution): Dr. Petra Wagner
 //Interesse an Noten:
@@ -271,11 +265,11 @@ Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
 
 *Bedürfnisse/Ziele:*
 
-Unterstützung der Studierenden und Dozierenden bei der Prüfungsvorbereitung.
+Eine praktikable Lösung bietet, die Studierende und Dozierende im Prüfungsprozess unterstützt, ohne großen Administrationsaufwand zu verursachen.
 
 *Hindernisse/Frustrationen:*
 
-Hoher Aufwand für die Integration neuer Systeme.
+Begrenzte Zeit und Ressourcen können die Vollständigkeit und langfristige Integration einschränken; zudem Bedenken, ob das Projekt tatsächlich den Anforderungen aller Nutzer gerecht wird.
 
 
 == Nutzungskontext

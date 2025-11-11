@@ -13,5 +13,14 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
 
 == Schnittstellen
 //Dokumentation oder Verweise auf Schnittstellen, z.B. REST-APIs
+=== Schnittpunkt /api/learning_set
+* *POST*: Wird benutzt, um ein neues Lernset zu erstellen. Die Funktion nimmt das Objekt, welches das Lernset repräsentiert, entgegen und fügt dieses in die Datenbank hinzu. Bei Erfolg wird das Objekt zurückgegeben.
+* *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von learning_set Objekten zurückgegeben.
+
+=== Schnittpunkt /api/learning_set/{id}
+* *DELETE*: Lösche das Lernset *id* aus der Datenbank. *Diese Funktion löscht alle Fragen dieses Lernsets*
+
+=== Schnittpunkt /api/learning_set/{id}/questions
+* *GET*: Gibt alle Fragen des Lernsets *id* zurück *TO DO - nicht implementiert*
 
 == Datenmodell

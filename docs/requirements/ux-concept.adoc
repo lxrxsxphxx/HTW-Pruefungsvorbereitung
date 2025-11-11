@@ -60,13 +60,19 @@ Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
 
 *Bedürfnisse/Ziele:*
 
-Möchte, dass das System effiziente Lernmethoden unterstützt, z.B. durch kurze interaktive Lernmodule und Gamification-Elemente, um Motivation und Spaß zu fördern.
+Möchte kurze, interaktive Lernmodule, die effizientes Lernen fördern
+
+Erwartet Gamification-Elemente als Motivation
+
+Will nicht durch lange Lerneinheiten gebremst werden
 
 *Hindernisse/Frustrationen:*
 
-Wäre frustriert, wenn das System zu monoton ist oder zu lange Lernabschnitte bietet, da dies ihr effizientes Lernen behindert. Außerdem könnte mangelnde Datenschutzsicherheit ihr Vertrauen beeinträchtigen.
+Frustriert, wenn Lernmodule monoton oder zu lang sind
 
-=== 1. Studierende: Max König
+Misstraut, wenn das System keine ausreichende Datenschutzsicherheit bietet
+
+=== 2. Studierende: Max König
 [%hardbreaks]
 
 *Leitspruch:* „Lernen heißt nicht nur Wissen anhäufen, sondern Zusammenhänge verstehen.“
@@ -101,15 +107,18 @@ Wenig aktiv auf Social Media, bevorzugt datenschutzfreundliche Apps.
 
 *Bedürfnisse/Ziele:*
 
-Braucht eine klare Strukturierung der Lerninhalte, die das System einfach zugänglich macht und komplexe Themen verständlich erklärt. Funktion wie personalisierte Lernpfade oder gezielte Prüfungsfragen wären wichtig.
+Nutzerfreundliche Strukturierung der Lerninhalte
+
+Personalisierte Lernpfade und gezielte Prüfungsfragen
+
+Verständnis komplexer Zusammenhänge erleichtern
 
 *Hindernisse/Frustrationen:*
 
-Verliert die Motivation, wenn das System ihn mit zu vielen oder irrelevanten Inhalten überfordert oder die Navigation unübersichtlich ist.
+Verliert Motivation bei irrelevanten Inhalten und unübersichtlicher Navigation
 
 
-
-=== 2.Dozierende: Prof. Dr. Klaus Becker
+=== 3.Dozierende: Prof. Dr. Klaus Becker
 [%hardbreaks]
 *Leitspruch:* „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
 
@@ -142,16 +151,19 @@ Smartphone für E-Mails und Kalenderverwaltung.
 
 *Bedürfnisse/Ziele:*
 
-Erwartet, dass die bereitgestellten Inhalte schnell und unkompliziert eingepflegt werden können, um Studierende effizient zu prüfen.
+Inhalte schnell und unkompliziert einpflegen
+
+Effiziente Prüfungsdurchführung ermöglichen
 
 *Hindernisse/Frustrationen:*
 
-Zeitaufwand für die Erstellung und Pflege von Lernmaterialien.
-Skepsis gegenüber der Qualität von Community-generierten Inhalten.
+Zeitaufwand für Erstellung und Pflege von Lernmaterialien
+
+Skepsis gegenüber Qualität von Community-Inhalten
 
 
 
-=== 3.Tutor:in / Assistierende: Anna Schmidt
+=== 4.Tutor:in / Assistierende: Anna Schmidt
 [%hardbreaks]
 *Leitspruch:* „Gemeinsam lernen wir besser.“
 
@@ -184,14 +196,14 @@ Erfahren im Umgang mit Lernplattformen und digitalen Tools.
 
 *Bedürfnisse/Ziele:*
 
-Möchte Studierende bei der Prüfungsvorbereitung unterstützen.
+Effektive Unterstützung der Studierenden bei Prüfungsvorbereitung
 
 *Hindernisse/Frustrationen:*
 
 Zeitdruck durch parallele Aufgaben.
 
 
-=== 4. Admin: Markus Weber
+=== 5. Admin: Markus Weber
 [%hardbreaks]
 *Leitspruch:* „Stabilität und Sicherheit stehen an erster Stelle.“
 
@@ -223,13 +235,15 @@ Experte für Server- und Systemadministration.
 
 *Bedürfnisse/Ziele:*
 
-Erwartet eine möglichst einfache, wartbare Systemlösung, die während des Projekts stabil läuft und keine komplexen administrativen Eingriffe erfordert.
+Einfache, wartbare Systemlösung ohne komplexe Eingriffe
+
+Stabilität im laufenden Betrieb
 
 *Hindernisse/Frustrationen:*
 
-Mögliche Unsicherheit bezüglich der Systemstabilität.
+Unsicherheit bezüglich Systemstabilität
 
-=== 5.HTW (Institution): Dr. Petra Wagner
+=== 6.HTW (Institution): Dr. Petra Wagner
 //Interesse an Noten:
 //Diese Persona hat wirklich keine Relevanz für Noten
 //Integration neuer Systeme:
@@ -265,12 +279,13 @@ Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
 
 *Bedürfnisse/Ziele:*
 
-Eine praktikable Lösung bietet, die Studierende und Dozierende im Prüfungsprozess unterstützt, ohne großen Administrationsaufwand zu verursachen.
+Praktikable Lösung für Prüfungsprozess mit geringem Administrationsaufwand
 
 *Hindernisse/Frustrationen:*
 
-Begrenzte Zeit und Ressourcen können die Vollständigkeit und langfristige Integration einschränken; zudem Bedenken, ob das Projekt tatsächlich den Anforderungen aller Nutzer gerecht wird.
+Begrenzte Zeit und Ressourcen
 
+Bedenken zur Vollständigkeit und Nutzeranforderungserfüllung
 
 == Nutzungskontext
 //Zu technisch und MVP-lastig:

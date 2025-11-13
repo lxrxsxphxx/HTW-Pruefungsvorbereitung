@@ -21,10 +21,12 @@
         :class="[cardResultColor, { flipped: isFlipped }]">
         <div id="cardInner">
           <div class="card-front" id="quizQuestion">
-            {{ currentQuizCard?.question }}
+            <p>{{ currentQuizCard?.question }}</p>
+            <div class="htw-stripe"><img src="@/assets/img/HtwLogo_black.png"></img></div>
           </div>
           <div class="card-back" id="correctAnswer">
-            {{ currentQuizCard?.answer }}
+            <p>{{ currentQuizCard?.answer }}</p>
+            <div class="htw-stripe"><img src="@/assets/img/HtwLogo_black.png"></img></div>
           </div>
         </div>
       </div>
@@ -451,5 +453,24 @@ form button:hover {
   padding: 20px;
   font-style: italic;
   color: #666;
+}
+
+.card-front p,
+.card-back p {
+  margin-top: auto;
+}
+
+.htw-stripe {
+  width: 100%;
+  height: 2rem;
+  background-color: var(--htw-orange);
+  margin-top: auto;
+  text-align: right;
+  justify-self: end;
+}
+
+.htw-stripe img {
+  width: auto;
+  height: 2rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="mc-quiz-entry-body">
-            <div id="mc-quiz-entry-header">
+        <div id="mc-quiz-entry-header">
             <h1>gib eine Quizfrage und die Lösungen ein</h1>
             <hr>
         </div>
@@ -378,7 +378,7 @@ class View{
         quiz_name_input.value.focus();
         cancel_popup.value.style.display = "none";
 
-        window.location.href = '/multiplechoice';
+        window.location.href = '/erstellen';
     }
     cancelCancel(){
         cancel_popup.value.style.display = "none";

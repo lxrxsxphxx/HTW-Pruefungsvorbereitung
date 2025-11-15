@@ -31,11 +31,34 @@
         </div>
       </div>
 
-      <div id="answerInputArea" v-show="quizCards.length > 0 && answerInputVisible">
-        <input type="text" id="userAnswer" v-model="userAnswer" placeholder="Deine Antwort hier eingeben"
-          autocomplete="off" :disabled="waitingForFlipBack" @keyup.enter="checkAnswer" />
-        <button id="checkAnswerBtn" @click="checkAnswer" :disabled="waitingForFlipBack || !userAnswer.trim()">
-          Antwort prüfen
+      <div id="answerInputArea" v-show="quizCards?.length > 0 && answerInputVisible">
+        <textarea id="userAnswer" v-model="userAnswer" placeholder="Notizen" autocomplete="off"
+          :disabled="flippedOnce" />
+        <button id="seeAnswerBtn" @click="seeAnswer" v-show="!isFlipped">
+          Antwort anzeigen
+        </button>
+        <button id="skipQuestionBtn" @click="skipQuestion" v-show="!flippedOnce">
+          Frage überspringen
+        </button>
+        <button id="seeQuestionBtn" @click="seeQuestion" v-show="isFlipped">
+          Zurück zur Frage
+        </button>
+        <div class="rating" v-show="flippedOnce">
+          <button id="badBtn" @click="nextQuestion('bad')" v-show="flippedOnce && !answered">
+            Nicht gewusst
+          </button>
+          <button id="okayBtn" @click="nextQuestion('okay')" v-show="flippedOnce && !answered">
+            Teilweise gewusst
+          </button>
+          <button id="goodBtn" @click="nextQuestion('good')" v-show="flippedOnce && !answered">
+            Vollständig gewusst
+          </button>
+        </div>
+        <button id="nextBtn" @click="nextQuestion('next')" v-show="flippedOnce && answered">
+          Nächste Frage
+        </button>
+        <button id="prevQuestionBtn" @click="prevQuestion" v-show="!firstQuestion">
+          Zurück zur vorherigen Frage
         </button>
       </div>
 
@@ -98,11 +121,15 @@ const subjects = computed(() => {
 const quizSubject = ref("");
 const quizCards = ref([]);
 const currentIndex = ref(0);
-const correctCount = ref(0);
-const incorrectCount = ref(0);
+const goodCards = ref(0);
+const okayCards = ref(0);
+const badCards = ref(0);
 const userAnswer = ref("");
-const waitingForFlipBack = ref(false);
+const flippedOnce = ref(false);
+const answered = ref(false);
 const isFlipped = ref(false);
+const firstQuestion = ref(true);
+const notes = ref([]);
 
 // Sichtbarkeiten Quiz UI
 const quizCardVisible = ref(false);
@@ -163,40 +190,64 @@ watch(quizSubject, (newSubject) => {
   waitingForFlipBack.value = false;
 });
 
-// Antwort prüfen
-function checkAnswer() {
-  if (waitingForFlipBack.value) return;
-  if (!userAnswer.value.trim()) return;
+function nextQuestion(click) {
+  if (currentIndex.value + 1 >= notes.value.length) {
+    flippedOnce.value = false;
+    answered.value = false;
+    if (currentIndex.value >= notes.value.length) {
+      notes.value.push(userAnswer.value);
+      if (click == "good") {
+        goodCards.value++;
+      } else if (click = "okay") {
+        okayCards.value++;
+      } else if (click = "bad") {
+        badCards.value++;
+      }
+    }
+    userAnswer.value = "";
 
-  isFlipped.value = true;
-  waitingForFlipBack.value = true;
-
-  const correct = currentQuizCard.value.answer
-    .trim()
-    .toLowerCase()
-    .includes(userAnswer.value.trim().toLowerCase());
-
-  if (correct) {
-    correctCount.value++;
-    cardResultColor.value = "correct";
   } else {
-    incorrectCount.value++;
-    cardResultColor.value = "incorrect";
+    userAnswer.value = notes.value[currentIndex.value + 1];
   }
 
-  setTimeout(() => {
-    isFlipped.value = false;
-    waitingForFlipBack.value = false;
-    cardResultColor.value = "";
-    userAnswer.value = "";
+  if (isFlipped.value) {
+    setTimeout(() => {
+      currentIndex.value++;
+    }, 600);
+  } else {
     currentIndex.value++;
+  }
+  isFlipped.value = false;
+  firstQuestion.value = false;
 
-    if (currentIndex.value >= quizCards.value.length) {
-      quizCardVisible.value = false;
-      answerInputVisible.value = false;
-      progressVisible.value = false;
+
+  if (currentIndex.value + 1 >= quizCards.value.length) {
+    quizCardVisible.value = false;
+    answerInputVisible.value = false;
+    progressVisible.value = false;
+  }
+}
+
+function prevQuestion() {
+  if (isFlipped.value) {
+    isFlipped.value = false;
+    setTimeout(() => {
+      currentIndex.value--;
+      if (currentIndex.value === 0) {
+        firstQuestion.value = true;
+      }
+      userAnswer.value = notes.value[currentIndex.value];
+    }, 600);
+  }
+  else {
+    currentIndex.value--;
+    if (currentIndex.value === 0) {
+      firstQuestion.value = true;
     }
-  }, 1500);
+    userAnswer.value = notes.value[currentIndex.value];
+  }
+  flippedOnce.value = true;
+  answered.value = true;
 }
 
 // Quiz komplett zurücksetzen
@@ -399,12 +450,13 @@ form button:hover {
   margin-bottom: 15px;
 }
 
-#answerInputArea input {
-  flex-grow: 1;
+#answerInputArea textarea {
+  height: 8rem;
   padding: 8px;
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid #aaa;
+  resize: none;
 }
 
 #answerInputArea button {

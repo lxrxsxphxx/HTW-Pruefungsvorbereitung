@@ -10,6 +10,66 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
  
 == Ausgewählte Sichten
 //Entwurfsklassendiagramme, Sequenzdiagramme
+== Models
+Die Models sind Klassen, die vom ORM-Mapper benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
+
+=== Models zu Karteikarten
+
+* *CardBase*: Hält die Basisinformation, die eine Karteikarte halten muss.
+** front (String) - Text auf der Vorderseite.
+** back (String) - Text auf der Rückseite.
+
+* *Card*: Repräsentiert eine Karte. Diese Klasse ist eine Tabelle. Erbt von *CardBase*.
+** id (int): Eindeutige Identifikationsnummer der Karteikarte.
+** learning_set (LearningSet): Beziehung zum Lernset, dem die Karteikarte zugehörig ist.
+
+* *CardResponse*: Repräsentiert eine Karte. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Karteikarte angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *CardBase*.
+** id (int): Eindeutige Identifikationsnummer der Karteikarte.
+
+=== Models zu Multiple-Choice-Fragen
+
+* *QuestionBase*: Hält die Basisinformation, die eine Multiple-Choice-Frage halten muss.
+** question (String): Die Frage, die beantwortet werden soll.
+
+* *Question*: Repräsentiert eine Multiple-Choice-Frage. Diese Klasse ist eine Tabelle. Erbt von *QuestionBase*.
+** id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage
+** answers (list[Answer]): Beziehung zu den Antworten der Multiple-Choice-Frage.
+** learning_set (LearningSet): Beziehung zum Lernset, dem die Multiple-Choice-Frage zugehörig ist.
+
+* *QuestionResponse*: Repräsentiert eine Multiple-Choice-Frage. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Multiple-Choice-Frage angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *QuestionBase*.
+** id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage.
+** answers (list[AnswerResponse]): Beziehung zu den Antworten der Multiple-Choice-Frage, hier aber als Response-Klasse.
+
+=== Models zu Antworten von Multiple-Choice-Fragen
+
+* *AnswerBase*: Hält die Basisinformation, die eine Antwort halten muss.
+** answer (String): Der Antworttext.
+** correct (bool): Information, ob die Antwort die richtige Antwort zu der Frage ist, der sie zugehörig ist.
+
+* *Answer*: Repräsentiert eine Antwort. Diese Klasse ist eine Tabelle. Erbt von *AnswerBase*.
+** id (int): Eindeutige Identifikationsnummer der Antwort.
+** question_id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage, der die Antwort zugehörig ist.
+** question (Question): Die Multiple-Choice-Frage, der die Antwort zugehörig ist. 
+
+* *AnswerResponse*: Repräsentiert eine Antwort. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Antwort angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *AnswerBase*.
+** id (int): Eindeutige Identifikationsnummer der Antwort. 
+** question_id (id): Eindeutige Identifikationsnummer der Multiple-Choice-Frage, der die Anwort zugehörig ist.
+
+=== Models zu Lernsets
+* *LearningSetBase*: Hält die Basisinformation, die ein Lernset halten muss.
+** name (String): Der Name des Lernsets
+** module (String): Der Name des Moduls, für das das Lernset erstellt wurde.
+
+* *LearningSet*: Repräsentiert ein Lernset. Diese Klasse ist eine Tabelle. Erbt von *LearningSetBase*.
+** id (int): Eindeutige Identifikationsnummer der Antwort.
+** cards (list[Card]): Die Karteikarten des Lernsets.
+** questions (list[Question]): Die Multiple-Choice-Fragen des Lernsets.
+
+* *LearningSetResponse*: Repräsentiert ein Lernset. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einem Lernset angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *LearningSetBase*. 
+** id (int): Eindeutige Identifikationsnummer der Antwort.
+** cards (list[CardResponse]): Die Karteikarten des Lernsets.
+** questions (list[QuestionResponse]): Die Multiple-Choice-Fragen des Lernsets.
+
 
 == Schnittstellen
 //Dokumentation oder Verweise auf Schnittstellen, z.B. REST-APIs
@@ -18,7 +78,7 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
 * *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von learning_set Objekten zurückgegeben.
 
 === Schnittpunkt /api/learning_set/{id}
-* *DELETE*: Lösche das Lernset *id* aus der Datenbank. *Diese Funktion löscht alle Fragen dieses Lernsets*
+* *DELETE*: Lösche das Lernset *id* aus der Datenbank. Diese Funktion löscht *ALLE* Fragen dieses Lernsets.
 
 === Schnittpunkt /api/learning_set/{id}/questions
 * *GET*: Gibt alle Fragen des Lernsets *id* zurück *TO DO - nicht implementiert*

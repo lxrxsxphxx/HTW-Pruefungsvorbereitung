@@ -106,20 +106,20 @@ Für zusätzliche Einsicht in die Datenbank steht ein Webinterface zur Verfügun
 
 title Kontextdiagramm für HTW Prüfungsvorbereiter
 
-Person(student, "Student", "Student der sich für Prüfung vorbereiten will")
-Person(prof, "Professor", "Professor der Inhalte für ein Modul anbietet")
+Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
+Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
 
-System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studenten sich für Prüfungen vorzubereiten, sich in Foren auszutauschen und Inhalte zu prüfen; ermöglicht Professoren Module zu verwalten, Lerninhalte einzustellen, zu überprüfen")
+System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studierenden sich für Prüfungen vorzubereiten, sich in Foren auszutauschen und Inhalte zu prüfen; ermöglicht Dozierenden Module zu verwalten, Lerninhalte einzustellen, zu überprüfen")
 
 Rel(student, vorbereiter, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
-Rel(prof, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+Rel(doz, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
 ....
 
-Das Kontext Diagramm zeigt die Beziehungen zwischen dem zu entwickelnden System und den Nutzergruppen "Studierende" und "ProfessorInnen".
+Das Kontext Diagramm zeigt die Beziehungen zwischen dem zu entwickelnden System und den Nutzergruppen "Studierende" und "Dozierende".
 
 Studierende interagieren mit dem System, um mit Karteikarten oder Multiple-Choice Fragen zu lernen, sich mit anderen Studierenden über Inhalte auszutauschen oder den eigenen Lernstand zu überprüfen.
 
-ProfessorInnen interagieren mit dem System, um Inhalte eigener Module einzustellen, vorhandene Inhalte auf Korrektheit zu prüfen oder sich über Lernstände zu informieren.
+Dozierende interagieren mit dem System, um Inhalte eigener Module einzustellen, vorhandene Inhalte auf Korrektheit zu prüfen oder sich über Lernstände zu informieren.
 
 Das zu entwickelnde System interagiert nicht mit externen Systemen.
 
@@ -136,17 +136,17 @@ Das zu entwickelnde System interagiert nicht mit externen Systemen.
 
 title Containerdiagramm für HTW Prüfungsvorbereiter
 
-Person(student, "Student", "Student der sich für Prüfung vorbereiten will")
-Person(prof, "Professor", "Professor der Inhalte für ein Modul anbietet")
+Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
+Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
 
 System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
-    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studenten und Professoren über deren Browser bereit")
+    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studierende und Dozierende über deren Browser bereit")
     ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
     Container(api, "API App", "Python, FastAPI", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
 }
 
 Rel(student, spa, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
-Rel(prof, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+Rel(doz, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
 
 
 Rel(spa, api, "nutzt", "JSON/HTTP")
@@ -155,7 +155,7 @@ Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "SQLModel")
 
 Das Container Diagramm zeigt den internen Aufbau des zu entwickelnden Systems.
 
-Die Nutzenden interagieren mit einer Single-Page Application, welche die nötigen Funktionalitäten für Studierende und ProfessorInnen in deren Browser bereitstellt.
+Die Nutzenden interagieren mit einer Single-Page Application, welche die nötigen Funktionalitäten für Studierende und Dozierende in deren Browser bereitstellt.
 
 Die Single-Page Application kommuniziert nach den Prinzipien von REST mittels HTTP und JSON mit einer API Application.
 Diese API Application stellt Schnittstellen zum Speichern von Daten und Abfragen bereits persistenter Daten zur Verfügung.

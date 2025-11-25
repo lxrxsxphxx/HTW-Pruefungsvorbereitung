@@ -25,12 +25,13 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
     return db_learning_set
 
 @router.get("/")
-def get_learning_sets(session: Session = Depends(get_session)) -> list[LearningSetResponse]:
+def get_learning_sets(session: Session = Depends(get_session), modul: str | None = None) -> list[LearningSetResponse]:
     """Get all Learning Sets in DB
         session: the database session
         
         returns list of LearningSets in LearningSetResponse type"""
-
+    if modul:
+        return session.exec(select(LearningSet).where(LearningSet.modul == modul)).all()
     return session.exec(select(LearningSet)).all()
 
 @router.delete("/{id}")

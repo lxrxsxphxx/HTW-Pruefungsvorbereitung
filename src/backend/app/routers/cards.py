@@ -1,9 +1,8 @@
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import CardBase, Card
+from app.models import CardBase, Card, LearningSet
 from app.dependencies import get_session
-from models import LearningSet
 
 router = APIRouter(
     prefix="/api/cards",
@@ -29,9 +28,7 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     return db_cards
 
 @router.get("/")
-def read_cards(session: Session = Depends(get_session), modul: str | None = None) -> list[Card]:
-    if modul:
-        return session.exec(select(Card).where(Card.modul == modul)).all()
+def read_cards(session: Session = Depends(get_session)) -> list[Card]:
     return session.exec(select(Card)).all()
 
 @router.get("/{id}")

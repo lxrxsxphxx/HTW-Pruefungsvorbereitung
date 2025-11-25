@@ -6,8 +6,7 @@ from sqlmodel import Field, Relationship, SQLModel
 class CardBase(SQLModel):
     front: str = Field()
     back: str = Field()
-    #modul: str = Field(index=True)
-    
+
 
 class Card(CardBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
@@ -53,4 +52,4 @@ class LearningSet(LearningSetBase):
 class LearningSetResponse(LearningSetBase):
     id: int
     cards: list[CardResponse]
-    questions: list[QuestionResponse]    
+    questions: list[QuestionResponse]

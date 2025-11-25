@@ -10,10 +10,12 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session))-> LearningSet:
-    """Adds a new learning set to DB"""
-
-    print("create_learning_set called")
+def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSet:
+    """ Adds a learning set to DB
+        learning_set: The learning set that is added to the database
+        session: the database session
+        
+        returns the learning set as it is in the database after adding"""
 
     db_learning_set = LearningSet.model_validate(learning_set)
     session.add(db_learning_set)
@@ -23,14 +25,22 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
     return db_learning_set
 
 @router.get("/")
-def get_learning_sets(session: Session = Depends(get_session))-> list[LearningSetResponse]:
-    """Returns list of all learning sets in DB"""
+def get_learning_sets(session: Session = Depends(get_session)) -> list[LearningSetResponse]:
+    """Get all Learning Sets in DB
+        session: the database session
+        
+        returns list of LearningSets in LearningSetResponse type"""
 
     return session.exec(select(LearningSet)).all()
 
 @router.delete("/{id}")
 def delete_learning_set(id: int, session: Session = Depends(get_session)) -> bool:
-    """Deletes a learning set from DB"""
+    """Deletes a learning set from DB
+        id: id of the learning set that is deleted
+        session: the database session
+        
+        returns information about success or failure"""
+
     db_learning_set = session.get(LearningSet,id)
 
     if not db_learning_set:

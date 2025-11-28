@@ -17,19 +17,8 @@
         </option>
       </select>
 
-      <div id="quizCard" v-show="quizCards.length > 0 && quizCardVisible"
-        :class="[cardResultColor, { flipped: isFlipped }]">
-        <div id="cardInner">
-          <div class="card-front" id="quizQuestion">
-            <p>{{ currentQuizCard?.question }}</p>
-            <div class="htw-stripe"><img src="@/assets/img/HtwLogo_black.png"></img></div>
-          </div>
-          <div class="card-back" id="correctAnswer">
-            <p>{{ currentQuizCard?.answer }}</p>
-            <div class="htw-stripe"><img src="@/assets/img/HtwLogo_black.png"></img></div>
-          </div>
-        </div>
-      </div>
+      <FlashCard :question="currentQuizCard?.question" :answer="currentQuizCard?.answer" :is-flipped="isFlipped"
+        v-show="quizCards?.length > 0 && quizCardVisible"></FlashCard>
 
       <div id="answerInputArea" v-show="quizCards?.length > 0 && answerInputVisible">
         <textarea id="userAnswer" v-model="userAnswer" placeholder="Notizen" autocomplete="off"
@@ -73,6 +62,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted } from "vue";
+import FlashCard from "@/components/FlashCard.vue";
 
 // API Base URL
 const API_BASE = "http://localhost:8000/api/cards";
@@ -80,7 +70,6 @@ const API_BASE = "http://localhost:8000/api/cards";
 // Karten aus der API laden
 const cards = ref([]);
 const loading = ref(false);
-const cardResultColor = ref(""); // '' | 'correct' | 'incorrect'
 
 
 // API Funktionen
@@ -301,148 +290,7 @@ section {
   background: #ffefc4;
 }
 
-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form textarea,
-form select {
-  width: 100%;
-  padding: 6px;
-  margin-top: 4px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-form textarea {
-  height: 80px;
-}
-
-form button {
-  margin-top: 15px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  background-color: #cc7a00;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #9e6207;
-}
-
-/* Kartenliste */
-#cardsList {
-  margin-top: 15px;
-}
-
-.card-item {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: white;
-  border-radius: 4px;
-  position: relative;
-}
-
-.card-actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 8px;
-}
-
-.card-actions button {
-  cursor: pointer;
-  background-color: #e1e1e1;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-
-.card-actions button:hover {
-  background-color: #c0c0c0;
-}
-
-#noCardsMsg {
-  font-style: italic;
-  color: #555;
-}
-
-/* Filter */
-#filterSection {
-  margin-bottom: 10px;
-}
-
-#filterSection label {
-  margin-right: 5px;
-}
-
 /* Quiz */
-#quizCard {
-  width: 100%;
-  height: 150px;
-  perspective: 1000px;
-  margin: 20px 0;
-}
-
-#quizCard.correct #cardInner {
-  background-color: #e0f7e0;
-  border: 2px solid #2e7d32;
-}
-
-#quizCard.incorrect #cardInner {
-  background-color: #fdecea;
-  border: 2px solid #c62828;
-}
-
-#cardInner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  background: white;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-#quizCard.flipped #cardInner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  font-weight: bold;
-}
-
 #answerInputArea {
   display: flex;
   gap: 10px;
@@ -505,24 +353,5 @@ form button:hover {
   padding: 20px;
   font-style: italic;
   color: #666;
-}
-
-.card-front p,
-.card-back p {
-  margin-top: auto;
-}
-
-.htw-stripe {
-  width: 100%;
-  height: 2rem;
-  background-color: var(--htw-orange);
-  margin-top: auto;
-  text-align: right;
-  justify-self: end;
-}
-
-.htw-stripe img {
-  width: auto;
-  height: 2rem;
 }
 </style>

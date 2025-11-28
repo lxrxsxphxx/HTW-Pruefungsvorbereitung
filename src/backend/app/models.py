@@ -10,6 +10,7 @@ class CardBase(SQLModel):
 
 class Card(CardBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
+    learning_set_id:int = Field(default = None, foreign_key = "learning_set.id")
     learning_set: "LearningSet" = Relationship(back_populates="cards")
 
 class QuestionBase(SQLModel):
@@ -25,6 +26,7 @@ class AnswerBase(SQLModel):
 class Question(QuestionBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
     answers: list["Answer"] = Relationship(back_populates="question", cascade_delete=True)
+    learning_set_id:int = Field(default = None, foreign_key = "learning_set.id")
     learning_set: "LearningSet" = Relationship(back_populates="questions")
 
 class Answer(AnswerBase, table=True):

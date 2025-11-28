@@ -39,6 +39,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |Moderierter Admin-Bereich	| Ein geschützter Bereich für Dozierende, um offizielle Prüfungsfragen zu erstellen und die Lerninhalte zu verwalten. |Dozentenbereich
 |Lernfortschrittsanalyse|Die Auswertung von Daten, die zeigen, wie weit ein Studierender in seinem Lernprozess fortgeschritten ist, oft mit visuellen Darstellungen der eigenen Stärken und Schwächen. | Fortschrittsverfolgung
 |webbasierte Lernplattform 	| Online-Zugang zu Lerninhalten und Übungen. | Online Lernen
+| Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. | Lernender
 |===
 
 

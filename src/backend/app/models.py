@@ -44,7 +44,7 @@ class LearningSetBase(SQLModel):
     name: str
     module: str
 
-class LearningSet(LearningSetBase):
+class LearningSet(LearningSetBase, table = True):
     id: int | None = Field(default=None, primary_key=True)
     cards: list[Card] = Relationship(back_populates="learning_set", cascade_delete=True)
     questions: list[Question] = Relationship(back_populates="learning_set", cascade_delete=True)

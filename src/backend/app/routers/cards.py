@@ -19,7 +19,7 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     db_cards = []
     for card in cards:
         db_card = Card.model_validate(card)
-        db_card.learning_set = learning_set.id
+        db_card.learning_set_id = learning_set.id
         session.add(db_card)
         session.commit()
         session.refresh(db_card)

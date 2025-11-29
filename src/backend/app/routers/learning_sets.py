@@ -34,6 +34,19 @@ def get_learning_sets(session: Session = Depends(get_session), modul: str | None
         return session.exec(select(LearningSet).where(LearningSet.modul == modul)).all()
     return session.exec(select(LearningSet)).all()
 
+@router.get("/{id}")
+def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session)) -> LearningSetResponse:
+    """Get a single learning set by its id
+        session: the database session
+        id: the id of the learning set you're looking for
+        
+        returns learning set in LearningSetResponse type"""
+
+    learning_set = session.get(LearningSet, learning_set_id)
+    if not learning_set:
+        raise HTTPException(status_code=404, detail="Learning set not found")
+    return learning_set
+
 @router.delete("/{id}")
 def delete_learning_set(id: int, session: Session = Depends(get_session)) -> bool:
     """Deletes a learning set from DB

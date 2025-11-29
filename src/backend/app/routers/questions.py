@@ -10,8 +10,9 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=QuestionResponse)
-def create_question(question: QuestionBase, answers: list[AnswerBase], session: Session = Depends(get_session))-> QuestionResponse:
+def create_question(question: QuestionBase, answers: list[AnswerBase],learningset_id, session: Session = Depends(get_session)) -> QuestionResponse:
     db_question = Question.model_validate(question)
+    db_question.learning_set_id = learningset_id
     session.add(db_question)
     session.commit()
     session.refresh(db_question)

@@ -31,7 +31,7 @@ def get_learning_sets(session: Session = Depends(get_session), modul: str | None
         
         returns list of LearningSets in LearningSetResponse type"""
     if modul:
-        return session.exec(select(LearningSet).where(LearningSet.modul == modul)).all()
+        return session.exec(select(LearningSet).where(LearningSet.module == modul)).all()
     return session.exec(select(LearningSet)).all()
 
 @router.get("/{id}")
@@ -48,7 +48,7 @@ def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_s
     return learning_set
 
 @router.delete("/{id}")
-def delete_learning_set(id: int, session: Session = Depends(get_session)) -> bool:
+def delete_learning_set(id: int, session: Session = Depends(get_session)):
     """Deletes a learning set from DB
         id: id of the learning set that is deleted
         session: the database session

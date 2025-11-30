@@ -34,7 +34,7 @@ def get_learning_sets(session: Session = Depends(get_session), modul: str | None
         return session.exec(select(LearningSet).where(LearningSet.module == modul)).all()
     return session.exec(select(LearningSet)).all()
 
-@router.get("/{id}")
+@router.get("/{learning_set_id}")
 def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session)) -> LearningSetResponse:
     """Get a single learning set by its id
         session: the database session

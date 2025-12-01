@@ -1,0 +1,107 @@
+= MEETINGNOTIZ – 30.11.2025
+
+--
+* Typ: Weekly  
+* Raum: online
+* Dauer: 14.00 - 14.15
+* Anwesend: Tobi, Frederic, Philipp, Marius, Johann, Lara
+--
+
+== TAGESORDNUNG / TO-DO
+
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+--
+
+== WEEKLY-FRAGEN
+
+--
+1. Was habe ich in der aktuellen Woche erledigt?
+2. Was plane ich für nächste Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+
+=== Johann:
+
+--
+* Aktuelle Woche:
+** Weiterarbeit an Lernset-Funktionalität (Erstellen)
+** Einbindung der „Erstellen“-Views in die Lernset-Eingabe
+* Nächste Woche:
+** Verarbeitung der Events der „Erstellen“-Views
+** Synchronisation mit Marius und Tobi
+* Hindernisse:
+** krankheitsbedingte ausfälle
+--
+
+
+=== Marius:
+
+--
+* Aktuelle Woche:
+** Änderungen am Pull Request vorgenommen
+* Nächste Woche:
+** Codequalität.adoc reviewen
+* Hindernisse:
+** Unsicherheit beim Merge-Vorgang
+** Zeitmanagement
+--
+
+
+=== Tobi:
+
+--
+* Aktuelle Woche:
+** UML-Diagramme erweitert und verbessert
+* Nächste Woche:
+** Synchronisation mit Marius und Johann
+* Hindernisse:
+** keine
+--
+
+
+=== Frederic:
+
+--
+* Aktuelle Woche:
+** Karteikarte als Component umgesetzt
+** Überspringen-Funktionalität für Karteikarten implementiert
+* Nächste Woche:
+** Formatierung der Karteikarten
+** Überspringen-Funktionalität für Karteikarten fertigstellen
+* Hindernisse:
+** Unklarheit bei „Überspringen“ + „zur vorherigen Frage zurück“ (Diskussionsbedarf, aber kein Pair Programming gewünscht)
+** Private Verhinderungen
+--
+
+
+=== Phillip:
+
+--
+* Aktuelle Woche:
+** User Stories verfeinert
+** Priorisierung der User Stories angepasst
+* Nächste Woche:
+** Weiterarbeit an User Storiesn
+* Hindernisse:
+** Stress durch Uni
+--
+
+
+=== Lara:
+
+--
+* Aktuelle Woche:
+** Beleghinweise geplant
+* Nächste Woche:
+** Zeitplan für Beleghinweise erstellen (bis Semesterende)
+** Notizen zur 4. Iteration (alle Meetings) fertigstellen
+* Hindernisse:
+** krankheitsbedingte ausfälle
+--
+

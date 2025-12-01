@@ -1,0 +1,107 @@
+= MEETINGNOTIZ – 30.11.2025
+
+--
+* Typ: Weekly  
+* Raum: online
+* Dauer: 14.00 - 14.15
+* Anwesend: Tobi, Frederic, Philipp, Marius, Johann, Lara
+--
+
+
+== TAGESORDNUNG / TO-DO
+
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+--
+
+== WEEKLY-FRAGEN
+
+--
+1. Was habe ich in der aktuellen Woche erledigt?
+2. Was plane ich für nächste Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+--
+
+
+== INDIVIDUELLE BEITRÄGE
+
+
+=== Johann:
+
+--
+* Aktuelle Woche:
+** Weiterarbeit an Lernset-Funktionalität (Erstellen)
+* Nächste Woche:
+** Weiterarbeit an Lernset-Funktionalität (Erstellen)
+* Hindernisse:
+** keine
+--
+
+
+=== Marius:
+
+--
+* Aktuelle Woche:
+** PR erstellt
+* Nächste Woche:
+** Codequalität.adoc reviewen
+** gewünschte Änderungen an PR vornehmen
+* Hindernisse:
+** Aufgabenmangel
+--
+
+
+=== Tobi:
+
+--
+* Aktuelle Woche:
+** Einarbeitung Backend
+** Wireframes für Lernset-Erstellung und -Ansicht mit Johann abgestimmt
+* Nächste Woche:
+** Frontend für Lernset-Ansicht beginnen
+* Hindernisse:
+** keine
+--
+
+
+=== Frederic:
+
+--
+* Aktuelle Woche:
+** PR review (Marius)
+** Karteikarten Bewertungsoptionen implementiert
+** Karteikarten zurück zur vorherigen Frage implementiert
+* Nächste Woche:
+** Karteikarte in Komponente auslagern
+** Überspringen-Funktionalität für Karteikarten implementieren
+* Hindernisse:
+** Private Verhinderungen
+--
+
+
+=== Phillip:
+
+--
+* Aktuelle Woche:
+** User Stories verfeinert
+* Nächste Woche:
+** Weiterarbeit an User Stories
+* Hindernisse:
+** keine
+--
+
+
+=== Lara:
+
+--
+* Aktuelle Woche:
+** Codequalität.adoc fertiggestellt
+** Review mit externe Gruppe geplant
+* Nächste Woche:
+** Wireframes anpassen
+** Planning vorbereiten
+* Hindernisse:
+** krankheitsbedingte Ausfälle
+--

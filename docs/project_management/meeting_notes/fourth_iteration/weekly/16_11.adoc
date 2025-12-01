@@ -1,0 +1,105 @@
+= MEETINGNOTIZ – 16.11.2025
+
+--
+* Typ: Weekly  
+* Raum: online
+* Dauer: 14.00 - 14.15
+* Anwesend: Tobi, Frederic, Philipp, Marius, Lara
+--
+
+
+== TAGESORDNUNG / TO-DO
+
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+--
+
+
+== WEEKLY-FRAGEN
+
+--
+1. Was habe ich in der aktuellen Woche erledigt?
+2. Was plane ich für nächste Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+--
+
+
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Marius:
+
+--
+* Aktuelle Woche:
+** Pair Programming mit Frederic ausprobiert
+** Einarebitung abgeschlossen
+** Erste Funktionen implementiert
+** Dokumentation (um Review gebeten)
+** Models angepasst
+* Nächste Woche:
+** Funktionalität der Endpoints erweitern
+** Dokumentation überarbeiten
+* Hindernisse:
+** private Verhinderungen
+--
+
+
+=== Tobi:
+
+--
+* Aktuelle Woche:
+** mit phython beschäftigt
+** wireframes mit johann erstellt
+* Nächste Woche:
+** programmierung starten
+** kommunikation backend frontend
+* Hindernisse:
+** krankheitsbedingte ausfälle
+--
+
+
+=== Frederic:
+
+--
+* Aktuelle Woche:
+** Vorbereitung Fachaustausch
+** architecture notebook mit hilfe von marlene winter verbessert
+* Nächste Woche:
+** Karteikarten weiter ausbauen bezüglich "zurück zur vorherigen Frage", "Überspringen von Fragen", Bewertungssystem
+* Hindernisse:
+** Fachaustauschfragen unklar und zu spezifisch, keine richtige antwort
+** Keine Issues zur Dokumentation
+** private Verhinderungen
+--
+
+
+=== Phillip:
+
+--
+* Aktuelle Woche:
+** ux concept angepasst
+** user stories verfeinert
+* Nächste Woche:
+** user stories finalisieren
+** git project verbessern
+* Hindernisse:
+** keine
+--
+
+
+=== Lara:
+
+--
+* Aktuelle Woche:
+** Review inhaltlich planen
+** Retro vorbereiten (auch im online Fall)
+** Git Workflow Dokumentation finalisiert
+** Meetingnotizen dokumentiert und veröffentlicht
+* Nächste Woche:
+** Codequalitätsvereinbarungen dokumentieren
+** Wireframes anpassen
+* Hindernisse:
+** private Verhinderungen
+--

@@ -1,143 +1,133 @@
 <template>
     <div id="learning-set-choice-body">
         <div id="learning-set-choice-header">
-            <h1>Lernmodus zum erstellen auswählen</h1>
-            
+            <h1>Lernset erstellen</h1>
         </div>
 
-        <div id="learning-set-choice-choice">
-            <div>
-                <RouterLink v-slot="{navigate, isActive}" to="/erstellen/karteikarten" custom>
-                    <button id="choice-karteikarten" @click="navigate" :class="{active: isActive}">
-                        Karteikarten
-                    </button>
-                </RouterLink>
+        <div id="learning-set-entry-main">
+            <div id="question-type-container">
+                <div>
+                    <label for="quiz_name">Quizname:</label>
+                    <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="quiz_name"><br>
+                </div>
+                <br>
+
+                <div id="index-cards-container" class="entry-container" ref="index_cards_entry">
+                    <KarteikartenErstellen class="entry-view" @addQuestion="addQuestion"/>
+                </div>
+                <div id="multiple-choice-container" class="entry-container" ref="multiple_choice_entry">
+                    <QuizEingabe class="entry-view" @addQuestion="addQuestion"/>
+                </div>
+
+                <div id="control-button-container">
+                    <button class="control-button" id="save_card_set">Lernset speichern</button>
+                    <button class="control-button" id="cancel">Abbrechen</button>
+                </div>
             </div>
-            <div>
-                <RouterLink v-slot="{navigate, isActive}" to="/erstellen/multiplechoice" custom>
-                    <button id="choice-multiplechoice" @click="navigate" :class="{active: isActive}">
-                        Multiple Choice Quiz
-                    </button>
-                </RouterLink>
-            </div>
+
+
+            <aside id="aside">
+                <div id="choice-container">
+                    <!--label for="question_type"></label-->
+                    <select name="question_type" id="question_type" ref="question_type" @change="questionTypeChoice">
+                        <option class="question_type_option" value="index_card">Karteikarte</option>
+                        <option class="question_type_option" value="multiple_choice">Multiple-choice Frage</option>
+                    </select>
+                </div>
+                <br>
+                <div id="entered_questions">
+                    <h3>Eingegebene Fragen:<br></h3>
+                    <div class="entered_question" v-for="(card, index) in entered_questions" :key="index">
+                        <div class="question_text" v-text="(index+1) + ': ' + card" @click="editQuestion(index)"></div>
+                        <button class="delete_question" @click="deleteQuestion(index)">löschen</button>
+                    </div>
+                </div>
+                
+            </aside>
         </div>
-        
     </div>
 </template>
 
 <style scoped>
-/* @import '@assets/lernset-erstellen.css'; */
-
-:root {
-    --dark-background: #444444;
-    --dark-popup: #8d4000;
-    --dark-menu: #cd5c00;
-    --dark-menu-hover: #e58435;
-    --dark-menu-active: #e3761d;
-    --dark-button: #666666;
-    --dark-button-hover: #585858;
-    --dark-button-active: #555555;
-    --dark-aside: #555555;
-    --dark-input: var(--dark-aside);
-    --dark-text-color: white;
-    --dark-red: #ad0a0a;
-    --dark-green: #269200;
-
-    --light-background: rgba(249, 155, 32, 0.308);
-    --light-popup: orange;
-    --light-menu: orange;
-    --light-menu-hover: #ffbb61;
-    --light-menu-active: #fda633;
-    --light-button: white;
-    --light-button-hover: #fffbf4;
-    --light-button-active: #fdc781;
-    --light-aside: #ffaa00cc;
-    --light-input: white;
-    --light-text-color: black;
-    --light-h-text-color: orange;
-    --light-red: rgb(255, 42, 0);
-    --light-green: rgb(124, 232, 0);
-
-}
-
-#learning-set-choice-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-
-button {
-    font-size: 1em;
-    background-color: var(--light-button);
-    color: var(--light-text-color);
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    padding: 0.5em;
-    border: 0;
-    border-radius: 0.5em;
-}
-
-#learning-set-choice-header {
-    background-color: var(--light-background);
-    border-radius: 10px;
-    padding: 30px 40px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#learning-set-choice-header > h1{
-    margin-top: -5px;
-    color: #ec852c;
-    font-size: 48px;
-    font-weight: bold;
-    /* margin-bottom: 30px; */
-    text-align: center;
-}
-
-#learning-set-choice-choice {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-    background: transparent;
-}
-
-#learning-set-choice-choice > div {
-    flex: 1;
-    background: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    min-height: 280px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#learning-set-choice-choice button {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--light-h-text-color);
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    max-width: 250px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-
-    transition: transform 0.2s ease;
-}
-    
-#learning-set-choice-choice button:hover {
-    transform: scale(1.20);
-}
-
-
+@import '@/assets/lernset-erstellen.css';
 </style>
+
+
+
+<script setup>
+import { provide, ref } from 'vue';
+import KarteikartenErstellen from './karteikarten-erstellen.vue';
+import QuizEingabe from './quiz-eingabe.vue';
+
+
+"use strict";
+
+
+
+let question_type = ref(null);
+
+let index_cards_entry = ref(null);
+let multiple_choice_entry = ref(null);
+
+let entered_questions = ref([]);
+let question_set = [];
+
+let edit_question = ref(undefined);
+let edit_index = ref(-1);
+
+provide('question_to_edit', edit_question);
+provide('index_of_question_to_edit', edit_index);
+
+
+function hideEntryViews(){
+    index_cards_entry.value.style.display = "none";
+    multiple_choice_entry.value.style.display = "none";
+}
+
+
+function questionTypeChoice(){
+    hideEntryViews();
+    let choice = question_type.value.options[question_type.value.selectedIndex].value;
+    console.log(choice);
+    
+    if(choice === 'index_card') index_cards_entry.value.style.display = "inline";
+    if(choice === 'multiple_choice') multiple_choice_entry.value.style.display = "inline";
+}
+
+
+/**
+ * Speichert alle zur Frage wichtigen Informationen und die Frage in die Liste der erstellten Fragen
+ * @param json Objekt, das die Frage, den Fragentyp, die URL und die an das Backend zu sendende JSON enthält
+ */
+function addQuestion(json){
+    console.log(json);
+
+    entered_questions.value.push(json.question_text);
+    question_set.push(json);
+}
+
+function editQuestion(index){
+    console.log('edit: ' + index);
+
+    edit_question.value = question_set[index];
+    edit_index = index;
+    console.log(edit_question.value);
+
+    hideEntryViews();
+    if(edit_question.value.question_type === 'index_card'){
+        index_cards_entry.value.style.display = "inline";
+        question_type.value.value = 'index_card';
+    }
+    if(edit_question.value.question_type === 'multiple_choice'){
+        multiple_choice_entry.value.style.display = "inline";
+        question_type.value.value = 'multiple_choice';
+    }
+}
+function deleteQuestion(index){
+    console.log('delete: ' + index);
+
+    question_set.splice(index, 1);
+    entered_questions.value.splice(index, 1);
+}
+
+</script>

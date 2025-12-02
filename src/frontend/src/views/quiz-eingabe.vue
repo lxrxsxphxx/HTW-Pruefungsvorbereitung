@@ -1,17 +1,12 @@
 <template>
     <div id="mc-quiz-entry-body">
         <div id="mc-quiz-entry-header">
-            <h1>gib eine Quizfrage und die Lösungen ein</h1>
+            <!--h1>gib eine Quizfrage und die Lösungen ein</h1-->
             <hr>
         </div>
         <div id="mc-quiz-entry-main">
             <div id="input">
                 <div id="input-container">
-                    <div>
-                        <label for="quiz_name">Quizname:</label>
-                        <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="quiz_name"><br>
-                    </div>
-                    <hr style="border: 0;">
                     <div id="error-message"></div>
                     <div>
                         <label for="question">Frage:</label>
@@ -45,31 +40,9 @@
                 </div>
 
                 <div id="control-button-container">
-                    <button class="control-button" id="add_question" v-text="add_text" @click="v.addQuestion"></button>
-                    <button class="control-button" id="save_quiz" v-text="save_text" @click="v.saveQuiz"></button>
-                    <button class="control-button" id="cancel" v-text="cancel_text" @click="v.showCancelPopup"></button>
-                </div>
-
-                <div id="cancel-popup" ref="cancel_popup">
-                    <div id="cancel-popup-text">
-                        <div style="margin-bottom: 1em;">Achtung, alle Fragen werden gelöscht.</div><div>Wirklich Abbrechen?</div>
-                    </div>
-                    <div id="cancel_button_container">
-                        <button id="commit_cancel" class="cancel_option" ref="commit_cancel" @click="v.commitCancel">Ja</button>
-                        <button id="cancel_cancel" class="cancel_option" ref="cancel_cancel" @click="v.cancelCancel">Nein</button>
-                    </div>
+                    <button class="control-button" id="add_question" v-text="add_text" @click="addQuestion"></button>
                 </div>
             </div>
-
-            <aside id="aside">
-                <!--Hier werden die eingegebenen Fragen stehen-->
-                <h3>Eingegebene Fragen:<br/></h3>
-                <div class="entered_question" v-for="(question, index) in entered_questions" :key="index">
-                    <div class="question_text" v-text="(index+1) + ': ' + question"></div>
-                    <button class="delete_question" @click="v.deleteQuestion(index)">löschen</button>
-                    <button class="edit_question" @click="v.editQuestion(index)">bearbeiten</button>
-                </div>
-            </aside>
         </div>
     </div>
 </template>
@@ -77,18 +50,13 @@
 
 <script setup>
 
-import { ref } from 'vue';
+import { defineProps, ref } from 'vue';
 
-</script>
-
-<script>
 "use strict";
 
-let m;
-let p;
-let v;
+const emit = defineEmits(['addQuestion']);
 
-let quiz_name = ref('');
+
 let question = ref('');
 
 let answer_1 = ref('');
@@ -98,16 +66,11 @@ let answer_4 = ref('');
 
 let correct_answers = ref('');
 
-let entered_questions = ref([]);
 
-
-let add_text = ref('Frage Hinzufügen');
-let save_text = ref('Quiz Speichern');
-let cancel_text = ref('Abbrechen');
+let add_text = ref('Frage hinzufügen');
 
 
 
-let quiz_name_input = ref(null);
 let question_input = ref(null);
 
 let answer_1_input = ref(null);
@@ -120,317 +83,134 @@ let correct_answers_input = ref(null);
 
 let cancel_popup = ref(null);
 
-let commit_cancel = ref(null);
-let cancel_cancel = ref(null);
 
 
 
-
-document.addEventListener('DOMContentLoaded', async function(){
-    m = new Model();
-    p = new Presenter();
-    v = new View(p);
-
-    p.setModelAndView(m, v);
-});
+let url = "http://localhost:8000/api/questions/";
 
 
-// ======================================= Model =======================================
+
+function makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers) {
+    let correct_answers_str = correct_answers.toString();
+    correct_answers_str.replaceAll(" ","");
+
+    let arr = correct_answers_str.split(",");
+    let correct_answers_arr = [];
+    let i;
+    for(i = 0; i < arr.length; i++){
+        console.log(arr[i]);
+        if(parseInt(arr[i]) >= 1 && parseInt(arr[i]) <= 4) correct_answers_arr.push(parseInt(arr[i]));
+    }
+    if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
+
+    console.log(correct_answers_arr);
+
+
+    let answers = [answer_1, answer_2, answer_3, answer_4];
+
+
+    let json_str = '{"question_text": "' + question_text + '", ';
+    json_str += '"url": "' + url + '", ';
+    json_str += '"question_type": "multiple_choice", ';
+
+    json_str += '"question": {"question": {"question":"' + question_text + '"}, "answers":[';
+
+    for(i = 0; i < 4; i++){
+        json_str += '{"answer":"' + answers[i] + '","correct":';
+        if(correct_answers_arr.includes((i+1))) json_str += 'true}';
+        else json_str += 'false}';
+        if(i !== 3) json_str += ',';
+    }
+
+    json_str += ']}}';
+
+    let json = JSON.parse(json_str);
+
+    return json;
+}
+function addQuestionToSet(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
+    let json = makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers);
+
+    emit('addQuestion', json);
+}
+
+
+let action = 0;
+
+
 /**
- * schreibt das eingegeben Quiz in die json-Datei
+ * 
+ * @param val 0: neue Frage hinzufügen
+ * @param val 1: Änderung übernehmen
  */
-class Model{
-    constructor(){
-        this.file_path = "./quiz.json"
-        this.url = "http://localhost:8000/api/questions/";
+function setAction(val){
+    if(val === 0){
+        action = 0;
+        add_text.value = 'Frage Hinzufügen';
     }
-
-    async writeSetToFile(str){
-        try{
-            const fileHandle = await window.showSaveFilePicker();
-
-            const file_stream = await fileHandle.createWritable();
-            await file_stream.write(str);
-
-            await file_stream.close();
-        }
-        catch (err) {
-            console.error(err.name, err.message);
-            return -1;
-        }
+    else if(val === 1){
+        action = 1;
+        add_text.value = 'Übernehmen';
     }
+}
+function addQuestion(){
+    if(question.value === "" || answer_1.value === "" || answer_2.value === "" || answer_3.value === "" || answer_4.value === ""){
+        console.warn("no question was entered");
+        return;
+    }
+    if(action === 0){       // hinzufügen
+        console.log("question: " + question.value);
+        addQuestionToSet(question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
 
-    async postQuestion(question_str){
-        const url = this.url;
-        const postHeader = new Headers();
-        postHeader.set("accept", "application/json");
-        postHeader.set("Content-Type", "application/json");
+        clearQuestionInputs();
 
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), 5000);
+        question_input.value.focus();
+    }
+    else if(action === 1){ // Änderung übernehmen
+        console.log("question: " + question.value);
+        changeQuestionAtIndex(edit_index, question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
 
-        try {
-            const response = await fetch(url, {method: "POST",
-                                               headers: postHeader,
-                                               body: question_str,
-                                               signal: controller.signal});
-            if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
+        //entered_questions.value[edit_index] = question.value;
 
-            clearTimeout(id);
+        clearQuestionInputs();
 
-            const data = await response.json();
-            return data;
-        }
-        catch (error) {
-            console.error(error.message);
-            return null;
-        }
+        setAction(0);
     }
 }
 
 
-
-// ======================================= Presenter =======================================
-/**
- * erstellt ein Quiz aus den einzelnen Fragen
- */
-class Presenter{
-    constructor(){
-        this.question_set = [];
-    }
-    setModelAndView(m, v){
-        this.model = m;
-        this.view = v;
-    }
-
-    /*makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
-        console.log(correct_answers);
-        let correct_answers_str = correct_answers.toString();
-        correct_answers_str.replaceAll(" ","");
-
-        let correct_answers_arr = correct_answers_str.split(",");
-
-        let json_str = '{"txt":"' + question_text + '", "answers":["' + answer_1 + '","' + answer_2 + '","' + answer_3 + '","' + answer_4 + '"],"correct":[';
-
-        let correct_str = '';
-        for(let i = 0; i < correct_answers_arr.length-1; i++){
-            if(correct_answers_arr[i] >= 1 && correct_answers_arr[i] <= 4) correct_str += '"' + parseInt(correct_answers_arr[i]-1) + '",';
-        }
-        if(correct_answers_arr[correct_answers_arr.length-1] >= 1 && correct_answers_arr[correct_answers_arr.length-1] <= 4) correct_str += '"' + parseInt(correct_answers_arr[correct_answers_arr.length-1]-1) + '"';
-        if(correct_str === '') correct_str = '"0"';
-
-        json_str += correct_str + ']}';
-
-        return json_str;
-    }*/
-    makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers) {
-        let correct_answers_str = correct_answers.toString();
-        correct_answers_str.replaceAll(" ","");
-
-        let arr = correct_answers_str.split(",");
-        let correct_answers_arr = [];
-        let i;
-        for(i = 0; i < arr.length; i++){
-            console.log(arr[i]);
-            if(parseInt(arr[i]) >= 1 && parseInt(arr[i]) <= 4) correct_answers_arr.push(parseInt(arr[i]));
-        }
-        if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
-
-        console.log(correct_answers_arr);
-
-
-        let answers = [answer_1, answer_2, answer_3, answer_4];
-
-        let json_str = '{"question":{"question":"' + question_text + '"}, "answers":[';
-
-        for(i = 0; i < 4; i++){
-            json_str += '{"answer":"' + answers[i] + '","correct":';
-            if(correct_answers_arr.includes((i+1))) json_str += 'true}';
-            else json_str += 'false}';
-            if(i !== 3) json_str += ',';
-        }
-
-        json_str += ']}';
-
-        return json_str;
-    }
-    addQuestionToSet(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
-        let json_str = this.makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers);
-
-        console.log(json_str);
-        this.question_set.push(json_str);
-
-        this.view.addEnteredQuestion(question_text);
-    }
-    changeQuestionAtIndex(index, question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
-        let json_str = this.makeJsonString(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers);
-
-        console.log(json_str);
-        this.question_set[index] = json_str;
-    }
-
-    async saveQuiz(quiz_name){
-        if(this.question_set.length > 0){
-
-            for(let i = 0; i < this.question_set.length; i++){
-                let ret = await this.model.postQuestion(this.question_set[i]);
-                console.log(ret);
-            }
-            /*else{
-                this.deleteQuestionSet();
-                return true;
-            }*/
-        }
-    }
-    deleteQuestion(index){
-        this.question_set.splice(index, 1);
-    }
-    deleteQuestionSet(){
-        const len = this.question_set.length
-        for(let i = 0; i < len; i++){
-            this.question_set.pop();
-        }
-    }
-
-    getQuestion(index){
-        return this.question_set[index];
-    }
+function clearQuestionInputs(){
+    question.value = "";
+    answer_1.value = "";
+    answer_2.value = "";
+    answer_3.value = "";
+    answer_4.value = "";
+    correct_answers.value = "";
 }
 
+/*function editQuestion(index){
+    edit_index = index;
+    console.log("edit: " + index);
+    let question_json = getQuestion(index);
+
+    let question_obj = JSON.parse(question_json);
+
+    question.value = question_obj.question.question;
+
+    answer_1.value = question_obj.answers[0].answer;
+    answer_2.value = question_obj.answers[1].answer;
+    answer_3.value = question_obj.answers[2].answer;
+    answer_4.value = question_obj.answers[3].answer;
 
 
-// ======================================= View =======================================
-/**
- * liest Eingaben aus der Website und gibt diese an den Presenter
- */
-class View{
-    constructor(p){
-        this.presenter = p;
-        this.setAction(0);
-        if(quiz_name_input.value) quiz_name_input.value.focus();
-    }
+    let correct = [];
+    for(let i = 0; i < 4; i++) if(question_obj.answers[i].correct) correct.push(i);
 
+    correct_answers.value = (correct[0] + 1);
+    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
 
-    /**
-     * 
-     * @param val 0: neue Frage hinzufügen
-     * @param val 1: Änderung übernehmen
-     */
-    setAction(val){
-        if(val === 0){
-            this.action = 0;
-            add_text.value = 'Frage Hinzufügen';
-        }
-        else if(val === 1){
-            this.action = 1;
-            add_text.value = 'Übernehmen';
-        }
-    }
-    addQuestion(){
-        if(question.value === "" || answer_1.value === "" || answer_2.value === "" || answer_3.value === "" || answer_4.value === ""){
-            console.warn("no question was entered");
-            //document.getElementById("error-message").innerHTML = "Bitte die Frage mit allen Antwortmöglichkeiten eingeben.";
-            return;
-        }
-        if(this.action === 0){       // hinzufügen
-            //document.getElementById("error-message").innerHTML = "";
-            console.log("question: " + question.value);
-            this.presenter.addQuestionToSet(question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
-
-            this.clearQuestionInputs();
-
-            question_input.value.focus();
-        }
-        else if(this.action === 1){ // Änderung übernehmen
-            console.log("question: " + question.value);
-            this.presenter.changeQuestionAtIndex(this.edit_index, question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
-
-            entered_questions.value[this.edit_index] = question.value;
-
-            this.clearQuestionInputs();
-
-            this.setAction(0);
-        }
-    }
-    addEnteredQuestion(question_text){
-        entered_questions.value.push(question_text);
-    }
-
-
-    async saveQuiz(){
-        //if(quiz_name.value !== ""){
-            let ret = await this.presenter.saveQuiz(quiz_name.value);
-            if(ret)this.clearEnteredQuestions();
-        //}
-        quiz_name_input.value.focus();
-
-        window.location.href = '/multiplechoice';
-    }
-
-
-    showCancelPopup(){
-        cancel_popup.value.style.display = "inline";
-    }
-    commitCancel(){
-        this.presenter.deleteQuestionSet();
-        this.clearEnteredQuestions();
-
-        quiz_name_input.value.focus();
-        cancel_popup.value.style.display = "none";
-
-        window.location.href = '/erstellen';
-    }
-    cancelCancel(){
-        cancel_popup.value.style.display = "none";
-    }
-
-
-    clearQuestionInputs(){
-        question.value = "";
-        answer_1.value = "";
-        answer_2.value = "";
-        answer_3.value = "";
-        answer_4.value = "";
-        correct_answers.value = "";
-    }
-    clearEnteredQuestions(){
-        quiz_name.value = "";
-
-        this.clearQuestionInputs();
-
-        entered_questions.value = [];
-    }
-
-    deleteQuestion(index){
-        console.log("delete: " + index);
-
-        this.presenter.deleteQuestion(index);
-        entered_questions.value.splice(index, 1);
-    }
-    editQuestion(index){
-        this.edit_index = index;
-        console.log("edit: " + index);
-        let question_json = this.presenter.getQuestion(index);
-
-        let question_obj = JSON.parse(question_json);
-
-        question.value = question_obj.question.question;
-
-        answer_1.value = question_obj.answers[0].answer;
-        answer_2.value = question_obj.answers[1].answer;
-        answer_3.value = question_obj.answers[2].answer;
-        answer_4.value = question_obj.answers[3].answer;
-
-
-        let correct = [];
-        for(let i = 0; i < 4; i++) if(question_obj.answers[i].correct) correct.push(i);
-
-        correct_answers.value = (correct[0] + 1);
-        for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
-
-        this.setAction(1);
-    }
-}
+    setAction(1);
+}*/
 
 
 </script>

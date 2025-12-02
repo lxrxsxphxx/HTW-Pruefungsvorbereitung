@@ -1,4 +1,4 @@
-/*:root {
+:root {
     --dark-background: #444444;
     --dark-popup: #8d4000;
     --dark-menu: #cd5c00;
@@ -8,6 +8,7 @@
     --dark-button-hover: #585858;
     --dark-button-active: #555555;
     --dark-aside: #555555;
+    --dark-input: var(--dark-aside);
     --dark-text-color: white;
     --dark-red: #ad0a0a;
     --dark-green: #269200;
@@ -18,17 +19,72 @@
     --light-menu-hover: #ffbb61;
     --light-menu-active: #fda633;
     --light-button: white;
-    --light-button-hover: #fff6e9;
+    --light-button-hover: #fffbf4;
     --light-button-active: #fdc781;
-    --light-aside: #ffaa0077;
+    --light-aside: #ffaa00cc;
+    --light-input: white;
     --light-text-color: black;
     --light-h-text-color: orange;
     --light-red: rgb(255, 42, 0);
     --light-green: rgb(124, 232, 0);
-}*/
 
-#mc-quiz-entry-body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    --standard-font-family: Arial, Helvetica, sans-serif;
+}
+
+/*#index-cards-entry-body {
+    color: var(--light-text-color);
+}
+
+button {
+    font-size: 1em;
+    color: var(--light-text-color);
+    background-color: var(--light-button);
+
+    border: none;
+    border-radius: 0.25em;
+}
+button:hover {background-color: var(--light-button-hover);}
+button:active {background-color: var(--light-button-active);}
+
+label {
+    padding-right: 1em;
+}
+
+#index-cards-entry-main {
+    display: flex;
+    flex-direction: row;
+}
+
+#input {
+    order: 1;
+    padding: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    flex: 2 2 0%;
+}
+
+#aside {
+    background-color: var(--light-aside);
+    order: 2;
+    flex: 1 1 0%;
+    max-width: calc(33.33% - 0.5em - 8px);
+}
+
+
+#cancel-popup {
+    display: none;
+}
+
+
+
+/*=============================================================================*/
+
+
+#index-cards-entry-body {
+    font-family: var(--standard-font-family);
     /*background-color: var(--light-background);*/
     color: var(--light-text-color);
     width: 100%;
@@ -58,11 +114,11 @@ button {
 button:hover {background-color: var(--light-button-hover);}
 button:active {background-color: var(--light-button-active);}
 
-#mc-quiz-entry-main {
+#index-cards-entry-main {
     display: flex;
 }
 
-#mc-quiz-entry-main > * {
+#index-cards-entry-main > * {
     /*border: 2px solid black;*/
     margin: 0.25em;
     border-radius: 0.5em;
@@ -97,15 +153,15 @@ label {
 }
 
 .input-field {
+    font-family: var(--standard-font-family);
     color: var(--light-text-color);
     background-color: var(--light-input);
     font-size: 1em;
-    order: 2;
-    flex: 1 1 0%;
     width: 100%;
+    height: 5em;
     border: 0;
     border-radius: 0.25em;
-    margin-left: 1em;
+    resize: none;
 }
 #question {
     width: 75%;
@@ -178,7 +234,7 @@ label {
 #cancel_cancel:active {background-color: #280;}*/
 
 
-aside {
+/*aside {
     background-color: var(--light-aside);
     order: 2;
     flex: 1 1 0%;
@@ -208,12 +264,12 @@ aside > h3 {
 .entered_question > button {
     flex: 0 0 2em;
     border-radius: 0;
-}
+}*/
 
 
 @media (max-width: 1000px) {
-    #mc-quiz-entry-body {width: 100%;}
-    #mc-quiz-entry-main {margin-bottom: 4em; flex-direction: column;}
+    #index-cards-entry-body {width: 100%;}
+    #index-cards-entry-main {margin-bottom: 4em; flex-direction: column;}
     #input-container > div {width: 100%;}
     #question {width: 100%;}
     #control-button-container {

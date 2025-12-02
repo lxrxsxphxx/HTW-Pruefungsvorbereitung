@@ -5,7 +5,7 @@ import JetztlernenView from '@/views/JetztlernenView.vue'
 import QuizEingabe from '@/views/quiz-eingabe.vue'
 import QuizLoesen from '@/views/quiz-loesen.vue'
 import Karteikarten from '@/views/karteikarten.vue'
-import LernsetErstellen from '@/views/Lernset-erstellen.vue'
+import LernsetErstellen from '@/views/lernset-erstellen.vue'
 import KarteikartenErstellen from '@/views/karteikarten-erstellen.vue'
 
 const router = createRouter({
@@ -26,7 +26,7 @@ const router = createRouter({
       
     },
     {
-      path: '/erstellen',
+      path: '/lernset-erstellen',
       name: 'LernsetErstellen',
       component: LernsetErstellen
     },

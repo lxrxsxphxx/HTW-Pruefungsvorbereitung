@@ -72,12 +72,36 @@ Die Models sind Klassen, die vom ORM-Mapper benutzt werden. Manche von ihnen wer
 
 
 == Schnittstellen
-//Dokumentation oder Verweise auf Schnittstellen, z.B. REST-APIs
-=== Schnittpunkt /api/learning_set
+Eine detailierte Dokumentation kann auf dem API Server unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen.
+
+=== Schnittpunkt für Karteikarten
+==== /api/cards/
+* *POST*: Erstelle eine Karte.
+** *body*: CardBase JSON-Objekt, das die Information der Karte hält.
+** *variable* learning_set_id: Die ID des Lernsets, dem die Karteikarte hinzugefügt werden soll.
+** *returns*: Card JSON-Objekt, das die Karte beschreibt
+* *GET*: Gibt alle Karten zurück.
+** *returns*: Liste von CardResponse Objekten.
+==== /api/cards/{id}
+* *GET*: Gibt die Karte zurück
+** *returns*: CardResponse JSON-Objekt der Karte.
+
+
+=== Schnittpunkt für Lernsets
+==== /api/learning_set
 * *POST*: Erstelle ein neues Lernset. Die Funktion nimmt das Objekt, welches das Lernset repräsentiert, entgegen und fügt dieses in die Datenbank hinzu. Bei Erfolg wird das Objekt zurückgegeben.
+** *body*: LerningSetBase JSON-Objekt, dass die Informationen zum Lernset hält.
+** returns: Card JSON-Objekt
 * *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von learning_set Objekten zurückgegeben.
+** *variable* module: Optionaler String, wenn nach Lernsets eines Moduls gefiltert werden soll.
+** *returns*: Liste von LearningSet Objekten 
 
-=== Schnittpunkt /api/learning_set/{id}
-* *DELETE*: Lösche das Lernset *id* aus der Datenbank. Diese Funktion löscht *ALLE* Fragen dieses Lernsets.
+==== /api/learning_set/{learning_set_id}
+* *GET*: Gibt ein einzelnes Lernset zurück
+** *path variable*: Die ID des Lernsets
+** *returns*: LearningSetResponse JSON-Objekt des Lernsets
 
-//== Datenmodell
+==== /api/learning_set/{id}
+* *DELETE*: Lösche ein Lernset aus der Datenbank. Diese Funktion löscht *ALLE* zugehörigen Fragen und Karteikarten aus der Datenbank.
+** *path variable*: Die ID des Lernsets
+** *returns*: null

@@ -24,8 +24,8 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 
 === Schnittpunkt für Karteikarten
 ==== /api/cards/
-* *POST*: Erstelle eine Karte.
-** *body*: CardBase JSON-Objekt, das die Information der Karte hält.
+* *POST*: Erstelle eine oder mehrere Karten.
+** *body*: Liste von CardBase JSON-Objekten, die die Informationen der Karten halten. Diese Liste kann auch nur ein Element enthalten
 ** *variable* _learning_set_id_: Die ID des Lernsets, dem die Karteikarte hinzugefügt werden soll.
 ** *returns*: Card JSON-Objekt, das die Karte beschreibt
 * *GET*: Gibt alle Karten zurück.

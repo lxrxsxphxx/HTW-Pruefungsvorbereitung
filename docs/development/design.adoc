@@ -29,6 +29,7 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 ** *variable* _learning_set_id_: Die ID des Lernsets, dem die Karteikarte hinzugefügt werden soll.
 ** *returns*: Card JSON-Objekt, das die Karte beschreibt
 * *GET*: Gibt alle Karten zurück.
+** *optional variable* _learning_set_id_: ID des Lernsets zu dem die Karteikarten gehören sollen. Wird diese Variable nicht angegeben, werden einfach alle existierenden Karteikarten zurückgegeben
 ** *returns*: Liste von CardResponse JSON-Objekten.
 
 ==== /api/cards/{id}
@@ -52,6 +53,7 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 ** *variable* learning_set_id: Die ID des Lernsets, dem die Multiple Choice Frage hinzugefügt werden soll.
 ** *returns*: QuestionResponse JSON-Objekt, das die Multiple Choice Frage beschreibt
 * *GET*: Gibt alle Multiple Choice Fragen zurück
+** *optional variable* _learning_set_id_: ID des Lernsets zu dem die Multiple Choice Fragen gehören sollen. Wird diese Variable nicht angegeben, werden einfach alle existierenden Multiple Choice Fragen zurückgegeben
 ** *returns*: Liste von QuestionResponse JSON-Objekten
 
 ==== /api/questions/{id}

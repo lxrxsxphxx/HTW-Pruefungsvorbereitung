@@ -48,7 +48,7 @@ def create_question(question: QuestionBase, answers: list[AnswerBase],learning_s
 
 
 @router.get("/")
-def read_questions(session: Session = Depends(get_session)) -> list[QuestionResponse]:
+def read_questions(learning_set_id:int | None = None,session: Session = Depends(get_session)) -> list[QuestionResponse]:
     """
     Reads all questions from the database
     
@@ -58,7 +58,8 @@ def read_questions(session: Session = Depends(get_session)) -> list[QuestionResp
     Returns:
         list[QuestionResponse]: All questions in the database
     """
-
+    if learning_set_id:
+        return session.exec(select(Question).where(Question.learning_set_id == learning_set_id)).all()
     return session.exec(select(Question)).all()
 
 @router.get("/{id}")

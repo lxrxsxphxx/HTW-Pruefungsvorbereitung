@@ -43,16 +43,20 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     return db_cards
 
 @router.get("/")
-def read_cards(session: Session = Depends(get_session)) -> list[CardResponse]:
+def read_cards(learning_set_id:int | None = None, session: Session = Depends(get_session)) -> list[CardResponse]:
     """
     Gets all cards currently in the database
     
     Args:
-        session (Session): 
+        session (Session): the database session
+        learning_set_id(int | None): the learning set the cards should belong to
     
     Returns:
         list[CardResponse]: Die Karten, die aktuell in der Datenbank gespeichert sind.
     """
+    if learning_set_id:
+        return session.exec(select(Card).where(Card.learning_set_id == learning_set_id)).all()
+
     return session.exec(select(Card)).all()
 
 @router.get("/{id}")

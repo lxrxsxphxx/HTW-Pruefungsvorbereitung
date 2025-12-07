@@ -10,7 +10,7 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSet:
+def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSetResponse:
     """ Adds a learning set to DB
         learning_set: The learning set that is added to the database
         session: the database session

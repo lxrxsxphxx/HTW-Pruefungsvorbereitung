@@ -1,3 +1,9 @@
+"""
+In dieser Datei wird der Endpunk für die Multiple Choice Fragen beschrieben.
+Die beschriebenen Funktionalitäten umfassen das Erstellen, Löschen, Ändern und Lesen
+von Multiple Choice Fragen
+"""
+
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 

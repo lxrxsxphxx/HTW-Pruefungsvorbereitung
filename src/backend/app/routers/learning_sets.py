@@ -1,3 +1,7 @@
+"""
+Diese Datei beschreibt den Endpoint für Lernsets.
+"""
+
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 

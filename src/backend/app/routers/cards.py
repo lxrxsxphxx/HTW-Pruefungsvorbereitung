@@ -1,3 +1,7 @@
+"""
+Diese Datei beschreibt den Endpoint für Karteikarten.
+"""
+
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 

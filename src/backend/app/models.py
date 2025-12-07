@@ -1,3 +1,8 @@
+"""
+In dieser Datei werden die Datenmodelle für dem ORM beschrieben.
+Objekte dieser Klassen werden zwischen Frontend und Backend zur Kommunikation verwendet.
+"""
+
 from sqlmodel import Field, Relationship, SQLModel
 
 #Base: minimal content to create object

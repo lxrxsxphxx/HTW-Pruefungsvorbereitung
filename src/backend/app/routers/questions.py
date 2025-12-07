@@ -54,6 +54,7 @@ def read_questions(learning_set_id:int | None = None,session: Session = Depends(
     
     Args:
         session (Session): the database session
+        learning_set_id(int | None): the learning set the questions should belong to
     
     Returns:
         list[QuestionResponse]: All questions in the database

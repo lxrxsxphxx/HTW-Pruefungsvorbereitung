@@ -72,7 +72,7 @@ Die Models sind Klassen, die vom ORM-Mapper benutzt werden. Manche von ihnen wer
 
 
 == Schnittstellen
-Eine detailierte Dokumentation kann auf dem API Server unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen.
+Eine detailierte Dokumentation durch FastAPI kann auf dem API Server unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
 
 === Schnittpunkt für Karteikarten
 ==== /api/cards/
@@ -86,14 +86,40 @@ Eine detailierte Dokumentation kann auf dem API Server unter /docs gefunden werd
 * *GET*: Gibt die Karte zurück
 ** *returns*: CardResponse JSON-Objekt der Karte.
 
+==== /api/cards/{id}
+* *GET*: Gibt die Karte zurück
+** *path variable*: Die ID der gewünschten Karte
+** *returns*: Ein CardResponse JSON-Objekt, das die Karte repräsentiert.
+* *PUT*: Aktualisiert die Werte eines existierenden Lernsets
+** *path variable*: ID des Lernsets, das geändert werden soll
+** *returns*: Card Objekt der aktualisierten Karte
+* *DELETE*: Löscht die gewünschte Karte
+** *returns*: null
+
+=== Schnittpunkt für Multiple Choice Fragen
+==== /api/questions/
+* *POST*: Erstellt eine Multiple Choice Frage
+** *body*: QuestionBase JSON-Objekt, das die Information der Multiple Choice Frage hält.
+** *variable* learning_set_id: Die ID des Lernsets, dem die Multiple Choice Frage hinzugefügt werden soll.
+** *returns*: Question JSON-Objekt, das die Multiple Choice Frage beschreibt
+* *GET*: Gibt alle Multiple Choice Fragen zurück
+** *returns*: Liste von QuestionResponse Objekten
+
+==== /api/questions/{id}
+* *GET*: Gibt die gewünschte Multiple Choice Frage zurück
+* *PUT*: Aktualisiert die gewünschte Multiple Choice Frage
+* *DELETE*: Löscht die gewünschte Multiple Choice Frage
+
+==== /api/questions/answers/{id}
+* *PUT*: 
 
 === Schnittpunkt für Lernsets
-==== /api/learning_set
+==== /api/learning_set/
 * *POST*: Erstelle ein neues Lernset. Die Funktion nimmt das Objekt, welches das Lernset repräsentiert, entgegen und fügt dieses in die Datenbank hinzu. Bei Erfolg wird das Objekt zurückgegeben.
 ** *body*: LerningSetBase JSON-Objekt, dass die Informationen zum Lernset hält.
 ** returns: Card JSON-Objekt
 * *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von learning_set Objekten zurückgegeben.
-** *variable* module: Optionaler String, wenn nach Lernsets eines Moduls gefiltert werden soll.
+** *optional variable* _module_: Optionaler String, wenn nach Lernsets eines Moduls gefiltert werden soll.
 ** *returns*: Liste von LearningSet Objekten 
 
 ==== /api/learning_set/{learning_set_id}

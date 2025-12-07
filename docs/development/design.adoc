@@ -50,7 +50,7 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 * *POST*: Erstellt eine Multiple Choice Frage
 ** *body*: QuestionBase JSON-Objekt, das die Information der Multiple Choice Frage hält.
 ** *variable* learning_set_id: Die ID des Lernsets, dem die Multiple Choice Frage hinzugefügt werden soll.
-** *returns*: Question JSON-Objekt, das die Multiple Choice Frage beschreibt
+** *returns*: QuestionResponse JSON-Objekt, das die Multiple Choice Frage beschreibt
 * *GET*: Gibt alle Multiple Choice Fragen zurück
 ** *returns*: Liste von QuestionResponse JSON-Objekten
 
@@ -75,7 +75,7 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 ==== /api/learning_set/
 * *POST*: Erstelle ein neues Lernset. Die Funktion nimmt das Objekt, welches das Lernset repräsentiert, entgegen und fügt dieses in die Datenbank hinzu. Bei Erfolg wird das Objekt zurückgegeben.
 ** *body*: LerningSetBase JSON-Objekt, dass die Informationen zum Lernset hält.
-** *returns*: LearningSet JSON-Objekt
+** *returns*: LearningSetResponse JSON-Objekt
 * *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von LearningSetResponse JSON-Objekten zurückgegeben.
 ** *optional variable* _module_: Optionaler String, wenn nach Lernsets eines Moduls gefiltert werden soll.
 ** *returns*: Liste von LearningSetResponse JSON-Objekten 

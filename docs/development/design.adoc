@@ -29,11 +29,11 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 ** *variable* _learning_set_id_: Die ID des Lernsets, dem die Karteikarte hinzugefügt werden soll.
 ** *returns*: Card JSON-Objekt, das die Karte beschreibt
 * *GET*: Gibt alle Karten zurück.
-** *returns*: Liste von Card JSON-Objekten.
+** *returns*: Liste von CardResponse JSON-Objekten.
 
 ==== /api/cards/{id}
 * *GET*: Gibt die Karte zurück
-** *returns*: Card JSON-Objekt der Karte.
+** *returns*: CardResponse JSON-Objekt der Karte.
 
 ==== /api/cards/{id}
 * *GET*: Gibt die Karte zurück
@@ -41,7 +41,7 @@ Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im developm
 ** *returns*: Ein Card JSON-Objekt, das die Karte repräsentiert.
 * *PUT*: Aktualisiert die Werte eines existierenden Lernsets
 ** *path variable*: ID des Lernsets, das geändert werden soll
-** *returns*: Card JSON-Objekt der aktualisierten Karte
+** *returns*: CardResponse JSON-Objekt der aktualisierten Karte
 * *DELETE*: Löscht die gewünschte Karte
 ** *returns*: null
 

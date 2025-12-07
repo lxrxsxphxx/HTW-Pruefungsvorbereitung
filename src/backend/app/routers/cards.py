@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session)) -> list[CardBase]:
+def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session)) -> list[CardResponse]:
     """
     Create one or more Cards
 

@@ -1,0 +1,39 @@
+= Teststrategie
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+
+== Allgemeines
+Dieses Dokument beschreibt die Teststrategie des Teams. Es wird festgeschrieben, wann, wie und von wem getestet werden soll.
+
+== Manuelle Akzeptanztests
+=== Pull Requests
+Es wird sich gegenseitig kontrolliert. Gemäß Git-Workflow des Teams wird für jede Änderung am bestehenden Projektstand ein Branch erstellt, am Ende der Arbeit an der jeweiligen Aufgabe dann eine Pull Request. Diese *muss* von mindestens einem anderen Team-Mitglied gesichtigt werden, bevor gemergt wird. Welches Team Mitglied genau als Kontrolle dient, soll nicht klar festgelegt werden, jedoch sollte die Wahl gut begründet sein. Der Aufgabenbereich der Person soll eine Kontrollkompetenz hergeben.
+Hier geht es sowohl um konzeptionelle, sachliche Richtigkeit, als auch um die Sicherstellung von Codequalität.
+
+Es handelt sich hierbei um manuelle Modul und Integrationstests.
+
+=== Product Owner
+Spätestens am Ende des Sprints müssen die durchgeführten Änderungen am Produkt durch den Product Owner abgenommen und abgenickt werden. Erst dann gilt die Aufgabe als abgeschlossen. Dabei geht es darum, ob die Vorgaben gemäß User Story erfüllt wurden.
+
+Es handelt sich hierbei um manuelle Systemtest.
+
+=== Review
+Am Ende des Sprints soll mindestens ein Review mit dem vorgeschriebenen Review Team durchgeführt werden.
+
+Es handelt sich hierbei um einen Abnahmetest.
+
+== Automatisierte Tests
+
+=== Grundsätzliches
+Das Ziel ist vollständige Automatisierung der Tests. Aus diesem Grund sollen die Tests als GitHub Action automatisch ausgeführt werden sollen.
+Tests sollen die Softwarequalität gewährleisten, deshalb kommt ihnen eine besondere Wichtigkeit zu. Tests müssen vollständig von Menschen geschrieben sein, es herrscht eine *absolute Nulltoleranz gegenüber KI-generiertem Testcode*.
+
+Änderungen bei Testquellcode werden behandelt wie im restlichen Git Workflow. Als Reviewer muss hier jedoch mindestens einer der festgelegten Tester angefragt werden.
+
+* Johann - Tests Frontend
+* Marius - Tests Backend
+
+Sollten die Änderungen von einem Tester kommen, muss eine andere fachlich passende Person aus dem Team eingeschaltet werden.
+
+=== Tests Backend

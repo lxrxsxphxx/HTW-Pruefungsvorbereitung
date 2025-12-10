@@ -10,25 +10,25 @@
                     <div id="error-message"></div>
                     <div>
                         <label for="question">Frage:</label>
-                        <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question"><br>
+                        <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question_entry"><br>
                     </div>
                     <br>
 
                     <div id="answer_1-container" class="answer-container">
                         <label for="answer_1" class="txt_answer">Antwort 1:</label>
-                        <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1"><br>
+                        <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1_entry"><br>
                     </div>
                     <div id="answer_2-container" class="answer-container">
                         <label for="answer_2" class="txt_answer">Antwort 2:</label>
-                        <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2"><br>
+                        <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2_entry"><br>
                     </div>
                     <div id="answer_3-container" class="answer-container">
                         <label for="answer_3" class="txt_answer">Antwort 3:</label>
-                        <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3"><br>
+                        <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3_entry"><br>
                     </div>
                     <div id="answer_4-container" class="answer-container">
                         <label for="answer_4" class="txt_answer">Antwort 4:</label>
-                        <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4"><br>
+                        <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4_entry"><br>
                     </div>
                     <br>
                     <div id="correct_answers-container">
@@ -50,24 +50,30 @@
 
 <script setup>
 
-import { defineProps, ref } from 'vue';
+import { defineExpose, ref } from 'vue';
 
-"use strict";
+//"use strict";
 
-const emit = defineEmits(['addQuestion']);
+const emit = defineEmits(['addQuestion', 'editQuestion']);
+/*const edit_question = inject('question_to_edit');
+const edit_index = inject('index_of_question_to_edit');*/
+
+defineExpose({editQuestion, clearQuestion});
 
 
-let question = ref('');
+let question_entry = ref('');
 
-let answer_1 = ref('');
-let answer_2 = ref('');
-let answer_3 = ref('');
-let answer_4 = ref('');
+let answer_1_entry = ref('');
+let answer_2_entry = ref('');
+let answer_3_entry = ref('');
+let answer_4_entry = ref('');
 
 let correct_answers = ref('');
 
 
-let add_text = ref('Frage hinzufügen');
+const ADD_QUESTION_TEXT = 'Frage hinzufügen';
+const EDIT_QUESTION_TEXT = 'Übernehmen';
+let add_text = ref(ADD_QUESTION_TEXT);
 
 
 
@@ -84,9 +90,12 @@ let correct_answers_input = ref(null);
 let cancel_popup = ref(null);
 
 
+const ADD_QUESTION = 0;
+const EDIT_QUESTION = 1;
+let action = ADD_QUESTION;
 
 
-let url = "http://localhost:8000/api/questions/";
+const url = "http://localhost:8000/api/questions/";
 
 
 
@@ -128,14 +137,31 @@ function makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct
 
     return json;
 }
-function addQuestionToSet(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
+function transferQuestion(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
     let json = makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers);
 
-    emit('addQuestion', json);
+    if(action === ADD_QUESTION) emit('addQuestion', json);
+    else if(action === EDIT_QUESTION) emit('editQuestion', json);
 }
 
 
-let action = 0;
+function editQuestion(json){
+    let question = json.question;
+
+    setAction(EDIT_QUESTION);
+
+    question_entry.value = question.question.question;
+    answer_1_entry.value = question.answers[0].answer;
+    answer_2_entry.value = question.answers[1].answer;
+    answer_3_entry.value = question.answers[2].answer;
+    answer_4_entry.value = question.answers[3].answer;
+
+    let correct = [];
+    for(let i = 0; i < 4; i++) if(question.answers[i].correct) correct.push(i);
+
+    correct_answers.value = (correct[0] + 1);
+    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
+}
 
 
 /**
@@ -143,48 +169,51 @@ let action = 0;
  * @param val 0: neue Frage hinzufügen
  * @param val 1: Änderung übernehmen
  */
-function setAction(val){
-    if(val === 0){
-        action = 0;
-        add_text.value = 'Frage Hinzufügen';
+function setAction(a){
+    if(a === ADD_QUESTION){
+        action = ADD_QUESTION;
+        add_text.value = ADD_QUESTION_TEXT;
     }
-    else if(val === 1){
-        action = 1;
-        add_text.value = 'Übernehmen';
+    else if(a === EDIT_QUESTION){
+        action = EDIT_QUESTION;
+        add_text.value = EDIT_QUESTION_TEXT;
     }
 }
 function addQuestion(){
-    if(question.value === "" || answer_1.value === "" || answer_2.value === "" || answer_3.value === "" || answer_4.value === ""){
+    if(question_entry.value === "" || answer_1_entry.value === "" || answer_2_entry.value === "" || answer_3_entry.value === "" || answer_4_entry.value === ""){
         console.warn("no question was entered");
         return;
     }
-    if(action === 0){       // hinzufügen
-        console.log("question: " + question.value);
-        addQuestionToSet(question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
+    if(action === ADD_QUESTION){       // hinzufügen
+        console.log("question: " + question_entry.value);
+        transferQuestion(question_entry.value, answer_1_entry.value, answer_2_entry.value, answer_3_entry.value, answer_4_entry.value, correct_answers.value);
 
         clearQuestionInputs();
 
         question_input.value.focus();
     }
-    else if(action === 1){ // Änderung übernehmen
-        console.log("question: " + question.value);
-        changeQuestionAtIndex(edit_index, question.value, answer_1.value, answer_2.value, answer_3.value, answer_4.value, correct_answers.value);
-
-        //entered_questions.value[edit_index] = question.value;
+    else if(action === EDIT_QUESTION){ // Änderung übernehmen
+        console.log("question: " + question_entry.value);
+        transferQuestion(question_entry.value, answer_1_entry.value, answer_2_entry.value, answer_3_entry.value, answer_4_entry.value, correct_answers.value);
 
         clearQuestionInputs();
+        setAction(ADD_QUESTION);
 
-        setAction(0);
+        question_input.value.focus();
     }
 }
 
 
+function clearQuestion(){
+    clearQuestionInputs();
+    setAction(ADD_QUESTION);
+}
 function clearQuestionInputs(){
-    question.value = "";
-    answer_1.value = "";
-    answer_2.value = "";
-    answer_3.value = "";
-    answer_4.value = "";
+    question_entry.value = "";
+    answer_1_entry.value = "";
+    answer_2_entry.value = "";
+    answer_3_entry.value = "";
+    answer_4_entry.value = "";
     correct_answers.value = "";
 }
 

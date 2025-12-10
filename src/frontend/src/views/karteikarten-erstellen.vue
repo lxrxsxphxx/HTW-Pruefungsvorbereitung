@@ -39,20 +39,24 @@
 
 <script setup>
 
-import { inject, ref } from 'vue';
+import { defineExpose, ref } from 'vue';
 
-"use strict";
+//"use strict";
 
 
-const emit = defineEmits(['addQuestion']);
-const edit_question = inject('question_to_edit');
-const edit_index = inject('index_of_question_to_edit');
+const emit = defineEmits(['addQuestion', 'editQuestion']);
+/*const edit_question = inject('question_to_edit');
+const edit_index = inject('index_of_question_to_edit');*/
+
+defineExpose({editQuestion, clearQuestion});
 
 
 let front = ref('');
 let back = ref('');
 
-let add_text = ref('Frage hinzufügen');
+const ADD_QUESTION_TEXT = 'Frage hinzufügen';
+const EDIT_QUESTION_TEXT = 'Übernehmen';
+let add_text = ref(ADD_QUESTION_TEXT);
 
 let front_input = ref(null);
 
@@ -60,9 +64,20 @@ let front_input = ref(null);
 const url = "http://localhost:8000/api/cards/";
 
 
+const ADD_QUESTION = 0;
+const EDIT_QUESTION = 1;
+let action = ADD_QUESTION;
 
-let action = 0;
-
+function setAction(a){
+    if(a === ADD_QUESTION){
+        action = ADD_QUESTION;
+        add_text.value = ADD_QUESTION_TEXT;
+    }
+    else if(a === EDIT_QUESTION){
+        action = EDIT_QUESTION;
+        add_text.value = EDIT_QUESTION_TEXT;
+    }
+}
 
 
 function addQuestion(){
@@ -70,35 +85,47 @@ function addQuestion(){
         console.warn("no question was entered");
         return;
     }
-    if(action === 0){       // hinzufügen
+    if(action === ADD_QUESTION){       // hinzufügen
         console.log("question: " + front.value);
-        addCardToSet(front.value, back.value);
+        transferCard(front.value, back.value);
 
         clearCardInputs();
 
         front_input.value.focus();
     }
-    else if(action === 1){ // Änderung übernehmen
+    else if(action === EDIT_QUESTION){ // Änderung übernehmen
         console.log("question: " + front.value);
+        transferCard(front.value, back.value);
 
         clearCardInputs();
+        setAction(ADD_QUESTION);
 
-        //setAction(0);
+        front_input.value.focus();
     }
 }
 
+function editQuestion(json){
+    let card = json.question[0];
 
-function addCardToSet(front_text, back_text, modul){
-    let json = makeJson(front_text, back_text, modul);
-
-    emit('addQuestion', json);
+    setAction(EDIT_QUESTION);
+    front.value = card.front;
+    back.value = card.back;
+    console.log(card.front);
 }
-function makeJson(front_text, back_text, modul){
+
+
+function transferCard(front_text, back_text){
+    let json = makeJson(front_text, back_text);
+
+    if(action === ADD_QUESTION) emit('addQuestion', json);
+    else if(action === EDIT_QUESTION) emit('editQuestion', json);
+}
+function makeJson(front_text, back_text){
     let json_str = '{"question_text": "' + front_text + '", ';
     json_str += '"url": "' + url + '", ';
     json_str += '"question_type": "index_card", ';
 
-    json_str += '"question": [{"front": "' + front_text + '", "back": "' + back_text + '", "modul": "' + modul + '"}]}';
+    json_str += '"question": [{"front": "' + front_text + '", "back": "' + back_text + '"}]}';
 
     let json = JSON.parse(json_str);
 
@@ -106,6 +133,10 @@ function makeJson(front_text, back_text, modul){
 }
 
 
+function clearQuestion(){
+    clearCardInputs();
+    setAction(ADD_QUESTION);
+}
 function clearCardInputs(){
     front.value = "";
     back.value = "";

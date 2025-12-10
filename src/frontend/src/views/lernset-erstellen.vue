@@ -13,10 +13,10 @@
                 <br>
 
                 <div id="index-cards-container" class="entry-container" ref="index_cards_entry">
-                    <KarteikartenErstellen class="entry-view" @addQuestion="addQuestion"/>
+                    <KarteikartenErstellen class="entry-view" ref="card_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion"/>
                 </div>
                 <div id="multiple-choice-container" class="entry-container" ref="multiple_choice_entry">
-                    <QuizEingabe class="entry-view" @addQuestion="addQuestion"/>
+                    <QuizEingabe class="entry-view" ref="quiz_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion"/>
                 </div>
 
                 <div id="control-button-container">
@@ -38,7 +38,7 @@
                 <div id="entered_questions">
                     <h3>Eingegebene Fragen:<br></h3>
                     <div class="entered_question" v-for="(card, index) in entered_questions" :key="index">
-                        <div class="question_text" v-text="(index+1) + ': ' + card" @click="editQuestion(index)"></div>
+                        <div class="question_text" v-text="(index+1) + ': ' + card" @click="provideQuestion(index)"></div>
                         <button class="delete_question" @click="deleteQuestion(index)">löschen</button>
                     </div>
                 </div>
@@ -69,19 +69,27 @@ let question_type = ref(null);
 let index_cards_entry = ref(null);
 let multiple_choice_entry = ref(null);
 
+let card_entry_view = ref(null);
+let quiz_entry_view = ref(null);
+
+
 let entered_questions = ref([]);
 let question_set = [];
 
-let edit_question = ref(undefined);
+/*let edit_question = ref(undefined);
 let edit_index = ref(-1);
 
 provide('question_to_edit', edit_question);
-provide('index_of_question_to_edit', edit_index);
+provide('index_of_question_to_edit', edit_index);*/
+let edit_index = -1;
 
 
 function hideEntryViews(){
     index_cards_entry.value.style.display = "none";
     multiple_choice_entry.value.style.display = "none";
+
+    card_entry_view.value.clearQuestion();
+    quiz_entry_view.value.clearQuestion();
 }
 
 
@@ -96,8 +104,8 @@ function questionTypeChoice(){
 
 
 /**
- * Speichert alle zur Frage wichtigen Informationen und die Frage in die Liste der erstellten Fragen
- * @param json Objekt, das die Frage, den Fragentyp, die URL und die an das Backend zu sendende JSON enthält
+ * Saves all the important information about a question into the list of entered questions
+ * @param json Object, which contains the Question, the question-type, the JSON to be sent to the Backend and the URL it will be sent to
  */
 function addQuestion(json){
     console.log(json);
@@ -105,27 +113,50 @@ function addQuestion(json){
     entered_questions.value.push(json.question_text);
     question_set.push(json);
 }
+function editQuestion(json){
+    let index = edit_index;
+    if(index >= 0 && index < question_set.length){
+        console.log(json);
 
-function editQuestion(index){
+        entered_questions.value[index] = json.question_text;
+        question_set[index] = json;
+    }
+    edit_index = -1;
+}
+
+function provideQuestion(index){
     console.log('edit: ' + index);
 
-    edit_question.value = question_set[index];
+    let edit_question = question_set[index];
     edit_index = index;
-    console.log(edit_question.value);
+    console.log(edit_question);
 
     hideEntryViews();
-    if(edit_question.value.question_type === 'index_card'){
+
+    if(edit_question.question_type === 'index_card'){
         index_cards_entry.value.style.display = "inline";
         question_type.value.value = 'index_card';
+
+        card_entry_view.value.editQuestion(edit_question);
     }
-    if(edit_question.value.question_type === 'multiple_choice'){
+    if(edit_question.question_type === 'multiple_choice'){
         multiple_choice_entry.value.style.display = "inline";
         question_type.value.value = 'multiple_choice';
+
+        quiz_entry_view.value.editQuestion(edit_question);
     }
 }
 function deleteQuestion(index){
     console.log('delete: ' + index);
+    
 
+    if(edit_index === index) console.warn('Frage ist in Bearbeitung. Kann nicht gelöscht werden.');
+    else{
+        spliceQuestionFromArrays(index);
+        if(edit_index > index) edit_index--;
+    }
+}
+function spliceQuestionFromArrays(index){
     question_set.splice(index, 1);
     entered_questions.value.splice(index, 1);
 }

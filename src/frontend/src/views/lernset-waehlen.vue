@@ -29,7 +29,7 @@
                      
                         <LernsetCard 
                          v-for="set in lernsets"
-                         :key="set.setId"
+                         :key="set.id"
                          :title="set.name"
                         />
 
@@ -81,7 +81,7 @@ export default {
 
     async loadLernset() {
         try {
-            const res = await fetch("noch hinzufügen");
+            const res = await fetch("http://localhost:8000/api/learning_set/");
             const data = await res.json();
             this.lernsets = data;
         } catch (err) {

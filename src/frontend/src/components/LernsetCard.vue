@@ -1,6 +1,6 @@
 <template>
   <div class="lernset-card">
-    <span class="text">Programmierung 1 Karteikarten</span>
+    <span class="text">{{ title }}</span>
      <!-- {{ title }}   -->
   </div>
 </template>

@@ -98,37 +98,26 @@ let action = ADD_QUESTION;
 const url = "http://localhost:8000/api/questions/";
 
 
-
-function makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers) {
-    let correct_answers_str = correct_answers.toString();
-    correct_answers_str.replaceAll(" ","");
-
-    let arr = correct_answers_str.split(",");
-    let correct_answers_arr = [];
-    let i;
-    for(i = 0; i < arr.length; i++){
-        console.log(arr[i]);
-        if(parseInt(arr[i]) >= 1 && parseInt(arr[i]) <= 4) correct_answers_arr.push(parseInt(arr[i]));
-    }
-    if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
-
-    console.log(correct_answers_arr);
-
-
-    let answers = [answer_1, answer_2, answer_3, answer_4];
-
-
+/**
+ * This function constructs a JSON Object which contains all the important information of the entered question.
+ * This information includes the question with all the question-parameters, the URL the question will be sent to and the type of question (multiple_choice).
+ * @param question_text the actual question
+ * @param entered_answers the list of entered answers as strings
+ * @param correct_answers a list that contains the numbers of all correct answers
+ */
+function makeJson(question_text, entered_answers, correct_answers) {
     let json_str = '{"question_text": "' + question_text + '", ';
     json_str += '"url": "' + url + '", ';
     json_str += '"question_type": "multiple_choice", ';
 
     json_str += '"question": {"question": {"question":"' + question_text + '"}, "answers":[';
 
-    for(i = 0; i < 4; i++){
-        json_str += '{"answer":"' + answers[i] + '","correct":';
-        if(correct_answers_arr.includes((i+1))) json_str += 'true}';
+    let len = entered_answers.length;
+    for(let i = 0; i < len; i++){
+        json_str += '{"answer":"' + entered_answers[i] + '","correct":';
+        if(correct_answers.includes((i+1))) json_str += 'true}';
         else json_str += 'false}';
-        if(i !== 3) json_str += ',';
+        if(i !== len-1) json_str += ',';
     }
 
     json_str += ']}}';
@@ -137,37 +126,27 @@ function makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct
 
     return json;
 }
-function transferQuestion(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers){
-    let json = makeJson(question_text, answer_1, answer_2, answer_3, answer_4, correct_answers);
+
+
+/**
+ * Transfers a question to the parent-view in the JSON-format via an emitted event
+ * @param question_text the actual question
+ * @param entered_answers the list of entered answers as strings
+ * @param correct_answers a list that contains the numbers of all correct answers
+ */
+function transferQuestion(question_text, entered_answers, correct_answers){
+    let json = makeJson(question_text, entered_answers, correct_answers);
 
     if(action === ADD_QUESTION) emit('addQuestion', json);
     else if(action === EDIT_QUESTION) emit('editQuestion', json);
 }
 
 
-function editQuestion(json){
-    let question = json.question;
-
-    setAction(EDIT_QUESTION);
-
-    question_entry.value = question.question.question;
-    answer_1_entry.value = question.answers[0].answer;
-    answer_2_entry.value = question.answers[1].answer;
-    answer_3_entry.value = question.answers[2].answer;
-    answer_4_entry.value = question.answers[3].answer;
-
-    let correct = [];
-    for(let i = 0; i < 4; i++) if(question.answers[i].correct) correct.push(i);
-
-    correct_answers.value = (correct[0] + 1);
-    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
-}
-
 
 /**
- * 
- * @param val 0: neue Frage hinzufügen
- * @param val 1: Änderung übernehmen
+ * Changes the Action performed by the add_question button
+ * @param val 0: add a new question
+ * @param val 1: Save edited question
  */
 function setAction(a){
     if(a === ADD_QUESTION){
@@ -179,35 +158,108 @@ function setAction(a){
         add_text.value = EDIT_QUESTION_TEXT;
     }
 }
+
+
+/**
+ * Reads the inputted values of the question-parameters and transfers the question to the parent-view.
+ */
 function addQuestion(){
-    if(question_entry.value === "" || answer_1_entry.value === "" || answer_2_entry.value === "" || answer_3_entry.value === "" || answer_4_entry.value === ""){
+    
+    // construct a list with the correct answers (as they are inputted)
+    let correct_answers_str = correct_answers.value.toString();
+    correct_answers_str.replaceAll(" ","");
+
+    let arr = correct_answers_str.split(",");
+    let correct_answers_input_arr = [];
+
+    for(let i = 0; i < arr.length; i++){
+        let index = parseInt(arr[i]);
+        if(index >= 1 && index <= 4) correct_answers_input_arr.push(index);
+    }
+
+
+    // construct the list of correct answers and the list of inputted questions
+    let correct_answers_arr = [];
+
+    let entered_answers = [];
+    if(answer_1_entry.value !== ""){
+        entered_answers.push(answer_1_entry.value);
+        if(correct_answers_input_arr.includes(1)) correct_answers_arr.push(entered_answers.length);
+    }
+    if(answer_2_entry.value !== ""){
+        entered_answers.push(answer_2_entry.value);
+        if(correct_answers_input_arr.includes(2)) correct_answers_arr.push(entered_answers.length);
+    }
+    if(answer_3_entry.value !== ""){
+        entered_answers.push(answer_3_entry.value);
+        if(correct_answers_input_arr.includes(3)) correct_answers_arr.push(entered_answers.length);
+    }
+    if(answer_4_entry.value !== ""){
+        entered_answers.push(answer_4_entry.value);
+        if(correct_answers_input_arr.includes(4)) correct_answers_arr.push(entered_answers.length);
+    }
+
+    if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
+    console.log(correct_answers_arr);
+
+
+
+    // the question and at least two answers mut be inputted
+    if(question_entry.value === "" || entered_answers.length < 2){
         console.warn("no question was entered");
         return;
     }
-    if(action === ADD_QUESTION){       // hinzufügen
-        console.log("question: " + question_entry.value);
-        transferQuestion(question_entry.value, answer_1_entry.value, answer_2_entry.value, answer_3_entry.value, answer_4_entry.value, correct_answers.value);
 
-        clearQuestionInputs();
 
-        question_input.value.focus();
-    }
-    else if(action === EDIT_QUESTION){ // Änderung übernehmen
-        console.log("question: " + question_entry.value);
-        transferQuestion(question_entry.value, answer_1_entry.value, answer_2_entry.value, answer_3_entry.value, answer_4_entry.value, correct_answers.value);
+    // transfer the question to the parent view and clean up
+    console.log("question: " + question_entry.value);
+    transferQuestion(question_entry.value, entered_answers, correct_answers_arr);
 
-        clearQuestionInputs();
-        setAction(ADD_QUESTION);
+    clearQuestionInputs();
+    if(action === EDIT_QUESTION) setAction(ADD_QUESTION); // change to the standard action
 
-        question_input.value.focus();
-    }
+    question_input.value.focus();
 }
 
 
+/**
+ * This function takes an existing question and sets it up to be edited.
+ * It writes the question-parameters into the corresponding input-fields and sets the the action to be "edit".
+ * @param json A JSON Object which contains all the important information of the question. This information includes the question with all the question-parameters, the URL the question will be sent to and the type of question (multiple_choice).
+ */
+function editQuestion(json){
+    let question = json.question;
+
+    setAction(EDIT_QUESTION);
+
+    let num_answers = question.answers.length
+
+    question_entry.value = question.question.question;
+    answer_1_entry.value = question.answers[0].answer;
+    answer_2_entry.value = question.answers[1].answer;
+    if(num_answers > 2) answer_3_entry.value = question.answers[2].answer;
+    if(num_answers > 3) answer_4_entry.value = question.answers[3].answer;
+
+    let correct = [];
+    for(let i = 0; i < num_answers; i++) if(question.answers[i].correct) correct.push(i);
+
+    correct_answers.value = (correct[0] + 1);
+    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
+}
+
+
+
+
+/**
+ * Clears all inputs and resets the action to the standard action (add question).
+ */
 function clearQuestion(){
     clearQuestionInputs();
     setAction(ADD_QUESTION);
 }
+/**
+ * Clears all input fields.
+ */
 function clearQuestionInputs(){
     question_entry.value = "";
     answer_1_entry.value = "";
@@ -216,30 +268,6 @@ function clearQuestionInputs(){
     answer_4_entry.value = "";
     correct_answers.value = "";
 }
-
-/*function editQuestion(index){
-    edit_index = index;
-    console.log("edit: " + index);
-    let question_json = getQuestion(index);
-
-    let question_obj = JSON.parse(question_json);
-
-    question.value = question_obj.question.question;
-
-    answer_1.value = question_obj.answers[0].answer;
-    answer_2.value = question_obj.answers[1].answer;
-    answer_3.value = question_obj.answers[2].answer;
-    answer_4.value = question_obj.answers[3].answer;
-
-
-    let correct = [];
-    for(let i = 0; i < 4; i++) if(question_obj.answers[i].correct) correct.push(i);
-
-    correct_answers.value = (correct[0] + 1);
-    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
-
-    setAction(1);
-}*/
 
 
 </script>

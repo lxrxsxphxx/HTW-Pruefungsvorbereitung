@@ -87,7 +87,7 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
         session (Session): the database session
     
     Returns:
-        CardResponse: 
+        CardResponse: Die aktualisierte Karte
     """
 
 

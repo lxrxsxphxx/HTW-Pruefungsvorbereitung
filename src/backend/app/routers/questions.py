@@ -113,6 +113,9 @@ def delete_question(id: int, session: Session = Depends(get_session)):
     Args:
         id (int): the id of the question that is going to be deleted
         session (Session): the database session
+
+    Returns:
+        null
     """
 
     question = session.get(Question, id)

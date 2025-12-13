@@ -41,7 +41,7 @@ def get_learning_sets(session: Session = Depends(get_session), modul: str | None
         session (Session): the database session
         
     Returns:
-        list of LearningSets in LearningSetResponse type
+        list[LearningSetResponse]: List of stored learning sets
     """
 
     if modul:
@@ -53,8 +53,8 @@ def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_s
     """
     Get a single learning set by its id
     Args:
-       session (Session): the database session
-        id (int): the id of the learning set you're looking for
+        learning_set_id (int): the id of the learning set you're looking for
+        session (Session): the database session
         
     Returns:
         LearningSetResponse: The wanted learning set
@@ -71,8 +71,8 @@ def delete_learning_set(id: int, session: Session = Depends(get_session)):
     Deletes a learning set from DB
     
     Args:
-        id: id of the learning set that is deleted
-        session: the database session
+        id (int): id of the learning set that is deleted
+        session (Session): the database session
         
     Returns:
         null

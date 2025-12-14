@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import QuestionBase, Question, QuestionResponse, AnswerBase, Answer, AnswerResponse
+from app.models import QuestionBase, Question, QuestionResponse, AnswerBase, Answer, AnswerResponse, LearningSet
 from app.dependencies import get_session
 
 router = APIRouter(
@@ -10,8 +10,14 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=QuestionResponse)
-def create_question(question: QuestionBase, answers: list[AnswerBase], session: Session = Depends(get_session))-> QuestionResponse:
+def create_question(question: QuestionBase, answers: list[AnswerBase],learning_set_id:int, session: Session = Depends(get_session)) -> QuestionResponse:
     db_question = Question.model_validate(question)
+
+    db_learning_set=session.get(LearningSet,learning_set_id)
+    if not db_learning_set:
+        raise HTTPException(status_code=404, detail="learning_set does not exist")
+
+    db_question.learning_set_id = learning_set_id
     session.add(db_question)
     session.commit()
     session.refresh(db_question)

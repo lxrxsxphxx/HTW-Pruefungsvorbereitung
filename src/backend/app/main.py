@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import SQLModel
 from app.routers import cards
 from app.routers import questions
+from app.routers import learning_sets
 from app.database import engine
 
 @asynccontextmanager
@@ -23,3 +24,4 @@ app.add_middleware(
 
 app.include_router(cards.router)
 app.include_router(questions.router)
+app.include_router(learning_sets.router)

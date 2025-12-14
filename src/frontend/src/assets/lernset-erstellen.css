@@ -102,6 +102,17 @@ button:active {
     border-radius: 0.25em;
     margin-left: 1em;
 }
+#module {
+    color: var(--light-text-color);
+    background-color: var(--light-input);
+    font-size: 1em;
+    order: 2;
+    flex: 1 1 0%;
+    width: 25%;
+    border: 0;
+    border-radius: 0.25em;
+    margin-left: 1em;
+}
 
 .entry-container {
     display: none;

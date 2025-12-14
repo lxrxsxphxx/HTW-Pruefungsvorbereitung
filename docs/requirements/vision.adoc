@@ -80,13 +80,13 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 
 
 | Admin
-| Technisch Verantwortliche für Betrieb, Sicherheit und Benutzerverwaltung
+| Technisch Verantwortliche für Betrieb, Sicherheit
 | Systemwartung, Rollenmanagement, Monitoring der Systemstabilität, technischer Support
-| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform, Minimaler Wartungsaufwand bei maximaler Nutzbarkeit
+| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform
 
 | HTWD (Institution)
 | Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
-| Stellt Infrastruktur bereit, achtet auf Datenschutz und rechtliche Konformität
+| Stellt Infrastruktur bereit
 | Förderung digitaler Bildung, Verbesserung von Lernqualität und Prüfungsergebnissen an der HTW
 |===
 
@@ -103,13 +103,10 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 [%header, cols="4,1,4,1"] 
 |=== 
 | Bedarf | Priorität | Features / Funktionen | Geplantes Release 
-| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragenkataloge, Multiple-Choice-Verfahren, Freitextantworten mit automatischer Bewertung, Zuordnungsaufgaben mit Drag-and-Drop-Funktionalität | mvp 
-| Kollaboratives Lernen | Mittel | Benutzer-generierte Fragen mit Upload-Funktion, Chat-Funktionalität | mvp, xx
-| Adaptiver Lernalgorithmus | Hoch | Spaced-Repetition-System basierend auf Ebbinghaus-Vergessenskurve, automatische Wiederholung schwieriger Inhalte nach 1, 3, 7 und 14 Tagen, personalisierte Lernpfade basierend auf individuellen Schwächen | xx
-| Motivation durch Gamification | Hoch | Abzeichen-System für erreichte Meilensteine (Bronze/Silber/Gold), Highscore-Listen pro Modul und Semester, Levelsystem mit Erfahrungspunkten für korrekte Antworten | xx
-| Lernfortschritt-Tracking | Hoch | Detaillierte Statistiken über Antwortgenauigkeit, Schwächenanalyse mit Empfehlungen für Vertiefung, visuelle Darstellung des Fortschritts durch Diagramme und Heatmaps | xx
-| Flexibles Lernen | Mittel | Offline-Modus mit Synchronisation bei Internetverbindung, responsive Design für mobile Endgeräte, Progressive Web App (PWA) für App-ähnliche Nutzung | xx
-| Dozierenden-Bereich | Mittel | Erstellung und Verwaltung von Probeklausuren, Veröffentlichung modulspezifischer Inhalte, Moderationstools für Community-Beiträge, Einsicht in Lernstatistiken der Studierenden | xx 
+| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragenkataloge, Multiple-Choice-Verfahren, Karteikarten Lernen, Zuordnungsaufgaben mit Drag-and-Drop-Funktionalität | mvp/6. Sprint 
+| Kollaboratives Lernen | Mittel | Benutzer-generierte Fragen mit Upload-Funktion | mvp
+| Motivation durch Gamification | Hoch | Abzeichen-System für erreichte Meilensteine, Highscore-Listen pro Modul und Semester | 6. Sprint
+| Lernfortschritt-Tracking | Hoch | Detaillierte Statistiken über Antwortgenauigkeit, Schwächenanalyse mit Empfehlungen für Vertiefung, visuelle Darstellung des Fortschritts durch Diagramme | 6. Sprint
 |===
 
 
@@ -126,13 +123,11 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 [%header, cols="4,1,1"] 
 |=== 
 | Anforderung | Priorität | Geplantes Release 
-| Webbasierte Lösung (mobil und Desktop) | Hoch | xx
-| Kompatibilität mit HTW-Login und Authentifizierung (Single Sign-On) | Hoch | mvp
+| Webbasierte Lösung (Desktop) | Hoch | mvp
 | Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | xx
 | Benutzerfreundliches Interface mit Barrierefreiheit (WCAG 2.1) | Hoch | mvp
 | Skalierbarkeit für neue Module und Studiengänge | Mittel | xx 
-| Administrator-Dashboard zur Benutzer- und Inhaltsverwaltung | Mittel | xx
-| Umfassende Dokumentation und technischer Support | Mittel | xx
-| Application Programming Interface (API) für Drittanbieter-Integration | Niedrig | xx
-| Mehrsprachige Unterstützung (Deutsch/Englisch) | Niedrig | xx
+| Umfassende Dokumentation | Mittel | xx
+| Light/Darkmode | Niedrig | 14.12.25
+| Multi-Device-Synchronisation | Mittel | mvp
 |===

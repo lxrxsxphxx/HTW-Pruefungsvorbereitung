@@ -172,3 +172,15 @@ button:active {
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
+
+
+#done-container {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#done-container button {
+    font-size: medium;
+}

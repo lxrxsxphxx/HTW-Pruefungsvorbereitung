@@ -120,7 +120,7 @@ function makeJson(question_text, entered_answers, correct_answers) {
  * @param {String} question_text the actual question
  * @param {list[String]} entered_answers the list of entered answers
  * @param {list[Number]} correct_answers a list that contains the numbers of all correct answers
- * @returns {Null}
+ * @returns {null}
  */
 function transferQuestion(question_text, entered_answers, correct_answers){
     let json = makeJson(question_text, entered_answers, correct_answers);
@@ -136,7 +136,7 @@ function transferQuestion(question_text, entered_answers, correct_answers){
 /**
  * @description Change the Action performed by the *add_question* button as well as its text.
  * @param {Number} a action to change to (can be *ADD_QUESTION* or *EDIT_QUESTION*)
- * @returns {Null}
+ * @returns {null}
  */
 function setAction(a){
     if(a === ADD_QUESTION){
@@ -153,7 +153,7 @@ function setAction(a){
 
 /**
  * @description Read the inputted values of the question-parameters and transfer the question to the parent-view.
- * @returns {Null}
+ * @returns {null}
  */
 function addQuestion(){
     
@@ -220,7 +220,7 @@ function addQuestion(){
  * @description This function takes an existing question and sets it up to be edited.
  * It writes the question-parameters into the corresponding input-fields and sets the the action to be *EDIT_QUESTION*.
  * @param {JSON} json A JSON Object which contains all the important information of the question. This information includes the question with all the question-parameters, the URL the question will be sent to and the type of question (multiple_choice).
- * @returns {Null}
+ * @returns {null}
  */
 function editQuestion(json){
     let question = json.question;
@@ -249,7 +249,7 @@ function editQuestion(json){
 
 /**
  * @description Clear all inputs and reset the action to the standard action (add question).
- * @returns {Null}
+ * @returns {null}
  */
 function clearQuestion(){
     question_entry.value = "";

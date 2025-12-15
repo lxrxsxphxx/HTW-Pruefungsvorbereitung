@@ -69,7 +69,7 @@ let action = ADD_QUESTION;
 /**
  * @description Change the Action performed by the *add_card* button as well as its text.
  * @param {Number} a action to change to (can be *ADD_QUESTION* or *EDIT_QUESTION*)
- * @returns {Null}
+ * @returns {null}
  */
 function setAction(a){
     if(a === ADD_QUESTION){
@@ -86,7 +86,7 @@ function setAction(a){
 
 /**
  * @description Read the inputted values for the front and back of the card and transfer the card to the parent-view.
- * @returns {Null}
+ * @returns {null}
  */
 function addQuestion(){
     if(front.value === "" || back.value === ""){
@@ -112,7 +112,7 @@ function addQuestion(){
  * It writes the card-parameters into the corresponding input-fields and sets the the action to be *EDIT_QUESTION*.
  * @param {JSON} json The JSON Object which contains all the important information of the question.
  * This information includes the card with all the card-parameters, the URL the question will be sent to and the type of question (index_card).
- * @returns {Null}
+ * @returns {null}
  */
 function editQuestion(json){
     let card = json.question[0];
@@ -130,7 +130,7 @@ function editQuestion(json){
  * @description Transfer a question to the parent-view in the JSON-format via an emitted event.
  * @param {String} front_text the question (front of the card)
  * @param {String} back_text the text on the back of the card
- * @returns {Null}
+ * @returns {null}
  */
 function transferCard(front_text, back_text){
     let json = makeJson(front_text, back_text);
@@ -164,7 +164,7 @@ function makeJson(front_text, back_text){
 
 /**
  * @description Clear all inputs and reset the action to the standard action (add question).
- * @returns {Null}
+ * @returns {null}
  */
 function clearQuestion(){
     front.value = "";

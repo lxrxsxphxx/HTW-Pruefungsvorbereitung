@@ -5,7 +5,7 @@
         </div>
 
         <div id="learning-set-entry-main">
-            <div id="question-type-container">
+            <div id="question-type-container" ref="question_type_container">
                 <div>
                     <label for="quiz_name">Name des Lernsets:</label>
                     <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="learning_set_name"><br>
@@ -28,7 +28,7 @@
             </div>
 
 
-            <aside id="aside">
+            <aside id="aside" ref="aside">
                 <div id="choice-container">
                     <select name="question_type" id="question_type" ref="question_type" @change="questionTypeChoice">
                         <option class="question_type_option" value="index_card">Karteikarte</option>
@@ -45,6 +45,14 @@
                 </div>
                 
             </aside>
+
+            <div id="done-container" ref="done_container">
+                <h2>Lernset wurde erfolgreich erstellt</h2>
+                <br>
+                <RouterLink v-slot="{navigate, isActive}" to="/lernset-waehlen" custom>
+                    <button class="control-button" @click="navigate" :class="{active: isActive}">Zurück zur Lernset-Übersicht</button>
+                </RouterLink>
+            </div>
         </div>
     </div>
 </template>
@@ -72,6 +80,10 @@ let multiple_choice_entry = ref(null);
 
 let card_entry_view = ref(null);
 let quiz_entry_view = ref(null);
+
+let question_type_container = ref(null);
+let aside = ref(null);
+let done_container = ref(null);
 
 let learning_set_name = ref('');
 let module_name = ref('');
@@ -103,7 +115,7 @@ function makeLearningSetJson(name, module){
 
 /**
  * @description Post the learning set and all its questions to the backend.
- * @returns {Null}
+ * @returns {null}
  */
 async function saveLearningSet(){
     if(learning_set_name.value === '' || module_name.value === ''){
@@ -144,6 +156,9 @@ async function saveLearningSet(){
             return;
         }
     }
+
+    learningSetDone();
+
     return;
 }
 
@@ -152,7 +167,7 @@ async function saveLearningSet(){
  * @description Post a JSON Object to the given url.
  * @param {JSON} json the JSON Object to be posted
  * @param {String} url the URL to post the JSON to
- * @returns {Null/JSON} the data from the POST-response
+ * @returns {null/JSON} the data from the POST-response
  */
 async function postJsonToURL(json, url){
     const json_str = JSON.stringify(json);
@@ -187,7 +202,7 @@ async function postJsonToURL(json, url){
 
 /**
  * @description Delete the entire learning set.
- * @returns {Null}
+ * @returns {null}
  */
 function deleteLearningSet(){
     hideEntryViews();
@@ -201,10 +216,23 @@ function deleteLearningSet(){
 }
 
 
+/**
+ * @description Indicate that the learning set is created and let the user go to the learning set viewer.
+ * @returns {null}
+ */
+function learningSetDone(){
+    question_type_container.value.style.display = 'none';
+    aside.value.style.display = 'none';
+
+    done_container.value.style.display = 'inline';
+    return;
+}
+
+
 
 /**
  * @description Hide the entry-views and clear their inputted values.
- * @returns {Null}
+ * @returns {null}
  */
 function hideEntryViews(){
     index_cards_entry.value.style.display = "none";
@@ -219,7 +247,7 @@ function hideEntryViews(){
 
 /**
  * @description Set only the chosen entry-view visible.
- * @returns {Null}
+ * @returns {null}
  */
 function questionTypeChoice(){
     hideEntryViews();
@@ -236,7 +264,7 @@ function questionTypeChoice(){
 /**
  * @description Save all the important information about a question into the list of entered questions.
  * @param {JSON} json Object, which contains the Question, the question-type, the JSON to be sent to the Backend and the URL it will be sent to
- * @returns {Null}
+ * @returns {null}
  */
 function addQuestion(json){
     console.log(json);
@@ -248,7 +276,7 @@ function addQuestion(json){
 /**
  * @description Change an existing question to the provided JSON.
  * @param {JSON} json Object, which contains the Question, the question-type, the JSON to be sent to the Backend and the URL it will be sent to
- * @returns {Null}
+ * @returns {null}
  */
 function editQuestion(json){
     let index = edit_index;
@@ -267,7 +295,7 @@ function editQuestion(json){
 /**
  * @description Provide an entry-view with the question to be edited.
  * @param {Number} index the index of the question to be edited
- * @returns {Null}
+ * @returns {null}
  */
 function provideQuestion(index){
     console.log('edit: ' + index);
@@ -297,7 +325,7 @@ function provideQuestion(index){
 /**
  * @description Delete a question from the entered questions.
  * @param {Number} index the index of the question to be deleted
- * @returns {Null}
+ * @returns {null}
  */
 function deleteQuestion(index){
     console.log('delete: ' + index);
@@ -314,7 +342,7 @@ function deleteQuestion(index){
 /**
  * @description Delete a question from the lists it appears in.
  * @param {Number} index the index of the question to be deleted
- * @returns {Null}
+ * @returns {null}
  */
 function spliceQuestionFromArrays(index){
     question_set.splice(index, 1);

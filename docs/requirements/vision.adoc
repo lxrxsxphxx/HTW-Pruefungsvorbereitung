@@ -44,7 +44,7 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 | ist der  | HTW-Prüfungsvorbereiter
 | eine  | webbasierte Lernplattform
 | die durch | einen Lernalgorithmus und Gamification Elementen
-| anders als | bpsw. quizlet
+| anders als | quizlet
 | speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
 
@@ -80,7 +80,6 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 | Bereitstellung und Kontrolle von Inhalten, Rolle eher beratend oder unterstützend im Hintergrund
 | indirekte Qualitätskontrolle der Inhalte
 
-
 | Admin
 | Technisch Verantwortliche für Betrieb, Sicherheit
 | Systemwartung, Rollenmanagement, Monitoring der Systemstabilität, technischer Support
@@ -90,6 +89,16 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 | Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
 | Stellt Infrastruktur bereit
 | Förderung digitaler Bildung, Verbesserung von Lernqualität und Prüfungsergebnissen an der HTW
+
+| Projektteam 2.B
+| Das Projektteam besteht aus 6 Studierenden, die eine Lernplattform im Rahmen von Software Engineering I/II entwickeln.
+| Durchführung von Scrum-Meetings (Planning, Daily, Review, Retrospektive), Erstellung und Pflege der Dokumentation, Sicherstellung der Code-Qualität durch Tests und Reviews, Eigenverantwortliche Aufgabenverteilung nach Pull-Prinzip
+| Erwerb von praktischer Kompetenzen in agiler Softwareentwicklung
+
+| Datenschutzbeauftragte / Gesetzgeber
+| Regulatorische Instanz, die rechtliche Rahmenbedingungen für den Betrieb der Lernplattform vorgeben, insbesondere Datenschutz.
+| Vorgabe von Datenschutzrichtlinien und Regelungen zur Speicherung/Verarbeitung personenbezogener Daten (Lernfortschritte, Nutzerdaten)
+| Schutz der Privatsphäre und personenbezogenen Daten der Studierenden, Sicherstellung der Transparenz bei Datenverarbeitung, Einhaltung gesetzlicher Vorgaben zur IT-Sicherheit
 |===
 
 

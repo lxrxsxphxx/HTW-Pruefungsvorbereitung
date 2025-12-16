@@ -28,6 +28,8 @@ Thema2_HTW-Prüfungsvorbereiter.pdf
 
 Vorlesungsskript Software Engineering I I152
 
+Vorlesungsskript Software Engineering II I151
+
 == Positionierung
 
 === Fachliche Motivation

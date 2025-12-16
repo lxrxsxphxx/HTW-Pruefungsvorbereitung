@@ -31,16 +31,6 @@ const router = createRouter({
       component: LernsetErstellen
     },
     {
-      path: '/erstellen/karteikarten',
-      name: 'Karteikartenerstellen',
-      component: KarteikartenErstellen
-    },
-    {
-      path: '/erstellen/multiplechoice',
-      name: 'Quizerstellen',
-      component: QuizEingabe
-    },
-    {
       path: '/multiplechoice',
       name: 'Multiplechoice',
       component: QuizLoesen

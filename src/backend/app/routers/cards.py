@@ -1,5 +1,5 @@
 """
-Diese Datei beschreibt den Endpoint für Karteikarten.
+This file describes the REST endpoint for database interactions with cards.
 """
 
 from fastapi import Depends, APIRouter, HTTPException

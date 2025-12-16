@@ -1,4 +1,6 @@
-"""Diese Datei verbindet die einzelnen Endpoints zu einer einzigen Anwendung"""
+"""
+This file connects the different endoints to a single application
+"""
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI

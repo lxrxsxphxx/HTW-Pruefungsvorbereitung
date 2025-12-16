@@ -1,5 +1,5 @@
 """
-Diese Datei beschreibt den Endpoint für Lernsets.
+This file describes the REST endpoint for database interactions with learning sets.
 """
 
 from fastapi import Depends, APIRouter, HTTPException

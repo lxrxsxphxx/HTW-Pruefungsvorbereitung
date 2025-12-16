@@ -1,7 +1,5 @@
 """
-In dieser Datei wird der Endpunk für die Multiple Choice Fragen beschrieben.
-Die beschriebenen Funktionalitäten umfassen das Erstellen, Löschen, Ändern und Lesen
-von Multiple Choice Fragen
+This file describes the endpoint for database interactions with multiple choice questions.
 """
 
 from fastapi import Depends, APIRouter, HTTPException

@@ -1,5 +1,5 @@
 """
-Diese Datei erstellt die Verbindung mit der Datenbank
+This file creates the database connection
 """
 
 import os

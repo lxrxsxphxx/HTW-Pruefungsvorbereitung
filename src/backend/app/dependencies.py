@@ -1,6 +1,6 @@
 """
-Diese Datei liefert die session mit der Datenbank.
-Diese wird von den Endpoint zur Datenbankinteraktion benutzt.
+This file gets the database session. The session ist used by the REST-endpoints
+for database interactions
 """
 
 from sqlmodel import Session

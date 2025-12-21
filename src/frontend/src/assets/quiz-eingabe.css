@@ -1,35 +1,5 @@
-/*:root {
-    --dark-background: #444444;
-    --dark-popup: #8d4000;
-    --dark-menu: #cd5c00;
-    --dark-menu-hover: #e58435;
-    --dark-menu-active: #e3761d;
-    --dark-button: #666666;
-    --dark-button-hover: #585858;
-    --dark-button-active: #555555;
-    --dark-aside: #555555;
-    --dark-text-color: white;
-    --dark-red: #ad0a0a;
-    --dark-green: #269200;
-
-    --light-background: rgba(249, 155, 32, 0.308);
-    --light-popup: orange;
-    --light-menu: orange;
-    --light-menu-hover: #ffbb61;
-    --light-menu-active: #fda633;
-    --light-button: white;
-    --light-button-hover: #fff6e9;
-    --light-button-active: #fdc781;
-    --light-aside: #ffaa0077;
-    --light-text-color: black;
-    --light-h-text-color: orange;
-    --light-red: rgb(255, 42, 0);
-    --light-green: rgb(124, 232, 0);
-}*/
-
 #mc-quiz-entry-body {
     font-family: Arial, Helvetica, sans-serif;
-    /*background-color: var(--light-background);*/
     color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
@@ -63,7 +33,6 @@ button:active {background-color: var(--light-button-active);}
 }
 
 #mc-quiz-entry-main > * {
-    /*border: 2px solid black;*/
     margin: 0.25em;
     border-radius: 0.5em;
 }
@@ -91,11 +60,6 @@ label {
     order: 1;
 }
 
-#error-message {
-    color: #f20;
-    height: 1em;
-}
-
 .input-field {
     color: var(--light-text-color);
     background-color: var(--light-input);
@@ -107,6 +71,83 @@ label {
     border-radius: 0.25em;
     margin-left: 1em;
 }
+
+.switch {
+    order: 3;
+    margin-left: 0.5em;
+    position: relative;
+    display: inline-block;
+    width: 2.5em;
+    height: 1.5em;
+}
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--light-red);
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    left: 0.25em;
+    bottom: 0.25em;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: var(--light-green);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(1em);
+    -ms-transform: translateX(1em);
+    transform: translateX(1em);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 0.75em;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    left: 105%;
+}
+.slider.round:hover .tooltip {
+    visibility: visible;
+}
+
+
 #question {
     width: 75%;
 }
@@ -134,7 +175,7 @@ label {
     overflow: hidden;
     text-overflow: ellipsis;
 
-    width: 33%;
+    width: 50%;
     padding: 0.5em;
     border: 0px;
     border-radius: 0.25em;
@@ -170,12 +211,8 @@ label {
     margin: 0.5em;
 }
 #commit_cancel {margin-right: 0.25em;}
-/*#commit_cancel:hover {background-color: #c20;}
-#commit_cancel:active {background-color: #b20;}*/
 
 #cancel_cancel {margin-left: 0.25em;}
-/*#cancel_cancel:hover {background-color: #290;}
-#cancel_cancel:active {background-color: #280;}*/
 
 
 aside {
@@ -213,7 +250,7 @@ aside > h3 {
 
 @media (max-width: 1000px) {
     #mc-quiz-entry-body {width: 100%;}
-    #mc-quiz-entry-main {margin-bottom: 4em; flex-direction: column;}
+    #mc-quiz-entry-main {flex-direction: column;}
     #input-container > div {width: 100%;}
     #question {width: 100%;}
     #control-button-container {

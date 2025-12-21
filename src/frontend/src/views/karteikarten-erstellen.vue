@@ -1,22 +1,18 @@
 <template>
     <div id="index-cards-entry-body">
         <div id="index-cards-entry-header">
-            <!--h1>gib eine Karteikarte ein</h1-->
             <hr>
         </div>
 
         <div id="index-cards-entry-main">
             <div id="input">
                 <div id="input-container">
-                    <div id="error-message"></div>
                     <div id="front-container">
-                        <!--label for="front">Vorderseite:</label-->
                         <textarea type="text" id="front" name="front" class="input-field" ref="front_input" v-model="front" placeholder="Vorderseite"></textarea><br>
                     </div>
                     
 
                     <div id="back-container" class="answer-container">
-                        <!--label for="back">Rückseite:</label-->
                         <textarea type="text" id="back" name="back" class="input-field" ref="back_input" v-model="back" placeholder="Rückseite"></textarea><br>
                     </div>
                     <br>
@@ -43,7 +39,7 @@ import { defineExpose, ref } from 'vue';
 
 
 
-const emit = defineEmits(['addQuestion', 'editQuestion']);
+const emit = defineEmits(['addQuestion', 'editQuestion', 'error']);
 
 defineExpose({editQuestion, clearQuestion});
 
@@ -90,7 +86,7 @@ function setAction(a){
  */
 function addQuestion(){
     if(front.value === "" || back.value === ""){
-        console.warn("no question was entered");
+        emit('error', 'Vorder- und Rückseite müssen eingegeben werden!');
         return;
     }
     

@@ -13,17 +13,18 @@
                     <input type="text" id="module" name="module" class="input-field" ref="module_input" v-model="module_name"><br>
                 </div>
                 <br>
+                <div id="error-message" ref="error_message_container" v-text="error_message"></div>
 
                 <div id="index-cards-container" class="entry-container" ref="index_cards_entry">
-                    <KarteikartenErstellen class="entry-view" ref="card_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion"/>
+                    <KarteikartenErstellen class="entry-view" ref="card_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion" @error="showErrorMessage"/>
                 </div>
                 <div id="multiple-choice-container" class="entry-container" ref="multiple_choice_entry">
-                    <QuizEingabe class="entry-view" ref="quiz_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion"/>
+                    <QuizEingabe class="entry-view" ref="quiz_entry_view" @addQuestion="addQuestion" @editQuestion="editQuestion" @error="showErrorMessage"/>
                 </div>
 
                 <div id="control-button-container">
-                    <button class="control-button" id="save_card_set" @click="saveLearningSet">Lernset speichern</button>
-                    <button class="control-button" id="cancel" @click="deleteLearningSet">Abbrechen</button>
+                    <div><button class="control-button" id="save_card_set" @click="saveLearningSet">Lernset speichern</button></div>
+                    <div><button class="control-button" id="cancel" @click="deleteLearningSet">Abbrechen</button></div>
                 </div>
             </div>
 
@@ -75,6 +76,8 @@ import QuizEingabe from './quiz-eingabe.vue';
 
 let question_type = ref(null);
 
+let error_message_container = ref(null);
+
 let index_cards_entry = ref(null);
 let multiple_choice_entry = ref(null);
 
@@ -88,8 +91,14 @@ let done_container = ref(null);
 let learning_set_name = ref('');
 let module_name = ref('');
 
+let error_message = ref('');
+
 let entered_questions = ref([]);
 let question_set = [];
+
+
+const TYPE_INDEX_CARD = 'index_card';
+const TYPE_MULTIPLE_CHOICE = 'multiple_choice';
 
 
 let edit_index = -1;
@@ -119,15 +128,15 @@ function makeLearningSetJson(name, module){
  */
 async function saveLearningSet(){
     if(learning_set_name.value === '' || module_name.value === ''){
-        console.warn('The name of the learning set must be entered!');
+        showErrorMessage('Name und Modul des Lernsets müssen eingegeben werden!');
         return;
     }
     if(question_set.length === 0){
-        console.warn('At least one question must be entered!');
+        showErrorMessage('Es muss midestens eine Frage eingegeben werden!');
         return;
     }
     if(edit_index >= 0){
-        console.warn('Finish editing all the questions first!');
+        showErrorMessage('Eine Frage befindet sich noch in bearbeitung!');
         return;
     }
 
@@ -205,8 +214,8 @@ async function postJsonToURL(json, url){
  * @returns {null}
  */
 function deleteLearningSet(){
-    hideEntryViews();
-    index_cards_entry.value.style.display = "inline";
+    hideEntryViews(TYPE_INDEX_CARD);
+    //index_cards_entry.value.style.display = "inline";
     editQuestion(question_set[edit_index]);
 
     for(let i = question_set.length-1; i >= 0; i--){
@@ -232,14 +241,31 @@ function learningSetDone(){
 
 /**
  * @description Hide the entry-views and clear their inputted values.
+ * Set one of the Views visible again.
+ * @param {String/null} choice if not null determines the view that will be set visible again
  * @returns {null}
  */
-function hideEntryViews(){
+function hideEntryViews(view){
+    if(!view){
+        if(index_cards_entry.value.style.display !== "none") view = TYPE_INDEX_CARD;
+        if(multiple_choice_entry.value.style.display !== "none") view = TYPE_MULTIPLE_CHOICE;
+    }
+    
+
     index_cards_entry.value.style.display = "none";
     multiple_choice_entry.value.style.display = "none";
 
     card_entry_view.value.clearQuestion();
     quiz_entry_view.value.clearQuestion();
+
+    if(view === TYPE_INDEX_CARD){
+        index_cards_entry.value.style.display = "inline";
+        question_type.value.value = TYPE_INDEX_CARD;
+    }
+    if(view === TYPE_MULTIPLE_CHOICE){
+        multiple_choice_entry.value.style.display = "inline";
+        question_type.value.value = TYPE_MULTIPLE_CHOICE;
+    }
 
     return;
 }
@@ -250,12 +276,10 @@ function hideEntryViews(){
  * @returns {null}
  */
 function questionTypeChoice(){
-    hideEntryViews();
     let choice = question_type.value.options[question_type.value.selectedIndex].value;
     console.log(choice);
-    
-    if(choice === 'index_card') index_cards_entry.value.style.display = "inline";
-    if(choice === 'multiple_choice') multiple_choice_entry.value.style.display = "inline";
+
+    hideEntryViews(choice);
 
     return;
 }
@@ -271,6 +295,7 @@ function addQuestion(json){
 
     entered_questions.value.push(json.question_text);
     question_set.push(json);
+
     return;
 }
 /**
@@ -304,20 +329,25 @@ function provideQuestion(index){
     edit_index = index;
     console.log(edit_question);
 
-    hideEntryViews();
+    hideEntryViews(edit_question.question_type);
 
-    if(edit_question.question_type === 'index_card'){
-        index_cards_entry.value.style.display = "inline";
-        question_type.value.value = 'index_card';
-
+    if(edit_question.question_type === TYPE_INDEX_CARD){
         card_entry_view.value.editQuestion(edit_question);
     }
-    if(edit_question.question_type === 'multiple_choice'){
-        multiple_choice_entry.value.style.display = "inline";
-        question_type.value.value = 'multiple_choice';
-
+    if(edit_question.question_type === TYPE_MULTIPLE_CHOICE){
         quiz_entry_view.value.editQuestion(edit_question);
     }
+    return;
+}
+
+
+function showErrorMessage(message){
+    error_message.value = message;
+    setTimeout(() => hideErrorMessage(), 5000);
+    return;
+}
+function hideErrorMessage(){
+    error_message.value = '';
     return;
 }
 
@@ -330,12 +360,10 @@ function provideQuestion(index){
 function deleteQuestion(index){
     console.log('delete: ' + index);
     
+    if(edit_index === index) hideEntryViews(question_set[index].question_type);
+    spliceQuestionFromArrays(index);
+    if(edit_index > index) edit_index--;
 
-    if(edit_index === index) console.warn('Frage ist in Bearbeitung. Kann nicht gelöscht werden.');
-    else{
-        spliceQuestionFromArrays(index);
-        if(edit_index > index) edit_index--;
-    }
     return;
 }
 

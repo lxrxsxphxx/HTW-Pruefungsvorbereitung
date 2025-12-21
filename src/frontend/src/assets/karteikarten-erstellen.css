@@ -1,91 +1,5 @@
-:root {
-    --dark-background: #444444;
-    --dark-popup: #8d4000;
-    --dark-menu: #cd5c00;
-    --dark-menu-hover: #e58435;
-    --dark-menu-active: #e3761d;
-    --dark-button: #666666;
-    --dark-button-hover: #585858;
-    --dark-button-active: #555555;
-    --dark-aside: #555555;
-    --dark-input: var(--dark-aside);
-    --dark-text-color: white;
-    --dark-red: #ad0a0a;
-    --dark-green: #269200;
-
-    --light-background: rgba(249, 155, 32, 0.308);
-    --light-popup: orange;
-    --light-menu: orange;
-    --light-menu-hover: #ffbb61;
-    --light-menu-active: #fda633;
-    --light-button: white;
-    --light-button-hover: #fffbf4;
-    --light-button-active: #fdc781;
-    --light-aside: #ffaa00cc;
-    --light-input: white;
-    --light-text-color: black;
-    --light-h-text-color: orange;
-    --light-red: rgb(255, 42, 0);
-    --light-green: rgb(124, 232, 0);
-
-
-    --standard-font-family: Arial, Helvetica, sans-serif;
-}
-
-/*#index-cards-entry-body {
-    color: var(--light-text-color);
-}
-
-button {
-    font-size: 1em;
-    color: var(--light-text-color);
-    background-color: var(--light-button);
-
-    border: none;
-    border-radius: 0.25em;
-}
-button:hover {background-color: var(--light-button-hover);}
-button:active {background-color: var(--light-button-active);}
-
-label {
-    padding-right: 1em;
-}
-
-#index-cards-entry-main {
-    display: flex;
-    flex-direction: row;
-}
-
-#input {
-    order: 1;
-    padding: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-    flex: 2 2 0%;
-}
-
-#aside {
-    background-color: var(--light-aside);
-    order: 2;
-    flex: 1 1 0%;
-    max-width: calc(33.33% - 0.5em - 8px);
-}
-
-
-#cancel-popup {
-    display: none;
-}
-
-
-
-/*=============================================================================*/
-
-
 #index-cards-entry-body {
     font-family: var(--standard-font-family);
-    /*background-color: var(--light-background);*/
     color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
@@ -119,7 +33,6 @@ button:active {background-color: var(--light-button-active);}
 }
 
 #index-cards-entry-main > * {
-    /*border: 2px solid black;*/
     margin: 0.25em;
     border-radius: 0.5em;
 }
@@ -145,11 +58,6 @@ button:active {background-color: var(--light-button-active);}
 }
 label {
     order: 1;
-}
-
-#error-message {
-    color: #f20;
-    height: 1em;
 }
 
 .input-field {
@@ -190,7 +98,7 @@ label {
     overflow: hidden;
     text-overflow: ellipsis;
 
-    width: 33%;
+    width: 50%;
     padding: 0.5em;
     border: 0px;
     border-radius: 0.25em;
@@ -226,50 +134,14 @@ label {
     margin: 0.5em;
 }
 #commit_cancel {margin-right: 0.25em;}
-/*#commit_cancel:hover {background-color: #c20;}
-#commit_cancel:active {background-color: #b20;}*/
 
 #cancel_cancel {margin-left: 0.25em;}
-/*#cancel_cancel:hover {background-color: #290;}
-#cancel_cancel:active {background-color: #280;}*/
 
-
-/*aside {
-    background-color: var(--light-aside);
-    order: 2;
-    flex: 1 1 0%;
-    max-width: calc(33.33% - 0.5em - 8px);
-}
-aside > h3 {
-    padding: 0.5em;
-    margin: 0;
-    text-align: left;
-}
-
-
-.entered_question {
-    display: flex;
-    flex-direction: row;
-
-    padding: 0.2em;
-}
-.entered_question:hover {background-color: var(--light-aside-hover);}
-.question_text{
-    flex: 1 1 0%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-}
-
-.entered_question > button {
-    flex: 0 0 2em;
-    border-radius: 0;
-}*/
 
 
 @media (max-width: 1000px) {
     #index-cards-entry-body {width: 100%;}
-    #index-cards-entry-main {margin-bottom: 4em; flex-direction: column;}
+    #index-cards-entry-main {flex-direction: column;}
     #input-container > div {width: 100%;}
     #question {width: 100%;}
     #control-button-container {

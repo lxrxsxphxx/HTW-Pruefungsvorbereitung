@@ -6,7 +6,6 @@
         <div id="mc-quiz-entry-main">
             <div id="input">
                 <div id="input-container">
-                    <div id="error-message"></div>
                     <div>
                         <label for="question">Frage:</label>
                         <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question_entry"><br>
@@ -16,24 +15,34 @@
                     <div id="answer_1-container" class="answer-container">
                         <label for="answer_1" class="txt_answer">Antwort 1:</label>
                         <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1_entry"><br>
+                        <label class="switch">
+                            <input type="checkbox" id="answer_1_correct" @click="toggleAnswerCorrectness(0)" v-bind:checked="answers_correct[0]">
+                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[0]"></span></span>
+                        </label>
                     </div>
                     <div id="answer_2-container" class="answer-container">
                         <label for="answer_2" class="txt_answer">Antwort 2:</label>
                         <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2_entry"><br>
+                        <label class="switch">
+                            <input type="checkbox" id="answer_2_correct" @click="toggleAnswerCorrectness(1)" v-bind:checked="answers_correct[1]">
+                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[1]"></span></span>
+                        </label>
                     </div>
                     <div id="answer_3-container" class="answer-container">
                         <label for="answer_3" class="txt_answer">Antwort 3:</label>
                         <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3_entry"><br>
+                        <label class="switch">
+                            <input type="checkbox" id="answer_3_correct" @click="toggleAnswerCorrectness(2)" v-bind:checked="answers_correct[2]">
+                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[2]"></span></span>
+                        </label>
                     </div>
                     <div id="answer_4-container" class="answer-container">
                         <label for="answer_4" class="txt_answer">Antwort 4:</label>
                         <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4_entry"><br>
-                    </div>
-                    <br>
-                    <div id="correct_answers-container">
-                        <label for="correct_answers">richtige Antworten: </label>
-                        <input type="text" id="correct_answers" name="correct_answers" class="input-field" ref="correct_answers_input" v-model="correct_answers">
-                        <div id="example">z.B.: 1, 4</div>
+                        <label class="switch">
+                            <input type="checkbox" id="answer_4_correct" @click="toggleAnswerCorrectness(3)" v-bind:checked="answers_correct[3]">
+                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[3]"></span></span>
+                        </label>
                     </div>
                     <br>
                 </div>
@@ -52,9 +61,11 @@
 import { defineExpose, ref } from 'vue';
 
 
-const emit = defineEmits(['addQuestion', 'editQuestion']);
+const emit = defineEmits(['addQuestion', 'editQuestion', 'error']);
 
 defineExpose({editQuestion, clearQuestion});
+
+const MAX_ANSWERS = 4;
 
 
 let question_entry = ref('');
@@ -64,7 +75,12 @@ let answer_2_entry = ref('');
 let answer_3_entry = ref('');
 let answer_4_entry = ref('');
 
-let correct_answers = ref('');
+
+let answers_correct = ref([false, false, false, false]);
+
+const FALSE_TEXT = 'Falsch';
+const RIGHT_TEXT = 'Richtig';
+let answers_correct_text = ref([FALSE_TEXT, FALSE_TEXT, FALSE_TEXT, FALSE_TEXT]);
 
 
 const ADD_QUESTION_TEXT = 'Frage hinzufügen';
@@ -156,39 +172,25 @@ function setAction(a){
  * @returns {null}
  */
 function addQuestion(){
-    
-    // construct a list with the correct answers (as they are inputted)
-    let correct_answers_str = correct_answers.value.toString();
-    correct_answers_str.replaceAll(" ","");
-
-    let arr = correct_answers_str.split(",");
-    let correct_answers_input_arr = [];
-
-    for(let i = 0; i < arr.length; i++){
-        let index = parseInt(arr[i]);
-        if(index >= 1 && index <= 4) correct_answers_input_arr.push(index);
-    }
-
-
     // construct the list of correct answers and the list of inputted questions
     let correct_answers_arr = [];
 
     let entered_answers = [];
     if(answer_1_entry.value !== ""){
         entered_answers.push(answer_1_entry.value);
-        if(correct_answers_input_arr.includes(1)) correct_answers_arr.push(entered_answers.length);
+        if(answers_correct.value[0]) correct_answers_arr.push(entered_answers.length);
     }
     if(answer_2_entry.value !== ""){
         entered_answers.push(answer_2_entry.value);
-        if(correct_answers_input_arr.includes(2)) correct_answers_arr.push(entered_answers.length);
+        if(answers_correct.value[1]) correct_answers_arr.push(entered_answers.length);
     }
     if(answer_3_entry.value !== ""){
         entered_answers.push(answer_3_entry.value);
-        if(correct_answers_input_arr.includes(3)) correct_answers_arr.push(entered_answers.length);
+        if(answers_correct.value[2]) correct_answers_arr.push(entered_answers.length);
     }
     if(answer_4_entry.value !== ""){
         entered_answers.push(answer_4_entry.value);
-        if(correct_answers_input_arr.includes(4)) correct_answers_arr.push(entered_answers.length);
+        if(answers_correct.value[3]) correct_answers_arr.push(entered_answers.length);
     }
 
     if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
@@ -198,7 +200,7 @@ function addQuestion(){
 
     // the question and at least two answers mut be inputted
     if(question_entry.value === "" || entered_answers.length < 2){
-        console.warn("no question was entered");
+        emit('error', 'Die Frage und mind. zwei Antworten müssen eingegeben werden!');
         return;
     }
 
@@ -235,15 +237,43 @@ function editQuestion(json){
     if(num_answers > 2) answer_3_entry.value = question.answers[2].answer;
     if(num_answers > 3) answer_4_entry.value = question.answers[3].answer;
 
-    let correct = [];
-    for(let i = 0; i < num_answers; i++) if(question.answers[i].correct) correct.push(i);
-
-    correct_answers.value = (correct[0] + 1);
-    for(let i = 1; i < correct.length; i++) correct_answers.value += ', ' + (correct[i] + 1);
+    for(let i = 0; i < num_answers; i++) {
+        if(question.answers[i].correct) setAnswerCorrectness(i, true);
+        else setAnswerCorrectness(i, false);
+    }
 
     return;
 }
 
+
+/**
+ * @description Set an answers correctness by setting its state and description.
+ * @param {Number} answer the index of the nswer
+ * @param {Boolean} correct the state to set the answer to (true: correct, false: incorrect)
+ * @returns {null}
+ */
+function setAnswerCorrectness(answer, correct){
+    if(answer < 0 || answer >= MAX_ANSWERS) return;
+    
+    answers_correct.value[answer] = correct;
+
+    if(correct) answers_correct_text.value[answer] = RIGHT_TEXT;
+    else answers_correct_text.value[answer] = FALSE_TEXT;
+
+    return;
+}
+
+/**
+ * @description Toggle an answers correctness by setting its state and description
+ * @param {Number} answer the index of the nswer
+ * @returns {null}
+ */
+function toggleAnswerCorrectness(answer){
+    if(answers_correct.value[answer] === false) setAnswerCorrectness(answer, true);
+    else setAnswerCorrectness(answer, false);
+
+    return;
+}
 
 
 
@@ -257,7 +287,8 @@ function clearQuestion(){
     answer_2_entry.value = "";
     answer_3_entry.value = "";
     answer_4_entry.value = "";
-    correct_answers.value = "";
+
+    for(let i = 0; i < MAX_ANSWERS; i++) setAnswerCorrectness(i, false);
 
     setAction(ADD_QUESTION);
     return;

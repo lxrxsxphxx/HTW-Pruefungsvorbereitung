@@ -1,3 +1,7 @@
+"""
+This file connects the different endoints to a single application
+"""
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware

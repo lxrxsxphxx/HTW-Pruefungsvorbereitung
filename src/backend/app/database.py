@@ -1,3 +1,7 @@
+"""
+This file creates the database connection
+"""
+
 import os
 from sqlmodel import create_engine
 from dotenv import load_dotenv

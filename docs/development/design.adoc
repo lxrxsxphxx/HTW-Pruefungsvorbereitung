@@ -10,8 +10,9 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
  
 == Ausgewählte Sichten
 //Entwurfsklassendiagramme, Sequenzdiagramme
-== Models
-Die Models sind Klassen, die vom ORM-Mapper benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
+
+== Datenmodell
+Angegeben werden die Models aus _models.py_. Die Models sind Klassen, die vom verwendeten ORM benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
 
 === Models zu Karteikarten
 
@@ -70,14 +71,79 @@ Die Models sind Klassen, die vom ORM-Mapper benutzt werden. Manche von ihnen wer
 ** cards (list[CardResponse]): Die Karteikarten des Lernsets.
 ** questions (list[QuestionResponse]): Die Multiple-Choice-Fragen des Lernsets.
 
-
 == Schnittstellen
-//Dokumentation oder Verweise auf Schnittstellen, z.B. REST-APIs
-=== Schnittpunkt /api/learning_set
+Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
+
+=== Begriffsdefinition
+* *body*: benötigter Inhalt im Body der HTTP-Request. Vor allem relevant für *POST* und *PUT* Anfragen.
+* *path variable*: Die Pfadvariable, die in jedem Fall mit angegeben werden muss.
+** Bsp.: Will man eine Karteikarte der ID 4 löschen, schickt man eine *DELETE* Anfrage an den Endpoint /api/cards/4
+* *returns*: Beschreibung des Rückgabewertes der Anfrage. Der Rückgabewert ist im Body der Antwort zu finden.
+* *variable*: Variable, die der Anfrage mitgegeben wird. Diese kann optional sein, in diesem Fall wird das mit angegeben.
+** Anwendung: Variablen werden ähnlich wie Pfadvariablen mit in den Pfad geschrieben. Sie stehen jedoch am Ende, außerdem sieht ihre Angabe etwas anders aus: "<Path>/?<variable name>=<value>"
+
+=== Schnittpunkt für Karteikarten
+==== /api/cards/
+* *POST*: Erstelle eine oder mehrere Karten.
+** *body*: Liste von CardBase JSON-Objekten, die die Informationen der Karten halten. Diese Liste kann auch nur ein Element enthalten
+** *variable* _learning_set_id_: Die ID des Lernsets, dem die Karteikarte hinzugefügt werden soll.
+** *returns*: Card JSON-Objekt, das die Karte beschreibt
+* *GET*: Gibt alle Karten zurück.
+** *optional variable* _learning_set_id_: ID des Lernsets zu dem die Karteikarten gehören sollen. Wird diese Variable nicht angegeben, werden einfach alle existierenden Karteikarten zurückgegeben
+** *returns*: Liste von CardResponse JSON-Objekten.
+
+==== /api/cards/{id}
+* *GET*: Gibt die Karte zurück
+** *path variable*: Die ID der gewünschten Karte
+** *returns*: Ein Card JSON-Objekt, das die Karte repräsentiert.
+* *PUT*: Aktualisiert die Werte eines existierenden Lernsets
+** *path variable*: ID des Lernsets, das geändert werden soll
+** *returns*: CardResponse JSON-Objekt der aktualisierten Karte
+* *DELETE*: Löscht die gewünschte Karte
+** *returns*: null
+
+=== Schnittpunkt für Multiple Choice Fragen
+==== /api/questions/
+* *POST*: Erstellt eine Multiple Choice Frage
+** *body*: QuestionBase JSON-Objekt, das die Information der Multiple Choice Frage hält.
+** *variable* learning_set_id: Die ID des Lernsets, dem die Multiple Choice Frage hinzugefügt werden soll.
+** *returns*: QuestionResponse JSON-Objekt, das die Multiple Choice Frage beschreibt
+* *GET*: Gibt alle Multiple Choice Fragen zurück
+** *optional variable* _learning_set_id_: ID des Lernsets zu dem die Multiple Choice Fragen gehören sollen. Wird diese Variable nicht angegeben, werden einfach alle existierenden Multiple Choice Fragen zurückgegeben
+** *returns*: Liste von QuestionResponse JSON-Objekten
+
+==== /api/questions/{id}
+* *GET*: Gibt die gewünschte Multiple Choice Frage zurück
+** *path variable*: Die ID der gewünschten Multiple Choice Frage
+** *returns*: QuestionResponse JSON-Objekt der gewünschten Multiple Choice Frage
+* *PUT*: Aktualisiert die Fragestellung der gewünschten Multiple Choice Frage
+** *body*: QuestionBase JSON-Objekt mit den gewünschten Daten für die Multiple Choice Frage
+** *path variable*: ID der zu ändernden Multiple Choie Frage 
+** *returns*: QuestionResponse JSON-Objekt der aktualisierten Frage
+* *DELETE*: Löscht die gewünschte Multiple Choice Frage
+** *path variable*: ID der Multiple Choice Frage, die gelöscht werden soll
+** *returns*: null
+
+==== /api/questions/answers/{id}
+* *PUT*: Ändert den Text der gewünschten Antwort
+** *path variable*: ID der zu ändernden Multiple Choice Frage
+** *returns*: AnswerResponse JSON-Objekt der aktualisierten Antwort
+
+=== Schnittpunkt für Lernsets
+==== /api/learning_set/
 * *POST*: Erstelle ein neues Lernset. Die Funktion nimmt das Objekt, welches das Lernset repräsentiert, entgegen und fügt dieses in die Datenbank hinzu. Bei Erfolg wird das Objekt zurückgegeben.
-* *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von learning_set Objekten zurückgegeben.
+** *body*: LerningSetBase JSON-Objekt, dass die Informationen zum Lernset hält.
+** *returns*: LearningSetResponse JSON-Objekt
+* *GET*: Gibt alle Lernsets zurück. Diese werden als Liste von LearningSetResponse JSON-Objekten zurückgegeben.
+** *optional variable* _module_: Optionaler String, wenn nach Lernsets eines Moduls gefiltert werden soll.
+** *returns*: Liste von LearningSetResponse JSON-Objekten 
 
-=== Schnittpunkt /api/learning_set/{id}
-* *DELETE*: Lösche das Lernset *id* aus der Datenbank. Diese Funktion löscht *ALLE* Fragen dieses Lernsets.
+==== /api/learning_set/{learning_set_id}
+* *GET*: Gibt ein einzelnes Lernset zurück
+** *path variable*: Die ID des Lernsets
+** *returns*: LearningSetResponse JSON-Objekt des Lernsets
 
-//== Datenmodell
+==== /api/learning_set/{id}
+* *DELETE*: Lösche ein Lernset aus der Datenbank. Diese Funktion löscht *ALLE* zugehörigen Fragen und Karteikarten aus der Datenbank.
+** *path variable*: Die ID des Lernsets
+** *returns*: null

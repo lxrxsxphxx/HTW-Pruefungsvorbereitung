@@ -1,3 +1,7 @@
+"""
+This file describes the REST endpoint for database interactions with learning sets.
+"""
+
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
@@ -10,12 +14,17 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSet:
-    """ Adds a learning set to DB
-        learning_set: The learning set that is added to the database
-        session: the database session
-        
-        returns the learning set as it is in the database after adding"""
+def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSetResponse:
+    """ 
+    Adds a learning set to DB
+
+    Args:
+        learning_set (LearningSetBase): The learning set that is added to the database
+        session (Session): the database session
+    
+    Returns: 
+        LearningSetResponse: the learning set as it is in the database after adding
+    """
 
     db_learning_set = LearningSet.model_validate(learning_set)
     session.add(db_learning_set)
@@ -26,21 +35,30 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
 
 @router.get("/")
 def get_learning_sets(session: Session = Depends(get_session), modul: str | None = None) -> list[LearningSetResponse]:
-    """Get all Learning Sets in DB
-        session: the database session
+    """
+    Get all Learning Sets in DB
+    Args:
+        session (Session): the database session
         
-        returns list of LearningSets in LearningSetResponse type"""
+    Returns:
+        list[LearningSetResponse]: List of stored learning sets
+    """
+
     if modul:
         return session.exec(select(LearningSet).where(LearningSet.module == modul)).all()
     return session.exec(select(LearningSet)).all()
 
 @router.get("/{learning_set_id}")
 def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session)) -> LearningSetResponse:
-    """Get a single learning set by its id
-        session: the database session
-        id: the id of the learning set you're looking for
+    """
+    Get a single learning set by its id
+    Args:
+        learning_set_id (int): the id of the learning set you're looking for
+        session (Session): the database session
         
-        returns learning set in LearningSetResponse type"""
+    Returns:
+        LearningSetResponse: The wanted learning set
+    """
 
     learning_set = session.get(LearningSet, learning_set_id)
     if not learning_set:
@@ -49,11 +67,16 @@ def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_s
 
 @router.delete("/{id}")
 def delete_learning_set(id: int, session: Session = Depends(get_session)):
-    """Deletes a learning set from DB
-        id: id of the learning set that is deleted
-        session: the database session
+    """
+    Deletes a learning set from DB
+    
+    Args:
+        id (int): id of the learning set that is deleted
+        session (Session): the database session
         
-        returns information about success or failure"""
+    Returns:
+        null
+    """
 
     db_learning_set = session.get(LearningSet,id)
 

@@ -37,7 +37,7 @@ Tests sollen die Softwarequalität gewährleisten, deshalb kommt ihnen eine beso
 Sollten die Änderungen von einem Tester kommen, muss eine andere fachlich passende Person aus dem Team eingeschaltet werden.
 
 === Umfang
-Eine vollständige Testabdeckung wird nicht angestrebt. Es sollen aber Testfälle für die grundlegendsten Komponenten existieren. Es sollen sowohl Backend als auch Frontend getestet werden, der klare Fokus liegt hier jedoch auf dem Backend. Das Ziel der automatisierten Test ist weniger die Softwarequalität zu garantieren, es soll vielmehr das Verständnis des Schreibens von Tests und die Automatisierung durch GitHub Actions gefördert werden.
+Eine vollständige Testabdeckung wird nicht angestrebt. Es sollen aber Testfälle für die grundlegendsten Komponenten existieren. Das Ziel der automatisierten Test ist weniger die Softwarequalität zu garantieren, es soll vielmehr das Verständnis des Schreibens von Tests und die Automatisierung durch GitHub Actions gefördert werden.
 
 === Tests Backend
 Als API-Test Client wird bruno benutzt.
@@ -45,5 +45,8 @@ https://www.usebruno.com/
 
 Testfälle sollen die korrekte Funktionsweise verifizieren. Dafür ist mindestens ein Positivtest erforderlich. Der Fokus liegt aber auf Negativtests.
 
+Um das Ergebnis von einem Test Run nachvollziehen zu können, sollen die Testergebnisse in einer Log Datei gespeichert werden. Ob immer neue Dateien erstellt werden, oder eine existierende Datei immer wieder überschrieben wird, ist dem Testenden überlassen.
+
 
 === Tests Frontend
+Aktuell sind keine Frontend Tests geplant. Sollte sich daran etwas ändern, wird hier mehr dazu erläutert.

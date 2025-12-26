@@ -1,5 +1,5 @@
 """
-This file gets the database session. The session ist used by the REST-endpoints
+This file gets the database session. The session is used by the REST-endpoints
 for database interactions
 """
 

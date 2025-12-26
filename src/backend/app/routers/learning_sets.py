@@ -23,7 +23,7 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
         session (Session): the database session
     
     Returns: 
-    LeanringSetResponse: the learning set as it is in the database after adding
+        LearningSetResponse: the learning set as it is in the database after adding
     """
 
     db_learning_set = LearningSet.model_validate(learning_set)

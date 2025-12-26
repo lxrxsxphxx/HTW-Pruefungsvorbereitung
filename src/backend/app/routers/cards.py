@@ -24,7 +24,7 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
         session (Session): The database session.
 
     Returns:
-        list[Card]: The created cards
+        list[CardResponse]: The created cards
     """
 
     learning_set = session.get(LearningSet,learning_set_id)
@@ -52,7 +52,7 @@ def read_cards(learning_set_id:int | None = None, session: Session = Depends(get
         learning_set_id(int | None): the learning set the cards should belong to
     
     Returns:
-        list[CardResponse]: Die Karten, die aktuell in der Datenbank gespeichert sind.
+        list[CardResponse]: The cards currently stored in database
     """
     if learning_set_id:
         return session.exec(select(Card).where(Card.learning_set_id == learning_set_id)).all()
@@ -87,7 +87,7 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
         session (Session): the database session
     
     Returns:
-        CardResponse: Die aktualisierte Karte
+        CardResponse: The updated card
     """
 
 

@@ -1,0 +1,20 @@
+meta {
+  name: get_learning_sets
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{learning_set_url}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

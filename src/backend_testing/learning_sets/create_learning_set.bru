@@ -1,0 +1,45 @@
+meta {
+  name: create_learning_set
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{learning_set_url}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "testset",
+    "module": "test_run"
+  }
+}
+
+assert {
+  body.id: isDefined
+  res.status: eq 200
+  res.body.name: isString
+  res.body.module: isString
+  res.body.id: isNumber
+  body.cards: isDefined
+  body.questions: isDefined
+}
+
+script:pre-request {
+  console.log('Creating Learning Set')
+}
+
+script:post-response {
+  const body = res.body
+  
+  bru.setVar("created_learning_set",body.id)
+  
+  console.log(bru.getVar("created_learning_set"))
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

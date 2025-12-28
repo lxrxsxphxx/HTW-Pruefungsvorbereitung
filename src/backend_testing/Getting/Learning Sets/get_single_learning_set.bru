@@ -1,0 +1,31 @@
+meta {
+  name: get_single_learning_set
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{learning_set_url}}/:learning_set_id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  learning_set_id: {{created_learning_set}}
+}
+
+assert {
+  res.status: eq 200
+  res.body: isDefined
+  res.body: isJson
+  res.body.name: eq testset
+  res.body.module: eq test_run
+  res.body.id: isNumber
+  res.body.cards: isArray
+  res.body.questions: isArray
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,7 +1,7 @@
 meta {
   name: get_learning_sets
   type: http
-  seq: 2
+  seq: 3
 }
 
 get {
@@ -12,6 +12,8 @@ get {
 
 assert {
   res.status: eq 200
+  res.body: isDefined
+  res.body: isNotEmpty
 }
 
 settings {

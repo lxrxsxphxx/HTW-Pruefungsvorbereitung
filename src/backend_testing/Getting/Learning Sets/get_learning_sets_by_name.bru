@@ -1,7 +1,7 @@
 meta {
-  name: filter_by_name
+  name: get_learning_sets_by_name
   type: http
-  seq: 3
+  seq: 1
 }
 
 get {
@@ -16,8 +16,8 @@ params:query {
 
 assert {
   res.status: eq 200
-  res.body: isJson
   res.body: isDefined
+  res.body: isNotEmpty
 }
 
 settings {

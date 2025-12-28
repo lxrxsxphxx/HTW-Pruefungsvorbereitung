@@ -1,0 +1,25 @@
+meta {
+  name: delete_new_learning_set
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{learning_set_url}}/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: {{created_learning_set}}
+}
+
+assert {
+  res.status: eq 200
+  res.body: isNull
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -28,15 +28,13 @@ assert {
 }
 
 script:pre-request {
-  console.log('Creating Learning Set')
+  console.log("The tests in this request are incomplete, the req and res bodies should be compared for equality")
 }
 
 script:post-response {
   const body = res.body
   
   bru.setVar("created_learning_set",body.id)
-  
-  console.log(bru.getVar("created_learning_set"))
 }
 
 settings {

@@ -1,11 +1,11 @@
 meta {
-  name: delete_new_learning_set
+  name: delete_question
   type: http
   seq: 1
 }
 
 delete {
-  url: {{learning_set_url}}{{created_learning_set}}
+  url: {{questions_url}}{{created_question}}
   body: none
   auth: inherit
 }

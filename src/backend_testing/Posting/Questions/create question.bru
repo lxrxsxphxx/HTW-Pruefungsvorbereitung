@@ -1,0 +1,47 @@
+meta {
+  name: create question
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{questions_url}}?learning_set_id={{created_learning_set}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  learning_set_id: {{created_learning_set}}
+}
+
+body:json {
+  {
+    "question": {
+      "question": "testingquestion"
+    },
+    "answers": [
+      {
+        "answer": "testinganswer",
+        "correct": true
+      }
+    ]
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: isNumber
+  res.body.answers: isArray
+  res.body: isJson
+  res.body.question: eq {{posted_question}}
+}
+
+script:post-response {
+  bru.setVar("created_question",res.body.id)
+  bru.setVar("posted_question","testingquestion")
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

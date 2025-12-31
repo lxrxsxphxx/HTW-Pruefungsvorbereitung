@@ -1,11 +1,11 @@
 meta {
-  name: get_deleted_set
+  name: get_deleted_question
   type: http
-  seq: 1
+  seq: 2
 }
 
 get {
-  url: {{learning_set_url}}{{created_learning_set}}
+  url: {{questions_url}}{{created_question}}
   body: none
   auth: inherit
 }

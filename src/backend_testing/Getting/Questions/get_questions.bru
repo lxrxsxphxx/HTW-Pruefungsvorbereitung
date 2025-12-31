@@ -1,18 +1,19 @@
 meta {
-  name: delete_new_learning_set
+  name: get_questions
   type: http
   seq: 1
 }
 
-delete {
-  url: {{learning_set_url}}{{created_learning_set}}
+get {
+  url: {{questions_url}}
   body: none
   auth: inherit
 }
 
 assert {
   res.status: eq 200
-  res.body: isNull
+  res.body: isDefined
+  res.body: isArray
 }
 
 settings {

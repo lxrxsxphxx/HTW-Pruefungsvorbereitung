@@ -18,13 +18,13 @@ body:json {
 }
 
 assert {
-  body.id: isDefined
+  res.body.id: isDefined
   res.status: eq 200
   res.body.name: isString
   res.body.module: isString
   res.body.id: isNumber
-  body.cards: isDefined
-  body.questions: isDefined
+  res.body.cards: isDefined
+  res.body.questions: isDefined
 }
 
 script:pre-request {

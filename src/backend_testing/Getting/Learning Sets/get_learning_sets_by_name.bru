@@ -5,18 +5,19 @@ meta {
 }
 
 get {
-  url: {{learning_set_url}}?modul=test_run
+  url: {{learning_set_url}}?modul={{module}}
   body: none
   auth: inherit
 }
 
 params:query {
-  modul: test_run
+  modul: {{module}}
 }
 
 assert {
   res.status: eq 200
   res.body: isDefined
+  res.body: isArray
   res.body: isNotEmpty
 }
 

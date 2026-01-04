@@ -23,12 +23,15 @@ assert {
   res.body.name: isString
   res.body.module: isString
   res.body.id: isNumber
-  res.body.cards: isDefined
-  res.body.questions: isDefined
+  res.body.cards: isArray
+  res.body.questions: isArray
 }
 
 script:pre-request {
   console.log("The tests in this request are incomplete, the req and res bodies should be compared for equality")
+  
+  bru.setVar("module",req.body.module)
+  bru.setVar("learning_set_name",req.body.name)
 }
 
 script:post-response {

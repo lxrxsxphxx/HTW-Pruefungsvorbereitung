@@ -20,8 +20,8 @@ body:json {
 assert {
   res.status: eq 200
   res.body: isJson
-  res.body.front: eq new_front
-  res.body.back: eq new_back
+  res.body.front: eq {{updated_front}}
+  res.body.back: eq {{updated_back}}
   res.body.id: eq {{created_card}}
 }
 

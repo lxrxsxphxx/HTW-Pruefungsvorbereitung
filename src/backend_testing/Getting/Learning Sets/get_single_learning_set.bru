@@ -18,8 +18,8 @@ assert {
   res.status: eq 200
   res.body: isDefined
   res.body: isJson
-  res.body.name: eq testset
-  res.body.module: eq test_run
+  res.body.name: eq {{learning_set_name}}
+  res.body.module: eq {{module}}
   res.body.id: isNumber
   res.body.cards: isArray
   res.body.questions: isArray

@@ -13,7 +13,7 @@ get {
 assert {
   res.status: eq 200
   res.body: isJson
-  res.body.front: eq testcard
-  res.body.back: eq testcard
+  res.body.front: eq {{posted_front}}
+  res.body.back: eq {{posted_back}}
   res.body.id: eq {{created_card}}
 }

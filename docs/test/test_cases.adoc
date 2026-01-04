@@ -6,9 +6,334 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
+Für die Ausführung der Tests wird der Bruno Client benötigt.
+Die Tests sind so konzipiert, dass sie *nicht* unabhängig voneinander sind. Das Ausführen einzelner Tests kann also dazu führen, dass manche Asserts nicht erfolgreich sind, obwohl das System wie gewünscht funktioniert. Das kommt daher, dass einige Anfragen auf Variablen zugreifen müssen, die von Skripten aus anderen Requests vorher gesetzt werden müssen. Die Tests sind in der Reihenfolge dokumentiert, in der sie bei einem Testdurchlauf ausgeführt werden.
+
+Dieses Dokument setzt voraus, dass sich mit der xref:../development/design.adoc[Dokumentation der REST-API] beschäftigt wurde. Pfad- und Queryparameter, die Struktur des Bodies etc. werden hier *nicht* dokumentiert.
+
+=== Installation und Benutzung Bruno Client
+https://www.usebruno.com/
+
+TODO
 
 == Test Cases
 
-=== Test Case 01
+Für die Integrationstests werden verschiedene Anfragen an die Endpunkte der API geschickt und Asserts auf den Antworten überprüft. Bei Änderungen in der Datenbank folgen noch GET-Requests, die den Erfolg der Request prüfen sollen.
 
-=== Test Case 02
+=== POST-Requests
+
+Dokumentation der POST-Requests in den Integrationstestanfragen. Die Tests überprüfen die Richtigkeit der Serverantwort auf die Requests. Das Ergebnis in der Datenbank durch die POST-Requests werden mittels GET-Requests verifiziert, diese sind weiter unten dokumentiert.
+
+==== Endpunkt für Lernsets
+
+Alle Requests gehen an den Pfad */api/learning_set/...*
+
+Diese Request wird vor allen anderen ausgeführt, da man Karteikarten und Multiple-Choice-Fragen nur für ein bestehendes Lernset erstellen kann.
+
+===== create_learning_set
+
+POST-Request an den Learning Set Endpunkt. Im Body wird ein JSON-Objekt mitgegeben, das ein Testlernset repräsentiert
+
+Asserts auf Response:
+
+* HTTP-Statuscode der Response 200?
+* ID definiert & Zahlenwert?
+* Name als String vorhanden?
+* Modul als String vorhanden?
+* Array für Karteikarten vorhanden?
+* Array für Multiple-Choice-Fragen vorhanden?
+
+Die ID des erzeugten Lernsets wird den restlichen Requests als Bruno Runtime-Variable zur Verfügung gestellt.
+
+==== Endpunkt für Karteikarten
+
+Alle Requests gehen an den Pfad */api/cards/...*
+
+===== create_card
+
+POST-Request an den Cards Endpunkt. Im Body wird ein JSON-Objekt mitgegeben, das eine Testkarte repräsentiert.
+
+Asserts auf Response: 
+
+* HTTP-Statuscode 200?
+* Ist der Inhalt des Bodies ein Array?
+
+In der Testrequest wird nur eine Karteikarte erstellt, theoretisch wären mehrere möglich. Die ID dieser Karteikarte, sowie deren Vorder- und Rückseite werden als Bruno Runtime Variablen gesetzt.
+
+==== Endpunkt für Multiple Choice Fragen
+
+Alle Requests gehen an den Pfad */api/questions/...
+
+===== create_question
+
+POST-Request an den Question Endpunkt. Im Körper wird ein JSON-Objekt mitgegeben, das eine Testfrage repräsentiert.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* ID im Body als Zahl definiert?
+* Antworten der Frage als Array vorhanden?
+* Fragestellung in der Response gleich der Fragestellung in der Request?
+
+Die Fragestellung in der Request wird als Bruno Runtime Variable gesetzt.
+
+=== GET-Requests
+
+Dokumentation der GET-Requests in den Integrationstestanfragen. Die Tests sollen überprüfen, ob die Response des Servers wie erwartet strukturiert ist und ob die POST-Requests auch den gewünschten Effekt in der Datenbank haben.
+
+==== Endpunkt für Karteikarten
+
+Alle Requests gehen an den Pfad */api/cards/...*
+
+===== get_cards
+
+GET-Request ohne bestimmte ID. In der Antwort werden alle gespeicherten Karteikarten erwartet.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Ist der Inhalt des Bodies ein Array?
+* Ist der erste Eintrag im Array definiert? 
+
+===== get_single_card
+
+GET-Request mit der ID der bereits erstellten Karteikarte aus der POST-Request an den Endpunkt. In der Antwort wird die erstellte Karteikarte erwartet.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt vom Body JSON-Objekt?
+* Vorderseite gleich erstellter Vorderseite?
+* Rückseite gleich erstellter Rückseite?
+* ID gleich erstellter ID?
+
+==== Endpunkt für Multiple-Choice-Fragen
+
+Alle Requests gehen an den Pfad */api/questions/...*
+
+===== get_question
+
+GET-Request ohne bestimmte ID. In der Antwort werden alle gespeichterten Karteikarten erwartet.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body definiert und im JSON-Format?
+
+===== get_questions_for_set
+
+GET-Request mit ID des erstellten Lernsets. Erwartet wird die bereits erstellte Multiple Choice Frage.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body definiert und Array?
+
+==== Endpunkt für Lernsets
+
+Alle Requests gehen an den Pfad */api/learning_set/...*
+
+===== get_learning_sets_by_name
+
+GET-Request mit module aus der POST-Request als Query-Parameter. Erwartet wird ein Array im Body.
+
+Asserts auf Response:
+* HTTP-Statuscode 200?
+* Inhalt Body definiert, ein Array und nicht leer?
+
+===== get_single_learning_set
+
+GET-Request mit ID des bereits erstellten Lernsets. Erwartet wird das bereits erstellte Lernset.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body definiert und im JSON-Format?
+* Name gleich dem erstellten Namen?
+* Modul gleich dem erstellten Modul?
+* ID liegt als Nummer vor?
+* Karten liegen als Array vor?
+* Multiple-Choice-Fragen liegen als Array vor?
+
+===== get_learning_sets
+
+GET-Request ohne bestimmte ID. Erwartet wird ein Array der Lernsets in der Datenbank.
+
+Asserts auf Response:
+* HTTP-Statuscode 200?
+* Body ist definiert?
+* Body ist ein nicht leeres Array?
+
+=== PUT-Requests
+
+Dokumentation der PUT-Requests. Nach jeder PUT-Request folgt eine GET-Request, die verifizieren soll, ob die Änderungen auch wirklich in der Datenbank vorgenommen wurden.
+
+==== Endpunkt für Karteikarten
+
+Alle Requests gehen an den Pfad */api/cards/...*
+
+===== update_card
+
+PUT-Request mit ID der bereits erstellten Karteikarte. Erwartet wird die erstellte Karteikarte mit angepassten Daten.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body im JSON-Format?
+* erhaltene Vorderseite gleich der aktualisierten Vorderseite?
+* erhaltene Rückseite gleich der aktualisierten Rückseite?
+* erhaltene ID gleich der ID der ID der erstellten Karteikarte?
+
+===== get_updated_card
+
+GET-Anfrage an bereits erstellte Karteikarte. Diese Anfrage überprüft die vorher ausgeführte POST-Request. Erwartet wird die aktualisierte Karteikarte.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body im JSON-Format?
+* Vorderseite ungleich erstellter Vorderseite und gleich aktualisierter Vorderseite?
+* Rückseite ungleich erstellter Rückseite und gleich aktualisierter Rückseite?
+
+==== Endpunkt für Multiple-Choice-Fragen
+
+Alle Request gehen an den Pfad */api/questions/...*
+
+===== update_question
+
+PUT-Request an bereits erstellte Multiple-Choice-Frage. Erwartet wird die erstellte Multiple-Choice-Frage mit angepassten Daten.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body definiert und im JSON-Format?
+* Fragestellung gleich der angepassten Fragestellung?
+* ID gleich der ID der erstellten Frage?
+
+===== get_updated_question
+
+GET-Request mit der ID der erstellten Multiple-Choice-Frage. Erwartet wird die aktualisierte Multiple-Choice-Frage.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body definiert und im JSON-Format?
+* Fragestellung gleich der aktualisierten Fragestellung?
+* ID gleich der ID der erstellten Multiple-Choice-Frage?
+* Antworten als Array vorhanden?
+
+==== Endpunkt für Lernsets
+
+Aktuell gibt es keine PUT-Requests in diesem Endpunkt.
+
+=== DELETE-Requests
+
+Dokumentation der DELETE-Requests. Nach jeder DELETE-Request folt eine GET-Request, die überprüfen soll, ob das gewünschte Objekt auch wirklich aus der Datenbank gelöscht wurde. Eine weitere DELETE-Request soll das korrekte Verhalten des Servers für ungültige DELETE-Anfragen überprüfen.
+
+==== Endpunkt für Karteikarten
+
+Alle Requests gehen an den Pfad */api/cards/...*
+
+===== delete_card
+
+DELETE Anfrage an den Endpunkt. Die Anfrage soll die erstellte Karte wieder löschen. Erwartet wird eine erfolgreiche Response mit leerem Body.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body null?
+
+===== get_deleted_card
+
+GET-Request mit der ID der erstellten Karte. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da diese Karteikarte vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404?
+* Inhalt Body im JSON-Format?
+* Detailangabe ist Sting?
+
+===== delete_card_again
+Erneute DELETE-Request mit der ID der erstellten Karteikarte. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da diese Karteikarte vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404?
+* Inhalt Body im JSON-Format?
+* Detailangabe ist String?
+
+==== Endpunkt für Multiple-Choice-Fragen
+
+Alle Requests gehen an den Pfad */api/questions/...*
+
+===== delete_question
+
+DELETE-Request mit der ID der erstellten Mulitple-Choice-Frage. Erwartet wird eine erfogreiche Response mit leerem Body
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body null?
+
+===== get_deleted_question
+
+GET-Request mit der ID der erstellten Mulitple-Choice-Frage. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da diese Mulitple-Choice-Frage vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404
+* Inhalt Body im JSON Format?
+* Detailangabe ist String?
+
+===== delete_question_again
+
+Erneute DELETE-Request mit der ID der erstellten Mulitple-Choice-Frage. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da diese Mulitple-Choice-Frage vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404?
+* Inhalt Body im JSON-Format?
+* Detailangabe ist String?
+
+==== Endpunkt für Lernsets
+
+Alle Requests gehen an den Pfad */api/learning_set/...*
+
+===== delete_new_learning_set
+
+DELETE-Request mit der ID des erstellten Lernsets. Erwartet wird eine erfogreiche Response mit leerem Body.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body null?
+
+===== get_deleted_set
+
+GET-Request mit der ID des erstellten Lernsets. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da dieses Lernset vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404
+* Inhalt Body im JSON-Format?
+* Detailangabe ist String?
+
+===== delete_learning_set_again
+
+Erneute DELETE-Request mit der ID des erstellten Lernsets. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da dieses Lernset vorher gelöscht wurde.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 404?
+* Inhalt Body im JSON-Format?
+* Detailangabe ist String?
+
+
+
+
+
+
+
+
+
+

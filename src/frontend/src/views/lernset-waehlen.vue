@@ -3,7 +3,7 @@
     <div class="Container">                     
         <div class="Body-Container">
             <RouterLink to="/lernset-erstellen" class="lernset-link">
-                <img src="@/assets/img/lernseterstellen.png" alt="Lernseterstellen" class="lernseterstellenbild"></img>
+                <img src="@/assets/img/Lernseterstellen.png" alt="Lernseterstellen" class="lernseterstellenbild"></img>
                 <span class="link-text">Lernset erstellen</span>
             </RouterLink>
 

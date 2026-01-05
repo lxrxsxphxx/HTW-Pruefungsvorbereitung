@@ -7,12 +7,14 @@
 
     <section class="features">
       <div class="btn-links">
+
         <button>
           <img src="@/assets/img/Kurse.png" alt="Kursbutton" class="kurs-button" />
         </button>
+      
       </div>
       <div class="btn-mitte">
-        <RouterLink to="/lernen">
+        <RouterLink to="/modul-waehlen">
           <button>
             <img src="@/assets/img/jetztLernen.png" alt="LernenButton" class="lernen-button" />
           </button>
@@ -107,7 +109,7 @@ export default {
 
 
 /* Large: Desktop */
-@media screen and (min-width: 1080px) and (max-width: 1479px) {
+@media screen and (min-width: 1080px) /*and (max-width: 1479px) */{
   .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -119,7 +121,7 @@ export default {
   }
 }
 
-/* Extra Large: Große Monitore */
+/* Extra Large: Große Monitore 
 @media screen and (min-width: 1480px) {
 
 
@@ -160,7 +162,7 @@ export default {
     width: 90%;
     height: 90%;
   }
-}
+}*/
 </style>
 
 

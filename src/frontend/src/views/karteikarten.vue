@@ -9,13 +9,6 @@
 
     <section id="quizSection">
       <h2>Abfrage</h2>
-      <label for="quizSubjectSelect">Fach / Modul wählen:</label>
-      <select id="quizSubjectSelect" v-model="quizSubject">
-        <option value="">-- Bitte wählen --</option>
-        <option v-for="subject in subjects" :key="subject" :value="subject">
-          {{ subject }}
-        </option>
-      </select>
 
       <FlashCard :question="currentQuizCard?.question" :answer="currentQuizCard?.answer" :is-flipped="isFlipped"
         v-show="quizCards?.length > 0 && quizCardVisible"></FlashCard>
@@ -61,8 +54,10 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import FlashCard from "@/components/FlashCard.vue";
+import { useRoute } from "vue-router";
+
 
 // API Base URL
 const API_BASE = "http://localhost:8000/api/cards";
@@ -71,12 +66,13 @@ const API_BASE = "http://localhost:8000/api/cards";
 const cards = ref([]);
 const loading = ref(false);
 
+const route = useRoute();
 
 // API Funktionen
 async function loadCards() {
   loading.value = true;
   try {
-    const response = await fetch(API_BASE);
+    const response = await fetch(API_BASE + `?learning_set_id=${route.params.learningSetId}`);
     if (!response.ok) throw new Error('Failed to load cards');
     const apiCards = await response.json();
 
@@ -92,6 +88,20 @@ async function loadCards() {
     alert('Fehler beim Laden der Karten!');
   }
   loading.value = false;
+  resetQuiz();
+  quizCards.value = cards.value.filter((c) => 1 === 1);
+  console.log(quizCards.value);
+
+
+  shuffleArray(quizCards.value);
+  currentIndex.value = 0;
+
+  quizCardVisible.value = true;
+  answerInputVisible.value = true;
+  progressVisible.value = true;
+  userAnswer.value = "";
+  isFlipped.value = false;
+  flippedOnce.value = false;
 }
 
 
@@ -137,47 +147,27 @@ const currentQuizCard = computed(() => {
 });
 
 const statsText = computed(() => {
-  let base = `Richtig: ${correctCount.value} | Falsch: ${incorrectCount.value}`;
+  let base = `${currentIndex.value}/${quizCards.value.length}`;
   if (!quizCardVisible.value && quizCards.value.length > 0) {
-    base += " | Quiz beendet!";
+    base = "Quiz beendet!\n";
+    base += `Nicht gewusst: ${badCards.value}\n`;
+    base += `Teilweise gewusst gewusst: ${okayCards.value}\n`;
+    base += `Vollständig gewusst: ${goodCards.value}\n`;
+    base += `Gewusste Karten: ${Math.round(goodCards.value / quizCards.value.length * 100)} %`
   }
   return base;
 });
 
 
 // --- Quiz-Funktionen ---
+function seeAnswer() {
+  isFlipped.value = true;
+  flippedOnce.value = true;
+}
 
-// Quiz vorbereiten, wenn Fach gewählt wurde
-watch(quizSubject, (newSubject) => {
-  if (!newSubject) {
-    quizCards.value = [];
-    quizCardVisible.value = false;
-    answerInputVisible.value = false;
-    progressVisible.value = false;
-    resetQuiz();
-    return;
-  }
-  // Alle Karten mit diesem Fach filtern
-  quizCards.value = cards.value.filter((c) => c.subject === newSubject);
-  if (quizCards.value.length === 0) {
-    alert("Keine Karteikarten für dieses Fach vorhanden.");
-    quizCardVisible.value = false;
-    answerInputVisible.value = false;
-    progressVisible.value = false;
-    resetQuiz();
-    return;
-  }
-  shuffleArray(quizCards.value);
-  currentIndex.value = 0;
-  correctCount.value = 0;
-  incorrectCount.value = 0;
-  quizCardVisible.value = true;
-  answerInputVisible.value = true;
-  progressVisible.value = true;
-  userAnswer.value = "";
+function seeQuestion() {
   isFlipped.value = false;
-  waitingForFlipBack.value = false;
-});
+}
 
 function nextQuestion(click) {
   if (currentIndex.value + 1 >= notes.value.length) {
@@ -239,14 +229,27 @@ function prevQuestion() {
   answered.value = true;
 }
 
+function skipQuestion() {
+  isFlipped.value = false;
+  flippedOnce.value = false;
+
+  const skipped = quizCards.value.splice(currentIndex.value, 1);
+  quizCards.value.push(skipped[0]);
+
+
+  userAnswer.value = "";
+  if (currentIndex.value >= quizCards.value.length) {
+    quizCardVisible.value = false;
+    answerInputVisible.value = false;
+    progressVisible.value = false;
+  }
+}
+
 // Quiz komplett zurücksetzen
 function resetQuiz() {
   quizCards.value = [];
   currentIndex.value = 0;
-  correctCount.value = 0;
-  incorrectCount.value = 0;
   userAnswer.value = "";
-  waitingForFlipBack.value = false;
   isFlipped.value = false;
   quizCardVisible.value = false;
   answerInputVisible.value = false;
@@ -283,19 +286,20 @@ nav button {
   cursor: pointer;
 }
 
-section {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 6px;
-  background: #ffefc4;
-}
-
 /* Quiz */
 #answerInputArea {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
 }
 
 #answerInputArea textarea {
@@ -307,19 +311,17 @@ section {
   resize: none;
 }
 
+#answerInputArea textarea:disabled {
+  background-color: #ebebeb;
+}
+
+
 #answerInputArea button {
   padding: 8px 16px;
   font-size: 1rem;
-  background-color: #cc7a00;
-  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-#answerInputArea button:disabled {
-  background-color: #9c5c08;
-  cursor: default;
 }
 
 /* Fortschrittsbalken */
@@ -334,8 +336,7 @@ section {
 
 #progressBar {
   height: 100%;
-  background-color: #cc7a00;
-  ;
+  background-color: var(--htw-orange);
   width: 0%;
   transition: width 0.3s ease;
 }

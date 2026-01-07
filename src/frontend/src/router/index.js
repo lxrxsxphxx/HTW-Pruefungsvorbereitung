@@ -43,7 +43,7 @@ const router = createRouter({
       component: QuizEingabe
     },
    {
-      path: '/karteikarten',
+      path: '/karteikarten/:learningSetId',
       name: 'Karteikarten',
       component: Karteikarten
     },

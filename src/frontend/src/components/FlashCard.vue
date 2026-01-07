@@ -73,6 +73,7 @@ const {question, answer, isFlipped} = defineProps(['question', 'answer', 'isFlip
 .card-front p,
 .card-back p {
   margin-top: auto;
+  color: black;
 }
 
 .htw-stripe {

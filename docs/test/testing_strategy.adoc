@@ -19,14 +19,14 @@ Spätestens am Ende des Sprints müssen die durchgeführten Änderungen am Produ
 Es handelt sich hierbei um manuelle Systemtest.
 
 === Review
-Am Ende des Sprints soll mindestens ein Review mit dem vorgeschriebenen Review Team durchgeführt werden.
+Am Ende des Sprints soll mindestens ein Review mit dem vorgeschriebenen Review Team durchgeführt werden. Das Review soll erst stattfinden, nachdem der Product Owner die neuen features abgenommen hat, es ersetzt diese Abnahme nicht.
 
 Es handelt sich hierbei um einen Abnahmetest.
 
 == Automatisierte Tests
 
 === Grundsätzliches
-Das Ziel ist vollständige Automatisierung der Tests. Aus diesem Grund sollen die Tests als GitHub Action automatisch ausgeführt werden sollen.
+Das Ziel ist vollständige Automatisierung der Tests. Um das zu ermöglichen, sollen die Tests als GitHub Action eingebunden werden.
 Tests sollen die Softwarequalität gewährleisten, deshalb kommt ihnen eine besondere Wichtigkeit zu. Tests müssen vollständig von Menschen geschrieben sein, es herrscht eine *absolute Nulltoleranz gegenüber KI-generiertem Testcode*.
 
 Änderungen bei Testquellcode werden behandelt wie im restlichen Git Workflow. Als Reviewer muss hier jedoch mindestens einer der festgelegten Tester angefragt werden.
@@ -44,9 +44,14 @@ Als API-Test Client wird bruno benutzt.
 https://www.usebruno.com/
 
 Testfälle sollen die korrekte Funktionsweise verifizieren. Dafür ist mindestens ein Positivtest erforderlich. Der Fokus liegt aber auf Negativtests.
+Bei Positivtests wird das korrekte Systemverhalten bei dem vorgesehenen, erwartetem, "richtigen" Input geprüft. Bei Negativtests wird das mit fehlerhaftem Input getan. Bei Negativtests muss also darauf geprüft werden, ob eine Fehlermeldung o.Ä. zurückkommt.
 
 Um das Ergebnis von einem Test Run nachvollziehen zu können, sollen die Testergebnisse in einer Log Datei gespeichert werden. Ob immer neue Dateien erstellt werden, oder eine existierende Datei immer wieder überschrieben wird, ist dem Testenden überlassen.
 
 
 === Tests Frontend
-Aktuell sind keine Frontend Tests geplant. Sollte sich daran etwas ändern, wird hier mehr dazu erläutert.
+Aktuell sind keine automatisierten Frontend Tests geplant. 
+
+Zum einen fehlt das Know-How, zum anderen herrscht im Frontend-Bereich eine hohe Änderungsrate des Codes. Deshalb wird auf automatisierte Frontend Tests verzichtet und rein auf manuelle, explorative Tests vertraut.
+
+Sollte sich daran etwas ändern, wird hier mehr dazu erläutert.

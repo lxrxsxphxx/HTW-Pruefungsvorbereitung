@@ -24,7 +24,7 @@
 
                 <div id="control-button-container">
                     <div><button class="control-button" id="save_card_set" @click="saveLearningSet">Lernset speichern</button></div>
-                    <div><button class="control-button" id="cancel" @click="deleteLearningSet">Abbrechen</button></div>
+                    <div><button class="control-button" id="cancel" @click="showCancelPopup">Abbrechen</button></div>
                 </div>
             </div>
 
@@ -44,8 +44,9 @@
                         <button class="delete_question" @click="deleteQuestion(index)">löschen</button>
                     </div>
                 </div>
-                
             </aside>
+
+            
 
             <div id="done-container" ref="done_container">
                 <h2>Lernset wurde erfolgreich erstellt</h2>
@@ -55,6 +56,7 @@
                 </RouterLink>
             </div>
         </div>
+        <Popup ref="cancel_popup" @buttonClicked="popupReaction"/>
     </div>
 </template>
 
@@ -68,6 +70,7 @@
 import { provide, ref } from 'vue';
 import KarteikartenErstellen from './karteikarten-erstellen.vue';
 import QuizEingabe from './quiz-eingabe.vue';
+import Popup from "./popup.vue";
 
 
 "use strict";
@@ -86,6 +89,8 @@ let quiz_entry_view = ref(null);
 
 let question_type_container = ref(null);
 let aside = ref(null);
+
+let cancel_popup = ref(null);
 let done_container = ref(null);
 
 let learning_set_name = ref('');
@@ -210,17 +215,43 @@ async function postJsonToURL(json, url){
 
 
 /**
- * @description Delete the entire learning set.
+ * @description Delete all the questions and the other entries of the learning set.
  * @returns {null}
  */
 function deleteLearningSet(){
     hideEntryViews(TYPE_INDEX_CARD);
-    //index_cards_entry.value.style.display = "inline";
     editQuestion(question_set[edit_index]);
 
     for(let i = question_set.length-1; i >= 0; i--){
         deleteQuestion(i);
     }
+
+    learning_set_name.value = "";
+    module_name.value = "";
+
+    return;
+}
+
+/**
+ * @description Show a Popup asking weather the learning-set shall be deleted.
+ * @returns {null}
+ */
+function showCancelPopup(){
+    let text = 'Achtung, alle Fragen werden gelöscht. Wirklich Abbrechen?';
+    let buttons = ['Ja', 'Nein'];
+    cancel_popup.value.setTextAndButtons(text, buttons);
+    cancel_popup.value.setVisibility(true);
+    return;
+}
+/**
+ * @description React to the user input about deleteing the learning-set.
+ * @param {Number} button index of the button that was pressed
+ * @returns {null}
+ */
+function popupReaction(button){
+    cancel_popup.value.setVisibility(false);
+
+    if(button === 0) deleteLearningSet();
     return;
 }
 

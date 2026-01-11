@@ -76,14 +76,16 @@ Fehler:
 ```sh
 You can run only at the root of a collection
 ```
+
 Lösung: Das Working Directory ist nicht das Verzeichnis der Collection, deshalb muss in die Collection gewechselt werden.
+
+---
 
 Fehler:
 Riesige Wand aus Errors
 
----
-
 Grund: Vermutlich wurde Bruno mit snap installiert. Das führt auf vielen Systemen zu Problemen.
+
 Lösung: 
 ```sh
 snap remove bruno

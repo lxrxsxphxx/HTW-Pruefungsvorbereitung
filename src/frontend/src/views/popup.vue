@@ -45,8 +45,9 @@ function buttonClicked(index){
 
 #main {
     position: absolute;
-    left: 40%;
-    top: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--light-menu);
     color: var(--light-text-color);
     text-align: center;

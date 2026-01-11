@@ -28,10 +28,6 @@ assert {
   req.body: isArray
 }
 
-script:pre-request {
-  console.log("The tests in this request are incomplete, the req and res bodies should be compared for equality")
-}
-
 script:post-response {
   const body = res.body
   

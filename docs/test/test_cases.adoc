@@ -40,8 +40,8 @@ Asserts auf Response:
 * ID definiert & Zahlenwert?
 * Name als String vorhanden?
 * Modul als String vorhanden?
-* Array für Karteikarten vorhanden?
-* Array für Multiple-Choice-Fragen vorhanden?
+* Array für Karteikarten vorhanden und leer?
+* Array für Multiple-Choice-Fragen vorhanden und leer?
 
 Die ID des erzeugten Lernsets wird den restlichen Requests als Bruno Runtime-Variable zur Verfügung gestellt.
 

@@ -133,7 +133,7 @@ Asserts auf Response:
 
 Alle Requests gehen an den Pfad */api/learning_set/...*
 
-===== get_learning_sets_by_name
+===== get_learning_sets_by_module
 
 GET-Request mit module aus der POST-Request als Query-Parameter. Erwartet wird ein Array im Body.
 
@@ -186,7 +186,7 @@ Asserts auf Response:
 
 ===== get_updated_card
 
-GET-Anfrage an bereits erstellte Karteikarte. Diese Anfrage überprüft die vorher ausgeführte POST-Request. Erwartet wird die aktualisierte Karteikarte.
+GET-Anfrage an bereits erstellte Karteikarte. Diese Anfrage überprüft die vorher ausgeführte PUT-Request. Erwartet wird die aktualisierte Karteikarte.
 
 Asserts auf Response:
 
@@ -251,7 +251,7 @@ Asserts auf Response:
 
 * HTTP-Statuscode 404?
 * Inhalt Body im JSON-Format?
-* Detailangabe ist Sting?
+* Detailangabe ist String?
 
 ===== delete_card_again
 Erneute DELETE-Request mit der ID der erstellten Karteikarte. Erwartet wird eine Fehlermeldung mit dem Statuscode 404, da diese Karteikarte vorher gelöscht wurde.

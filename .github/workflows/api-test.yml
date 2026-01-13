@@ -13,8 +13,15 @@ on:
     - 'src/testing/**.bru'
 
   pull_request:
-    branches-ignore:
-    - main
+    branches:
+      #docs branches are uninteresting to us, as the code doesn't change
+    - 'feat/**'
+
+    paths:
+      #only if .py or .bru files are changed, as they make up the backend + tests
+    - '.github/**.yml'
+    - 'src/backend/**.py'
+    - 'src/testing/**.bru'
 
 jobs:
   test:

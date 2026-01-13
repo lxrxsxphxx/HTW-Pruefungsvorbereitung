@@ -14,7 +14,7 @@ Dieses Dokument setzt voraus, dass sich mit der xref:../development/design.adoc[
 === Installation und Benutzung Bruno Client
 https://www.usebruno.com/
 
-TODO
+Installation und Benutzung sind in der xref:../../src/testing/README.md[README] im Verzeichnis für Testquellcode zu finden
 
 == Test Cases
 

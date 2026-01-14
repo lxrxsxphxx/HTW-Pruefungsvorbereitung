@@ -16,7 +16,7 @@ Es handelt sich hierbei um manuelle Modul und Integrationstests.
 === Product Owner
 Spätestens am Ende des Sprints müssen die durchgeführten Änderungen am Produkt durch den Product Owner abgenommen und abgenickt werden. Erst dann gilt die Aufgabe als abgeschlossen. Dabei geht es darum, ob die Vorgaben gemäß User Story erfüllt wurden.
 
-Es handelt sich hierbei um manuelle Systemtest.
+Es handelt sich hierbei um manuelle Systemtests.
 
 === Review
 Am Ende des Sprints soll mindestens ein Review mit dem vorgeschriebenen Review Team durchgeführt werden. Das Review soll erst stattfinden, nachdem der Product Owner die neuen features abgenommen hat, es ersetzt diese Abnahme nicht.

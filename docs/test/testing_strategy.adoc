@@ -1,0 +1,57 @@
+= Teststrategie
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+
+== Allgemeines
+Dieses Dokument beschreibt die Teststrategie des Teams. Es wird festgeschrieben, wann, wie und von wem getestet werden soll.
+
+== Manuelle Akzeptanztests
+=== Pull Requests
+Es wird sich gegenseitig kontrolliert. Gemäß Git-Workflow des Teams wird für jede Änderung am bestehenden Projektstand ein Branch erstellt, am Ende der Arbeit an der jeweiligen Aufgabe dann eine Pull Request. Diese *muss* von mindestens einem anderen Team-Mitglied gesichtigt werden, bevor gemergt wird. Welches Team Mitglied genau als Kontrolle dient, soll nicht klar festgelegt werden, jedoch sollte die Wahl gut begründet sein. Der Aufgabenbereich der Person soll eine Kontrollkompetenz hergeben.
+Hier geht es sowohl um konzeptionelle, sachliche Richtigkeit, als auch um die Sicherstellung von Codequalität.
+
+Es handelt sich hierbei um manuelle Modul und Integrationstests.
+
+=== Product Owner
+Spätestens am Ende des Sprints müssen die durchgeführten Änderungen am Produkt durch den Product Owner abgenommen und abgenickt werden. Erst dann gilt die Aufgabe als abgeschlossen. Dabei geht es darum, ob die Vorgaben gemäß User Story erfüllt wurden.
+
+Es handelt sich hierbei um manuelle Systemtests.
+
+=== Review
+Am Ende des Sprints soll mindestens ein Review mit dem vorgeschriebenen Review Team durchgeführt werden. Das Review soll erst stattfinden, nachdem der Product Owner die neuen features abgenommen hat, es ersetzt diese Abnahme nicht.
+
+Es handelt sich hierbei um einen Abnahmetest.
+
+== Automatisierte Tests
+
+=== Grundsätzliches
+Das Ziel ist vollständige Automatisierung der Tests. Um das zu ermöglichen, sollen die Tests als GitHub Action eingebunden werden.
+Tests sollen die Softwarequalität gewährleisten, deshalb kommt ihnen eine besondere Wichtigkeit zu. Tests müssen vollständig von Menschen geschrieben sein, es herrscht eine *absolute Nulltoleranz gegenüber KI-generiertem Testcode*.
+
+Änderungen bei Testquellcode werden behandelt wie im restlichen Git Workflow. Als Reviewer muss hier jedoch mindestens einer der festgelegten Tester angefragt werden.
+
+* Johann - Tests Frontend
+* Marius - Tests Backend
+
+Sollten die Änderungen von einem Tester kommen, muss eine andere fachlich passende Person aus dem Team eingeschaltet werden.
+
+=== Umfang
+Eine vollständige Testabdeckung wird nicht angestrebt. Es sollen aber Testfälle für die grundlegendsten Komponenten existieren. Das Ziel der automatisierten Test ist weniger die Softwarequalität zu garantieren, es soll vielmehr das Verständnis des Schreibens von Tests und die Automatisierung durch GitHub Actions gefördert werden.
+
+=== Tests Backend
+Als API-Test Client wird bruno benutzt.
+https://www.usebruno.com/
+
+Testfälle sollen die korrekte Funktionsweise verifizieren. Dafür ist mindestens ein Positivtest erforderlich. Der Fokus liegt aber auf Negativtests.
+Bei Positivtests wird das korrekte Systemverhalten bei dem vorgesehenen, erwartetem, "richtigen" Input geprüft. Bei Negativtests wird das mit fehlerhaftem Input getan. Bei Negativtests muss also darauf geprüft werden, ob eine Fehlermeldung o.Ä. zurückkommt.
+
+Um das Ergebnis von einem Test Run nachvollziehen zu können, sollen die Testergebnisse in einer Log Datei gespeichert werden. Ob immer neue Dateien erstellt werden, oder eine existierende Datei immer wieder überschrieben wird, ist dem Testenden überlassen.
+
+
+=== Tests Frontend
+Aktuell sind keine automatisierten Frontend Tests geplant. 
+
+Zum einen fehlt das Know-How, zum anderen herrscht im Frontend-Bereich eine hohe Änderungsrate des Codes. Deshalb wird auf automatisierte Frontend Tests verzichtet und rein auf manuelle, explorative Tests vertraut.
+
+Sollte sich daran etwas ändern, wird hier mehr dazu erläutert.

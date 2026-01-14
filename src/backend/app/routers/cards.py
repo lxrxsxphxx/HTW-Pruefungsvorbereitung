@@ -1,7 +1,11 @@
+"""
+This file describes the REST endpoint for database interactions with cards.
+"""
+
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import CardBase, Card, LearningSet
+from app.models import CardBase, Card, CardResponse, LearningSet
 from app.dependencies import get_session
 
 router = APIRouter(
@@ -10,7 +14,18 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session)) -> list[Card]:
+def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session)) -> list[CardResponse]:
+    """
+    Create one or more Cards
+
+    Args:
+        cards (list[CardBase]): The cards to be created.
+        learning_set_id (int): ID of the learning set the cards belong to.
+        session (Session): The database session.
+
+    Returns:
+        list[CardResponse]: The created cards
+    """
 
     learning_set = session.get(LearningSet,learning_set_id)
     if not learning_set:
@@ -28,18 +43,54 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     return db_cards
 
 @router.get("/")
-def read_cards(session: Session = Depends(get_session)) -> list[Card]:
+def read_cards(learning_set_id:int | None = None, session: Session = Depends(get_session)) -> list[CardResponse]:
+    """
+    Gets all cards currently in the database
+    
+    Args:
+        session (Session): the database session
+        learning_set_id(int | None): the learning set the cards should belong to
+    
+    Returns:
+        list[CardResponse]: The cards currently stored in database
+    """
+    if learning_set_id:
+        return session.exec(select(Card).where(Card.learning_set_id == learning_set_id)).all()
+
     return session.exec(select(Card)).all()
 
 @router.get("/{id}")
-def read_card(id: int, session: Session = Depends(get_session)) -> Card:
+def read_card(id: int, session: Session = Depends(get_session)) -> CardResponse:
+    """
+    gets a single card
+    
+    Args:
+        id (int): the id of the wanted card
+        session (Session): the database session
+    
+    Returns: 
+        CardResponse: The wanted card
+    """
     card = session.get(Card, id)
     if not card:
         raise HTTPException(status_code=404, detail="Card not found")
     return card
 
 @router.put("/{id}")
-def update_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> Card:
+def update_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> CardResponse:
+    """
+    Updates the information of a card
+    
+    Args:
+        id (int): the id of the card that is going to be updated
+        card (CardBase): the new information of the card
+        session (Session): the database session
+    
+    Returns:
+        CardResponse: The updated card
+    """
+
+
     db_card = session.get(Card, id)
     if not card:
         raise HTTPException(status_code=404, detail="Card not found")
@@ -52,6 +103,17 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
 
 @router.delete("/{id}")
 def delete_card(id: int, session: Session = Depends(get_session)):
+    """
+    deletes a card
+    
+    Args:
+        id (int): the id of the card that is going to be deleted
+        session (Session): the database session
+    
+    Returns:
+        null
+    """
+
     card = session.get(Card, id)
     if not card:
         raise HTTPException(status_code=404, detail="Card not found")

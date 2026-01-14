@@ -7,6 +7,8 @@ import QuizLoesen from '@/views/quiz-loesen.vue'
 import Karteikarten from '@/views/karteikarten.vue'
 import LernsetErstellen from '@/views/lernset-erstellen.vue'
 import KarteikartenErstellen from '@/views/karteikarten-erstellen.vue'
+import ModulWaehlen from '@/views/modul-waehlen.vue'
+import LernsetWaehlen from '@/views/lernset-waehlen.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +33,11 @@ const router = createRouter({
       component: LernsetErstellen
     },
     {
+      path: '/lernset-waehlen',
+      name: 'Lernset-waehlen',
+      component: LernsetWaehlen
+    },
+    {
       path: '/multiplechoice',
       name: 'Multiplechoice',
       component: QuizLoesen
@@ -39,6 +46,11 @@ const router = createRouter({
       path: '/karteikarten',
       name: 'Karteikarten',
       component: Karteikarten
+    },
+    {
+      path: '/modul-waehlen',
+      name: 'Modul-waehlen',
+      component: ModulWaehlen
     }
   ],
 })

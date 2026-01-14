@@ -1,3 +1,8 @@
+"""
+This file gets the database session. The session is used by the REST-endpoints
+for database interactions
+"""
+
 from sqlmodel import Session
 from app.database import engine
 

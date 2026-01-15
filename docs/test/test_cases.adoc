@@ -107,6 +107,18 @@ Asserts auf Response:
 * Rückseite gleich erstellter Rückseite?
 * ID gleich erstellter ID?
 
+===== get_cards_by_set
+
+GET-Request mit ID des erstellten Lernsets. Erwartet wird ein Array, das die bereits erstellte Karteikarte enthält.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body als nicht leeres Array?
+* Vorderseite gleich erstellter Vorderseite?
+* Rückseite gleich erstellter Rückseite?
+* ID gleich erstellter ID?
+
 ==== Endpunkt für Multiple-Choice-Fragen
 
 Alle Requests gehen an den Pfad */api/questions/...*
@@ -119,6 +131,18 @@ Asserts auf Response:
 
 * HTTP-Statuscode 200?
 * Inhalt Body definiert und im JSON-Format?
+
+===== get_question_by_id
+
+GET-Request mit ID der erstellten Multiple Choice Frage. Erwartet wird die bereits erstellte Multiple Choice Frage.
+
+Asserts auf Response:
+
+* HTTP-Statuscode 200?
+* Inhalt Body im JSON-Format?
+* Fragestellung gleich erstellter Fragestellung?
+* ID als Nummer und gleich erstellter ID?
+* Antworten als Array vorliegend?
 
 ===== get_questions_for_set
 
@@ -182,7 +206,7 @@ Asserts auf Response:
 * Inhalt Body im JSON-Format?
 * erhaltene Vorderseite gleich der aktualisierten Vorderseite?
 * erhaltene Rückseite gleich der aktualisierten Rückseite?
-* erhaltene ID gleich der ID der ID der erstellten Karteikarte?
+* erhaltene ID gleich der ID der erstellten Karteikarte?
 
 ===== get_updated_card
 

@@ -22,7 +22,7 @@ https://docs.usebruno.com/bruno-basics/download
 # Installation Bruno CLI
 Das Command Line Interface (CLI) ist für die Ausführung der Collection interessant.
 
-Für die Installation ein Package Manager gebraucht. Wir benutzen npm. Es sollte vorher sichergestellt sein, dass Node.js auf dem System installiert ist.
+Für die Installation wird ein Package Manager gebraucht. Wir benutzen npm. Es sollte vorher sichergestellt sein, dass Node.js auf dem System installiert ist.
 
 Danach:
 

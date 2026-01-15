@@ -1,0 +1,22 @@
+meta {
+  name: get_deleted_question
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{questions_url}}{{created_question}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 404
+  res.body: isJson
+  res.body.detail: isString
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

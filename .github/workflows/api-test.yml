@@ -1,0 +1,80 @@
+name: API Tests
+ 
+on:
+  push:
+    branches:
+      #docs branches are uninteresting to us, as the code doesn't change
+    - 'feat/**'
+
+    paths:
+      #only if .py or .bru files are changed or if the workflow itself is edited, as they make up the backend + tests
+    - '.github/**.yml'
+    - 'src/backend/**.py'
+    - 'src/testing/**.bru'
+
+  pull_request:
+    branches:
+      #docs branches are uninteresting to us, as the code doesn't change
+    - 'feat/**'
+
+    paths:
+      #only if .py or .bru files are changed, as they make up the backend + tests
+    - '.github/**.yml'
+    - 'src/backend/**.py'
+    - 'src/testing/**.bru'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code to the runner
+      uses: actions/checkout@v4
+
+# Preparing database
+
+    - name: Creating and filling .env
+      run: |
+          cd ./src/database
+          touch .env
+          echo "DB_USER=\"user\"" >> .env && echo "DB_PASS=\"passwd\"" >> .env && echo "DB_ADDR=\"host\"" >> .env
+          docker compose up -d
+
+# Starting the API
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        cd ${{ github.workspace }}/src/backend
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: preparing API
+      run: |
+        cd ./src/backend
+        touch .env
+        echo "DB_USER=\"user\"" >> .env && echo "DB_PASS=\"passwd\"" >> .env && echo "DB_ADDR=\"localhost\"" >> .env
+        python -m venv .venv
+        source .venv/bin/activate
+        ls -a
+    - name: launching API
+      run: |
+          cd ./src/backend
+          fastapi dev app/main.py &
+
+
+
+# Everything below here is for the tests
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install Bruno CLI
+      run: npm install -g @usebruno/cli
+    
+    - name: Run API Tests
+      run: | 
+          cd ./src/testing/testing_backend
+          bru run --delay 10

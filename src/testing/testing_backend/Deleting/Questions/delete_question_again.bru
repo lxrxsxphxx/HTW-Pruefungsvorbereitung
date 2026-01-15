@@ -1,0 +1,22 @@
+meta {
+  name: delete_question_again
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{questions_url}}{{created_question}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 404
+  res.body: isJson
+  res.body.detail: isString
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

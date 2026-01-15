@@ -1,0 +1,21 @@
+meta {
+  name: delete_question
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{questions_url}}{{created_question}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+  res.body: isNull
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

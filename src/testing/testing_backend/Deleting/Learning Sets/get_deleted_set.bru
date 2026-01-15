@@ -1,0 +1,22 @@
+meta {
+  name: get_deleted_set
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{learning_set_url}}{{created_learning_set}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 404
+  res.body: isJson
+  res.body.detail: isString
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

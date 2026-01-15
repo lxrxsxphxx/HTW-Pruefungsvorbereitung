@@ -1,0 +1,16 @@
+meta {
+  name: delete_card
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{cards_url}}{{created_card}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isNull
+}

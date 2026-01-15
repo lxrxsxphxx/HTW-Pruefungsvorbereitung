@@ -1,0 +1,29 @@
+meta {
+  name: get_cards_by_set
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{cards_url}}?learning_set_id={{created_learning_set}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  learning_set_id: {{created_learning_set}}
+}
+
+assert {
+  res.status: eq 200
+  res.body: isArray
+  res.body: isNotEmpty
+  res.body[0].front: eq {{posted_front}}
+  res.body[0].back: eq {{posted_back}}
+  res.body[0].id: eq {{created_card}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

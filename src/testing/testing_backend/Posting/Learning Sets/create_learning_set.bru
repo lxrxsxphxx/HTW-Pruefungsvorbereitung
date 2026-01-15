@@ -1,0 +1,46 @@
+meta {
+  name: create_learning_set
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{learning_set_url}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "testset",
+    "module": "test_run"
+  }
+}
+
+assert {
+  res.body.id: isDefined
+  res.status: eq 200
+  res.body.name: isString
+  res.body.module: isString
+  res.body.id: isNumber
+  res.body.cards: isArray
+  res.body.questions: isArray
+  res.body.cards: isEmpty
+  res.body.questions: isEmpty
+}
+
+script:pre-request {
+  bru.setVar("module",req.body.module)
+  bru.setVar("learning_set_name",req.body.name)
+}
+
+script:post-response {
+  const body = res.body
+  
+  bru.setVar("created_learning_set",body.id)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,22 @@
+meta {
+  name: get_questions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{questions_url}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+  res.body: isDefined
+  res.body: isArray
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

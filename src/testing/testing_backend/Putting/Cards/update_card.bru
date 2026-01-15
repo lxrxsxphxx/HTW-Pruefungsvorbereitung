@@ -1,0 +1,31 @@
+meta {
+  name: update_card
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{cards_url}}{{created_card}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "front": "new_front",
+    "back": "new_back"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body: isJson
+  res.body.front: eq {{updated_front}}
+  res.body.back: eq {{updated_back}}
+  res.body.id: eq {{created_card}}
+}
+
+script:pre-request {
+  bru.setVar("updated_front",req.body.front)
+  bru.setVar("updated_back",req.body.back)
+}

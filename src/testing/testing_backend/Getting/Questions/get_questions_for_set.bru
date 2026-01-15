@@ -1,0 +1,26 @@
+meta {
+  name: get_questions_for_set
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{questions_url}}?learning_set_id={{created_learning_set}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  learning_set_id: {{created_learning_set}}
+}
+
+assert {
+  res.status: eq 200
+  res.body: isDefined
+  res.body: isArray
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

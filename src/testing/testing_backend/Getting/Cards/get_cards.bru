@@ -1,0 +1,17 @@
+meta {
+  name: get_cards
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{cards_url}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: isArray
+  res.body[0]: isDefined
+}

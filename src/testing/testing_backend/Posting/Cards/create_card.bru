@@ -1,0 +1,37 @@
+meta {
+  name: create_card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{cards_url}}?learning_set_id={{created_learning_set}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  learning_set_id: {{created_learning_set}}
+}
+
+body:json {
+  [
+    {
+      "front": "testcard",
+      "back": "testcard"
+    }
+  ]
+}
+
+assert {
+  res.status: eq 200
+  req.body: isArray
+}
+
+script:post-response {
+  const body = res.body
+  
+  bru.setVar("created_card",body[0].id)
+  bru.setVar("posted_front",body[0].front)
+  bru.setVar("posted_back",body[0].back)
+}

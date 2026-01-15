@@ -1,0 +1,25 @@
+meta {
+  name: get_updated_question
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{questions_url}}{{created_question}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+  res.body: isDefined
+  res.body: isJson
+  res.body.question: eq {{updated_question}}
+  res.body.id: eq {{created_question}}
+  res.body.answers: isArray
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,22 @@
+meta {
+  name: get_deleted_card
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{cards_url}}{{created_card}}
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 404
+  res.body: isJson
+  res.body.detail: isString
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

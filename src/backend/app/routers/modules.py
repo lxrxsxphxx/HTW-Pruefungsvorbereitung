@@ -1,0 +1,49 @@
+"""
+This file describes the REST endpoint for database interactions with modules.
+"""
+
+from fastapi import Depends, APIRouter, HTTPException
+from sqlmodel import Session, select
+
+from app.models import ModuleBase, Module, ModuleResponse
+from app.dependencies import get_session
+
+router = APIRouter(
+    prefix="/api/modules",
+    tags=["modules"]
+)
+
+@router.post("/")
+def post_module(module:ModuleBase,session: Session = Depends(get_session)) -> ModuleResponse:
+
+    """
+    Adds a module to DB
+
+    Args:
+        module (ModuleBase): The module that is added to the database
+        session (Session): the database session
+    
+    Returns: 
+        ModuleResponse: the module as it is in the database after adding
+    """
+
+    db_module = Module.model_validate(module)
+    session.add(db_module)
+    session.commit()
+    session.refresh(db_module)
+
+    return db_module
+
+@router.get("/")
+def read_modules(session: Session = Depends(get_session)) -> list[ModuleResponse]:
+    """
+    Gets all modules currently in the database
+    
+    Args:
+        session (Session): the database session
+    
+    Returns:
+        list[ModuleResponse]: The cards currently stored in database
+    """
+
+    return session.exec(select(Module)).all()

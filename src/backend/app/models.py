@@ -181,6 +181,8 @@ class User(UserBase,table=True):
     id: int | None = Field(default=None, primary_key=True)
     course_id: int | None = Field(default = None, foreign_key = "course.id")
     course:Course = Relationship(back_populates="users")
+    username:str
+    passwd:str
 
 class UserResponse(UserBase):
     """
@@ -188,6 +190,8 @@ class UserResponse(UserBase):
     """
 
     id:int
+    course_id: int = Field(default=None, foreign_key="course.id")
+
 
 class Module(ModuleBase,table=True):
     """

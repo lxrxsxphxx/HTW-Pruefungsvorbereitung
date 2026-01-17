@@ -152,6 +152,7 @@ class Course(CourseBase,table=True):
     
     id: int | None = Field(default=None, primary_key=True)
     modules:"CourseModule" = Relationship(back_populates="courses", cascade_delete=False)
+    users: "User" = Relationship(back_populates="course")
 
 class CourseResponse(CourseBase):
     """
@@ -159,19 +160,6 @@ class CourseResponse(CourseBase):
     """
 
     id: int
-    
-
-class UserModule(SQLModel,table=True):
-    """
-    Class mapping Users to modules an reverse.
-    """
-
-    id : int | None = Field(default=None, primary_key=True)
-    user_id: int = Field(default=None, foreign_key="user.id")
-    users:"User"   =  Relationship(back_populates="modules", cascade_delete=False)
-
-    module_id: int = Field(default=None, foreign_key="module.id")
-    modules:"Module" = Relationship(back_populates="users", cascade_delete=False)
 
 class CourseModule(SQLModel,table=True):
     """
@@ -191,8 +179,8 @@ class User(UserBase,table=True):
     """
 
     id: int | None = Field(default=None, primary_key=True)
-    modules:UserModule = Relationship(back_populates="users")
-    #course_id: int | None = Field(default = None, foreign_key = "course.id")
+    course_id: int | None = Field(default = None, foreign_key = "course.id")
+    course:Course = Relationship(back_populates="users")
 
 class UserResponse(UserBase):
     """
@@ -207,7 +195,6 @@ class Module(ModuleBase,table=True):
     """
 
     id: int | None = Field(default=None, primary_key=True)
-    users: list[UserModule] = Relationship(back_populates="modules", cascade_delete=False)
     courses: list[CourseModule] = Relationship(back_populates="modules", cascade_delete=False)
     learning_sets: list[LearningSet] = Relationship(back_populates="module", cascade_delete=False)
 
@@ -217,4 +204,3 @@ class ModuleResponse(ModuleBase):
     """
 
     id:int
-

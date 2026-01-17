@@ -98,12 +98,15 @@ class LearningSetBase(SQLModel):
 
 class LearningSet(LearningSetBase, table = True):
     """
-    Class for how answers to learning sets are stored in database.
+    Class for how learning sets are stored in database.
     """
 
     id: int | None = Field(default=None, primary_key=True)
     cards: list[Card] = Relationship(back_populates="learning_set", cascade_delete=True)
     questions: list[Question] = Relationship(back_populates="learning_set", cascade_delete=True)
+    module_id: int | None = Field(default=None, foreign_key="module.id")
+    module: "Module" = Relationship(back_populates="learning_sets", cascade_delete=False)
+    
 
 class LearningSetResponse(LearningSetBase):
     """
@@ -113,3 +116,105 @@ class LearningSetResponse(LearningSetBase):
     id: int
     cards: list[CardResponse]
     questions: list[QuestionResponse]
+
+class CourseBase(SQLModel):
+    """
+    Base class for courses of study.
+    Holds necessary information to describe a single multiple choice question.
+    """
+
+    name: str
+    faculty: str
+
+class UserBase(SQLModel):
+    """
+    Base class for users. 
+    Holds minimum necessary information to describe a single user.
+    """
+    name: str
+    faculty: str
+    curr_semester: int
+
+class ModuleBase(SQLModel):
+    """
+    Base class for modules.
+    Holds minimum necessary information to describe a single module.
+    """
+
+    name: str
+    lecturer: str
+    semester: int
+
+class Course(CourseBase,table=True):
+    """
+    Class for how courses of study are stored in database.
+    """
+    
+    id: int | None = Field(default=None, primary_key=True)
+    modules:"CourseModule" = Relationship(back_populates="courses", cascade_delete=False)
+
+class CourseResponse(CourseBase):
+    """
+    Class representing a course of study. Only used as response to GET-requests.
+    """
+
+    id: int
+    
+
+class UserModule(SQLModel,table=True):
+    """
+    Class mapping Users to modules an reverse.
+    """
+
+    id : int | None = Field(default=None, primary_key=True)
+    user_id: int = Field(default=None, foreign_key="user.id")
+    users:"User"   =  Relationship(back_populates="modules", cascade_delete=False)
+
+    module_id: int = Field(default=None, foreign_key="module.id")
+    modules:"Module" = Relationship(back_populates="users", cascade_delete=False)
+
+class CourseModule(SQLModel,table=True):
+    """
+    Class mapping Courses to modules and reverse.
+    """
+
+    id : int | None = Field(default=None, primary_key=True)
+
+    course_id: int = Field(default=None, foreign_key="course.id")
+    courses:"Course" = Relationship(back_populates="modules", cascade_delete=False)
+    module_id: int = Field(default=None, foreign_key="module.id")
+    modules:"Module" = Relationship(back_populates="courses", cascade_delete=False)
+
+class User(UserBase,table=True):
+    """
+    Class for how users are stored in database.
+    """
+
+    id: int | None = Field(default=None, primary_key=True)
+    modules:UserModule = Relationship(back_populates="users")
+    #course_id: int | None = Field(default = None, foreign_key = "course.id")
+
+class UserResponse(UserBase):
+    """
+    Class representing a user. Only used as response to GET-requests.
+    """
+
+    id:int
+
+class Module(ModuleBase,table=True):
+    """
+    Class for how modules are stored in database.
+    """
+
+    id: int | None = Field(default=None, primary_key=True)
+    users: list[UserModule] = Relationship(back_populates="modules", cascade_delete=False)
+    courses: list[CourseModule] = Relationship(back_populates="modules", cascade_delete=False)
+    learning_sets: list[LearningSet] = Relationship(back_populates="module", cascade_delete=False)
+
+class ModuleResponse(ModuleBase):
+    """
+    Class representing a card. Only used as response to GET-requests.
+    """
+
+    id:int
+

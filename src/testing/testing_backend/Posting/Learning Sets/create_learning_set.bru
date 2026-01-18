@@ -5,15 +5,18 @@ meta {
 }
 
 post {
-  url: {{learning_set_url}}
+  url: {{learning_set_url}}?modul_id=1
   body: json
   auth: inherit
 }
 
+params:query {
+  modul_id: 1
+}
+
 body:json {
   {
-    "name": "testset",
-    "module": "test_run"
+    "name": "testset"
   }
 }
 
@@ -21,12 +24,12 @@ assert {
   res.body.id: isDefined
   res.status: eq 200
   res.body.name: isString
-  res.body.module: isString
   res.body.id: isNumber
   res.body.cards: isArray
   res.body.questions: isArray
   res.body.cards: isEmpty
   res.body.questions: isEmpty
+  ~res.body.module: isString
 }
 
 script:pre-request {

@@ -9,20 +9,23 @@
       <div class="btn-links">
 
         <button>
-          <img src="@/assets/img/Kurse.png" alt="Kursbutton" class="kurs-button" />
+          <img src="@/assets/img/book.png" alt="Kursbutton" class="kurs-button" />
+          <p>Module</p>
         </button>
       
       </div>
       <div class="btn-mitte">
         <RouterLink to="/modul-waehlen">
           <button>
-            <img src="@/assets/img/jetztLernen.png" alt="LernenButton" class="lernen-button" />
+            <img src="@/assets/img/checkmark.png" alt="LernenButton" class="lernen-button" />
+            <p>Jetzt Lernen</p>
           </button>
         </RouterLink>
       </div>
       <div class="btn-rechts">
         <button>
-          <img src="@/assets/img/Statistiken.png" alt="StatistikenButton" class="statistiken-button" />
+          <img src="@/assets/img/bars.png" alt="StatistikenButton" class="statistiken-button" />
+          <p>Statistiken</p>
         </button>
       </div>
     </section>
@@ -60,6 +63,7 @@ export default {
 
 .intro p {
   font-size: 1.25rem;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -78,16 +82,11 @@ export default {
   border: none;
   cursor: pointer;
   width: 100%;
-}
-
-.features img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
 }
 
 .features img {
-  width: 100%;
+  width: 50%;
   height: auto;
   max-width: 100%;
   aspect-ratio: 1 / 1;
@@ -96,8 +95,14 @@ export default {
   transition: transform 0.2s ease;
 }
 
-.features img:hover {
-  transform: scale(1.20);
+.features p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.features button {
+  aspect-ratio: 1 / 1;
 }
 
 
@@ -119,10 +124,6 @@ export default {
 @media screen and (min-width: 1480px) {
 
 
-  
-  .intro {
-    margin-top: 90px;
-  }
   .container {
   
   max-width: 2000px;
@@ -140,21 +141,12 @@ export default {
     gap: 5rem;
   }
 
-  .intro{
-    width: 90%;
-    margin-left: 5%;
-  }
   .intro h1{
     font-size: 80px;
   }
 
   .intro p{
     font-size:2.0rem ;
-  }
-
-  .features img{
-    width: 90%;
-    height: 90%;
   }
 }*/
 </style>

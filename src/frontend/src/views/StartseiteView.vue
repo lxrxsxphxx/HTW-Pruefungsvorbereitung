@@ -46,7 +46,6 @@ export default {
 }
 
 .intro {
-  background-color: rgba(249, 155, 32, 0.308);
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
@@ -55,7 +54,6 @@ export default {
 
 .intro h1 {
   font-size: 2.5rem;
-  color: #ec852c;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -77,7 +75,6 @@ export default {
 }
 
 .features button {
-  background: transparent;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -87,8 +84,6 @@ export default {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  background: white;
-  object-fit: contain;
 }
 
 .features img {
@@ -96,7 +91,6 @@ export default {
   height: auto;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  background: white;
   border-radius: 10px;
   object-fit: contain;
   transition: transform 0.2s ease;

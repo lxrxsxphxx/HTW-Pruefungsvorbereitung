@@ -74,10 +74,8 @@ header img {
 }
 
 .login-wrapper button {
-  background-color: orange;
   border-radius: 8px;
   padding: 10px 20px;
-  color: white;
   border: none;
   cursor: pointer;
   font-weight: bold;

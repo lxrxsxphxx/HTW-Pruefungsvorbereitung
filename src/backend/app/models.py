@@ -94,7 +94,6 @@ class LearningSetBase(SQLModel):
     """
 
     name: str
-    module: str
 
 class LearningSet(LearningSetBase, table = True):
     """
@@ -166,11 +165,10 @@ class CourseModule(SQLModel,table=True):
     Class mapping Courses to modules and reverse.
     """
 
-    id : int | None = Field(default=None, primary_key=True)
-
-    course_id: int = Field(default=None, foreign_key="course.id")
+    #id : int | None = Field(default=None, primary_key=True)
+    course_id: int = Field(default=None, foreign_key="course.id", primary_key=True)
     courses:"Course" = Relationship(back_populates="modules", cascade_delete=False)
-    module_id: int = Field(default=None, foreign_key="module.id")
+    module_id: int = Field(default=None, foreign_key="module.id", primary_key=True)
     modules:"Module" = Relationship(back_populates="courses", cascade_delete=False)
 
 class User(UserBase,table=True):

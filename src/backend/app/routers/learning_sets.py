@@ -5,7 +5,7 @@ This file describes the REST endpoint for database interactions with learning se
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import LearningSetBase, LearningSet, LearningSetResponse
+from app.models import LearningSetBase, LearningSet, LearningSetResponse,Module
 from app.dependencies import get_session
 
 router = APIRouter(
@@ -14,7 +14,8 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session)) -> LearningSetResponse:
+def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session),
+                        modul_id:int | None = None) -> LearningSetResponse:
     """ 
     Adds a learning set to DB
 
@@ -27,6 +28,11 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
     """
 
     db_learning_set = LearningSet.model_validate(learning_set)
+    if modul_id:
+        db_module = session.get(Module,modul_id)
+        if not db_module:
+            raise HTTPException(status_code=404, detail="Module does not exist")
+        db_learning_set.module_id=modul_id
     session.add(db_learning_set)
     session.commit()
     session.refresh(db_learning_set)
@@ -34,18 +40,19 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
     return db_learning_set
 
 @router.get("/")
-def get_learning_sets(session: Session = Depends(get_session), modul: str | None = None) -> list[LearningSetResponse]:
+def get_learning_sets(session: Session = Depends(get_session), modul: int | None = None) -> list[LearningSetResponse]:
     """
     Get all Learning Sets in DB
     Args:
         session (Session): the database session
+        modul (int|None): id of the module the set belongs to
         
     Returns:
         list[LearningSetResponse]: List of stored learning sets
     """
 
     if modul:
-        return session.exec(select(LearningSet).where(LearningSet.module == modul)).all()
+        return session.exec(select(LearningSet).where(LearningSet.module_id == modul)).all()
     return session.exec(select(LearningSet)).all()
 
 @router.get("/{learning_set_id}")

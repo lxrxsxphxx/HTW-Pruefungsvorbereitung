@@ -1,6 +1,7 @@
 <template>
   <header>
-    <img src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
+    <img v-if="dark_mode" src="@/assets/img/HtwLogo_white.png" alt="HtwLogo" />
+    <img v-else  src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
     <div class="login-wrapper">
       <template v-if="!isLoggedIn">
         <button @click="showLogin = !showLogin">Login</button>
@@ -18,6 +19,10 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
+  
+  
 export default {
   /**
    * - email: Benutzer-E-Mail für Login
@@ -52,6 +57,16 @@ export default {
         alert('Falsche Zugangsdaten');
       }
     }
+  },
+  setup () {
+    const dark_mode = ref(true);
+    dark_mode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      dark_mode.value = event.matches;
+    })
+  
+  return {dark_mode}
   }
 };
 </script>
@@ -64,13 +79,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 50px;
-}
-
-header img {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  max-height: 50px;
 }
 
 .login-wrapper button {

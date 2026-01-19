@@ -88,20 +88,12 @@ async function loadCards() {
     alert('Fehler beim Laden der Karten!');
   }
   loading.value = false;
-  resetQuiz();
-  quizCards.value = cards.value.filter((c) => 1 === 1);
-  console.log(quizCards.value);
-
-
+  quizCards.value = cards.value;
   shuffleArray(quizCards.value);
-  currentIndex.value = 0;
 
   quizCardVisible.value = true;
   answerInputVisible.value = true;
   progressVisible.value = true;
-  userAnswer.value = "";
-  isFlipped.value = false;
-  flippedOnce.value = false;
 }
 
 
@@ -110,14 +102,8 @@ onMounted(() => {
   loadCards();
 });
 
-// Liste aller eindeutigen Fächer
-const subjects = computed(() => {
-  return [...new Set(cards.value.map((c) => c.subject))].sort();
-});
-
 
 // Quiz-bezogene Daten
-const quizSubject = ref("");
 const quizCards = ref([]);
 const currentIndex = ref(0);
 const goodCards = ref(0);
@@ -245,18 +231,6 @@ function skipQuestion() {
   }
 }
 
-// Quiz komplett zurücksetzen
-function resetQuiz() {
-  quizCards.value = [];
-  currentIndex.value = 0;
-  userAnswer.value = "";
-  isFlipped.value = false;
-  quizCardVisible.value = false;
-  answerInputVisible.value = false;
-  progressVisible.value = false;
-  quizSubject.value = "";
-}
-
 // Hilfsfunktion: Array mischen (Fisher-Yates)
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -346,6 +320,7 @@ nav button {
   text-align: center;
   font-weight: bold;
   margin-top: 5px;
+  white-space: pre;
 }
 
 /* Loading */

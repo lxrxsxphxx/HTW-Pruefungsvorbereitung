@@ -5,7 +5,7 @@ This file describes the REST endpoint for database interactions with modules.
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import ModuleBase, Module, ModuleResponse
+from app.models import ModuleBase, Module, ModuleResponse, Course, CourseResponse, CourseModule
 from app.dependencies import get_session
 
 router = APIRouter(
@@ -47,3 +47,25 @@ def read_modules(session: Session = Depends(get_session)) -> list[ModuleResponse
     """
 
     return session.exec(select(Module)).all()
+
+@router.get("/{id}/courses")
+def get_courses(id:int,session:Session = Depends(get_session)) -> list[CourseResponse]:
+    """
+    Gets the courses of study containing a certain module
+    
+    Args:
+        id (int): the id of the module
+        session (Session): the database session
+    
+    Returns:
+        list[CourseResponse]: the list of the wanted courses of study 
+    """
+
+    db_course = session.get(Module,id)
+    if not db_course:
+        raise HTTPException(status=404, detail="This module does not exist")
+
+    courses = session.exec(select(Course)
+                           .join(CourseModule)
+                           .where(CourseModule.course_id == id)).all()
+    return courses

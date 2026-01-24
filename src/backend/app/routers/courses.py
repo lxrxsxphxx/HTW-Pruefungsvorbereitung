@@ -5,7 +5,7 @@ This file describes the REST endpoint for database interactions with courses of 
 from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
-from app.models import CourseBase,Course, CourseResponse
+from app.models import CourseBase,Course, CourseResponse, ModuleResponse,CourseModule,Module
 from app.dependencies import get_session
 
 router = APIRouter(
@@ -46,3 +46,43 @@ def post_course(course:CourseBase, session: Session = Depends(get_session)) -> C
     session.refresh(db_course)
 
     return db_course
+
+@router.get("/{id}")
+def get_single_course(id:int,session:Session = Depends(get_session)) -> CourseResponse:
+    """
+    Gets a single course of study by its id
+    
+    Args:
+        id (int): the id of the course
+        session (Session): the database session
+    
+    Returns:
+        CourseResponse: The course as it is in the database after adding
+    """
+
+    db_course = session.get(Course,id)
+    if not db_course:
+        raise HTTPException(status=404, detail="This course does not exist")
+    return db_course
+
+@router.get("/{id}/modules")
+def get_modules(id:int,session:Session = Depends(get_session)) -> list[ModuleResponse]:
+    """
+    Gets the modules associated with a course of study
+    
+    Args:
+        id (int): the id of the course
+        session (Session): the database session
+    
+    Returns:
+        list[ModuleResponse]: the list of the wanted modules 
+    """
+
+    db_course = session.get(Course,id)
+    if not db_course:
+        raise HTTPException(status=404, detail="This course does not exist")
+
+    modules = session.exec(select(Module)
+                           .join(CourseModule)
+                           .where(CourseModule.course_id == id)).all()
+    return modules

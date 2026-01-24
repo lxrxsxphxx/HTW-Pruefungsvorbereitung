@@ -35,7 +35,10 @@ Vorlesungsskript Software Engineering II I151
 == Positionierung
 
 === Fachliche Motivation
-Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Plattform soll Lernen strukturierter, interaktiver und motivierender gestalten.
+Die Prüfungsvorbereitung erfolgt auf vielen Lernplattformen über inoffizielle und verstreute Quellen wie Altklausuren, Übungen oder Zusammenfassungen.
+Studierende müssen relevante Materialien eigenständig suchen und deren Aktualität, Relevanz sowie fachliche Zuordnung selbst einschätzen, was häufig zu Unsicherheit und ineffizientem Lernaufwand führt.
+
+Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene Struktur für die HTW Dresden sowie zugehörige Lernsets eine strukturierte, transparente und effiziente Prüfungsvorbereitung zu ermöglichen.
 
 === Produktvision
 

@@ -12,7 +12,9 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an die Lernplattform aus Sicht der Nutzer zu beschreiben und ein gemeinsames Verständnis der Inhalte zu schaffen.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, strukturierte, modulspezifische und spielerisch unterstützte Lerninhalte zu nutzen, um damit die individuelle Prüfungsvorbereitung zu verbessern, Lernfortschritte zu analysieren und in einer Community Wissen zu teilen und zu validieren.
+Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, hochschulspezifische und modulbezogene Lerninhalte zu nutzen, um die Prüfungsvorbereitung gezielt zu unterstützen. 
+
+Die Lernplattform dient ausschließlich der Unterstützung der Prüfungsvorbereitung und ersetzt weder das eigenständige Lernen noch andere Aspekte des Studienalltags.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc

@@ -48,8 +48,8 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 | die | sich auf Prüfungen vorbereiten möchten
 | ist der  | HTW-Prüfungsvorbereiter
 | eine  | webbasierte Lernplattform
-| die durch | einen Lernalgorithmus und Gamification Elementen
-| anders als | quizlet
+| die durch | eine hochschulspezifische und modulbezogene Struktur die Prüfungsvorbereitung ermöglicht
+| anders als | allgemeine Lernplattformen wie Quizlet
 | speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
 

@@ -3,6 +3,8 @@ This file connects the different endoints to a single application
 """
 
 from contextlib import asynccontextmanager
+import secrets
+import bcrypt
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import SQLModel, Session, select
@@ -17,6 +19,9 @@ async def lifespan(app: FastAPI):
     # Create database tables
     SQLModel.metadata.create_all(engine)
 
+    # Generate random key for jwt creation later on
+    app.state.jwt_key = secrets.token_urlsafe()
+
     #writing default data to database
     with Session(engine) as session:
 
@@ -30,13 +35,17 @@ async def lifespan(app: FastAPI):
         #creating dummy user if needed
         db_user = session.get(User, 1)
         if not db_user:
+
+            salt = bcrypt.gensalt()
+            hashed_passwd = bcrypt.hashpw(b'1234',salt)
+
             db_user = User( name = "Dummy Dummbatz",
                             faculty = "Metaphysik",
                             curr_semester=99,
                             id = 1,
                             course_id=1,
                             username="test@htw.de",
-                            passwd=1234)
+                            passwd=hashed_passwd)
             session.add(db_user)
             session.commit()
 

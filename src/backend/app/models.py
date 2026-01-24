@@ -3,7 +3,7 @@ This file describes the models used by the ORM.
 These are used for communication between backend and frontend.
 """
 
-from sqlmodel import Field, Relationship, SQLModel
+from sqlmodel import Field, Relationship, SQLModel, LargeBinary, Column
 
 #Base: minimal content to create object
 #table = True: this is a table in db
@@ -133,6 +133,7 @@ class UserBase(SQLModel):
     name: str
     faculty: str
     curr_semester: int
+    
 
 class ModuleBase(SQLModel):
     """
@@ -180,7 +181,7 @@ class User(UserBase,table=True):
     course_id: int | None = Field(default = None, foreign_key = "course.id")
     course:Course = Relationship(back_populates="users")
     username:str
-    passwd:str
+    passwd:bytes = Field(sa_column=Column(LargeBinary))
 
 class UserResponse(UserBase):
     """
@@ -206,3 +207,10 @@ class ModuleResponse(ModuleBase):
     """
 
     id:int
+
+class LoginData(SQLModel):
+    """
+    Class bundling the data for a user login into a single object
+    """
+    username: str
+    passwd: str

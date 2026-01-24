@@ -71,39 +71,38 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 
 
 
-[%header, cols="1,3,3,3"]
+[%header, cols="1,3,3"]
 |===
-| Name | Beschreibung | Verantwortlichkeiten | Ziele 
+| Name | Beschreibung | Verantwortlichkeiten 
 
 | Studierende
-| Studierende an der HTW, Hauptnutzer:innen der Anwendung, die sich auf Prüfungen vorbereiten 
-| Nutzung der Lernplattform zur Vorbereitung auf Prüfungen, Interaktion mit Inhalten (Fragen erstellen, beantworten, bewerten), Analyse des Lernfortschritts, Teilnahme an spielerischen Formaten
-| Erfolgreiches Bestehen von Prüfungen, Wissenslücken gezielt schließen,
+| Studierende der HTW Dresden, die die Lernplattform zur Unterstützung ihrer Prüfungsvorbereitung nutzen
+| Sorgen dafür, dass modulbezogene Lernsets genutzt und mit Inhalten gefüllt werden
 
-| Dozierende / Tutor:in / Assistierende
-| Lehrende der HTW, die Inhalte verantworten, aber nicht operativ in das System eingreifen
-| Bereitstellung und Kontrolle von Inhalten, Rolle eher beratend oder unterstützend im Hintergrund
-| indirekte Qualitätskontrolle der Inhalte
+
+| Dozierende / Tutor:innen / Assistierende
+| Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden
+| Sorgen durch ihre fachliche Expertise für einen Mehrwert der Lernsets 
+
 
 | Admin
-| Technisch Verantwortliche für Betrieb, Sicherheit
-| Systemwartung, Rollenmanagement, Monitoring der Systemstabilität, technischer Support
-| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform
+| Verantwortlich für die administrative Verwaltung der Lernplattform
+| Sorgt für die Verwaltung von Benutzerkonten und Zugriffsrechten sowie den ordnungsgemäßen Ablauf der Anwendung
+
 
 | HTWD (Institution)
 | Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
-| Stellt Infrastruktur bereit
-| Förderung digitaler Bildung, Verbesserung von Lernqualität und Prüfungsergebnissen an der HTW
+| Sorgt für die Bereitstellung der notwendigen Infrastruktur
+
 
 | Projektteam 2.B
-| Das Projektteam besteht aus 6 Studierenden, die eine Lernplattform im Rahmen von Software Engineering I/II entwickeln.
-| Durchführung von Scrum-Meetings (Planning, Daily, Review, Retrospektive), Erstellung und Pflege der Dokumentation, Sicherstellung der Code-Qualität durch Tests und Reviews, Eigenverantwortliche Aufgabenverteilung nach Pull-Prinzip
-| Erwerb von praktischer Kompetenzen in agiler Softwareentwicklung
+| Studierendenteam mit dem Ziel, im Rahmen von Software Engineering I/II eine Lernplattform zu entwickeln
+| Sorgen für die Entwicklung, Dokumentation und Qualitätssicherung des Systems
+
 
 | Datenschutzbeauftragte / Gesetzgeber
-| Regulatorische Instanz, die rechtliche Rahmenbedingungen für den Betrieb der Lernplattform vorgeben, insbesondere Datenschutz.
-| Vorgabe von Datenschutzrichtlinien und Regelungen zur Speicherung/Verarbeitung personenbezogener Daten (Lernfortschritte, Nutzerdaten)
-| Schutz der Privatsphäre und personenbezogenen Daten der Studierenden, Sicherstellung der Transparenz bei Datenverarbeitung, Einhaltung gesetzlicher Vorgaben zur IT-Sicherheit
+| Regulatorische Instanzen mit Interesse an der Einhaltung datenschutzrechtlicher Vorgaben
+| Sorgen für die Vorgabe und Einhaltung rechtlicher Rahmenbedingungen zum Datenschutz
 |===
 
 

@@ -1,8 +1,11 @@
 meta {
   name: Posting
-  seq: 2
 }
 
 auth {
-  mode: inherit
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
 }

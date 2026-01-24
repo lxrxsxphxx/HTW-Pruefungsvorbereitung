@@ -1,0 +1,27 @@
+meta {
+  name: initial_login
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:8000/api/users/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "test@htw.de",
+    "passwd": "1234"
+  }
+}
+
+script:post-response {
+  bru.setVar("token", res.body)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

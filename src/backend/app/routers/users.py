@@ -6,7 +6,7 @@ from fastapi import Depends, APIRouter, HTTPException, Request
 from sqlmodel import Session, select
 
 from app.models import User, UserResponse, LoginData
-from app.dependencies import get_session, get_jwt_key
+from app.dependencies import get_session, get_jwt_key, validate_jwt
 
 import bcrypt
 import jwt
@@ -17,12 +17,13 @@ router = APIRouter(
 )
 
 @router.get("/")
-def read_users(session: Session = Depends(get_session)) -> list[UserResponse]:
+def read_users(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[UserResponse]:
     """
     Gets all users currently in the database
     
     Args:
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         list[UserResponse]: The users currently stored in database

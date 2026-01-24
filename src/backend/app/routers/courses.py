@@ -6,7 +6,7 @@ from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
 from app.models import CourseBase,Course, CourseResponse, ModuleResponse,CourseModule,Module
-from app.dependencies import get_session
+from app.dependencies import get_session, validate_jwt
 
 router = APIRouter(
     prefix="/api/courses",
@@ -14,12 +14,13 @@ router = APIRouter(
 )
 
 @router.get("/")
-def read_cards(session: Session = Depends(get_session)) -> list[CourseResponse]:
+def read_cards(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CourseResponse]:
     """
     Gets all courses of study currently in the database
     
     Args:
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         list[CourseResponse]: The courses of study currently stored in database
@@ -28,13 +29,14 @@ def read_cards(session: Session = Depends(get_session)) -> list[CourseResponse]:
     return session.exec(select(Course)).all()
 
 @router.post("/")
-def post_course(course:CourseBase, session: Session = Depends(get_session)) -> Course:
+def post_course(course:CourseBase, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> Course:
     """
     Adds a new course of study to the database
     
     Args:
         course (CourseBase): The course that is added to the database
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         CourseResponse: The course as it is in the database after adding
@@ -48,13 +50,14 @@ def post_course(course:CourseBase, session: Session = Depends(get_session)) -> C
     return db_course
 
 @router.get("/{id}")
-def get_single_course(id:int,session:Session = Depends(get_session)) -> CourseResponse:
+def get_single_course(id:int,session:Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CourseResponse:
     """
     Gets a single course of study by its id
     
     Args:
         id (int): the id of the course
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         CourseResponse: The course as it is in the database after adding
@@ -66,13 +69,14 @@ def get_single_course(id:int,session:Session = Depends(get_session)) -> CourseRe
     return db_course
 
 @router.get("/{id}/modules")
-def get_modules(id:int,session:Session = Depends(get_session)) -> list[ModuleResponse]:
+def get_modules(id:int,session:Session = Depends(get_session), username = Depends(validate_jwt)) -> list[ModuleResponse]:
     """
     Gets the modules associated with a course of study
     
     Args:
         id (int): the id of the course
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         list[ModuleResponse]: the list of the wanted modules 

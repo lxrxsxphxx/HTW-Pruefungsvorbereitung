@@ -9,7 +9,7 @@ include::../_includes/default-attributes.inc.adoc[]
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems HTW-Prüfungsvorbereiter überblicksartig zu beschreiben. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System {project-system-name} diese Bedarfe erfüllt, werden durch User Stories im Product Backlog sowie dem UX-Konzept beschrieben.
 
 === Zweck
-Ziel dieses Dokuments ist es, das System konsequent aus Nutzersicht zu denken und die Anforderungen so zu formulieren, dass sie den realen Studienalltag widerspiegeln.
+Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an die Lernplattform aus Sicht der Nutzer zu beschreiben und ein gemeinsames Verständnis der Inhalte zu schaffen.
 
 === Gültigkeitsbereich (Scope)
 Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, strukturierte, modulspezifische und spielerisch unterstützte Lerninhalte zu nutzen, um damit die individuelle Prüfungsvorbereitung zu verbessern, Lernfortschritte zu analysieren und in einer Community Wissen zu teilen und zu validieren.

@@ -58,7 +58,7 @@ def user_login(data:LoginData,
     #now the user exist without question - we can check if credentials are correct
     user = db_user[0]
     if bcrypt.checkpw(data.passwd.encode("utf-8"),user.passwd):
-        token = jwt.encode({"username": user.username},key)
+        token = jwt.encode({"username": user.username},key,algorithm="HS256")
         return token
 
     raise HTTPException(status = 401,detail = "username or password is wrong")

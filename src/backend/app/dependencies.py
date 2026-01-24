@@ -44,9 +44,10 @@ def validate_jwt(request: Request) -> str:
         raise HTTPException(status_code=401, detail="wrong format")
 
     secret_key = request.app.state.jwt_key
-
+    
     try:
-        payload = jwt.decode(splitted[1],secret_key)
+        
+        payload = jwt.decode(splitted[1],secret_key,algorithms=["HS256"])
         username = payload.get("username")
         if not username:
             raise HTTPException(status_code=401,detail = "invalid token payload")

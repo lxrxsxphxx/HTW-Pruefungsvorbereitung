@@ -20,8 +20,9 @@ async def lifespan(app: FastAPI):
     SQLModel.metadata.create_all(engine)
 
     # Generate random key for jwt creation later on
+    
     app.state.jwt_key = secrets.token_urlsafe()
-
+    
     #writing default data to database
     with Session(engine) as session:
 

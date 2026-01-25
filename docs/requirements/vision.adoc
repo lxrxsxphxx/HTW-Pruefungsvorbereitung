@@ -48,7 +48,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 | die | sich auf Prüfungen vorbereiten möchten
 | ist der  | HTW-Prüfungsvorbereiter
 | eine  | webbasierte Lernplattform
-| die durch | eine hochschulspezifische und modulbezogene Struktur die Prüfungsvorbereitung ermöglicht
+| die durch | eine hochschulspezifische und modulbezogene Struktur die Prüfungsvorbereitung unterstützt
 | anders als | allgemeine Lernplattformen wie Quizlet
 | speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
@@ -77,7 +77,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 
 | Studierende
 | Studierende der HTW Dresden, die die Lernplattform zur Unterstützung ihrer Prüfungsvorbereitung nutzen
-| Sorgen für die Nutzung und Bereitstellung von Inhalten zur Prüfungsvorbereitung.
+| Sorgen für die Nutzung und Befüllung von Inhalten zur Prüfungsvorbereitung.
 
 | Dozierende / Tutor:innen / Assistierende
 | Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden
@@ -132,7 +132,7 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 | -
 
 | Motivation für langfristiges und effizientes Lernen
-| Mittel | Motivierender und lernunterstützender Mechanismen für nachhaltiges Lernen.
+| Mittel | Einsatz von motivierenden und lernunterstützenden Mechanismen für nachhaltiges Lernen.
 | -
 |===
 
@@ -151,10 +151,10 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 |=== 
 | Anforderung | Priorität | Geplantes Release 
 | Webbasierte Anwendung für Desktop-Browser | Hoch | mvp
-| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | -
-| Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | -  
-| Angemessene Reaktionszeiten für eine flüssige Nutzung| Niedrig | - 
+| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | mvp
+| Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | mvp  
+| Angemessene Reaktionszeiten für eine flüssige Nutzung| Mittel | - 
 | Stabiler und robuster Betrieb der Lernplattform | Mittel | -
 | Vermeidung von Datenverlusten | Hoch | -
-| verständliche Projektdokumentation | Hocch | mvp
+| Verständliche Projektdokumentation | Hoch | mvp
 |===

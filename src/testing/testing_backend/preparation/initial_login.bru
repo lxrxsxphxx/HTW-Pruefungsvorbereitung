@@ -24,6 +24,7 @@ assert {
 
 script:post-response {
   bru.setVar("token", res.body)
+  bru.runner.setNextRequest("Posting/LearningSets/create_learning_set")
 }
 
 settings {

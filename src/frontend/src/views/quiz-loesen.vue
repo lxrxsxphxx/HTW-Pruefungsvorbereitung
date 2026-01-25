@@ -44,37 +44,33 @@
 <script setup>
 
 import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
 
 "use strict";
 
 
+const URL = "http://localhost:8000/api/questions";
+const route = useRoute();
+
+
+const keys = ref([]);
+
+const progress_percent = ref("0%");
+const task_info = ref("...");
+const question_text = ref('');
+const answers = ref([]);
+const new_task = ref("Neue Frage");
+const cancel_quiz = ref("Quiz abbrechen");
+const statistic = ref([]);
+
+const answer_buttons = ref([]);
 
 let evaluated = false;
 let STATISTIC_SHOWN = false;
 
-let keys = ref([]);
-
-
-let progress_percent = ref("0%");
-
-let task_info = ref("...");
-
-let new_task = ref("Neue Frage");
-let cancel_quiz = ref("Quiz abbrechen");
-
-let statistic = ref([]);
-let statistic_data = [];
-
-let question_text = ref('');
-let answers = ref([]);
-
-
-const URL = "http://localhost:8000/api/learning_set/";
-
-let answer_buttons = ref([]);
-
 let task_set;
 let current_task_nr = 0;
+let statistic_data = [];
 
 let chosen_answers = [];
 let chosen_answers_indices = [];
@@ -102,9 +98,10 @@ const EVAL_FAIL = 0;
 onMounted(() => {start();});
 
 
-async function getQuestions(id){
+
+async function getQuestions(){
     let url
-    if(id) url = URL + id;
+    if(id) url = URL + `?learning_set_id=${route.params.learningSetId}`;
 
     // {"question":{"question": "Welcher ist der am weitesten von der Sonne entfernte Planet im Sonnensystem?"}, "answers": [{"answer": "Basketball", "correct": true}, {"answer": "Pluto", "correct": false}]}
     // {"question":{"question": "Was ist 1 + 1?"}, "answers": [{"answer": "11", "correct": true}, {"answer": "2", "correct": false}]}
@@ -115,15 +112,14 @@ async function getQuestions(id){
         const id = setTimeout(() => controller.abort(), 5000);
 
         const response = await fetch(url, {method: "GET", signal: controller.signal});
-        // console.log(response);
         if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
-        const data = await response.json();
-        const questions = data.questions;
+        const questions = await response.json();
         return questions;
     }
     catch (error) {
         console.error(error.message);
+        alert("Fehler beim laden der Fragen!");
         return null;
     }
 }
@@ -135,7 +131,7 @@ async function start(){
     task_info.value = "...";
     setAction(ACTION_NEW_QUESTION);
 
-    let data = await getQuestions(5);
+    let data = await getQuestions();
     // console.log(data);
 
     if(data !== null){

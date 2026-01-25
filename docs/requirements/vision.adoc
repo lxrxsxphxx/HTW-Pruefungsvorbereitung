@@ -77,8 +77,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 
 | Studierende
 | Studierende der HTW Dresden, die die Lernplattform zur Unterstützung ihrer Prüfungsvorbereitung nutzen
-| Sorgen dafür, dass modulbezogene Lernsets genutzt und mit Inhalten gefüllt werden
-
+| Sorgen für die Nutzung und Bereitstellung von Inhalten zur Prüfungsvorbereitung.
 
 | Dozierende / Tutor:innen / Assistierende
 | Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden

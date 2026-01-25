@@ -129,14 +129,12 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 | 7. Sprint
 
 | Austausch und Zusammenarbeit bei Lerninhalten
-| Mittel | Ermöglichung gemeinschaftlicher Lernaktivitäten und des Austauschs zu Lerninhalten
+| Hoch | Ermöglichung gemeinschaftlicher Lernaktivitäten und des Austauschs zu Lerninhalten
 | -
 
 | Motivation für langfristiges und effizientes Lernen
 | Mittel | Motivierender und lernunterstützender Mechanismen für nachhaltiges Lernen.
 | -
-
-
 |===
 
 
@@ -153,11 +151,11 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 [%header, cols="4,1,1"] 
 |=== 
 | Anforderung | Priorität | Geplantes Release 
-| Webbasierte Lösung (Desktop) | Hoch | mvp
-| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | xx
-| Benutzerfreundliches Interface mit Barrierefreiheit (WCAG 2.1) | Hoch | mvp
-| Skalierbarkeit für neue Module und Studiengänge | Mittel | xx 
-| Umfassende Dokumentation | Mittel | xx
-| Light/Darkmode | Niedrig | 14.12.25
-| Multi-Device-Synchronisation | Mittel | mvp
+| Webbasierte Anwendung für Desktop-Browser | Hoch | mvp
+| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | -
+| Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | -  
+| Angemessene Reaktionszeiten für eine flüssige Nutzung| Niedrig | - 
+| Stabiler und robuster Betrieb der Lernplattform | Mittel | -
+| Vermeidung von Datenverlusten | Hoch | -
+| verständliche Projektdokumentation | Hocch | mvp
 |===

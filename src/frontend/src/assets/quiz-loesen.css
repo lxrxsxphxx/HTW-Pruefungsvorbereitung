@@ -78,30 +78,6 @@ button:active {background-color: var(--light-button-active);}
     display: flex;
     flex-direction: column;
 }
-#quiz-choice-container {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--light-menu);
-
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5em;
-    border-radius: 0.5em;
-}
-#quiz-choice-container p {order: 0; margin: 0; padding: 0.5em; padding-top: 0.5em; padding-bottom: 0.5em; border-bottom: 1px solid black;}
-#quiz-choice {
-    display: flex;
-    flex-direction: column;
-}
-#quiz-choice > button:not(#change-learning-mode-button) {
-    text-align: left;
-    order: 0;
-    background-color: var(--light-menu);
-    /*border-radius: 0.5em;*/
-}
-#quiz-choice > button:not(#change-learning-mode-button):hover {background-color: var(--light-menu-hover);}
-#quiz-choice > button:not(#change-learning-mode-button):active {background-color: var(--light-menu-active);}
 
 #new-quiz-button {
     width: 50%;
@@ -118,7 +94,7 @@ button:active {background-color: var(--light-button-active);}
 }
 
 #middle {
-    display: none;
+    display: flex;
     flex-direction: column;
     flex: 6 6 0%;
 }
@@ -149,7 +125,6 @@ button:active {background-color: var(--light-button-active);}
     order: 1;
 }
 #statistic {
-    display: none;
     text-align: left;
 
     padding: 1em;
@@ -176,9 +151,10 @@ aside div {
     display: flex;
 }
 .answer-button {
-    width: 25%;
+    flex: 1 0 0;
     margin-left: 0.25em;
     margin-right: 0.25em;
+    border: 2px solid #0000;
 }
 
 #answer-button_1 {order: 1; flex: 1 1 0%;}
@@ -222,7 +198,6 @@ aside div {
 
 @media (max-width: 1000px) {
     #mc-quiz-body {width: 100%; margin-bottom: 3em;}
-    #quiz-choice-container {width: 100%;}
     #new-quiz-button {width: 100%;}
     #question-container {order: 3; padding-left: 1em; padding-right: 1em;}
     #statistic {text-align: left; padding-left: 1em; padding-right: 1em;}

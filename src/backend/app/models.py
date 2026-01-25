@@ -105,7 +105,6 @@ class LearningSet(LearningSetBase, table = True):
     questions: list[Question] = Relationship(back_populates="learning_set", cascade_delete=True)
     module_id: int | None = Field(default=None, foreign_key="module.id")
     module: "Module" = Relationship(back_populates="learning_sets", cascade_delete=False)
-    
 
 class LearningSetResponse(LearningSetBase):
     """
@@ -119,7 +118,7 @@ class LearningSetResponse(LearningSetBase):
 class CourseBase(SQLModel):
     """
     Base class for courses of study.
-    Holds necessary information to describe a single multiple choice question.
+    Holds necessary information to describe a single course of study.
     """
 
     name: str
@@ -133,7 +132,6 @@ class UserBase(SQLModel):
     name: str
     faculty: str
     curr_semester: int
-    
 
 class ModuleBase(SQLModel):
     """
@@ -149,7 +147,7 @@ class Course(CourseBase,table=True):
     """
     Class for how courses of study are stored in database.
     """
-    
+
     id: int | None = Field(default=None, primary_key=True)
     modules:"CourseModule" = Relationship(back_populates="courses", cascade_delete=False)
     users: "User" = Relationship(back_populates="course")
@@ -166,7 +164,6 @@ class CourseModule(SQLModel,table=True):
     Class mapping Courses to modules and reverse.
     """
 
-    #id : int | None = Field(default=None, primary_key=True)
     course_id: int = Field(default=None, foreign_key="course.id", primary_key=True)
     courses:"Course" = Relationship(back_populates="modules", cascade_delete=False)
     module_id: int = Field(default=None, foreign_key="module.id", primary_key=True)

@@ -17,22 +17,6 @@ router = APIRouter(
     tags=["users"]
 )
 
-@router.get("/")
-def read_users(session: Session = Depends(get_session),
-               username:str = Depends(validate_jwt)) -> list[UserResponse]:
-    """
-    Gets all users currently in the database
-    
-    Args:
-        session (Session): the database session
-        username (str): Username of the current user - extracted from jwt
-    
-    Returns:
-        list[UserResponse]: The users currently stored in database
-    """
-
-    return session.exec(select(User)).all()
-
 @router.post("/login")
 def user_login(data:LoginData,
                session: Session = Depends(get_session),

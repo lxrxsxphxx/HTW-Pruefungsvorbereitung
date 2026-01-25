@@ -177,6 +177,7 @@ class User(UserBase,table=True):
     id: int | None = Field(default=None, primary_key=True)
     course_id: int | None = Field(default = None, foreign_key = "course.id")
     course:Course = Relationship(back_populates="users")
+    modules:list["ModuleUser"] = Relationship(back_populates="user")
     username:str
     passwd:bytes = Field(sa_column=Column(LargeBinary))
 
@@ -205,6 +206,16 @@ class ModuleResponse(ModuleBase):
     """
 
     id:int
+
+class ModuleUser(SQLModel, table=True):
+    """
+    Class mapping modules to users and reverse.
+    """
+
+    module_id: int = Field(default=None, foreign_key="module.id", primary_key=True)
+    module: Module  = Relationship(cascade_delete=False)
+    user_id: int = Field(default=None, foreign_key="user.id", primary_key=True)
+    user: User = Relationship(back_populates="modules", cascade_delete=False)
 
 class LoginData(SQLModel):
     """

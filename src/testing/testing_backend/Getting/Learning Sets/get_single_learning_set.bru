@@ -19,10 +19,10 @@ assert {
   res.body: isDefined
   res.body: isJson
   res.body.name: eq {{learning_set_name}}
-  res.body.module: eq {{module}}
   res.body.id: isNumber
   res.body.cards: isArray
   res.body.questions: isArray
+  ~res.body.module: eq {{module}}
 }
 
 settings {

@@ -6,7 +6,7 @@ from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
 from app.models import CardBase, Card, CardResponse, LearningSet
-from app.dependencies import get_session
+from app.dependencies import get_session, validate_jwt
 
 router = APIRouter(
     prefix="/api/cards",
@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session)) -> list[CardResponse]:
+def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CardResponse]:
     """
     Create one or more Cards
 
@@ -22,6 +22,7 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
         cards (list[CardBase]): The cards to be created.
         learning_set_id (int): ID of the learning set the cards belong to.
         session (Session): The database session.
+        username (str): Username of the current user - extracted from jwt
 
     Returns:
         list[CardResponse]: The created cards
@@ -43,13 +44,14 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     return db_cards
 
 @router.get("/")
-def read_cards(learning_set_id:int | None = None, session: Session = Depends(get_session)) -> list[CardResponse]:
+def read_cards(learning_set_id:int | None = None, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CardResponse]:
     """
     Gets all cards currently in the database
     
     Args:
         session (Session): the database session
         learning_set_id(int | None): the learning set the cards should belong to
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         list[CardResponse]: The cards currently stored in database
@@ -60,13 +62,14 @@ def read_cards(learning_set_id:int | None = None, session: Session = Depends(get
     return session.exec(select(Card)).all()
 
 @router.get("/{id}")
-def read_card(id: int, session: Session = Depends(get_session)) -> CardResponse:
+def read_card(id: int, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CardResponse:
     """
     gets a single card
     
     Args:
         id (int): the id of the wanted card
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns: 
         CardResponse: The wanted card
@@ -77,7 +80,7 @@ def read_card(id: int, session: Session = Depends(get_session)) -> CardResponse:
     return card
 
 @router.put("/{id}")
-def update_card(id: int, card: CardBase, session: Session = Depends(get_session)) -> CardResponse:
+def update_card(id: int, card: CardBase, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CardResponse:
     """
     Updates the information of a card
     
@@ -85,6 +88,7 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
         id (int): the id of the card that is going to be updated
         card (CardBase): the new information of the card
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         CardResponse: The updated card
@@ -92,7 +96,7 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
 
 
     db_card = session.get(Card, id)
-    if not card:
+    if not db_card:
         raise HTTPException(status_code=404, detail="Card not found")
     card_data = card.model_dump(exclude_unset=True)
     db_card.sqlmodel_update(card_data)
@@ -102,13 +106,14 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
     return db_card
 
 @router.delete("/{id}")
-def delete_card(id: int, session: Session = Depends(get_session)):
+def delete_card(id: int, session: Session = Depends(get_session), username:str = Depends(validate_jwt)):
     """
     deletes a card
     
     Args:
         id (int): the id of the card that is going to be deleted
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         null

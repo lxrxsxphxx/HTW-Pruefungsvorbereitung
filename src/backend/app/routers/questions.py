@@ -6,7 +6,7 @@ from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 
 from app.models import QuestionBase, Question, QuestionResponse, AnswerBase, Answer, AnswerResponse, LearningSet
-from app.dependencies import get_session
+from app.dependencies import get_session, validate_jwt
 
 router = APIRouter(
     prefix="/api/questions",
@@ -14,7 +14,9 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=QuestionResponse)
-def create_question(question: QuestionBase, answers: list[AnswerBase],learning_set_id:int, session: Session = Depends(get_session)) -> QuestionResponse:
+def create_question(question: QuestionBase, answers: list[AnswerBase],learning_set_id:int,
+                    session: Session = Depends(get_session),
+                    username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
     Docstring for create_question
     
@@ -23,6 +25,8 @@ def create_question(question: QuestionBase, answers: list[AnswerBase],learning_s
         answers (list[AnswerBase]): the possible answers a user can give
         learning_set_id (int): the id of the learning set the question should belong to
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
+
     Returns:
         QuestionResponse: The Question that has been added
     """
@@ -46,29 +50,34 @@ def create_question(question: QuestionBase, answers: list[AnswerBase],learning_s
 
 
 @router.get("/")
-def read_questions(learning_set_id:int | None = None,session: Session = Depends(get_session)) -> list[QuestionResponse]:
+def read_questions(learning_set_id:int | None = None,session: Session = Depends(get_session),
+                   username:str = Depends(validate_jwt)) -> list[QuestionResponse]:
     """
     Reads all questions from the database
     
     Args:
         session (Session): the database session
         learning_set_id(int | None): the learning set the questions should belong to
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         list[QuestionResponse]: All questions in the database
     """
     if learning_set_id:
-        return session.exec(select(Question).where(Question.learning_set_id == learning_set_id)).all()
+        return session.exec(
+            select(Question).where(Question.learning_set_id == learning_set_id)).all()
     return session.exec(select(Question)).all()
 
 @router.get("/{id}")
-def read_question(id: int, session: Session = Depends(get_session)) -> QuestionResponse:
+def read_question(id: int, session: Session = Depends(get_session), 
+                  username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
     Reads a single question by its id
     
     Args:
         id (int): the id of the wanted question
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         QuestionResponse: The question that is stored
@@ -80,7 +89,8 @@ def read_question(id: int, session: Session = Depends(get_session)) -> QuestionR
     return question
 
 @router.put("/{id}")
-def update_question(id: int, question: QuestionBase, session: Session = Depends(get_session)) -> QuestionResponse:
+def update_question(id: int, question: QuestionBase, session: Session = Depends(get_session),
+                    username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
     update a question, but not its answers!
     
@@ -88,6 +98,7 @@ def update_question(id: int, question: QuestionBase, session: Session = Depends(
         id (int): the id of the question taht is going to be updated:
         question (QuestionBase): the new information of the question 
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         QuestionResponse: the updated question
@@ -104,13 +115,15 @@ def update_question(id: int, question: QuestionBase, session: Session = Depends(
     return db_question
 
 @router.delete("/{id}")
-def delete_question(id: int, session: Session = Depends(get_session)):
+def delete_question(id: int, session: Session = Depends(get_session),
+                    username:str = Depends(validate_jwt)):
     """
     deletes a question
     
     Args:
         id (int): the id of the question that is going to be deleted
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
 
     Returns:
         null
@@ -124,7 +137,8 @@ def delete_question(id: int, session: Session = Depends(get_session)):
     return
 
 @router.put("/answers/{id}")
-def update_answer(id: int, answer: AnswerBase ,session: Session = Depends(get_session)) -> AnswerResponse:
+def update_answer(id: int, answer: AnswerBase ,session: Session = Depends(get_session),
+                  username:str = Depends(validate_jwt)) -> AnswerResponse:
     """
     Updates an answer
     
@@ -132,6 +146,7 @@ def update_answer(id: int, answer: AnswerBase ,session: Session = Depends(get_se
         id (int): the id of the answer that is going to be updated
         answer (AnswerBase): the new information of the answer
         session (Session): the database session
+        username (str): Username of the current user - extracted from jwt
     
     Returns:
         AnswerResponse: the updated answer

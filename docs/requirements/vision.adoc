@@ -113,7 +113,7 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 == Produktüberblick
 
 === Bedarfe und Hauptfunktionen
-Intelligenter Lernalgorithmus mit Gamification Elementen 
+
 
 [%header, cols="4,1,4,1"] 
 |=== 

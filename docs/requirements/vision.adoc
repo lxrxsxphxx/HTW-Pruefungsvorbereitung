@@ -118,10 +118,25 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 [%header, cols="4,1,4,1"] 
 |=== 
 | Bedarf | Priorität | Features / Funktionen | Geplantes Release 
-| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragenkataloge, Multiple-Choice-Verfahren, Karteikarten Lernen, Zuordnungsaufgaben mit Drag-and-Drop-Funktionalität | mvp/6. Sprint 
-| Kollaboratives Lernen | Mittel | Benutzer-generierte Fragen mit Upload-Funktion | mvp
-| Motivation durch Gamification | Hoch | Abzeichen-System für erreichte Meilensteine, Highscore-Listen pro Modul und Semester | 6. Sprint
-| Lernfortschritt-Tracking | Hoch | Detaillierte Statistiken über Antwortgenauigkeit, Schwächenanalyse mit Empfehlungen für Vertiefung, visuelle Darstellung des Fortschritts durch Diagramme | 6. Sprint
+| Übersichtliche Organisation von Lerninhalten | Hoch | Zuordnung von Lerninhalten zu den Studiengängen und Modulen der HTW Dresden.| mvp / 6.Sprint 
+
+| Prüfungsvorbereitung mit modulspezifischen Lerninhalten
+| Hoch | Bereitstellung strukturierter Lernsets passend zu Modulen.
+| mvp / 6.Sprint
+
+| Überblick über den Lernfortschritt
+| Hoch |  Visualisierung des Lernfortschritts zur Einschätzung des Lernbedarfs.
+| 7. Sprint
+
+| Austausch und Zusammenarbeit bei Lerninhalten
+| Mittel | Ermöglichung gemeinschaftlicher Lernaktivitäten und des Austauschs zu Lerninhalten
+| -
+
+| Motivation für langfristiges und effizientes Lernen
+| Mittel | Motivierender und lernunterstützender Mechanismen für nachhaltiges Lernen.
+| -
+
+
 |===
 
 

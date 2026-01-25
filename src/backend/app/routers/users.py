@@ -3,6 +3,7 @@ This file describes the REST endpoint for database interactions with users.
 """
 
 from fastapi import Depends, APIRouter, HTTPException, Request
+from fastapi.responses import JSONResponse
 from sqlmodel import Session, select
 
 from app.models import User, UserResponse, LoginData
@@ -17,7 +18,8 @@ router = APIRouter(
 )
 
 @router.get("/")
-def read_users(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[UserResponse]:
+def read_users(session: Session = Depends(get_session),
+               username:str = Depends(validate_jwt)) -> list[UserResponse]:
     """
     Gets all users currently in the database
     
@@ -34,7 +36,7 @@ def read_users(session: Session = Depends(get_session), username:str = Depends(v
 @router.post("/login")
 def user_login(data:LoginData,
                session: Session = Depends(get_session),
-               key:str = Depends(get_jwt_key))->str:
+               key:str = Depends(get_jwt_key))->JSONResponse:
     """
     Handles an attempted user login
     
@@ -59,6 +61,10 @@ def user_login(data:LoginData,
     user = db_user[0]
     if bcrypt.checkpw(data.passwd.encode("utf-8"),user.passwd):
         token = jwt.encode({"username": user.username},key,algorithm="HS256")
-        return token
+        content = {"message":"successfully logged in!"}
+        response = JSONResponse(content=content)
+        response.set_cookie(key="fakesession",value=token)
+
+        return response
 
     raise HTTPException(status = 401,detail = "username or password is wrong")

@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 @router.get("/")
-def read_cards(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CourseResponse]:
+def read_courses(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CourseResponse]:
     """
     Gets all courses of study currently in the database
     

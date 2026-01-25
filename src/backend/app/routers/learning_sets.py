@@ -15,7 +15,8 @@ router = APIRouter(
 
 @router.post("/")
 def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session),
-                        modul_id:int | None = None, username:str = Depends(validate_jwt)) -> LearningSetResponse:
+                        modul_id:int | None = None,
+                        username:str = Depends(validate_jwt)) -> LearningSetResponse:
     """ 
     Adds a learning set to DB
 
@@ -41,7 +42,9 @@ def create_learning_set(learning_set: LearningSetBase, session: Session = Depend
     return db_learning_set
 
 @router.get("/")
-def get_learning_sets(session: Session = Depends(get_session), modul: int | None = None, username:str = Depends(validate_jwt)) -> list[LearningSetResponse]:
+def get_learning_sets(session: Session = Depends(get_session),
+                      modul: int | None = None,
+                      username:str = Depends(validate_jwt)) -> list[LearningSetResponse]:
     """
     Get all Learning Sets in DB
     Args:
@@ -58,7 +61,8 @@ def get_learning_sets(session: Session = Depends(get_session), modul: int | None
     return session.exec(select(LearningSet)).all()
 
 @router.get("/{learning_set_id}")
-def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> LearningSetResponse:
+def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session),
+                            username:str = Depends(validate_jwt)) -> LearningSetResponse:
     """
     Get a single learning set by its id
     Args:
@@ -76,15 +80,16 @@ def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_s
     return learning_set
 
 @router.delete("/{id}")
-def delete_learning_set(id: int, session: Session = Depends(get_session), username:str = Depends(validate_jwt)):
+def delete_learning_set(id: int, session: Session = Depends(get_session),
+                        username:str = Depends(validate_jwt)):
     """
     Deletes a learning set from DB
-    
+
     Args:
         id (int): id of the learning set that is deleted
         session (Session): the database session
         username (str): Username of the current user - extracted from jwt
-        
+
     Returns:
         null
     """

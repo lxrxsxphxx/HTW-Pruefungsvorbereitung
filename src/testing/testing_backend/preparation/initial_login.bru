@@ -19,12 +19,8 @@ body:json {
 
 assert {
   res.status: eq 200
-  res.body: isString
-}
-
-script:post-response {
-  bru.setVar("token", res.body)
-  bru.runner.setNextRequest("Posting/LearningSets/create_learning_set")
+  res.body: isJson
+  res.body.message: eq "successfully logged in!"
 }
 
 settings {

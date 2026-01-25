@@ -63,7 +63,10 @@ def user_login(data:LoginData,
         token = jwt.encode({"username": user.username},key,algorithm="HS256")
         content = {"message":"successfully logged in!"}
         response = JSONResponse(content=content)
-        response.set_cookie(key="fakesession",value=token)
+        response.set_cookie(key="token",
+                            value=token,
+                            httponly=True,
+                            samesite="lax")
 
         return response
 

@@ -34,20 +34,15 @@ def validate_jwt(request: Request) -> str:
         str: the username contained in the token, if valid
     """
 
-    header = request.headers.get("Authorization")
-    if not header:
+    token = request.cookies.get("token")
+
+    if not token:
         raise HTTPException(status_code=401, detail="Unauthorized - header missing")
 
-    splitted = header.split(" ")
-
-    if splitted[0].lower()!="bearer" or len(splitted)!=2:
-        raise HTTPException(status_code=401, detail="wrong format")
-
     secret_key = request.app.state.jwt_key
-    
+
     try:
-        
-        payload = jwt.decode(splitted[1],secret_key,algorithms=["HS256"])
+        payload = jwt.decode(token,secret_key,algorithms=["HS256"])
         username = payload.get("username")
         if not username:
             raise HTTPException(status_code=401,detail = "invalid token payload")

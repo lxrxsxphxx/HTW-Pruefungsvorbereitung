@@ -2,7 +2,7 @@
 This file describes the REST endpoint for database interactions with users.
 """
 
-from fastapi import Depends, APIRouter, HTTPException, Request
+from fastapi import Depends, APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from sqlmodel import Session, select
 
@@ -46,7 +46,7 @@ def user_login(data:LoginData,
         key:str: A secret string needed for creating tokens
     
     Returns:
-        str: Encoded JSON Web Token as a string
+        JSONResponse: Response Object containing a string and the cookie with the token
     """
 
     db_user = session.exec(select(User).where(User.username == data.username)).all()

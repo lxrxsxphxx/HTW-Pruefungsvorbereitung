@@ -4,58 +4,84 @@
     <img v-else  src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
     <div class="login-wrapper">
       <template v-if="!isLoggedIn">
-        <button @click="showLogin = !showLogin">Login</button>
-        <div v-if="showLogin" class="login-form">
-          <input v-model="email" placeholder="HTW-Mail" />
-          <input v-model="password" type="password" placeholder="Passwort" />
-          <button @click="login">Anmelden</button>
-        </div>
+        <button @click="openLogin">Login</button>
       </template>
       <template v-else>
-        👤 {{ username }}
+        <div class="user-area" @click="logout" title="Abmelden">👤 {{ username }}</div>
       </template>
+
+      <LoginDialog v-if="showLogin" @login="handleLogin" @close="showLogin = false" />
     </div>
   </header>
 </template>
 
 <script>
-import { ref } from 'vue';
+import LoginDialog from './LoginDialog.vue';
 
-  
-  
 export default {
-  /**
-   * - email: Benutzer-E-Mail für Login
-   * - password: Passwort für Login
-   * - showLogin: Steuert, ob das Login-Formular angezeigt wird
-   * - isLoggedIn: Gibt an, ob der Benutzer eingeloggt ist
-   * - username: Wird gesetzt wenn der Login erfolgreich war
-   */
   name: 'Header',
+  components: { LoginDialog },
   data() {
     return {
-      email: '',
-      password: '',
       showLogin: false,
       isLoggedIn: false,
       username: ''
     };
   },
-  methods: {
-    /**
-     * Führt einen einfachen Login durch.
-     * Prüft, ob E-Mail und Passwort korrekt sind.
-     * Setzt Zustände (isLoggedIn, username, showLogin).
-     * Zeigt eine Fehlermeldung, bei falschen Zugangsdaten.
-     */
-    login() {
-      if (this.email === 'test@htw.de' && this.password === '1234') {
-        this.isLoggedIn = true;
-        this.username = 'Tobi';
-        this.showLogin = false;
-      } else {
-        alert('Falsche Zugangsdaten');
+  mounted() {
+    fetch('http://localhost:8000/api/users/data', {
+      credentials: "include"
+    })
+    .then(response => {
+      if (response.status == 200) {
+        response.json().then(
+          data => {
+            this.username = data.name;
+            this.isLoggedIn = true;
+          }
+        )
       }
+    })
+  },
+  methods: {
+    openLogin() {
+      this.showLogin = true;
+      document.body.classList.add('modal-open');
+    },
+    handleLogin({ email, password }) {
+      fetch('http://localhost:8000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'accept': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          username: email,
+          passwd: password
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Login fehlgeschlagen');
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.isLoggedIn = true;
+          this.username = email.split('@')[0];
+          this.showLogin = false;
+          document.body.classList.remove('modal-open');
+        })
+        .catch(error => {
+          console.error('Login-Fehler:', error);
+          alert('Login fehlgeschlagen. Bitte prüfe deine Zugangsdaten.');
+        });
+    },
+    logout() {
+      this.isLoggedIn = false;
+      this.username = '';
+      document.body.classList.remove('modal-open');
     }
   },
   setup () {

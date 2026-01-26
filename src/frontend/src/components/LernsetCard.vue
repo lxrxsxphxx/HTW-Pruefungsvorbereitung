@@ -46,7 +46,8 @@ export default {
 .text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;  
+  -webkit-line-clamp: 4;
+  line-clamp: 4;  /* ??? */ 
   overflow: hidden;
   width: 100%;
 }

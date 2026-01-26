@@ -27,19 +27,45 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme
-| Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Fach
-| Gamification | Der Einsatz spielerischer Elemente wie Punkte, Abzeichen oder Level, um die Motivation zu steigern. | Spielifizierung
-| Lernalgorithmus | Ein System, das sich an den individuellen Lernfortschritt anpasst, um Wiederholungen und Inhalte gezielt zu steuern. | Anpassungssystem
-| Lernmodi | Verschiedene Ansätze zum Lernen, wie Übungsmodus, Blitz-Quiz oder Karteikarten. | Lernansätze
-| Push-Benachrichtigungen | Automatische Erinnerungen für tägliche Lerneinheiten oder anstehende Prüfungen. | Erinnerungen
-|Kollaboratives Lernen| Studierende arbeiten in Gruppen zusammen, tauschen Wissen aus und lösen Aufgaben gemeinsam.|Gemeinschaftliches Lernen
-|Prüfungssimulation	|Ein Lernmodus, der eine reale Prüfungssituation nachstellt, um Studierenden die Möglichkeit zu geben, sich unter prüfungsähnlichen Bedingungen zu testen. | Klausursimulation
-|Freitextfragen	|Ein Fragetyp, bei dem die Studierenden ihre Antworten in freier Textform eingeben müssen, im Gegensatz zu vorgegebenen Auswahlmöglichkeiten. |Offene Fragen
-|Zuordnungsfragen	| Ein Fragetyp, bei dem Elemente aus zwei Listen einander richtig zugeordnet werden müssen. | Matching-Fragen
-|Moderierter Admin-Bereich	| Ein geschützter Bereich für Dozierende, um offizielle Prüfungsfragen zu erstellen und die Lerninhalte zu verwalten. |Dozentenbereich
-|Lernfortschrittsanalyse|Die Auswertung von Daten, die zeigen, wie weit ein Studierender in seinem Lernprozess fortgeschritten ist, oft mit visuellen Darstellungen der eigenen Stärken und Schwächen. | Fortschrittsverfolgung
-|webbasierte Lernplattform 	| Online-Zugang zu Lerninhalten und Übungen. | Online Lernen
-| Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. | Lernender
+| Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
+
+ Dozierende | Lehrende Personen, die an Hochschulen oder Universitäten, Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt. | Lehrende |
+
+ Tutor:innen | studentische Beschäftigte an Hochschulen, die unter fachlicher Leitung von Dozierenden Lehrveranstaltungen (Tutorien) leiten. |  Studentische Hilfskraft |
+
+ HTW-Mitglied | Personen, die der HTW Dresden angehören und berechtigt sind, die Lernplattform zu nutzen. | Angehörige der HTW |
+
+ Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Lehreinheit |
+
+ Studiengang | Ein strukturiertes Bildungsprogramm an Hochschulen, das durch Studien- und Prüfungsordnungen geregelt ist und zu einem berufsqualifizierenden akademischen Abschluss führt. | Studienprogramm |
+
+ Modulübersicht | Strukturierte Zusammenstellung aller in einem Studiengang enthaltenen Module. | Studienverlaufsplan |
+
+Fakultät | Eine zentrale Organisationseinheit für Forschung und Lehre, die inhaltlich verwandte Fachbereiche bündelt. | Fachbereich |
+
+Bachelor / Diplom / Master | Berufsbezogener akademischer Grad, der nach einem mit einer Prüfung abgeschlossenen Studium erworben wird | berufsqualifizierender Abschluss |
+
+Lernplattform | Eine webbasierte Softwareumgebung, die Lerninhalte zentral verwaltet, bereitstellt und den Lernprozess organisiert. | Digitaltes Lernumfeld |
+
+Lerninhalte | Theoretischen und/oder praktische Informationen die Lernende erwerben müssen, um definierte Bildungsziele zu erreichen. | Lehrstoff |
+
+Altklausuren | in der Vergangenheit gestellte Prüfungsaufgaben, die von Dozierenden oft freiwillig zur Verfügung gestellt werden. | altes Prüfungsexemplar |
+
+Lernset |  Eine strukturierte Sammlung, die zum Beispiel Begriffe, Definitionen, Fragen und Antworten zu einem bestimmten Thema bündelt. | Lernmaterialien |
+
+Lernmodus | Auswahl der Lernform, z. B. Lernen mit Karteikarten oder Bearbeiten von Multiple-Choice-Fragen. | Lernumgebung |
+
+Karteikarten | Kleine, beidseitig beschriftbare Karten, die als effektives Lernwerkzeug zur strukturierten Wiederholung von Wissen dienen. | beschriftbare Karte |
+
+Multiple-Choice | Ein geschlossenes Antwort-Wahl-Verfahren in Prüfungen oder Umfragen, bei dem aus vorgegebenen Optionen eine oder mehrere korrekte Antworten auszuwählen sind. | Fragen mit Auswahlantworten |
+
+Frage | Eine sprachliche Äußerung, die eine Antwort verlangt und darauf abzielt, Informationen, Bestätigungen oder Meinungen zu erlangen. | Erkundigung |
+
+Antwort | sprachliche, schriftliche oder nonverbale Erwiderung auf eine Frage. Sie dient der Auskunft, Reaktion oder Lösung. | Aufklärung |
+
+Lernfortschritt | Beschreibt die positive Veränderung des Wissensstands, der Fähigkeiten oder Fertigkeiten eines Lernenden im Vergleich zu einem früheren Zeitpunkt. | Fortentwicklung |
+
+Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie und Motivation die nötig sind, um ein bestimmtes Lernziel zu erreichen. |  Lernzaktivität |
 |===
 
 
@@ -59,7 +85,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | SWS	| Semesterwochenstunden | Eine Maßeinheit für den Umfang von Lehrveranstaltungen pro Semester.
 | LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
 | PO | Prüfungsordnung	| Das Regelwerk, das die Anforderungen und Abläufe von Prüfungen festlegt.
-| QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen.
+| QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen. | 
 |===
 
 == Verzeichnis der Datenstrukturen

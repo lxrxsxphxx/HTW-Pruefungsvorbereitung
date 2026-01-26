@@ -32,16 +32,16 @@ export default {
     fetch('http://localhost:8000/api/users/data', {
       credentials: "include"
     })
-    .then(response => {
-      if (response.status == 200) {
-        response.json().then(
-          data => {
-            this.username = data.name;
-            this.isLoggedIn = true;
-          }
-        )
-      }
-    })
+      .then(response => {
+        if (response.status == 200) {
+          response.json().then(
+            data => {
+              this.username = data.name;
+              this.isLoggedIn = true;
+            }
+          )
+        }
+      })
   },
   methods: {
     openLogin() {
@@ -68,8 +68,19 @@ export default {
           return response.json();
         })
         .then(data => {
-          this.isLoggedIn = true;
-          this.username = email.split('@')[0];
+          fetch('http://localhost:8000/api/users/data', {
+            credentials: "include"
+          })
+            .then(response => {
+              if (response.status == 200) {
+                response.json().then(
+                  data => {
+                    this.username = data.name;
+                    this.isLoggedIn = true;
+                  }
+                )
+              }
+            })
           this.showLogin = false;
           document.body.classList.remove('modal-open');
         })

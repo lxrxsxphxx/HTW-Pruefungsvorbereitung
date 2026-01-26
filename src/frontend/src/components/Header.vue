@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import LoginDialog from './LoginDialog.vue';
 
 export default {

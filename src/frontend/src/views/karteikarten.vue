@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
     <nav>
-      <RouterLink v-slot="{ navigate, isActive }" to="/lernen" custom>
+      <RouterLink v-slot="{ navigate, isActive }" :to="'/lernen/'+learningSetId" custom>
         <button class="control-button" id="change-learning-mode-button" @click="navigate"
-          :class="{ active: isActive }">Lernmodus wechseln</button>
+          :class="{ active: isActive }">Zurück zum Lernset</button>
       </RouterLink>
     </nav>
 
@@ -66,6 +66,7 @@ const API_BASE = "http://localhost:8000/api/cards";
 const cards = ref([]);
 const loading = ref(false);
 const route = useRoute();
+const learningSetId = ref(0);
 
 /**
  * function to load data from api
@@ -73,7 +74,8 @@ const route = useRoute();
 async function loadCards() {
   loading.value = true;
   try {
-    const response = await fetch(API_BASE + `?learning_set_id=${route.params.learningSetId}`, {credentials: "include"});
+    learningSetId.value = route.params.learningSetId;
+    const response = await fetch(API_BASE + `?learning_set_id=${learningSetId.value}`, {credentials: "include"});
     if (!response.ok) throw new Error('Failed to load cards');
     const apiCards = await response.json();
 

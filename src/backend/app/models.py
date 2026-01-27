@@ -206,6 +206,7 @@ class ModuleResponse(ModuleBase):
     """
 
     id:int
+    learning_sets: list[LearningSetResponse]
 
 class ModuleUser(SQLModel, table=True):
     """

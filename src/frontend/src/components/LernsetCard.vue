@@ -19,8 +19,9 @@ export default {
 
 <style scoped>
 .lernset-card {
+  color: var(--color-text);
   margin: 0.5em 0.2rem ;
-  border: 0.2rem solid #797171;
+  border: 0.2rem solid var(--color-border);
   border-radius: 0.5rem;
   padding: 0.2rem;
   width: 6rem;
@@ -29,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  background-color: white;
+  background-color: var(--color-background-mute);
   cursor: pointer;
   box-sizing: border-box;     /* WICHTIG */
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -41,6 +42,7 @@ export default {
 .lernset-card:hover {
   transform: scale(1.015);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-border-hover);
 }
 
 .text {

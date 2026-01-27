@@ -200,14 +200,14 @@ export default {
 .studiengang {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
 
 .semester-info {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text);
 }
 
 .sidebar-action-button {

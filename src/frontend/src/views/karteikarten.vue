@@ -62,13 +62,14 @@ import { useRoute } from "vue-router";
 // API Base URL
 const API_BASE = "http://localhost:8000/api/cards";
 
-// Karten aus der API laden
+// API data
 const cards = ref([]);
 const loading = ref(false);
-
 const route = useRoute();
 
-// API Funktionen
+/**
+ * function to load data from api
+ */
 async function loadCards() {
   loading.value = true;
   try {
@@ -76,10 +77,8 @@ async function loadCards() {
     if (!response.ok) throw new Error('Failed to load cards');
     const apiCards = await response.json();
 
-    // Backend-Format zu Frontend-Format konvertieren
     cards.value = apiCards.map(card => ({
       id: card.id,
-      subject: card.modul,
       question: card.front,
       answer: card.back
     }));
@@ -97,13 +96,15 @@ async function loadCards() {
 }
 
 
-// Beim Start Karten laden
+/**
+ * load cards from api when view is mounted
+ */
 onMounted(() => {
   loadCards();
 });
 
 
-// Quiz-bezogene Daten
+// variables for flash card learning
 const quizCards = ref([]);
 const currentIndex = ref(0);
 const goodCards = ref(0);
@@ -116,22 +117,29 @@ const isFlipped = ref(false);
 const firstQuestion = ref(true);
 const notes = ref([]);
 
-// Sichtbarkeiten Quiz UI
+// ui visibility variables
 const quizCardVisible = ref(false);
 const answerInputVisible = ref(false);
 const progressVisible = ref(false);
 
-// Fortschritt in Prozent
+/**
+ * computed value for percent of progress
+ */
 const progressPercent = computed(() => {
   if (quizCards.value.length === 0) return 0;
   return ((currentIndex.value) / quizCards.value.length) * 100;
 });
 
-// Aktuelle Karte im Quiz
+/**
+ * computed for the current flash card
+ */
 const currentQuizCard = computed(() => {
   return quizCards.value[currentIndex.value] || null;
 });
 
+/**
+ * computed text for stats at the end of learning
+ */
 const statsText = computed(() => {
   let base = `${currentIndex.value}/${quizCards.value.length}`;
   if (!quizCardVisible.value && quizCards.value.length > 0) {
@@ -145,27 +153,38 @@ const statsText = computed(() => {
 });
 
 
-// --- Quiz-Funktionen ---
+/**
+ * function to flip the flash card to back side
+ */
 function seeAnswer() {
   isFlipped.value = true;
   flippedOnce.value = true;
 }
 
+/**
+ * function to flip the flash card to front side
+ */
 function seeQuestion() {
   isFlipped.value = false;
 }
 
-function nextQuestion(click) {
+
+/**
+ * function to set the self rating for a flash card or next for already rated card
+ * saves notes to the card for later reuse
+ * @param rating rating given by the student : 'good', 'ok', 'bad', 'next'
+ */
+function nextQuestion(rating) {
   if (currentIndex.value + 1 >= notes.value.length) {
     flippedOnce.value = false;
     answered.value = false;
     if (currentIndex.value >= notes.value.length) {
       notes.value.push(userAnswer.value);
-      if (click == "good") {
+      if (rating == "good") {
         goodCards.value++;
-      } else if (click = "okay") {
+      } else if (rating = "okay") {
         okayCards.value++;
-      } else if (click = "bad") {
+      } else if (rating = "bad") {
         badCards.value++;
       }
     }
@@ -193,6 +212,10 @@ function nextQuestion(click) {
   }
 }
 
+/**
+ * function to go back to the last flash card
+ * also sets notes of the corresponding card back into the notes field
+ */
 function prevQuestion() {
   if (isFlipped.value) {
     isFlipped.value = false;
@@ -215,6 +238,9 @@ function prevQuestion() {
   answered.value = true;
 }
 
+/**
+ * function to skip the current flash card and append it at the end
+ */
 function skipQuestion() {
   isFlipped.value = false;
   flippedOnce.value = false;
@@ -231,7 +257,10 @@ function skipQuestion() {
   }
 }
 
-// Hilfsfunktion: Array mischen (Fisher-Yates)
+/**
+ * function to shuffle an array, acts of the array itself
+ * @param array the array to be shuffled
+ */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

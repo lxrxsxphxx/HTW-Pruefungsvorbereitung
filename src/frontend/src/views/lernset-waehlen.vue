@@ -11,10 +11,10 @@
 
         <!--Start: Content-Container-->
         <div class="Content-Container">
-            <div class="scroll-section">
-                <h2>Meine Lernsets</h2>
-                <div v-for="(module, index) in modules" :key="index" class="scroll-row">
-                    <LernsetCard 
+            <div class="module-container" v-for="module in modules" :key="module.id">
+                <h2>{{ module.module_name }}</h2>
+                <div class="scroll-row">
+                    <LernsetCard
                     v-for="set in module.learning_sets"
                     :key="set.id"
                     :title="set.name"
@@ -39,27 +39,55 @@ const modules = ref(null);
 
 const API_LEARNING_SETS = "http://localhost:8000/api/learning_set/";
 const API_MODULES = "http://localhost:8000/api/modules/";
+const LOGIN_URL = "http://localhost:8000/api/users/login";
 
 onMounted(() => {loadContent();});
 
+/**
+ * @description Login with the dummy credentials to test Getting the user-specific modules. (temporary)
+ * @returns {JSON, Null} the response from the server as a JSON Object
+ */
+async function login(){
+    try{
+        const postHeader = new Headers();
+        postHeader.set("accept", "application/json");
+        postHeader.set("Content-Type", "application/json");
+
+        const response = await fetch(LOGIN_URL, {method: "POST", credentials: "include", headers: postHeader, body: JSON.stringify({username: "test@htw.de", passwd: "1234"})});
+        console.log(response);
+        if (!response.ok) throw new Error(`Response status: ${response.status}`);
+        return response;
+    }
+    catch(error){
+        console.error(error.message);
+        return null;
+    }
+}
+
+
 async function loadContent(){
-    // const user_modules = loadUserModules();
-    // if(!user_modules) return;
+    await login();
+
+    const user_modules = await loadUserModules();
+    if(!user_modules) return;
 
     let json_str = '[{';
 
-    // for(let i = 0; i < user_modules.length; i++){
-        const module_name = "Testmodul";//user_modules[i].name;
-        // const learning_sets = loadLearningSets(module_name);
-        // if(!learning_sets) return;
+    for(let i = 0; i < user_modules.length; i++){
+        const module_name = user_modules[i].name;
+        const module_id = user_modules[i].id;
+        const learning_sets = await loadLearningSets(module_id);
+        if(!learning_sets) return;
 
-        json_str += '"module_name": "' + module_name + '", "learning_sets": ' + JSON.stringify([{name:"Lernset 1"}, {name:"2. Lernset"}]) + '}';
-        // if(i !== user_modules.length - 1) json_str += ',';
-    // }
+        json_str += '"module_name": "' + module_name + '", "module_id": "' + module_id + '", "learning_sets": ' + JSON.stringify(learning_sets) + '}';
+        if(i !== user_modules.length - 1) json_str += ',';
+    }
     json_str += ']';
 
     modules.value = await JSON.parse(json_str);
-    console.log(json);
+    console.log(modules.value);
+
+    return;
 }
 
 
@@ -68,7 +96,7 @@ async function loadUserModules(){
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), 5000);
 
-        const response = await fetch(API_MODULES, {method: "GET", signal: controller.signal});
+        const response = await fetch(API_MODULES, {method: "GET", credentials: "include", signal: controller.signal});
         if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
         const modules = await response.json();
@@ -81,14 +109,14 @@ async function loadUserModules(){
     }
 }
 
-async function loadLearningSets(modul) {
+async function loadLearningSets(modul_id) {
     try {
-        let url = API_LEARNING_SETS + '?modul=' + modul;
+        let url = API_LEARNING_SETS + '?modul=' + modul_id;
 
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), 5000);
 
-        const response = await fetch(API_LEARNING_SETS, {method: "GET", signal: controller.signal});
+        const response = await fetch(url, {method: "GET", credentials: "include", signal: controller.signal});
         if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
         const learning_sets = await response.json();
@@ -122,7 +150,7 @@ async function loadLearningSets(modul) {
     border-radius: 10px;
 }
 
-.scroll-section{
+.module-container{
     display: flex;
     flex-direction: column;
     max-width: 100%;

@@ -94,12 +94,11 @@ export default {
   cursor: pointer;
 }
 .btn.primary {
-  background: orange;
-  color: white;
   font-weight: bold;
 }
 .btn.secondary {
   background: #f0f0f0;
+  color: black;
 }
 .error {
   color: #c0392b;

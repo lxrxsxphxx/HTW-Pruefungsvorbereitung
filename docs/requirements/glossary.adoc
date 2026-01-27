@@ -24,9 +24,11 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 //Quiz-App:
 //Quiz App wirkt aktuell noch etwas allgemein für einen Glossareintrag – eventuell könnten wir hier eine genauere Definition überlegen oder dieses Wort entfernen.
 
+
+
 [%header]
 |===
-| Begriff | Definition und Erläuterung | Synonyme
+| Begriff | Definition und Erläuterung | Synonyme 
 | Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
 
  Dozierende | Lehrende Personen, die an Hochschulen oder Universitäten, Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt. | Lehrende |
@@ -74,16 +76,15 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
-//| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
+//
 | ECTS | European Credit Transfer and Accumulation System | Leistungspunkte
-| HTWD | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
+| HTW | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
 | WiSe | Wintersemester | Winterhalbjahr eines Jahres
 | SoSe | Sommersemester | Sommerhalbjahr eines Jahres
 | B.Sc. | Bachelor of Science	| Ein akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
+| Dipl. | Diplom|  Ein traditioneller akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
 | M.Sc. | Master of Science	| Ein weiterführender akademischer Grad, der auf einem Bachelor-Studium aufbaut und in naturwissenschaftlichen und technischen Studiengängen erworben wird.
-| VL | Vorlesung	| Eine Lehrveranstaltungsform, in der Dozierende Inhalte präsentieren und erläutern.
 | SWS	| Semesterwochenstunden | Eine Maßeinheit für den Umfang von Lehrveranstaltungen pro Semester.
-| LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
 | PO | Prüfungsordnung	| Das Regelwerk, das die Anforderungen und Abläufe von Prüfungen festlegt.
 | QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen. | 
 |===

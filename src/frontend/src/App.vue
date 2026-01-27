@@ -20,12 +20,8 @@ import { RouterView } from 'vue-router'
   height: 100vh;   
   width: 100vw;      
   margin: 0;
-  background-color: #fcecd8;
   display: flex;
   flex-direction: column;
 }
-
-
-
 
 </style>

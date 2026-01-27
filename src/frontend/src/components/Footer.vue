@@ -16,7 +16,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 5%;
-  background-color: #f99b20;
+  background-color: var(--htw-orange);
   text-align: center;
   padding: 3px 0;
   

@@ -9,20 +9,23 @@
       <div class="btn-links">
 
         <button>
-          <img src="@/assets/img/Kurse.png" alt="Kursbutton" class="kurs-button" />
+          <img src="@/assets/img/book.png" alt="Kursbutton" class="kurs-button" />
+          <p>Module</p>
         </button>
       
       </div>
       <div class="btn-mitte">
         <RouterLink to="/modul-waehlen">
           <button>
-            <img src="@/assets/img/jetztLernen.png" alt="LernenButton" class="lernen-button" />
+            <img src="@/assets/img/checkmark.png" alt="LernenButton" class="lernen-button" />
+            <p>Jetzt Lernen</p>
           </button>
         </RouterLink>
       </div>
       <div class="btn-rechts">
         <button>
-          <img src="@/assets/img/Statistiken.png" alt="StatistikenButton" class="statistiken-button" />
+          <img src="@/assets/img/bars.png" alt="StatistikenButton" class="statistiken-button" />
+          <p>Statistiken</p>
         </button>
       </div>
     </section>
@@ -46,7 +49,6 @@ export default {
 }
 
 .intro {
-  background-color: rgba(249, 155, 32, 0.308);
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
@@ -55,13 +57,13 @@ export default {
 
 .intro h1 {
   font-size: 2.5rem;
-  color: #ec852c;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .intro p {
   font-size: 1.25rem;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -77,33 +79,30 @@ export default {
 }
 
 .features button {
-  background: transparent;
   border: none;
   cursor: pointer;
   width: 100%;
-}
-
-.features img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
-  background: white;
-  object-fit: contain;
 }
 
 .features img {
-  width: 100%;
+  width: 50%;
   height: auto;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  background: white;
   border-radius: 10px;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
-.features img:hover {
-  transform: scale(1.20);
+.features p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.features button {
+  aspect-ratio: 1 / 1;
 }
 
 
@@ -125,10 +124,6 @@ export default {
 @media screen and (min-width: 1480px) {
 
 
-  
-  .intro {
-    margin-top: 90px;
-  }
   .container {
   
   max-width: 2000px;
@@ -146,21 +141,12 @@ export default {
     gap: 5rem;
   }
 
-  .intro{
-    width: 90%;
-    margin-left: 5%;
-  }
   .intro h1{
     font-size: 80px;
   }
 
   .intro p{
     font-size:2.0rem ;
-  }
-
-  .features img{
-    width: 90%;
-    height: 90%;
   }
 }*/
 </style>

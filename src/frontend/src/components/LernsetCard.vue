@@ -24,8 +24,8 @@ export default {
   border: 0.2rem solid var(--color-border);
   border-radius: 0.5rem;
   padding: 0.2rem;
-  width: 6rem;
-  height: 6rem;
+  width: 10rem;
+  height: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;

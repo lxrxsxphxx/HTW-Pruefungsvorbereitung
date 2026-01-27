@@ -1,21 +1,26 @@
 <template>
   <div class="container">
     <section class="intro">
-      <h1>Lernmodus auswählen</h1>
+      <h1>"{{ learningSet.name }}" ausgewählt</h1>
+      <p>Für dein ausgewähltes Lernset wurden {{ learningSet.cards.length }} Karteikarten und {{
+        learningSet.questions.length }} Multiple Choice Fragen hinterlegt.</p>
+        <p>Bitte wähle einen Lernmodus</p>
     </section>
 
     <section class="features">
       <div>
-        <RouterLink to="/karteikarten">
-          <button>
+        <RouterLink :to="'/karteikarten/' + learningSetId">
+          <button :disabled="learningSet.cards.length == 0">
             <img src="@/assets/img/Karteikarten.png" alt="Karteikartenbutton" class="karteikarten-button" />
+            <p>Karteikarten</p>
           </button>
         </RouterLink>
       </div>
       <div>
-        <RouterLink to="/multiplechoice">
-          <button>
+        <RouterLink :to="'/multiplechoice/' + learningSetId">
+          <button :disabled="learningSet.questions.length == 0">
             <img src="@/assets/img/MultipleChoice.png" alt="MultipleChoiceButton" class="multipleChoice-button" />
+            <p>Multiple Choice</p>
           </button>
         </RouterLink>
       </div>
@@ -23,10 +28,31 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Jetztlernen"
-};
+<script setup>
+import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+
+const learningSet = ref({
+  questions: [],
+  cards: []
+});
+const route = useRoute();
+const learningSetId = route.params.learningSetId;
+
+const API_BASE = "http://localhost:8000/api/learning_set/";
+
+onMounted(async () => {
+  try {
+    const response = await fetch(API_BASE + learningSetId, { credentials: "include" });
+    if (!response.ok) throw new Error('Failed to load cards');
+    learningSet.value = await response.json();
+    console.log(learningSet)
+  } catch (error) {
+    console.error('Error loading learn set:', error);
+  }
+}
+)
 
 </script>
 
@@ -38,7 +64,6 @@ export default {
 }
 
 .intro {
-  background-color: rgba(249, 155, 32, 0.308);
   border-radius: 10px;
   padding: 30px 20px;
   text-align: center;
@@ -46,12 +71,15 @@ export default {
 }
 
 .intro h1 {
-  margin-top: -5px;
-  color: #ec852c;
-  font-size: 48px;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .features {
@@ -62,7 +90,7 @@ export default {
   background: transparent;
 }
 
-.features > div {
+.features>div {
   flex: 1;
   background: transparent;
   padding: 20px;
@@ -76,91 +104,86 @@ export default {
   align-items: center;
 }
 
-.features button {
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
 .karteikarten-button,
 .multipleChoice-button {
   width: 100%;
   height: auto;
   max-width: 250px;
   margin-bottom: 10px;
-  background: white;
-  border-radius: 10px;
 }
+
+button {
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  width: 17rem;
+}
+
 .features img {
-  width: 100%;
+  width: 10rem;
   height: auto;
   max-width: 250px;
   aspect-ratio: 1 / 1;
-  background: white;
   border-radius: 10px;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
-.features img:hover {
-  transform: scale(1.20);
+.features p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
 }
-
 
 /* Large: Desktop */
 @media screen and (min-width: 1080px) and (max-width: 1479px) {
   .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 }
 
 /* Extra Large: Große Monitore */
 @media screen and (min-width: 1480px) {
 
 
-.container{
-  height: 2000px;
-  width: 2000px;
-}
-
-.intro{
-  margin-top: 100px;
-  height: auto;
-  width: 150%;
-  margin-left: -25%;
-}
-
-.intro h1{
-  font-size: 80px;
-}
-
-.features > div {
-    margin-top: 100px;
-    width: 100%;    
+  .container {
+    height: 2000px;
+    width: 2000px;
   }
 
-.features{
+  .intro {
+    margin-top: 100px;
+    height: auto;
+    width: 150%;
+    margin-left: -25%;
+  }
+
+  .intro h1 {
+    font-size: 80px;
+  }
+
+  .features>div {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .features {
     gap: 5rem;
   }
 
-.features img{
+  .features img {
     width: 90%;
     height: 90%;
     max-width: none;
   }
 
-.karteikarten-button,
-.multipleChoice-button {
-width: 100%;
-max-width: none;
+  .karteikarten-button,
+  .multipleChoice-button {
+    width: 100%;
+    max-width: none;
+
+  }
 
 }
-
-}
-
-
 </style>

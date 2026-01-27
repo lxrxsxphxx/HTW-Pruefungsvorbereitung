@@ -18,7 +18,7 @@ const router = createRouter({
       component: StartseiteView,
     },
     {
-      path: '/lernen',
+      path: '/lernen/:learningSetId',
       name: 'Jetztlernen',
       component: JetztlernenView,
       // route level code-splitting

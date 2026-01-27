@@ -1,7 +1,9 @@
 <template>
   <header>
-    <img v-if="dark_mode" src="@/assets/img/HtwLogo_white.png" alt="HtwLogo" />
-    <img v-else  src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
+    <RouterLink to="/">
+      <img v-if="dark_mode" src="@/assets/img/HtwLogo_white.png" alt="HtwLogo" />
+      <img v-else src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
+    </RouterLink>
     <div class="login-wrapper">
       <template v-if="!isLoggedIn">
         <button @click="openLogin">Login</button>
@@ -96,15 +98,15 @@ export default {
       document.body.classList.remove('modal-open');
     }
   },
-  setup () {
+  setup() {
     const dark_mode = ref(true);
     dark_mode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
       dark_mode.value = event.matches;
     })
-  
-  return {dark_mode}
+
+    return { dark_mode }
   }
 };
 </script>

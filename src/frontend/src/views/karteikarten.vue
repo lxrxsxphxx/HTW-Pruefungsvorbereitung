@@ -72,7 +72,7 @@ const route = useRoute();
 async function loadCards() {
   loading.value = true;
   try {
-    const response = await fetch(API_BASE + `?learning_set_id=${route.params.learningSetId}`);
+    const response = await fetch(API_BASE + `?learning_set_id=${route.params.learningSetId}`, {credentials: "include"});
     if (!response.ok) throw new Error('Failed to load cards');
     const apiCards = await response.json();
 

@@ -9,7 +9,9 @@
         <button @click="openLogin">Login</button>
       </template>
       <template v-else>
-        <div class="user-area" @click="logout" title="Abmelden">👤 {{ username }}</div>
+        <RouterLink to="/user" style="padding: 0px;">
+          <div class="user-area">👤 {{ username }}</div>
+        </RouterLink>
       </template>
 
       <LoginDialog v-if="showLogin" @login="handleLogin" @close="showLogin = false" />
@@ -140,6 +142,10 @@ header {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+.user-area {
+  color: var(--color-text);
 }
 
 

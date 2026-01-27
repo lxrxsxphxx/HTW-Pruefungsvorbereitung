@@ -15,7 +15,7 @@
         </RouterLink>
       </div>
       <div class="btn-mitte">
-        <RouterLink to="/modul-waehlen">
+        <RouterLink to="/lernset-waehlen">
           <button>
             <img src="@/assets/img/checkmark.png" alt="LernenButton" class="lernen-button" />
             <p>Jetzt Lernen</p>

@@ -5,7 +5,6 @@ import JetztlernenView from '@/views/JetztlernenView.vue'
 import QuizEingabe from '@/views/quiz-eingabe.vue'
 import QuizLoesen from '@/views/quiz-loesen.vue'
 import Karteikarten from '@/views/karteikarten.vue'
-import ModulWaehlen from '@/views/modul-waehlen.vue'
 import LernsetWaehlen from '@/views/lernset-waehlen.vue'
 import ModulWaehlenView from '@/views/ModulWaehlenView.vue'
 
@@ -48,11 +47,6 @@ const router = createRouter({
       component: Karteikarten
     },
     {
-      path: '/modul-waehlen',
-      name: 'Modul-waehlen',
-      component: ModulWaehlen
-    },
-        {
       path: '/modulwahl',
       name: 'Modulwahl',
       component: ModulWaehlenView

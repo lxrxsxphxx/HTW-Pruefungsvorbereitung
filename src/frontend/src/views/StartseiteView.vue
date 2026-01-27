@@ -7,12 +7,12 @@
 
     <section class="features">
       <div class="btn-links">
-
-        <button>
-          <img src="@/assets/img/book.png" alt="Kursbutton" class="kurs-button" />
-          <p>Module</p>
-        </button>
-      
+        <RouterLink to="/modulwahl">
+          <button>
+            <img src="@/assets/img/book.png" alt="Kursbutton" class="kurs-button" />
+            <p>Module</p>
+          </button>
+        </RouterLink>
       </div>
       <div class="btn-mitte">
         <RouterLink to="/modul-waehlen">
@@ -74,7 +74,7 @@ export default {
   gap: 1rem;
 }
 
-.features > div {
+.features>div {
   text-align: center;
 }
 
@@ -108,14 +108,16 @@ export default {
 
 
 /* Large: Desktop */
-@media screen and (min-width: 1080px) /*and (max-width: 1479px) */{
+@media screen and (min-width: 1080px)
+/*and (max-width: 1479px) */
+  {
   .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-  
-  .features > div {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .features>div {
     width: 30%;
   }
 }
@@ -150,11 +152,3 @@ export default {
   }
 }*/
 </style>
-
-
-
-
-
-
-
-

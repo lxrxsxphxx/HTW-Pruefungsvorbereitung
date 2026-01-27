@@ -65,7 +65,7 @@ def get_single_course(id:int,session:Session = Depends(get_session), username:st
 
     db_course = session.get(Course,id)
     if not db_course:
-        raise HTTPException(status=404, detail="This course does not exist")
+        raise HTTPException(status_code=404, detail="This course does not exist")
     return db_course
 
 @router.get("/{id}/modules")
@@ -84,7 +84,7 @@ def get_modules(id:int,session:Session = Depends(get_session), username = Depend
 
     db_course = session.get(Course,id)
     if not db_course:
-        raise HTTPException(status=404, detail="This course does not exist")
+        raise HTTPException(status_code=404, detail="This course does not exist")
 
     modules = session.exec(select(Module)
                            .join(CourseModule)

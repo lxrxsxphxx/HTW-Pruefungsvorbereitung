@@ -36,10 +36,10 @@ def user_login(data:LoginData,
     db_user = session.exec(select(User).where(User.username == data.username)).all()
 
     if not db_user:
-        raise HTTPException(status = 401,detail = "username or password is wrong")
+        raise HTTPException(status_code=401,detail = "username or password is wrong")
 
     if len(db_user)>1:
-        raise HTTPException(status = 500,detail="something has gone terribly wrong")
+        raise HTTPException(status_code=500,detail="something has gone terribly wrong")
 
     #now the user exist without question - we can check if credentials are correct
     user = db_user[0]
@@ -54,7 +54,7 @@ def user_login(data:LoginData,
 
         return response
 
-    raise HTTPException(status = 401,detail = "username or password is wrong")
+    raise HTTPException(status_code=401,detail = "username or password is wrong")
 
 @router.get("/data")
 def get_user_data(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> UserResponse:
@@ -72,7 +72,7 @@ def get_user_data(session: Session = Depends(get_session), username:str = Depend
     db_user = session.exec(select(User).where(User.username == username)).all()
 
     if not db_user or len(db_user)>1:
-        raise HTTPException(status = 500,detail="something has gone terribly wrong")
+        raise HTTPException(status_code=500,detail="something has gone terribly wrong")
     
     user = db_user[0]
     return user
@@ -92,7 +92,7 @@ def get_user_modules(session: Session = Depends(get_session), username:str = Dep
     db_user = session.exec(select(User).where(User.username == username)).all()
 
     if not db_user or len(db_user)>1:
-        raise HTTPException(status = 500,detail="something has gone terribly wrong")
+        raise HTTPException(status_code=500,detail="something has gone terribly wrong")
     
     user = db_user[0]
     modules = session.exec(select(Module)

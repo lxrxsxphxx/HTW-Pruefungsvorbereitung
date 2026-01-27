@@ -211,7 +211,7 @@ export default {
 }
 
 .sidebar-action-button {
-  background-color: #F99B20; 
+  background-color: var(--htw-orange); 
   color: white;
   border: none;
   padding: 0.7rem;
@@ -226,12 +226,12 @@ export default {
 }
 
 .sidebar-action-button:hover:not(:disabled) {
-  background-color: #e08b1d;
+  background-color: var(--htw-orange);
   transform: scale(1.02);
 }
 
 .sidebar-action-button:disabled {
-  background-color: #F99B20;
+  background-color: var(--htw-orange);
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
@@ -301,13 +301,13 @@ export default {
 }
 
 .semester-header {
-  background-color: #F99B20;
+  background-color: var(--htw-orange);
   padding: 0.8rem;
   text-align: center;
 }
 
 .semester-title {
-  color: #333;
+  color: white;
   margin: 0;
   font-size: 1.1rem;
   font-weight: bold;
@@ -345,8 +345,8 @@ export default {
 
 .module-item.is-selected {
   background-color: #fff8e1;
-  border-color: #F99B20;
-  box-shadow: 0 0 0 1px #F99B20;
+  border-color: var(--htw-orange);
+  box-shadow: 0 0 0 1px var(--htw-orange);
 }
 
 .module-item.is-assigned {

@@ -13,63 +13,129 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
 
 == Datenmodell
 Angegeben werden die Models aus _models.py_. Die Models sind Klassen, die vom verwendeten ORM benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
+Zudem werden nur die 
 
 === Models zu Karteikarten
 
-* *CardBase*: Hält die Basisinformation, die eine Karteikarte halten muss.
+* *CardBase*: Hält die Basisinformation, um eine Karteikarte zu beschreiben.
 ** front (String) - Text auf der Vorderseite.
 ** back (String) - Text auf der Rückseite.
 
-* *Card*: Repräsentiert eine Karte. Diese Klasse ist eine Tabelle. Erbt von *CardBase*.
+* *Card*: Repräsentiert eine Karte. Diese Klasse wird als Tabelle abgebildet. Erbt von *CardBase*.
 ** id (int): Eindeutige Identifikationsnummer der Karteikarte.
 ** learning_set (LearningSet): Beziehung zum Lernset, dem die Karteikarte zugehörig ist.
+** learning_set_id (int): ID des Lernsets, dem die Karteikarte zugehörig ist.
 
-* *CardResponse*: Repräsentiert eine Karte. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Karteikarte angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *CardBase*.
+* *CardResponse*: Repräsentiert eine Karte. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Karteikarten angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *CardBase*.
 ** id (int): Eindeutige Identifikationsnummer der Karteikarte.
 
 === Models zu Multiple-Choice-Fragen
 
-* *QuestionBase*: Hält die Basisinformation, die eine Multiple-Choice-Frage halten muss.
+* *QuestionBase*: Hält die Basisinformation, um eine Multiple-Choice-Frage zu beschreiben.
 ** question (String): Die Frage, die beantwortet werden soll.
 
-* *Question*: Repräsentiert eine Multiple-Choice-Frage. Diese Klasse ist eine Tabelle. Erbt von *QuestionBase*.
+* *Question*: Repräsentiert eine Multiple-Choice-Frage. Diese Klasse wird als Tabelle abgebildet. Erbt von *QuestionBase*.
 ** id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage
 ** answers (list[Answer]): Beziehung zu den Antworten der Multiple-Choice-Frage.
 ** learning_set (LearningSet): Beziehung zum Lernset, dem die Multiple-Choice-Frage zugehörig ist.
+** learning_set_id (id): ID des Lernsets, dem die Multiple-Choice-Frage zugehörig ist.
 
-* *QuestionResponse*: Repräsentiert eine Multiple-Choice-Frage. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Multiple-Choice-Frage angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *QuestionBase*.
+* *QuestionResponse*: Repräsentiert eine Multiple-Choice-Frage. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Multiple-Choice-Fragen angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *QuestionBase*.
 ** id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage.
 ** answers (list[AnswerResponse]): Beziehung zu den Antworten der Multiple-Choice-Frage, hier aber als Response-Klasse.
 
 === Models zu Antworten von Multiple-Choice-Fragen
 
-* *AnswerBase*: Hält die Basisinformation, die eine Antwort halten muss.
+* *AnswerBase*: Hält die Basisinformation, um eine Antwort zu beschreiben.
 ** answer (String): Der Antworttext.
 ** correct (bool): Information, ob die Antwort die richtige Antwort zu der Frage ist, der sie zugehörig ist.
 
-* *Answer*: Repräsentiert eine Antwort. Diese Klasse ist eine Tabelle. Erbt von *AnswerBase*.
+* *Answer*: Repräsentiert eine Antwort. Diese Klasse wird als Tabelle abgebildet. Erbt von *AnswerBase*.
 ** id (int): Eindeutige Identifikationsnummer der Antwort.
 ** question_id (int): Eindeutige Identifikationsnummer der Multiple-Choice-Frage, der die Antwort zugehörig ist.
 ** question (Question): Die Multiple-Choice-Frage, der die Antwort zugehörig ist. 
 
-* *AnswerResponse*: Repräsentiert eine Antwort. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einer Antwort angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *AnswerBase*.
+* *AnswerResponse*: Repräsentiert eine Antwort. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Antworten angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *AnswerBase*.
 ** id (int): Eindeutige Identifikationsnummer der Antwort. 
 ** question_id (id): Eindeutige Identifikationsnummer der Multiple-Choice-Frage, der die Anwort zugehörig ist.
 
 === Models zu Lernsets
-* *LearningSetBase*: Hält die Basisinformation, die ein Lernset halten muss.
+* *LearningSetBase*: Hält die Basisinformation, um ein Lernset zu beschreiben.
 ** name (String): Der Name des Lernsets
-** module (String): Der Name des Moduls, für das das Lernset erstellt wurde.
 
-* *LearningSet*: Repräsentiert ein Lernset. Diese Klasse ist eine Tabelle. Erbt von *LearningSetBase*.
+
+* *LearningSet*: Repräsentiert ein Lernset. Diese Klasse wird als Tabelle abgebildet. Erbt von *LearningSetBase*.
 ** id (int): Eindeutige Identifikationsnummer der Antwort.
 ** cards (list[Card]): Die Karteikarten des Lernsets.
 ** questions (list[Question]): Die Multiple-Choice-Fragen des Lernsets.
+** module_id (int): ID des Moduls, dem das Lernset zugehörig ist.
+** module (Module): Das Modul, dem das Lernset zugehörig ist.
 
-* *LearningSetResponse*: Repräsentiert ein Lernset. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu einem Lernset angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *LearningSetBase*. 
+* *LearningSetResponse*: Repräsentiert ein Lernset. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Lernsets angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *LearningSetBase*. 
 ** id (int): Eindeutige Identifikationsnummer der Antwort.
 ** cards (list[CardResponse]): Die Karteikarten des Lernsets.
 ** questions (list[QuestionResponse]): Die Multiple-Choice-Fragen des Lernsets.
+
+=== Models zu Modulen
+* *ModuleBase:* Hält die Basisinformationen, um ein Modul zu beschreiben.
+** name (String): Der Name des Moduls 
+** lecturer (String): Der Name der dozierenden Person
+** semester (int): Das Semester, in dem das Modul normalerweise vorgesehen ist. 
+
+* *Module:* Repräsentiert ein Modul. Diese Klasse wird als Tabelle abgebildet. Erbt von *ModuleBase*.
+** id (int): Die eindeutige ID des Moduls.
+** courses (list[CourseModule]): Verbindung zu den Studiengängen, die ein Modul beinhalten.
+** learning_sets (list[LearningSet]): Die Lernsets, die es zu diesem Modul gibt.
+
+* *ModuleResponse:* Repräsentiert ein Modul. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Modulen angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *ModuleBase*.
+
+=== Models zu Nutzern
+* *UserBase:* Hält die Basisinformationen, um einen Nutzer zu beschreiben.
+** name (String): Der Name des Nutzers.
+** faculty (String): Die Fakultät, zu der der Nutzer gehört. 
+** curr_semester (int): Das aktuelle Semester, in dem sich der Nutzer befindet.
+
+* *User:* Repräsentiert einen Nutzer. Diese Klasse wird als Tabelle abgebildet. Erbt von *UserBase*.
+** id (int): Die eindeutige ID des Nutzers
+** course_id (int): Die eindeutige ID des Studiengangs, dem dieser Nutzer zugehörig ist.
+** course (Course): Der Studiengang, dem dieser Nutzer zugehörig ist.
+** modules (list[ModuleUser]): 
+** username (String): Der __einzigartige__ Nutzername des Nutzers
+** passwd (bytes): gehashtes und gesaltetes Passwort
+
+* *UserResponse:* Repräsentiert einen Nutzer. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Nutzern angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *UserBase*
+** id (int): Die eindeutige ID des Nutzers.
+** course_id (int): Die ID des Studiengangs, dem der Nutzer zugehörig ist.
+
+
+=== Models zu Studiengängen
+* *CourseBase:* Hält die Basisinformationen, um ein Studiengang zu beschreiben.
+** name (String): Der Name des Studiengangs
+** faculty(String): Die Fakultät, der dieser Studiengang zugehörig ist.
+
+* *Course:* Repräsentiert ein Studiengang. Diese Klasse wird als Tabelle abgebildet. Erbt von *CourseBase*.
+** id (int): Die eindeutige ID des Studiengangs.
+** modules (CourseModule): Verbindung zu den Modulen, die es in einem Studiengang gibt.
+** users (User): Verbindung zu den Nutzern, die zu diesem Studiengang gehören.
+
+* *CourseResponse:* Repräsentiert einen Studiengang. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Studiengängen angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *CourseBase*
+** id (int): Die eindeutige ID des Studiengangs.
+
+* *LoginData*: Diese Klasse bündelt die für einen Login relevanten Daten in einer Klasse.
+** username (String): Der Nutzername des Nutzers, für den der Loginversuch stattfindet. Verglichen wird mit User.__username__, *nicht* mit User.__name__.
+** passwd (String): Das Klartextpasswort, das zum Nutzernamen gehört.
+
+* *CourseModule*: Diese Klasse wird als Tabelle abgebildet und verbindet die Studiengänge mit den Modulen.
+** course_id (int): Die ID eines Studiengangs.
+** courses (Course): Der zur ID gehörende Studiengang.
+** module_id (int): Die ID eines Moduls.
+** modules (Module): Das zur ID gehörende Modul.
+
+* *ModuleUser*: Diese Klasse wird als Tabelle abgebildet und verbindet die Module mit den Nutzern. Ein Element aus dieser Tabelle kann über die Kombination von module_id und user_id eindeutig identifiziert werden.
+** module_id (int): Die ID eines Moduls.
+** module (Module): Das zur ID gehörende Modul.
+** user_id (int): Die ID eines Nutzers.
+** user (User): Der zur ID gehörende Nutzer.
 
 == Schnittstellen
 Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.

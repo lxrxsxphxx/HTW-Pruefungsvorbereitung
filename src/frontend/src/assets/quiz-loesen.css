@@ -87,6 +87,8 @@ span{pointer-events: none;}
 }
 .answer-button {
   flex: 1 0 0;
+  height: 2.2rem;
+  padding: 0;
   margin-left: 0.25em;
   margin-right: 0.25em;
   border: 4px solid #0000;

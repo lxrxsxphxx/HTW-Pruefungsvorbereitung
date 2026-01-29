@@ -158,22 +158,19 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 
 [plantuml, domain-model, svg]
 ----
-
 @startuml UML
 hide circle
 
 class User {
-    username: String
-    faculty: String
-    curr_semester: Int
+  username: String
+  faculty: String
+  curr_semester: Int
 }
-
 
 class Course {
   name: String
   faculty: String
 }
-
 
 class Module {
   name: String
@@ -201,12 +198,11 @@ class Answer {
 
 User "*" --> "0..1" Course : eingeschrieben in
 Course "*" -- "*" Module : umfasst
-Module  *-- "*" LearningSet : enthält
-LearningSet  *-- "*" Card : enthält
-LearningSet  *-- "*" Question : enthält
-Question  *-- "0..4" Answer : enthält
- 
+Module "*" *-- "*" LearningSet : enthält
+LearningSet "*" *-- "*" Card : enthält
+LearningSet "*" *-- "*" Question : enthält
+Question "*" *-- "0..4" Answer : enthält
 
 @enduml
-
 ----
+

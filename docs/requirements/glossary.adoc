@@ -98,38 +98,51 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
 | String
-| Emailadresse muss `@`-Zeichen und `.` Punkt enthalten.
+| Keine zusätzlichen formalen Vorgaben definiert.
 | Login
 
-| Benutzerdaten
-| Informationen über den Nutzer (Name, ID).
-| String
-| Name darf keine Sonderzeichen enthalten.
+| Benutzer
+| Registrierter Nutzer des Systems mit persönlichen Daten sowie Anmeldedaten.
+| Objekt
+| Benutzername ist eindeutig.
 | Userdaten
 
-| Prüfungsdaten
-| Angaben zu Prüfungen (Datum, Modul).
-| JSON
-| Datum im Format YYYY-MM-DD.
-| Klausurinfo
+| Studiengang
+| Datenobjekt zur Abbildung eines Studiengangs, das mehrere Module umfasst
+| Objekt
+| Keine zusätzlichen Gültigkeitsregeln definiert.
+| Course
 
-| Statistiken
-| Lernfortschritt und erreichte Punkte.
-| JSON
-| Punkte müssen numerisch sein.
-| Fortschritt
+| Modul
+| Datenobjekt zur Abbildung eines Moduls mit zugehörigen Lernsets.
+| Objekt
+| Keine zusätzlichen Gültigkeitsregeln definiert.
+| Module
 
-| Fragenkatalog
-| Sammlung von Fragen und Antworten.
-| Array
-| Jede Frage muss mindestens eine Antwort enthalten.
-| Quizfragen
+| Lernset
+| Datenobjekt zur Zusammenfassung von Fragen und Antworten, die einem Modul zugeordnet sind.
+| Objekt
+| Lernset ist genau einem Modul zugeordnet.
+| LearningSet
 
-| Moduldaten
-| Informationen zu Modulen (Name, ID, ECTS).
-| JSON
-| ECTS muss eine Ganzzahl sein.
-| Kursdaten
+
+| Kareikarte
+| Datenobjekt zur Abbildung einer Lernkarte mit Vorder- und Rückseite, die einem Lernset zugeordnet ist.
+| Objekt
+| Lernkarte ist genau einem Lernset zugeordnet.
+| Card
+
+| Multiple-Choice-Frage
+| Datenobjekt zur Abbildung einer Frage mit mehreren Antwortmöglichkeiten, die einem Lernset zugeordnet ist.
+| Objekt
+| Multiple-Choice-Frage ist genau einem Lernset zugeordnet.
+| Question
+
+| Multiple-Choice-Antwort
+| Datenobjekt zur Abbildung einer Antwortmöglichkeit zu einer Multiple-Choice-Frage.
+| Objekt
+| Multiple-Choice-Antwort ist genau einer Multiple-Choice-Frage zugeordnet.
+| Answer
 
 
 |===

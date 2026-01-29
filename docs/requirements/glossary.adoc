@@ -29,11 +29,11 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme 
-| Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
+| Student | Eine Person, die an der Htw Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
 
- Dozierende | Lehrende Personen, die an Hochschulen oder Universitäten, Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt. | Lehrende |
+ Dozierende | Lehrende Personen an der Htw Dresden, die Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt und Prüfungsleistungen bewerten. | Lehrende |
 
- Tutor:innen | studentische Beschäftigte an Hochschulen, die unter fachlicher Leitung von Dozierenden Lehrveranstaltungen (Tutorien) leiten. |  Studentische Hilfskraft |
+ Tutor:innen | Studierende der HTW Dresden, die unter fachlicher Anleitung von Dozierenden Tutorien (begleitende Lehrveranstaltungen) durchführen und andere Studierende beim Lernen unterstützen. |  Studentische Hilfskraft |
 
  HTW-Mitglied | Personen, die der HTW Dresden angehören und berechtigt sind, die Lernplattform zu nutzen. | Angehörige der HTW |
 
@@ -47,27 +47,27 @@ Fakultät | Eine zentrale Organisationseinheit für Forschung und Lehre, die inh
 
 Bachelor / Diplom / Master | Berufsbezogener akademischer Grad, der nach einem mit einer Prüfung abgeschlossenen Studium erworben wird | berufsqualifizierender Abschluss |
 
-Lernplattform | Eine webbasierte Softwareumgebung, die Lerninhalte zentral verwaltet, bereitstellt und den Lernprozess organisiert. | Digitaltes Lernumfeld |
+Lernplattform | Eine webbasierte Softwareumgebung, die Lerninhalte zentral verwaltet, bereitstellt und den Lernprozess organisiert. | - |
 
 Lerninhalte | Theoretischen und/oder praktische Informationen die Lernende erwerben müssen, um definierte Bildungsziele zu erreichen. | Lehrstoff |
 
 Altklausuren | in der Vergangenheit gestellte Prüfungsaufgaben, die von Dozierenden oft freiwillig zur Verfügung gestellt werden. | altes Prüfungsexemplar |
 
-Lernset |  Eine strukturierte Sammlung, die zum Beispiel Begriffe, Definitionen, Fragen und Antworten zu einem bestimmten Thema bündelt. | Lernmaterialien |
+Lernset |  Eine strukturierte Sammlung, die zum Beispiel Begriffe, Definitionen, Fragen und Antworten zu einem bestimmten Thema bündelt. | - |
 
 Lernmodus | Auswahl der Lernform, z. B. Lernen mit Karteikarten oder Bearbeiten von Multiple-Choice-Fragen. | Lernumgebung |
 
-Karteikarten | Kleine, beidseitig beschriftbare Karten, die als effektives Lernwerkzeug zur strukturierten Wiederholung von Wissen dienen. | beschriftbare Karte |
+Karteikarten | Kleine, beidseitig beschriftbare Karten, die als effektives Lernwerkzeug zur strukturierten Wiederholung von Wissen dienen. | - |
 
-Multiple-Choice | Ein geschlossenes Antwort-Wahl-Verfahren in Prüfungen oder Umfragen, bei dem aus vorgegebenen Optionen eine oder mehrere korrekte Antworten auszuwählen sind. | Fragen mit Auswahlantworten |
+Multiple-Choice | Ein geschlossenes Antwort-Wahl-Verfahren in Prüfungen oder Umfragen, bei dem aus vorgegebenen Optionen eine oder mehrere korrekte Antworten auszuwählen sind. | - |
 
-Frage | Eine sprachliche Äußerung, die eine Antwort verlangt und darauf abzielt, Informationen, Bestätigungen oder Meinungen zu erlangen. | Erkundigung |
+Frage | Eine sprachliche Äußerung, die eine Antwort verlangt und darauf abzielt, Informationen, Bestätigungen oder Meinungen zu erlangen. | - |
 
-Antwort | sprachliche, schriftliche oder nonverbale Erwiderung auf eine Frage. Sie dient der Auskunft, Reaktion oder Lösung. | Aufklärung |
+Antwort | sprachliche, schriftliche oder nonverbale Erwiderung auf eine Frage. Sie dient der Auskunft, Reaktion oder Lösung. | - |
 
-Lernfortschritt | Beschreibt die positive Veränderung des Wissensstands, der Fähigkeiten oder Fertigkeiten eines Lernenden im Vergleich zu einem früheren Zeitpunkt. | Fortentwicklung |
+Lernfortschritt | Beschreibt die positive Veränderung des Wissensstands, der Fähigkeiten oder Fertigkeiten eines Lernenden im Vergleich zu einem früheren Zeitpunkt. | - |
 
-Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie und Motivation die nötig sind, um ein bestimmtes Lernziel zu erreichen. |  Lernzaktivität |
+Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie und Motivation die nötig sind, um ein bestimmtes Lernziel zu erreichen. |  - |
 |===
 
 

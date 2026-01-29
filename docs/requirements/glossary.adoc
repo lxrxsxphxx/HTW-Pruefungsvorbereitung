@@ -207,6 +207,6 @@ LearningSet  *-- "*" Question : enthält
 Question  *-- "0..4" Answer : enthält
  
 
-@endumlP
+@enduml
 
 ----

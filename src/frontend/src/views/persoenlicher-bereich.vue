@@ -1,7 +1,7 @@
 <template>
   <div id="personal-space-main">
     <div id="personal-info-container">
-      <img src="C:\Users\Johann\Documents\Mobile Geräte\Galaxy_S8\DCIM\Camera\20230220_125042.jpg" alt="Profilbild" id="profile-picture" width="256" height="256"><br>
+      <img src="../assets/img/dummy-picture.jpg" alt="Profilbild" id="profile-picture" width="256" height="256"><br>
       <div class="user-information" id="username" v-text="USERNAME"></div>
       <div class="user-information" id="faculty" v-text="FACULTY"></div>
       <div class="user-information" id="major" v-text="MAJOR"></div>

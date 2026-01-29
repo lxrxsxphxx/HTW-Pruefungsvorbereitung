@@ -17,7 +17,7 @@
 
       <div id="manage-modules-container">
         <RouterLink to="/modulwahl" style="padding: 0px;">
-          <button id="manage-modules-button">Module verwalten</button>
+          <button id="manage-modules-button">Module hinzufügen</button>
         </RouterLink>
       </div>
     </div>

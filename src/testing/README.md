@@ -82,7 +82,7 @@ Lösung: Das Working Directory ist nicht das Verzeichnis der Collection, deshalb
 ---
 
 Fehler:
-Riesige Wand aus Errors
+Riesige Wand aus Errors (bei einem Linux System)
 
 Grund: Vermutlich wurde Bruno mit snap installiert. Das führt auf vielen Systemen zu Problemen.
 

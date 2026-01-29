@@ -6,10 +6,13 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
+In diesem Dokument werden die Backend Tests dokumentiert.
 Für die Ausführung der Tests wird der Bruno Client benötigt.
 Die Tests sind so konzipiert, dass sie *nicht* unabhängig voneinander sind. Das Ausführen einzelner Tests kann also dazu führen, dass manche Asserts nicht erfolgreich sind, obwohl das System wie gewünscht funktioniert. Das kommt daher, dass einige Anfragen auf Variablen zugreifen müssen, die von Skripten aus anderen Requests vorher gesetzt werden müssen. Die Tests sind in der Reihenfolge dokumentiert, in der sie bei einem Testdurchlauf ausgeführt werden.
 
 Dieses Dokument setzt voraus, dass sich mit der xref:../development/design.adoc[Dokumentation der REST-API] beschäftigt wurde. Pfad- und Queryparameter, die Struktur des Bodies etc. werden hier *nicht* dokumentiert.
+
+Aktuell werden die Endpunkte für Karteikarten, Multiple-Choice-Fragen und Lernsets getestet.
 
 === Installation und Benutzung Bruno Client
 https://www.usebruno.com/

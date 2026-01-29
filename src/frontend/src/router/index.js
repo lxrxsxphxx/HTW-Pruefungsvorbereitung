@@ -32,7 +32,7 @@ const router = createRouter({
       component: LernsetWaehlen
     },
     {
-      path: '/multiplechoice',
+      path: '/multiplechoice/:learningSetId',
       name: 'Multiplechoice',
       component: QuizLoesen
     },

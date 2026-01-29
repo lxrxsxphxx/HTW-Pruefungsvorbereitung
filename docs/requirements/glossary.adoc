@@ -97,7 +97,7 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
-| String
+| Objekt
 | Keine zusätzlichen formalen Vorgaben definiert.
 | Login
 
@@ -150,5 +150,57 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 == Domänenmodell
 // Fügen Sie hier eine Abbildung mit ihrem Domänenmodell ein
 
+[plantuml, domain-model, svg]
+----
 
-image::Uml-Diagram.png[height=600, title="Domänenmodell"] 
+@startuml UML
+hide circle
+
+class User {
+    username: String
+    faculty: String
+    curr_semester: Int
+}
+
+
+class Course {
+  name: String
+  faculty: String
+}
+
+
+class Module {
+  name: String
+  lecturer: String
+  semester: Int
+}
+
+class LearningSet {
+  name: String
+}
+
+class Card {
+  front: String
+  back: String
+}
+
+class Question {
+  question: String
+}
+
+class Answer {
+  answer: String
+  correct: Boolean
+}
+
+User "*" --> "0..1" Course : eingeschrieben in
+Course "*" -- "*" Module : umfasst
+Module  *-- "*" LearningSet : enthält
+LearningSet  *-- "*" Card : enthält
+LearningSet  *-- "*" Question : enthält
+Question  *-- "0..4" Answer : enthält
+ 
+
+@endumlP
+
+----

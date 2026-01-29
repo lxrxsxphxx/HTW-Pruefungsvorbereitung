@@ -55,8 +55,6 @@ Altklausuren | in der Vergangenheit gestellte Prüfungsaufgaben, die von Doziere
 
 Lernset |  Eine strukturierte Sammlung, die zum Beispiel Begriffe, Definitionen, Fragen und Antworten zu einem bestimmten Thema bündelt. | - |
 
-Lernmodus | Auswahl der Lernform, z. B. Lernen mit Karteikarten oder Bearbeiten von Multiple-Choice-Fragen. | Lernumgebung |
-
 Karteikarten | Kleine, beidseitig beschriftbare Karten, die als effektives Lernwerkzeug zur strukturierten Wiederholung von Wissen dienen. | - |
 
 Multiple-Choice | Ein geschlossenes Antwort-Wahl-Verfahren in Prüfungen oder Umfragen, bei dem aus vorgegebenen Optionen eine oder mehrere korrekte Antworten auszuwählen sind. | - |
@@ -97,50 +95,58 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
-| Objekt
+| username : Sting +
+  passwort : String
 | Keine zusätzlichen formalen Vorgaben definiert.
-| Login
+| Login / LoginData
 
 | Benutzer
 | Registrierter Nutzer des Systems mit persönlichen Daten sowie Anmeldedaten.
-| Objekt
+| username: String +
+  faculty: String  +
+  curr_semester: Int
 | Benutzername ist eindeutig.
-| Userdaten
+| User
 
 | Studiengang
 | Datenobjekt zur Abbildung eines Studiengangs, das mehrere Module umfasst
-| Objekt
+| name: String +
+  faculty: String
 | Keine zusätzlichen Gültigkeitsregeln definiert.
 | Course
 
 | Modul
 | Datenobjekt zur Abbildung eines Moduls mit zugehörigen Lernsets.
-| Objekt
+| name: String +
+  lecturer: String +
+  semester: Int
 | Keine zusätzlichen Gültigkeitsregeln definiert.
 | Module
 
 | Lernset
 | Datenobjekt zur Zusammenfassung von Fragen und Antworten, die einem Modul zugeordnet sind.
-| Objekt
+| name: String
 | Lernset ist genau einem Modul zugeordnet.
 | LearningSet
 
 
-| Kareikarte
+| Karteikarte
 | Datenobjekt zur Abbildung einer Lernkarte mit Vorder- und Rückseite, die einem Lernset zugeordnet ist.
-| Objekt
+| front: String +
+  back: String
 | Lernkarte ist genau einem Lernset zugeordnet.
 | Card
 
 | Multiple-Choice-Frage
 | Datenobjekt zur Abbildung einer Frage mit mehreren Antwortmöglichkeiten, die einem Lernset zugeordnet ist.
-| Objekt
+| question: String
 | Multiple-Choice-Frage ist genau einem Lernset zugeordnet.
 | Question
 
 | Multiple-Choice-Antwort
 | Datenobjekt zur Abbildung einer Antwortmöglichkeit zu einer Multiple-Choice-Frage.
-| Objekt
+| answer: String +
+  correct: Boolean
 | Multiple-Choice-Antwort ist genau einer Multiple-Choice-Frage zugeordnet.
 | Answer
 

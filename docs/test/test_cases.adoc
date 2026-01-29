@@ -20,6 +20,20 @@ Installation und Benutzung sind in der xref:../../src/testing/README.md[README] 
 
 Für die Integrationstests werden verschiedene Anfragen an die Endpunkte der API geschickt und Asserts auf den Antworten überprüft. Bei Änderungen in der Datenbank folgen noch GET-Requests, die den Erfolg der Request prüfen sollen.
 
+=== Vorbereitung
+Seit dem Einbauen der Loginfunktion muss ein Nutzer sich erst einloggen, bevor er mit den anderen Endpunkten interagieren kann. Damit die bisherigen Integrationstests also funktionieren muss álso gewährleistet werden, dass der Cookie, der einen eingeloggten Nutzer identifiziert, im Client vorhaben ist.
+
+===== initial_login
+POST-Request, die einen Loginversuch beim Standardnutzer durchführt.
+* URL: /api/users/login
+
+Asserts auf Response:
+* HTTP-Statuscode 200?
+* Inhalt Body im JSON-Format?
+* body.message gleich "successfully logged in!"?
+
+Bruno setzt automatisch den Cookie. Alle folgenden Requests authentifizieren sich über diesen Cookie.
+
 === POST-Requests
 
 Dokumentation der POST-Requests in den Integrationstestanfragen. Die Tests überprüfen die Richtigkeit der Serverantwort auf die Requests. Das Ergebnis in der Datenbank durch die POST-Requests werden mittels GET-Requests verifiziert, diese sind weiter unten dokumentiert.
@@ -32,14 +46,13 @@ Diese Request wird vor allen anderen ausgeführt, da man Karteikarten und Multip
 
 ===== create_learning_set
 
-POST-Request an den Learning Set Endpunkt. Im Body wird ein JSON-Objekt mitgegeben, das ein Testlernset repräsentiert
+POST-Request an den Learning Set Endpunkt. Im Body wird ein JSON-Objekt mitgegeben, das ein Testlernset repräsentiert. Die Queryvariable modul_id wird auf 1 gesetzt.
 
 Asserts auf Response:
 
-* HTTP-Statuscode der Response 200?
+* HTTP-Statuscode 200?
 * ID definiert & Zahlenwert?
 * Name als String vorhanden?
-* Modul als String vorhanden?
 * Array für Karteikarten vorhanden und leer?
 * Array für Multiple-Choice-Fragen vorhanden und leer?
 
@@ -159,7 +172,7 @@ Alle Requests gehen an den Pfad */api/learning_set/...*
 
 ===== get_learning_sets_by_module
 
-GET-Request mit module aus der POST-Request als Query-Parameter. Erwartet wird ein Array im Body.
+GET-Request mit module aus der POST-Request als Query-Parameter. Erwartet wird ein Array im Body. Die Queryvariable modul wird auf 1 gesetzt.
 
 Asserts auf Response:
 * HTTP-Statuscode 200?
@@ -174,7 +187,6 @@ Asserts auf Response:
 * HTTP-Statuscode 200?
 * Inhalt Body definiert und im JSON-Format?
 * Name gleich dem erstellten Namen?
-* Modul gleich dem erstellten Modul?
 * ID liegt als Nummer vor?
 * Karten liegen als Array vor?
 * Multiple-Choice-Fragen liegen als Array vor?

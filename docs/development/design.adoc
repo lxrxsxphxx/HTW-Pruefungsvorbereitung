@@ -143,7 +143,7 @@ Die hier aufgeführten Klassen dienen der Bündelung von Daten. Sie werden nicht
 ** passwd (String): Das Klartextpasswort, das zum Nutzernamen gehört.
 
 == Schnittstellen
-Eine detailierte Dokumentation durch FastAPI kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
+Eine detailierte, interaktive Dokumentation durch Swagger kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
 
 === Begriffsdefinition
 * *body*: benötigter Inhalt im Body der HTTP-Request. Vor allem relevant für *POST* und *PUT* Anfragen.

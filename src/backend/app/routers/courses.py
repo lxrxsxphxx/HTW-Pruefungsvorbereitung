@@ -14,7 +14,8 @@ router = APIRouter(
 )
 
 @router.get("/")
-def read_courses(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CourseResponse]:
+def read_courses(session: Session = Depends(get_session),
+                 username:str = Depends(validate_jwt)) -> list[CourseResponse]:
     """
     Gets all courses of study currently in the database
     
@@ -29,7 +30,9 @@ def read_courses(session: Session = Depends(get_session), username:str = Depends
     return session.exec(select(Course)).all()
 
 @router.post("/")
-def post_course(course:CourseBase, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> Course:
+def post_course(course:CourseBase,
+                session: Session = Depends(get_session),
+                username:str = Depends(validate_jwt)) -> Course:
     """
     Adds a new course of study to the database
     
@@ -50,7 +53,9 @@ def post_course(course:CourseBase, session: Session = Depends(get_session), user
     return db_course
 
 @router.get("/{id}")
-def get_single_course(id:int,session:Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CourseResponse:
+def get_single_course(id:int,
+                      session:Session = Depends(get_session),
+                      username:str = Depends(validate_jwt)) -> CourseResponse:
     """
     Gets a single course of study by its id
     
@@ -69,7 +74,9 @@ def get_single_course(id:int,session:Session = Depends(get_session), username:st
     return db_course
 
 @router.get("/{id}/modules")
-def get_modules(id:int,session:Session = Depends(get_session), username = Depends(validate_jwt)) -> list[ModuleResponse]:
+def get_modules(id:int,
+                session:Session = Depends(get_session),
+                username = Depends(validate_jwt)) -> list[ModuleResponse]:
     """
     Gets the modules associated with a course of study
     

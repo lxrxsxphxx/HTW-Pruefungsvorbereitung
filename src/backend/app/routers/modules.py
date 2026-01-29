@@ -14,7 +14,8 @@ router = APIRouter(
 )
 
 @router.post("/")
-def post_module(module:ModuleBase,session: Session = Depends(get_session),
+def post_module(module:ModuleBase,
+                session: Session = Depends(get_session),
                 username:str = Depends(validate_jwt)) -> ModuleResponse:
 
     """
@@ -53,7 +54,8 @@ def read_modules(session: Session = Depends(get_session),
     return session.exec(select(Module)).all()
 
 @router.get("/{id}/courses")
-def get_courses(id:int,session:Session = Depends(get_session),
+def get_courses(id:int,
+                session:Session = Depends(get_session),
                 username:str = Depends(validate_jwt)) -> list[CourseResponse]:
     """
     Gets the courses of study containing a certain module
@@ -77,8 +79,9 @@ def get_courses(id:int,session:Session = Depends(get_session),
     return courses
 
 @router.post("/{id}/user")
-def add_module_to_user(id: int, session:Session = Depends(get_session),
-                username:str = Depends(validate_jwt)):
+def add_module_to_user(id: int,
+                       session:Session = Depends(get_session),
+                       username:str = Depends(validate_jwt)):
     """
     Handles adding a module to a users profile
     
@@ -93,22 +96,23 @@ def add_module_to_user(id: int, session:Session = Depends(get_session),
     db_module = session.get(Module, id)
     if not db_module:
         raise HTTPException(status_code=404, detail="This module does not exist")
-    
+
     db_user = session.exec(select(User).where(User.username == username)).all()
     if not db_user or len(db_user)>1:
         raise HTTPException(status_code=500,detail="something has gone terribly wrong")
-    
+
     db_modeluser = session.get(ModuleUser, (db_module.id, db_user[0].id))
     if db_modeluser:
         raise HTTPException(status_code=400, detail="This module is already assigned to the user")
-    
+
     module_user = ModuleUser(module_id=db_module.id, user_id=db_user[0].id)
     session.add(module_user)
     session.commit()
 
 @router.delete("/{id}/user")
-def remove_module_from_user(id: int, session:Session = Depends(get_session),
-                username:str = Depends(validate_jwt)):
+def remove_module_from_user(id: int,
+                            session:Session = Depends(get_session),
+                            username:str = Depends(validate_jwt)):
     """
     Handles removing a module from a users profile
     
@@ -123,14 +127,14 @@ def remove_module_from_user(id: int, session:Session = Depends(get_session),
     db_module = session.get(Module, id)
     if not db_module:
         raise HTTPException(status_code=404, detail="This module does not exist")
-    
+
     db_user = session.exec(select(User).where(User.username == username)).all()
     if not db_user or len(db_user)>1:
         raise HTTPException(status_code=500,detail="something has gone terribly wrong")
-    
+
     db_modeluser = session.get(ModuleUser, (db_module.id, db_user[0].id))
     if not db_modeluser:
         raise HTTPException(status_code=404, detail="This module is not assigned to the user")
-    
+
     session.delete(db_modeluser)
     session.commit()

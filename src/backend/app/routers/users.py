@@ -57,7 +57,8 @@ def user_login(data:LoginData,
     raise HTTPException(status_code=401,detail = "username or password is wrong")
 
 @router.get("/data")
-def get_user_data(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> UserResponse:
+def get_user_data(session: Session = Depends(get_session),
+                  username:str = Depends(validate_jwt)) -> UserResponse:
     """
     Gets data of the logged in user
     
@@ -73,12 +74,13 @@ def get_user_data(session: Session = Depends(get_session), username:str = Depend
 
     if not db_user or len(db_user)>1:
         raise HTTPException(status_code=500,detail="something has gone terribly wrong")
-    
+
     user = db_user[0]
     return user
 
 @router.get("/modules")
-def get_user_modules(session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[ModuleResponse]:
+def get_user_modules(session: Session = Depends(get_session),
+                      username:str = Depends(validate_jwt)) -> list[ModuleResponse]:
     """
     Gets modules of the logged in user
     
@@ -93,7 +95,7 @@ def get_user_modules(session: Session = Depends(get_session), username:str = Dep
 
     if not db_user or len(db_user)>1:
         raise HTTPException(status_code=500,detail="something has gone terribly wrong")
-    
+
     user = db_user[0]
     modules = session.exec(select(Module)
                  .join(ModuleUser)

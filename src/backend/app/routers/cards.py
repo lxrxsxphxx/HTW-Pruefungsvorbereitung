@@ -14,7 +14,10 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CardResponse]:
+def create_card(cards: list[CardBase],
+                learning_set_id: int ,
+                session: Session = Depends(get_session),
+                username:str = Depends(validate_jwt)) -> list[CardResponse]:
     """
     Create one or more Cards
 
@@ -44,7 +47,9 @@ def create_card(cards: list[CardBase],learning_set_id: int ,session: Session = D
     return db_cards
 
 @router.get("/")
-def read_cards(learning_set_id:int | None = None, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> list[CardResponse]:
+def read_cards(learning_set_id:int | None = None,
+               session: Session = Depends(get_session),
+               username:str = Depends(validate_jwt)) -> list[CardResponse]:
     """
     Gets all cards currently in the database
     
@@ -62,7 +67,9 @@ def read_cards(learning_set_id:int | None = None, session: Session = Depends(get
     return session.exec(select(Card)).all()
 
 @router.get("/{id}")
-def read_card(id: int, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CardResponse:
+def read_card(id: int,
+              session: Session = Depends(get_session),
+              username:str = Depends(validate_jwt)) -> CardResponse:
     """
     gets a single card
     
@@ -80,7 +87,10 @@ def read_card(id: int, session: Session = Depends(get_session), username:str = D
     return card
 
 @router.put("/{id}")
-def update_card(id: int, card: CardBase, session: Session = Depends(get_session), username:str = Depends(validate_jwt)) -> CardResponse:
+def update_card(id: int,
+                card: CardBase,
+                session: Session = Depends(get_session),
+                username:str = Depends(validate_jwt)) -> CardResponse:
     """
     Updates the information of a card
     
@@ -106,7 +116,9 @@ def update_card(id: int, card: CardBase, session: Session = Depends(get_session)
     return db_card
 
 @router.delete("/{id}")
-def delete_card(id: int, session: Session = Depends(get_session), username:str = Depends(validate_jwt)):
+def delete_card(id: int,
+                session: Session = Depends(get_session),
+                username:str = Depends(validate_jwt)):
     """
     deletes a card
     
@@ -124,4 +136,3 @@ def delete_card(id: int, session: Session = Depends(get_session), username:str =
         raise HTTPException(status_code=404, detail="Card not found")
     session.delete(card)
     session.commit()
-    return

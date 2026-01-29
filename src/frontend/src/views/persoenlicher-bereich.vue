@@ -73,7 +73,6 @@ async function getUserData(){
     const id = setTimeout(() => controller.abort(), 5000);
 
     const response = await fetch(API_USER_DATA, {method: "GET", credentials: "include", signal: controller.signal});
-    console.log(response);
     if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
     const data = await response.json();
@@ -96,7 +95,6 @@ async function getUserModules(){
     const id = setTimeout(() => controller.abort(), 5000);
 
     const response = await fetch(API_MODULES, {method: "GET", credentials: "include", signal: controller.signal});
-    console.log(response);
     if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
     const modules = await response.json();
@@ -123,7 +121,6 @@ async function getCourse(course_id) {
     const id = setTimeout(() => controller.abort(), 5000);
 
     const response = await fetch(url, {method: "GET", credentials: "include", signal: controller.signal});
-    console.log(response);
     if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
     const course = await response.json();

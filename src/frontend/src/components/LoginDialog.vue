@@ -14,8 +14,21 @@
 </template>
 
 <script>
+/**
+ * @component LoginDialog
+ * @description Modal dialog component for user authentication
+ * Provides email/password input fields with validation and emits login events
+ */
 export default {
   name: 'LoginDialog',
+  
+  /**
+   * Component data properties
+   * @returns {Object} Reactive data properties
+   * @property {string} email - User email input value
+   * @property {string} password - User password input value
+   * @property {string} error - Error message to display (empty when no error)
+   */
   data() {
     return {
       email: '',
@@ -23,11 +36,30 @@ export default {
       error: ''
     };
   },
+  
+  /**
+   * Component methods
+   */
   methods: {
+    /**
+     * Closes the login dialog
+     * Clears any error messages and emits close event to parent
+     * @emits close - Emitted when dialog should be closed
+     */
     close() {
       this.error = '';
       this.$emit('close');
     },
+    
+    /**
+     * Handles login form submission
+     * Validates email and password fields before emitting login event
+     * Trims whitespace from email input
+     * @emits login - Emitted with {email, password} object when validation passes
+     * @property {Object} loginData - Login credentials object
+     * @property {string} loginData.email - Trimmed email address
+     * @property {string} loginData.password - User password
+     */
     submit() {
       this.error = '';
       if (!this.email) {

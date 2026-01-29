@@ -7,6 +7,7 @@ import QuizLoesen from '@/views/quiz-loesen.vue'
 import Karteikarten from '@/views/karteikarten.vue'
 import LernsetWaehlen from '@/views/lernset-waehlen.vue'
 import ModulWaehlenView from '@/views/ModulWaehlenView.vue'
+import PersoenlicherBereich from '@/views/persoenlicher-bereich.vue'
 
 
 const router = createRouter({
@@ -50,6 +51,11 @@ const router = createRouter({
       path: '/modulwahl',
       name: 'Modulwahl',
       component: ModulWaehlenView
+    },
+    {
+      path: '/user',
+      name: 'Nutzer',
+      component: PersoenlicherBereich
     }
   ],
 })

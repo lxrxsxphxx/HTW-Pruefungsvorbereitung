@@ -86,6 +86,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-color: var(--color-border-hover) var(--color-background);
 }
 
 button {

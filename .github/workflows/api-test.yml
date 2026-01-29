@@ -2,10 +2,6 @@ name: API Tests
  
 on:
   push:
-    branches:
-      #docs branches are uninteresting to us, as the code doesn't change
-    - 'feat/**'
-
     paths:
       #only if .py or .bru files are changed or if the workflow itself is edited, as they make up the backend + tests
     - '.github/**.yml'

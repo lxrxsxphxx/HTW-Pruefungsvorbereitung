@@ -155,6 +155,7 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 |=== 
 | Anforderung | Priorität | Geplantes Release 
 | Webbasierte Anwendung für Desktop-Browser | Hoch | mvp
+| Nutzung der Lernplattform auf mobilen Endgeräten | Mittel | -
 | Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | mvp
 | Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | mvp  
 | Angemessene Reaktionszeiten für eine flüssige Nutzung| Mittel | - 

@@ -9,32 +9,48 @@ include::../_includes/default-attributes.inc.adoc[]
 In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der <Projektthema-Systems> definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
 
 == Begriffe
-//Übungsmodus und Blitz-Quiz:
-//Aktuell gibt es in unserem Konzept noch keinen Übungsmodus oder Blitz-Quiz – vielleicht sollten wir das nochmal gemeinsam klären, ob wir diese Features wirklich vorsehen möchten.
-//Push-Benachrichtigungen:
-//Push-Benachrichtigungen sind an sich keine täglichen Erinnerungen – hier wäre es gut, den Unterschied zwischen Funktion und technischer Umsetzung noch etwas klarer zu trennen.
-//Kollaboratives Lernen:
-//Die Beschreibung zum kollaborativen Lernen ist vielleicht noch etwas zu ausführlich – eventuell könnten wir das Ziel hier präziser und kürzer formulieren.
-//High Score:
-//Das Thema High Score haben wir bisher noch nicht genauer besprochen – eventuell ist es für unser Konzept noch gar nicht relevant oder kann später betrachtet werden.
-//Adaptiver Lernmodus / Lernalgorithmus:
-//Diese beiden Begriffe meinen vermutlich dasselbe – wir könnten sie vielleicht zusammenfassen.
-//Freitextfragen:
-//Freitextfragen sind vielleicht nicht der beste Lernmodus für unsere App – lass uns dazu gerne nochmal über alternative Lernformate sprechen.
-//Quiz-App:
-//Quiz App wirkt aktuell noch etwas allgemein für einen Glossareintrag – eventuell könnten wir hier eine genauere Definition überlegen oder dieses Wort entfernen.
 
 [%header]
 |===
-| Begriff | Definition und Erläuterung | Synonyme
-| Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Fach
-//|Zuordnungsfragen	| Ein Fragetyp, bei dem Elemente aus zwei Listen einander richtig zugeordnet werden müssen. | Matching-Fragen
-//|Statistik|Die Auswertung von Daten, die zeigen, wie weit ein Studierender in seinem Lernprozess fortgeschritten ist, oft mit visuellen //Darstellungen der eigenen Stärken und Schwächen. | Fortschrittsverfolgung
-| HTW Mitglied | Ein an der Hochschule für Technik und Wirtschaft (HTW) immatrikulierter Studierender, der die Lernplattform zur Prüfungsvorbereitung nutzt. | Nutzer
-| Lernset | Eine thematisch zusammengestellte Sammlung von Fragen und Antworten zu einem bestimmten Modul oder Themengebiet. | Themensammlung
-| Frage | Das zentrale Lernelement, das als Aufgabenstellung in Karteikarten oder Multiple-Choice-Quiz erscheint. | Problemstellung
-| Antwort | Die Lösung oder Antwortmöglichkeit zu einer gestellten Frage, die entweder als vollständige Lösung (Karteikarte) oder als Auswahloption (Multiple Choice) dargestellt wird. | Lösung​
-| Student | Eine Person, die an einer Hochschule oder Universität immatrikuliert ist und dort eine akademische Ausbildung bestrebt. | Lernender
+
+| Begriff | Definition und Erläuterung | Synonyme 
+| Studierende | Eine Person, die an der HTW Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
+
+ Dozierende | Lehrende Personen an der HTW Dresden, die Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt und Prüfungsleistungen bewerten. | Lehrende |
+
+ Tutor:innen | Studierende der HTW Dresden, die unter fachlicher Anleitung von Dozierenden Tutorien (begleitende Lehrveranstaltungen) durchführen und andere Studierende beim Lernen unterstützen. |  - |
+
+ HTW-Mitglied | Personen, die der HTW Dresden angehören und berechtigt sind, die Lernplattform zu nutzen. Dazu zählen insbesondere Studierende sowie Dozierende, Tutor:innen und Assistierende. | Angehörige der HTW |
+
+ Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, kann mit einer Prüfung abgeschlossen werden. | Lehreinheit |
+
+ Studiengang | Ein strukturiertes Bildungsprogramm an Hochschulen, das durch Studien- und Prüfungsordnungen geregelt ist und zu einem berufsqualifizierenden akademischen Abschluss führt. | Studienprogramm |
+
+ Modulübersicht | Strukturierte Zusammenstellung aller in einem Studiengang enthaltenen Module. | Studienverlaufsplan |
+
+Fakultät | Eine zentrale Organisationseinheit für Forschung und Lehre, die inhaltlich verwandte Fachbereiche bündelt. | Fachbereich |
+
+Bachelor / Diplom / Master | Berufsbezogener akademischer Grad, der nach einem mit einer Prüfung abgeschlossenen Studium erworben wird | berufsqualifizierender Abschluss |
+
+Lernplattform | Eine webbasierte Softwareumgebung, die Lerninhalte zentral verwaltet, bereitstellt und den Lernprozess organisiert. | - |
+
+Lerninhalte | Theoretischen und/oder praktische Informationen die Lernende erwerben müssen, um definierte Bildungsziele zu erreichen. | Lehrstoff |
+
+Altklausuren | in der Vergangenheit gestellte Prüfungsaufgaben, die von Dozierenden oft freiwillig zur Verfügung gestellt werden. | altes Prüfungsexemplar |
+
+Lernset |  Eine strukturierte Sammlung, die zum Beispiel Begriffe, Definitionen, Fragen und Antworten zu einem bestimmten Thema bündelt. | - |
+
+Karteikarten | Kleine, beidseitig beschriftbare Karten, die als effektives Lernwerkzeug zur strukturierten Wiederholung von Wissen dienen. | - |
+
+Multiple-Choice | Ein geschlossenes Antwort-Wahl-Verfahren in Prüfungen oder Umfragen, bei dem aus vorgegebenen Optionen eine oder mehrere korrekte Antworten auszuwählen sind. | - |
+
+Frage | Eine sprachliche Äußerung, die eine Antwort verlangt und darauf abzielt, Informationen, Bestätigungen oder Meinungen zu erlangen. | - |
+
+Antwort | sprachliche, schriftliche oder nonverbale Erwiderung auf eine Frage. Sie dient der Auskunft, Reaktion oder Lösung. | - |
+
+Lernfortschritt | Beschreibt die positive Veränderung des Wissensstands, der Fähigkeiten oder Fertigkeiten eines Lernenden im Vergleich zu einem früheren Zeitpunkt. | - |
+
+Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie und Motivation die nötig sind, um ein bestimmtes Lernziel zu erreichen. |  - |
 |===
 
 
@@ -43,57 +59,133 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
-| HTWD | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
+
+//
+| ECTS | European Credit Transfer and Accumulation System | Leistungspunkte
+| HTW Dresden | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
+| WiSe | Wintersemester | Winterhalbjahr eines Jahres
+| SoSe | Sommersemester | Sommerhalbjahr eines Jahres
 | B.Sc. | Bachelor of Science	| Ein akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
+| Dipl. | Diplom|  Ein traditioneller akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
 | M.Sc. | Master of Science	| Ein weiterführender akademischer Grad, der auf einem Bachelor-Studium aufbaut und in naturwissenschaftlichen und technischen Studiengängen erworben wird.
+| SWS	| Semesterwochenstunden | Eine Maßeinheit für den Umfang von Lehrveranstaltungen pro Semester.
+| LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
+| QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen. | 
 |===
 
 == Verzeichnis der Datenstrukturen
-// Die Ausarbeitung der Datenstruktur wäre vermutlich besser von den Developern in Abstimmung mit dem Domänenmodell zu erstellen
+
 [%header]
 |===
 | Bezeichnung | Definition | Format | Gültigkeitsregeln | Alias
+| Anmeldedaten
+| Zusammensetzung von Benutzername und Passwort.
+| username : Sting +
+  passwort : String
+| Keine zusätzlichen formalen Vorgaben definiert.
+| LoginData
 
-| HTW-Mitglied 
-| Person, die an der HTW Dresden tätig oder immatrikuliert ist	
-| Name: String, Vorname: String, Rolle: Enum	
-| Benutzername und Passwort erforderlich, Rolle muss definiert sein	
-| Benutzer, User, Person
+| Benutzer
+| Registrierter Nutzer des Systems mit persönlichen Daten sowie Anmeldedaten.
+| username: String +
+  faculty: String  +
+  curr_semester: Int
+| Benutzername ist eindeutig.
+| User
 
-| Studierender
-| Spezialisierung von HTW-Mitglied: Studierender, der Lernsets nutzt und erstellt	
-| Benutzername: String, Passwort: String, Rolle: Enum
-| Passwort muss muss mind. ein Sonderzeichen beinhalten 
-| Student, Lernender
+| Studiengang
+| Datenobjekt zur Abbildung eines Studiengangs, das mehrere Module umfasst
+| name: String +
+  faculty: String
+| Keine zusätzlichen Gültigkeitsregeln definiert.
+| Course
 
-| Lernset	
-| Sammlung von Fragen zu einem Modul mit zugeordnetem Lernmodus	
-| Titel: String, LernsetID: Int, Beschreibung: String	Titel: String
-| LernsetID muss eindeutig sein, Titel erforderlich, Mindestens 1 Frage muss enthalten sein	
-| Fragenkatalog
+| Modul
+| Datenobjekt zur Abbildung eines Moduls mit zugehörigen Lernsets.
+| name: String +
+  lecturer: String +
+  semester: Int
+| Keine zusätzlichen Gültigkeitsregeln definiert.
+| Module
 
-| Frage	
-| Einzelne Lernfrage innerhalb eines Lernsets	
-| FrageID: Int, Fragetext: String 
-| FrageID muss eindeutig sein, Fragetext muss ausgefüllt sein, Muss 1-4 Antworten enthalten
-| Aufgabe
+| Lernset
+| Datenobjekt zur Zusammenfassung von Fragen und Antworten, die einem Modul zugeordnet sind.
+| name: String
+| Lernset ist genau einem Modul zugeordnet.
+| LearningSet
 
-| Antwort	
-| Antwortmöglichkeit zu einer Frage	
-| Antworttext: String, Lösung: Boolean	
-| Antworttext erforderlich, Lösung = true, false, Mind. 1 Antwort pro Frage muss Lösung=true haben	
-| Antwortoption, Response
 
-| Lernmodus	
-| Definiert die Art der Visualisierung eines Lernsets	
-| Enum-Verweis auf Visualisierungstyp	
-| Muss einem der definierten Visualisierungstypen entsprechen	
-| Darstellungsform
+| Karteikarte
+| Datenobjekt zur Abbildung einer Lernkarte mit Vorder- und Rückseite, die einem Lernset zugeordnet ist.
+| front: String +
+  back: String
+| Lernkarte ist genau einem Lernset zugeordnet.
+| Card
 
+| Multiple-Choice-Frage
+| Datenobjekt zur Abbildung einer Frage mit mehreren Antwortmöglichkeiten, die einem Lernset zugeordnet ist.
+| question: String
+| Multiple-Choice-Frage ist genau einem Lernset zugeordnet.
+| Question
+
+| Multiple-Choice-Antwort
+| Datenobjekt zur Abbildung einer Antwortmöglichkeit zu einer Multiple-Choice-Frage.
+| answer: String +
+  correct: Boolean
+| Multiple-Choice-Antwort ist genau einer Multiple-Choice-Frage zugeordnet.
+| Answer
 |===
 
 == Domänenmodell
 // Fügen Sie hier eine Abbildung mit ihrem Domänenmodell ein
 
+[plantuml, domain-model, svg]
+----
+@startuml UML
+hide circle
 
-image::Uml-Diagram.png[height=600, title="Domänenmodell"] 
+class User {
+  username: String
+  faculty: String
+  curr_semester: Int
+}
+
+class Course {
+  name: String
+  faculty: String
+}
+
+class Module {
+  name: String
+  lecturer: String
+  semester: Int
+}
+
+class LearningSet {
+  name: String
+}
+
+class Card {
+  front: String
+  back: String
+}
+
+class Question {
+  question: String
+}
+
+class Answer {
+  answer: String
+  correct: Boolean
+}
+
+User "*" --> "0..1" Course : eingeschrieben in
+Course "*" -- "*" Module : umfasst
+Module "*" *-- "*" LearningSet : enthält
+LearningSet "*" *-- "*" Card : enthält
+LearningSet "*" *-- "*" Question : enthält
+Question "*" *-- "0..4" Answer : enthält
+
+@enduml
+----
+

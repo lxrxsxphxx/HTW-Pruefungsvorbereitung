@@ -1,0 +1,124 @@
+= MEETINGNOTIZ – 02.11.2025
+
+--
+* Typ: Planning 
+* Raum: online  
+* Dauer: 12.00 - 13.00 
+* Anwesend: Tobi, Johann, Frederic, Philipp, Marius, Lara
+--
+
+== ZIELE DES MEETINGS
+
+--
+* Planung des bevorstehenden Sprints
+* Festlegung und Priorisierung von Aufgaben
+* Koordination im Team hinsichtlich Zuständigkeiten und Kapazitäten
+* Besprechung relevanter organisatorischer oder technischer Rahmenbedingungen
+--
+
+== TAGESORDNUNG / TODO
+
+--
+1. **Sprint-Ziel / Planungsrahmen festlegen**
+
+   * Was soll bis zum nächsten Review erreicht werden?
+   * Welche Aufgaben sind notwendig, um dieses Ziel zu erreichen?
+
+
+2. **Aufgabenanalyse & -verteilung**
+
+   * Durchsicht vorhandener oder neuer User Stories
+   * Priorisierung der Aufgaben
+   * Aufwandsschätzung
+   * Verteilung der Aufgaben auf Teammitglieder
+
+
+3. **Organisatorisches & Koordination**
+
+   * Verfügbarkeiten im Team
+   * Absprachen zu Meetings, Fristen, Blockern
+   * Synchronisation mit Product Owner 
+   * Technische oder methodische Abstimmungen
+
+
+4. **Offene Fragen & Sonstiges**
+
+   * Klärung von Unsicherheiten oder Unklarheiten
+   * Vorbereitung von Folgeaufgaben oder Abhängigkeiten
+--
+
+
+== OUTCOME
+
+--
+* Sprint-Ziel definiert
+* Aufgaben priorisiert und zugewiesen
+* Technische & organisatorische Rahmenbedingungen sind geklärt
+* Offene Fragen identifiziert
+--
+
+
+== FESTLEGUNGEN
+
+--
+* Sprint-Zeitraum: 02.11 - 29. 11
+* Sprint-Ziel: 
+** Karteikarten fixen
+** UI für Inhaltserstellung
+** Übersicht „Lernset ansehen“ implementieren
+* Blocker / Risiken: 
+** Unklare Datenstrukturen im Backend (Lernsets)
+** UI-Abhängigkeiten zu noch offenen Wireframe-Anpassungen
+* Nächste Meilensteine / Termine: 
+** Termin mit Coach: [Datum noch festlegen]
+** Sprint Review: [Datum noch festlegen]
+** Retrospektive: [Datum noch festlegen]
+--
+
+=== Verantwortlichkeiten
+
+**Technische Umsetzung**
+
+[cols="2,3,1"]
+|===
+| **Bereich** | **Task** | **Zuständigkeit**
+| Frontend | Karteikarten fixen | Frederic
+| Backend | Endpoint für Erstellung / Lernset | Marius
+| Frontend | UI zur Antwort- und Fragenerstellung | Johann
+| Frontend | Lernset ansehen UI | Tobi
+|===
+
+
+**Dokumentation**
+
+[cols="2,3,1"]
+|===
+| **Dokument** | **Aufgabe** | **Zuständigkeit**
+| Github Workflow | Erstellung | Lara
+| Risiken | Anpassung nach Feedback | Lara
+| Glossar / UML Diagramm | Anpassung nach Feedback | Tobi
+| architecture notebook | Anpassung nach Feedback | Frederic
+| UX Concept | Anpassung nach Feedback | Philipp
+| design | Datenmodell ergänzen | Marius
+| architecture notebook | Verteilungsdiagramm (Deployment Diagramm) ergänzen | Frederic
+| design | Schnittstellen ergänzen | Marius
+
+|===
+
+
+**Kommunikation & Organisation**
+
+[cols="3,1"]
+|===
+| **Aufgabe** | **Zuständigkeit**
+| branches anlegen | Lara
+| Wireframes überarbeiten | Lara
+|===
+
+
+== NÄCHSTE SCHRITTE
+--
+1. Umsetzung der geplanten Aufgaben
+2. Regelmäßige Synchronisation im Weekly / Discord
+3. Bearbeitung identifizierter Blocker
+--

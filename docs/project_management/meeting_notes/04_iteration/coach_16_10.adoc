@@ -1,0 +1,39 @@
+= MEETINGNOTIZ – 16.10.2025
+
+--
+* Typ: Coach 
+* Raum: S128
+* Dauer: 17:30 – 18.30 
+* Anwesend: Johann, Phillipp, Frederic, Marius, Lara + Marlene Winter
+--
+
+== ZIELE DES MEETINGS
+--
+* Offene Fragen aus technischer und organisatorischer Sicht klären
+* Reflexion des erhaltenen Feedbacks  
+* Unterstützung zur Projektstrukturierung und -priorisierung einholen
+--
+
+== TAGESORDNUNG / TODO
+--
+1. **Glossar / Datenmodell**
+* **Themenverantwortlicher: Tobi**
+* Inkonsistenz zwischen Datenstrukturen und Domänenmodell
+* Unklarheiten und mögliche Korrekturen
+* Fragen von Tobi:
+** Warum ist das UML-Diagramm nicht konsistent?
+** Worauf muss man achten damit dass nicht nochmal passiert?
+** Gibt es eine Checkliste an der man sich orientieren kann um einen besseren Überblick zu haben?
+
+2. **Architecture Notebook**
+* **Themenverantwortlicher: Frederic**
+* Maßnahme / Ziel / Anforderungen / Entwurfsentscheidungen wo ziehen wir die Linie?
+
+--
+
+
+== Antworten & Coach Feedback
+--
+mit doku zeitig genug anfangen
+vorlagen suchen (extension in vs code)
+--

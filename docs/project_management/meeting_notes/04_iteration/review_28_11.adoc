@@ -1,0 +1,49 @@
+= MEETINGNOTIZ – 28.11.2025
+
+--
+* Typ: Review  (intern)
+* Raum: online
+* Dauer: 17.00 – 17.30
+* Anwesend: Tobi, Johann, Frederic, Philipp, Marius, Lara
+--
+
+== ZIELE DES MEETINGS
+--
+- Vorstellung der abgeschlossenen Arbeiten des Sprints
+- Abnahme durch den Product Owner
+- Feedback der Stakeholder
+- Überprüfung, ob Sprintziel erreicht wurde
+--
+== VORGEHENSWEISE
+--
+1. Vorstellung der umgesetzten Product Backlog Items
+2. Live-Demo oder Erläuterung der Funktionalitäten
+3. Feedback-Runde von PO und Stakeholdern
+4. Diskussion über aufgetretene Probleme oder Änderungen
+5. Abnahmeentscheidung des PO
+--
+
+== UMGESETZTE ITEMS (Übersicht)
+--
+* [ ] Fragen- und Antworterstellung UI
+* [ ] Lernset Ansicht
+* [ ] Karteikarten fixes
+* [ ] Endpoints für Lernset-Erstellung
+--
+
+== ABNAHME DURCH PRODUCT OWNER
+
+* [ ] Ja, alle Items wurden abgenommen
+* [ x ] Nein, folgende Items wurden nicht abgenommen:
+** Fragen- und Antworterstellung UI  (nicht abgeschlossen)
+** Lernset Ansicht (nicht abgeschlossen)
+** Karteikarten fixes (nicht abgeschlossen)
+
+== FAZIT UND NÄCHSTE SCHRITTE
+
+* Erreichtes Sprintziel: [  ] Ja / [ x ] Nein
+* Konkrete Learnings aus dem Sprint:
+** ...
+** ...
+* Offene Punkte für nächste Meetings:
+**  {To-Dos oder Entscheidungen}

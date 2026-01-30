@@ -13,7 +13,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme 
-| Student | Eine Person, die an der HTW Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
+| Studierende | Eine Person, die an der HTW Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
 
  Dozierende | Lehrende Personen an der HTW Dresden, die Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt und Prüfungsleistungen bewerten. | Lehrende |
 

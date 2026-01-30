@@ -9,8 +9,13 @@
                 <div>
                     <label for="quiz_name">Name des Lernsets:</label>
                     <input type="text" id="quiz_name" name="quiz_name" class="input-field" ref="quiz_name_input" v-model="learning_set_name"><br>
-                    <label for="module">Modul:</label>
-                    <input type="text" id="module" name="module" class="input-field" ref="module_input" v-model="module_name"><br>
+                    
+                    <div id="module-choice-container">
+                        <label for="module">Modul: </label>
+                        <select name="module_choice" id="module-choice" ref="module_choice" @change="moduleChoice">
+                            <option class="module" v-for="module in modules" :value="module.id">{{ module.name }}</option>
+                        </select>
+                    </div>
                 </div>
                 <br>
                 <div id="error-message" ref="error_message_container" v-text="error_message"></div>
@@ -67,7 +72,7 @@
 
 
 <script setup>
-import { provide, ref } from 'vue';
+import { provide, ref, onMounted } from 'vue';
 import KarteikartenErstellen from './karteikarten-erstellen.vue';
 import QuizEingabe from './quiz-eingabe.vue';
 import Popup from "./popup.vue";
@@ -77,28 +82,22 @@ import Popup from "./popup.vue";
 
 
 
-let question_type = ref(null);
+const question_type = ref(null);
+const index_cards_entry = ref(null);
+const multiple_choice_entry = ref(null);
+const card_entry_view = ref(null);
+const quiz_entry_view = ref(null);
+const question_type_container = ref(null);
+const aside = ref(null);
+const cancel_popup = ref(null);
+const done_container = ref(null);
 
-let error_message_container = ref(null);
+const module_choice = ref(null);
+const modules = ref([])
+const learning_set_name = ref('');
+const error_message = ref('');
 
-let index_cards_entry = ref(null);
-let multiple_choice_entry = ref(null);
-
-let card_entry_view = ref(null);
-let quiz_entry_view = ref(null);
-
-let question_type_container = ref(null);
-let aside = ref(null);
-
-let cancel_popup = ref(null);
-let done_container = ref(null);
-
-let learning_set_name = ref('');
-let module_name = ref('');
-
-let error_message = ref('');
-
-let entered_questions = ref([]);
+const entered_questions = ref([]);
 let question_set = [];
 
 
@@ -107,20 +106,59 @@ const TYPE_MULTIPLE_CHOICE = 'multiple_choice';
 
 
 let edit_index = -1;
+let module_id = -1;
 
-const learning_set_url = 'http://localhost:8000/api/learning_set/';
+const API_LEARNING_SETS = 'http://localhost:8000/api/learning_set/';
+const API_MODULES = "http://localhost:8000/api/users/modules/";
 
 
+
+onMounted(() => {loadUserModules();});
+
+
+/**
+ * @description Get the user-specific modules and write them into the list of modules.
+ * @returns {null}
+ */
+async function loadUserModules(){
+  try {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), 5000);
+
+    const response = await fetch(API_MODULES, {method: "GET", credentials: "include", signal: controller.signal});
+    if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
+
+    modules.value = await response.json();
+    module_id = modules.value[0].id;
+    return null;
+  }
+  catch (error) {
+    console.error(error.message);
+    return null;
+  }
+}
+
+
+
+/**
+ * @description Set the module_id to the id of the chosen module.
+ * @returns {null}
+ */
+function moduleChoice(){
+    module_id = module_choice.value.options[module_choice.value.selectedIndex].value;
+    console.log(module_id);
+
+    return;
+}
 
 
 /**
  * @description Construct a JSON Object of a learning set.
  * @param {String} name the name of the learning set
- * @param {String} module the module the learning set will belong to
  * @returns {JSON} the json Object describing the learning set
  */
-function makeLearningSetJson(name, module){
-    let json_str = '{"name": "' + name + '", "module": "' + module + '"}'
+function makeLearningSetJson(name){
+    let json_str = '{"name": "' + name + '"}'
 
     let json = JSON.parse(json_str);
     return json;
@@ -132,7 +170,7 @@ function makeLearningSetJson(name, module){
  * @returns {null}
  */
 async function saveLearningSet(){
-    if(learning_set_name.value === '' || module_name.value === ''){
+    if(learning_set_name.value === ''){
         showErrorMessage('Name und Modul des Lernsets müssen eingegeben werden!');
         return;
     }
@@ -146,9 +184,9 @@ async function saveLearningSet(){
     }
 
 
-    let learning_set_json = makeLearningSetJson(learning_set_name.value, module_name.value);
+    let learning_set_json = makeLearningSetJson(learning_set_name.value);
 
-    let data = await postJsonToURL(learning_set_json, learning_set_url);
+    let data = await postJsonToURL(learning_set_json, API_LEARNING_SETS + '?modul_id=' + module_id);
     let learning_set_id;
     if(data === null){
         console.error('Post learning set failed');
@@ -199,7 +237,8 @@ async function postJsonToURL(json, url){
         const response = await fetch(url, {method: "POST",
                                             headers: postHeader,
                                             body: json_str,
-                                            signal: controller.signal});
+                                            signal: controller.signal,
+                                            credentials: 'include'});
         if (!response.ok) {throw new Error(`Response status: ${response.status}`);}
 
         clearTimeout(id);
@@ -227,7 +266,6 @@ function deleteLearningSet(){
     }
 
     learning_set_name.value = "";
-    module_name.value = "";
 
     return;
 }

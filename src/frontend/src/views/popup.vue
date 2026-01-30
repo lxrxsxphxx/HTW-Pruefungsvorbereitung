@@ -32,7 +32,6 @@ let buttons = ref([]);
 function setTextAndButtons(new_text, new_buttons){
   text = new_text;
   buttons = new_buttons;
-  console.log(text + ', ' + buttons);
   return;
 }
 function setVisibility(visibility){

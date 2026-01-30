@@ -91,7 +91,6 @@ function addQuestion(){
   }
   
   // transfer the card to the parent view and clean up
-  console.log("question: " + front.value);
   transferCard(front.value, back.value);
 
   clearQuestion();
@@ -116,7 +115,6 @@ function editQuestion(json){
   setAction(EDIT_QUESTION);
   front.value = card.front;
   back.value = card.back;
-  console.log(card.front);
 
   return;
 }

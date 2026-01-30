@@ -194,7 +194,6 @@ function addQuestion(){
   }
 
   if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
-  console.log(correct_answers_arr);
 
 
 
@@ -206,7 +205,6 @@ function addQuestion(){
 
 
   // transfer the question to the parent view and clean up
-  console.log("question: " + question_entry.value);
   transferQuestion(question_entry.value, entered_answers, correct_answers_arr);
 
   clearQuestion();

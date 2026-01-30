@@ -146,7 +146,6 @@ async function loadUserModules(){
  */
 function moduleChoice(){
   module_id = module_choice.value.options[module_choice.value.selectedIndex].value;
-  console.log(module_id);
 
   return;
 }
@@ -194,7 +193,6 @@ async function saveLearningSet(){
   }
   else{
     learning_set_id = data.id;
-    console.log(learning_set_id);
   }
 
   for(let i = 0; i < question_set.length; i++){
@@ -223,8 +221,6 @@ async function saveLearningSet(){
  */
 async function postJsonToURL(json, url){
   const json_str = JSON.stringify(json);
-  console.log(json_str);
-  console.log(url);
 
   const postHeader = new Headers();
   postHeader.set("accept", "application/json");
@@ -346,7 +342,6 @@ function hideEntryViews(view){
  */
 function questionTypeChoice(){
   let choice = question_type.value.options[question_type.value.selectedIndex].value;
-  console.log(choice);
 
   hideEntryViews(choice);
 
@@ -360,7 +355,6 @@ function questionTypeChoice(){
  * @returns {null}
  */
 function addQuestion(json){
-  console.log(json);
 
   entered_questions.value.push(json.question_text);
   question_set.push(json);
@@ -375,7 +369,6 @@ function addQuestion(json){
 function editQuestion(json){
   let index = edit_index;
   if(index >= 0 && index < question_set.length){
-    console.log(json);
 
     entered_questions.value[index] = json.question_text;
     question_set[index] = json;
@@ -392,11 +385,9 @@ function editQuestion(json){
  * @returns {null}
  */
 function provideQuestion(index){
-  console.log('edit: ' + index);
 
   let edit_question = question_set[index];
   edit_index = index;
-  console.log(edit_question);
 
   hideEntryViews(edit_question.question_type);
 
@@ -427,7 +418,6 @@ function hideErrorMessage(){
  * @returns {null}
  */
 function deleteQuestion(index){
-  console.log('delete: ' + index);
   
   if(edit_index === index) hideEntryViews(question_set[index].question_type);
   spliceQuestionFromArrays(index);

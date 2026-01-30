@@ -1,0 +1,82 @@
+= MEETINGNOTIZ – 28.11.2025
+
+--
+* Typ: Retro  
+* Raum: online
+* Dauer: 17.30 – 18.30
+* Anwesend: Tobi, Johann, Frederic, Philipp, Marius, Lara
+--
+
+== ZIELE DES MEETINGS
+
+--
+* Reflektion der Zusammenarbeit im letzten Sprint
+* Identifikation von positiven Aspekten und Verbesserungsbereichen
+* Ableitung konkreter Maßnahmen zur Optimierung der Teamarbeit
+--
+
+== VORGEHENSWEISE
+
+--
+1. Rückblick auf Sprint-Ziel und Stimmung im Team durch Happy Index
+2. Sammlung der Erfahrungen in vier Kategorien:
+** liked: Was hat mir gefallen?
+** learned: Was habe ich gelernt?
+** lacked: Was hat gefehlt?
+** longed for: Was wünsche ich mir?
+3. Diskussion über Ursachen und Lösungen
+4. Festlegung konkreter Verbesserungsmaßnahmen
+--
+
+== RÜCKBLICK
+
+=== liked (Was hat mir gefallen?)
+* Klare Meetingstruktur
+* Ergebnisse des zweiten Refinements
+* Nutzung des Planning-Poker-Tools (https://planningpokeronline.com/)
+* Nutzung des Terminfindungs-Tool Timeful (https://timeful.app/)
+* Zwischenstände im Weekly präsentieren
+* Kommunikation im Team vorallem zwischen Devs
+
+=== learned (Was habe ich gelernt?)
+* PR Review Prozess (aufwändig aber sinnvoll)
+* Erfahrung im Zusammenspiel von Backend und Frontend
+* Umgang mit User Stories (Definition of Done, Akzeptanzkriterien)
+
+=== lacked (Was hat gefehlt?)
+* Asynchrone Kommunikation (zwischen Meetings)
+* Testing (Unit-Tests, Integrationstests) + Teststrategie
+* Klar formulierte Aufgaben / bessere User Story Aufbereitung
+* Konsequentes Einhalten der Definition of Ready
+* Domäne Module 
+
+=== longed for (Was wünsche ich mir?)
+* klare (ausformulierte) Aufgaben
+* effizientere Meetings (vorallem Meeting zum Refinement)
+
+
+== BESCHLÜSSE UND MASSNAHMEN
+
+
+[cols="3,3,1,2"]
+|===
+|            **Maßnahme**             |          **Ziel**           | **Zuständigkeit** | **Deadline**
+| Termin mit Coach                    | Aufgabenklärung + offene Fragen klären          | Lara              | bis nächstes Planning
+| Testing-Strategie ausarbeiten       | Einheitliches + Effizentes testen               | Johann, Marius    | als Aufgabe im nächsten Sprint
+| Timeboxing der Meetings             | effizientere Meetings                           | Lara              | jedes Meeting
+| Synchrones Arbeiten                 | bessere Kommunikation zwischen den Meetings     | Alle              | laufend
+| Strategie für PR Reviews entwickeln | einheitliche + effiziente Prüfung des Codes     | Lara              | als Aufgabe im nächsten Sprint
+| Dokumentation des Codes             | bessere Verständlichkeit des Codes              | Alle              | laufend
+| persönliches Ansprechen in Meetings | bessere Kommunikation + effizientere Meetings   | Lara              | jedes Meeting
+| Meetings für Refinements optimieren | Verbesserung der Aufgabenklarheit               | Lara              | bereits verwendete Maßnahmen beibehalten
+| the core protocols: decider         | effiziente Entscheidungsfindung                 | Lara              | laufend
+|===
+
+
+
+== FAZIT
+
+*Allgemeine Bewertung des Sprints:* 
+Der Sprint war etwas unstrukturiert und es wurden geplante Ziele teilweise verfehlt. 
+Gründe hierfür lagen vor allem in unklaren Aufgaben, fehlender technischer Abstimmung, nicht ausreichender asynchroner Kommunikation sowie begrenzten Kapazitäten durch Krankheit/Verhinderungen. 
+Mit den beschlossenen Maßnahmen wird im kommenden Sprint auf klarere Aufgaben, effizientere Meetings und bessere Code-/Testqualität hingearbeitet.

@@ -190,6 +190,7 @@ Prof. Vogel stellt vor Semesterbeginn offizielle Lernsets und Beispielaufgaben b
 
 Martin ergänzt seine Lehrveranstaltung während des Semesters um kurze Quizformate, analysiert typische Fehler und passt Übungen gezielt an.
 
+Bedenken zur Vollständigkeit und Nutzeranforderungserfüllung
 
 == Nutzungskontext
 

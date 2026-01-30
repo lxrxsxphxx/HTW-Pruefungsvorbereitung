@@ -1,0 +1,105 @@
+= MEETINGNOTIZ – 27.10.2025
+
+--
+* Typ: Refinement
+* Raum: S128
+* Dauer: 15.30 - 17.00
+* Anwesend: Tobi, Frederic, Philipp, Marius, Lara (nur bis 16.15)
+--
+
+== ZIELE DES MEETINGS
+
+--
+* Sicherstellen, dass das Product Backlog aktuell, verständlich und priorisiert ist
+* Klärung offener Fragen zu bestehenden User Stories
+* Aufteilung zu großer oder unklarer Stories
+* Vorbereitung des nächsten Sprints
+--
+
+== TAGESORDNUNG / TODO
+
+--
+1. **Vorbereitung & Überblick**
+
+   * Stories auswählen, die für den nächsten Sprint relevant sind
+   * Überblick über aktuellen Entwicklungsstand geben
+
+2. **User Stories im Detail durchgehen**
+
+   * Story vorstellen und Ziel erklären (Product Owner)
+   * Verständnisfragen im Team klären
+   * Akzeptanzkriterien ergänzen oder präzisieren
+   * Technische oder fachliche Abhängigkeiten notieren
+   * Besprechung der Stories „Fragen ansehen“, „Möglichkeit der Selbstüberprüfung (Karteikarten)“ und „Antwort ansehen (Karteikarten)“
+
+3. **Bewertung & Schätzung**
+
+   * Aufwand abschätzen 
+   * Risiken oder Unsicherheiten besprechen
+   * Story ggf. in kleinere Teilstories aufsplitten
+
+4. **Priorisierung & Aktualisierung des Backlogs**
+
+   * Reihenfolge der Stories anpassen
+   * Nicht mehr relevante Stories entfernen oder verschieben
+   * Neue Stories ergänzen (z. B. aus Feedback, neuen Ideen)
+
+5. **Ergebnisdokumentation**
+
+   * Besprochene Änderungen direkt im Backlog festhalten
+   * Offene Punkte markieren und Verantwortlichkeiten klären
+   * Sicherstellen, dass das Backlog „ready“ für das nächste Planning ist
+--
+
+== BESPROCHENE STORIES
+
+--
+1. Datenstrukturen
+
+* Strukturierung und Überprüfung der Datenmodelle insbesondere Datenstruktur Lernsets
+* Vorbereitung auf Integration mit Frontend-Komponenten
+--
+
+**User Story 1:  9. Fragen ansehen**
+
+--
+* Design anpassen: Streifen unten mit HTWD-Logo (Spezifizierung notwendig)
+* Vollbildmodus der Karteikarten entfernen, stattdessen Anpassung an Fragenlänge, Responsive Design (Spezifizierung notwendig)
+--
+
+**User Story 2: 10. Möglichkeit der Selbstüberprüfung (Karteikarten)**
+
+--
+* Komplette Überarbeitung des Features
+* Automatische Prüfung entfällt (Missverständnis in vorheriger Umsetzung)
+* Hinweisfeld optional, soll bei Nichtverwendung ausgeblendet werden, auch in Erstellung berücksichtigen (Spezifizierung notwendig)
+* Logik für „Überspringen“: Fragen sollen am Ende wiederholt werden (Spezifizierung notwendig)
+--
+
+**User Story 2: 11. Antwort ansehen (Karteikarten)**
+
+--
+* Animation überarbeiten (aktueller Bug fixen)
+* Markdown-Unterstützung für Fragen und Antworten (Spezifizierung notwendig)
+* Zusatzinformationen für Lernset oder Frage als Hinweisfeld oder Button einbauen (Spezifizierung notwendig)
+* Lesbarkeit verbessern: Kontraststufe festlegen (Spezifizierung notwendig)
+--
+
+== OUTCOME
+
+--
+* Stories sind verständlich und geschätzt
+* Akzeptanzkriterien sind ergänzt oder präzisiert
+* Backlog ist priorisiert und aktuell
+* Offene Punkte wurden identifiziert und Verantwortlichkeiten verteilt
+--
+
+
+== NÄCHSTE SCHRITTE
+
+--
+1. Aktualisierung des Product Backlogs gemäß der Besprechung
+2. Klärung offener technischer oder fachlicher Fragen bis zum nächsten Meeting
+3. Vorbereitung des nächsten Planning Meetings
+4. Dokumentation der Ergebnisse im Projektdokument und Repository
+--

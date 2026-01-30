@@ -1,0 +1,112 @@
+= MEETINGNOTIZ – 09.11.2025
+
+--
+* Typ: Weekly
+* Raum: online
+* Dauer: 14.00 - 14.15
+* Anwesend: Tobi, Johann, Frederic, Philipp, Marius, Lara
+--
+
+== TAGESORDNUNG / TO-DO
+
+--
+* Beantwortung der Weekly-Fragen
+* Besprechung aktueller Anpassungen
+* Sammlung und Diskussion bestehender Hindernisse
+* Status „Happy Index“
+--
+
+== WEEKLY-FRAGEN
+
+--
+1. Was habe ich in der letzten Woche erledigt?
+2. Was plane ich für diese Woche?
+3. Welche Hindernisse behindern meine Arbeit?
+--
+
+== INDIVIDUELLE BEITRÄGE
+
+=== Johann:
+
+--
+* Letzte Woche:
+** Anpassung bestehender Elemente für die Erstellung von Fragen und Antworten
+* Diese Woche:
+** Weiterarbeit an der UI zur Antwort- und Fragenerstellung
+* Hindernisse:
+** wenig Zeit
+--
+
+=== Marius:
+
+--
+* Letzte Woche:
+** Projekt kennenlernen
+** Einarbeitung ins Backend
+* Diese Woche:
+** Endpoints mit Funktionalität ausstatten
+* Hindernisse:
+** Zeitmangel
+** Unklare Anforderungen an die Funktionalität
+--
+
+=== Tobi:
+
+--
+* Letzte Woche:
+** Aufgrund von Krankheit keine Bearbeitung möglich
+* Diese Woche:
+** Lernset Übersicht erstellen
+* Hindernisse:
+** Krankheit
+--
+
+=== Frederic:
+
+--
+* Letzte Woche:
+** Karteikarten überarbeitet
+** architecture_notebook aktualisiert
+* Diese Woche:
+** Weiterarbeit an den Karteikarten
+** Erstellung des Verteilungsdiagramm (Deployment Diagramm)
+* Hindernisse:
+** Umgang mit Selbsteinschätzung (Karteikarten) unklar
+** Überarbeitungsmaß der Karteikarten unklar
+--
+
+=== Phillip:
+
+--
+* Letzte Woche:
+** User Stories überarbeiten
+* Diese Woche:
+** Überarbeitung des UX Concepts nach Feedback
+* Hindernisse:
+** Zeitmangel
+--
+
+=== Lara:
+
+--
+* Letzte Woche:
+** Branches angelegt und geschützt
+** Risk Status nach Kritik angepasst
+** GitWorkflow Dokument angefertigt
+* Diese Woche:
+** GitWorkflow Dokument überarbeiten (nach Kritik)
+** Folien für den Fachaustausch anfertigen
+** Tasks in Git übertragen
+* Hindernisse:
+** private Verhinderungen
+** Unklare Aufgaben aufgrund fehlender Iterationshinweise (erschwert Sortierung und Planung)
+--
+
+
+== HINDERNISSE
+
+--
+* **Unklare Anforderung**
+** Einige Aufgaben sind nicht detailliert genug beschrieben
+** Lösung: Rücksprache mit PO + Ergänzung um klare Akzeptanzkriterien
+--

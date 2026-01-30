@@ -23,9 +23,22 @@
 import { ref } from 'vue';
 import LoginDialog from './LoginDialog.vue';
 
+/**
+ * @component Header
+ * @description Application header component with login/logout functionality and adaptive logo
+ * Manages user authentication state and displays user information
+ */
 export default {
   name: 'Header',
   components: { LoginDialog },
+  
+  /**
+   * Component data properties
+   * @returns {Object} Reactive data properties
+   * @property {boolean} showLogin - Controls visibility of login dialog
+   * @property {boolean} isLoggedIn - User authentication status
+   * @property {string} username - Currently logged in username
+   */
   data() {
     return {
       showLogin: false,
@@ -33,6 +46,11 @@ export default {
       username: ''
     };
   },
+  
+  /**
+   * Lifecycle hook - checks authentication status on component mount
+   * Fetches user data from backend if valid session exists
+   */
   mounted() {
     fetch('http://localhost:8000/api/users/data', {
       credentials: "include"
@@ -48,11 +66,28 @@ export default {
         }
       })
   },
+  
+  /**
+   * Component methods
+   */
   methods: {
+    /**
+     * Opens the login dialog
+     * Displays modal overlay and prevents body scrolling
+     */
     openLogin() {
       this.showLogin = true;
       document.body.classList.add('modal-open');
     },
+    
+    /**
+     * Handles user login
+     * Sends credentials to backend and fetches user data on success
+     * @param {Object} credentials - User login credentials
+     * @param {string} credentials.email - User email address
+     * @param {string} credentials.password - User password
+     * @throws {Error} When login fails
+     */
     handleLogin({ email, password }) {
       fetch('http://localhost:8000/api/users/login', {
         method: 'POST',
@@ -94,12 +129,25 @@ export default {
           alert('Login fehlgeschlagen. Bitte prüfe deine Zugangsdaten.');
         });
     },
+    
+    /**
+     * Logs out the current user
+     * Clears user session and resets authentication state
+     * Note: Currently only clears frontend state, no backend logout call
+     */
     logout() {
       this.isLoggedIn = false;
       this.username = '';
       document.body.classList.remove('modal-open');
     }
   },
+  
+  /**
+   * Composition API setup function
+   * Handles dark mode detection and automatic theme switching
+   * @returns {Object} Reactive properties for template
+   * @property {import('vue').Ref<boolean>} dark_mode - Current dark mode state
+   */
   setup() {
     const dark_mode = ref(true);
     dark_mode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;

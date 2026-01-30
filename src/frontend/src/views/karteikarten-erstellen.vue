@@ -54,7 +54,7 @@ let add_text = ref(ADD_QUESTION_TEXT);
 let front_input = ref(null);
 
 
-const url = "http://localhost:8000/api/cards/";
+const url = `${import.meta.env.VITE_API_URL}/cards/`;
 
 
 const ADD_QUESTION = 0;

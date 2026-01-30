@@ -51,7 +51,7 @@ import { useRoute } from "vue-router";
 "use strict";
 
 
-const URL = "http://localhost:8000/api/questions";
+const URL = `${import.meta.env.VITE_API_URL}/questions`;
 const route = useRoute();
 
 

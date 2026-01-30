@@ -38,9 +38,9 @@ const SEMESTER = ref('');
 
 const user_modules = ref({});
 
-const API_MODULES = "http://localhost:8000/api/users/modules/";
-const API_USER_DATA = "http://localhost:8000/api/users/data/";
-const API_COURSES = "http://localhost:8000/api/courses/";
+const API_MODULES = `${import.meta.env.VITE_API_URL}/users/modules/`;
+const API_USER_DATA = `${import.meta.env.VITE_API_URL}/users/data/`;
+const API_COURSES = `${import.meta.env.VITE_API_URL}/courses/`;
 
 
 onMounted(() => {loadContent();});

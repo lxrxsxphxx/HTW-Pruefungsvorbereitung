@@ -40,7 +40,7 @@ const learningSet = ref({
 const route = useRoute();
 const learningSetId = route.params.learningSetId;
 
-const API_BASE = "http://localhost:8000/api/learning_set/";
+const API_BASE = `${import.meta.env.VITE_API_URL}/learning_set/`;
 
 onMounted(async () => {
   try {

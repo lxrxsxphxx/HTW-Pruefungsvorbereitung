@@ -37,7 +37,7 @@ import LernsetCard from "@/components/LernsetCard.vue";
 const modules = ref(null);
 
 
-const API_MODULES = "http://localhost:8000/api/users/modules/";
+const API_MODULES = `${import.meta.env.VITE_API_URL}/users/modules/`;
 
 onMounted(() => {loadContent();});
 

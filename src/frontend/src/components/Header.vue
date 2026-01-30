@@ -52,7 +52,7 @@ export default {
    * Fetches user data from backend if valid session exists
    */
   mounted() {
-    fetch('http://localhost:8000/api/users/data', {
+    fetch(`${import.meta.env.VITE_API_URL}/users/data`, {
       credentials: "include"
     })
       .then(response => {
@@ -89,7 +89,7 @@ export default {
      * @throws {Error} When login fails
      */
     handleLogin({ email, password }) {
-      fetch('http://localhost:8000/api/users/login', {
+      fetch(`${import.meta.env.VITE_API_URL}/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export default {
           return response.json();
         })
         .then(data => {
-          fetch('http://localhost:8000/api/users/data', {
+          fetch(`${import.meta.env.VITE_API_URL}/users/data`, {
             credentials: "include"
           })
             .then(response => {

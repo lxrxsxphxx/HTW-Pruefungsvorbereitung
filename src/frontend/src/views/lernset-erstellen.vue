@@ -108,8 +108,8 @@ const TYPE_MULTIPLE_CHOICE = 'multiple_choice';
 let edit_index = -1;
 let module_id = -1;
 
-const API_LEARNING_SETS = 'http://localhost:8000/api/learning_set/';
-const API_MODULES = "http://localhost:8000/api/users/modules/";
+const API_LEARNING_SETS = `${import.meta.env.VITE_API_URL}/learning_set/`;
+const API_MODULES = `${import.meta.env.VITE_API_URL}/users/modules/`;
 
 
 

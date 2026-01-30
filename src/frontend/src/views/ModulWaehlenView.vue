@@ -108,15 +108,15 @@ export default {
     async fetchData() {
       try {
         const [usersRes, modulesRes, userModulesRes] = await Promise.all([
-          fetch("http://localhost:8000/api/users/data", { 
+          fetch(`${import.meta.env.VITE_API_URL}/users/data`, { 
             credentials: 'include',
             headers: { 'accept': 'application/json' }
           }),
-          fetch("http://localhost:8000/api/modules/", { 
+          fetch(`${import.meta.env.VITE_API_URL}/modules/`, { 
             credentials: 'include',
             headers: { 'accept': 'application/json' }
           }),
-          fetch("http://localhost:8000/api/users/modules", { 
+          fetch(`${import.meta.env.VITE_API_URL}/users/modules`, { 
             credentials: 'include',
             headers: { 'accept': 'application/json' }
           })
@@ -153,7 +153,7 @@ export default {
       if (!this.selectedModuleId || !this.user) return;
       
       const isRemoving = this.isAssigned(this.selectedModuleId);
-      const url = `http://localhost:8000/api/modules/${this.selectedModuleId}/user`;
+      const url = `${import.meta.env.VITE_API_URL}/modules/${this.selectedModuleId}/user`;
       const method = isRemoving ? 'DELETE' : 'POST';
 
       try {

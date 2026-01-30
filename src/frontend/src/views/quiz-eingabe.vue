@@ -97,7 +97,7 @@ const EDIT_QUESTION = 1;
 let action = ADD_QUESTION;
 
 
-const url = "http://localhost:8000/api/questions/";
+const url = `${import.meta.env.VITE_API_URL}/questions/`;
 
 
 /**

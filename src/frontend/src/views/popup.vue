@@ -46,7 +46,7 @@ function buttonClicked(index){
 
 </script>
 
-<style>
+<style scoped>
 
 #main {
   position: absolute;

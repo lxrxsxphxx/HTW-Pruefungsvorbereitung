@@ -1,58 +1,58 @@
 <template>
-    <div id="mc-quiz-entry-body">
-        <div id="mc-quiz-entry-header">
-            <hr>
-        </div>
-        <div id="mc-quiz-entry-main">
-            <div id="input">
-                <div id="input-container">
-                    <div>
-                        <label for="question">Frage:</label>
-                        <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question_entry"><br>
-                    </div>
-                    <br>
-
-                    <div id="answer_1-container" class="answer-container">
-                        <label for="answer_1" class="txt_answer">Antwort 1:</label>
-                        <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1_entry"><br>
-                        <label class="switch">
-                            <input type="checkbox" id="answer_1_correct" @click="toggleAnswerCorrectness(0)" v-bind:checked="answers_correct[0]">
-                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[0]"></span></span>
-                        </label>
-                    </div>
-                    <div id="answer_2-container" class="answer-container">
-                        <label for="answer_2" class="txt_answer">Antwort 2:</label>
-                        <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2_entry"><br>
-                        <label class="switch">
-                            <input type="checkbox" id="answer_2_correct" @click="toggleAnswerCorrectness(1)" v-bind:checked="answers_correct[1]">
-                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[1]"></span></span>
-                        </label>
-                    </div>
-                    <div id="answer_3-container" class="answer-container">
-                        <label for="answer_3" class="txt_answer">Antwort 3:</label>
-                        <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3_entry"><br>
-                        <label class="switch">
-                            <input type="checkbox" id="answer_3_correct" @click="toggleAnswerCorrectness(2)" v-bind:checked="answers_correct[2]">
-                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[2]"></span></span>
-                        </label>
-                    </div>
-                    <div id="answer_4-container" class="answer-container">
-                        <label for="answer_4" class="txt_answer">Antwort 4:</label>
-                        <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4_entry"><br>
-                        <label class="switch">
-                            <input type="checkbox" id="answer_4_correct" @click="toggleAnswerCorrectness(3)" v-bind:checked="answers_correct[3]">
-                            <span class="slider round"><span class="tooltip" v-text="answers_correct_text[3]"></span></span>
-                        </label>
-                    </div>
-                    <br>
-                </div>
-
-                <div id="control-button-container">
-                    <button class="control-button" id="add_question" v-text="add_text" @click="addQuestion"></button>
-                </div>
-            </div>
-        </div>
+  <div id="mc-quiz-entry-body">
+    <div id="mc-quiz-entry-header">
+      <hr>
     </div>
+    <div id="mc-quiz-entry-main">
+      <div id="input">
+        <div id="input-container">
+          <div>
+            <label for="question">Frage:</label>
+            <input type="text" id="question" name="question" class="input-field" ref="question_input" v-model="question_entry"><br>
+          </div>
+          <br>
+
+          <div id="answer_1-container" class="answer-container">
+            <label for="answer_1" class="txt_answer">Antwort 1:</label>
+            <input type="text" id="answer_1" name="answer_1" class="input-field" ref="answer_1_input" v-model="answer_1_entry"><br>
+            <label class="switch">
+              <input type="checkbox" id="answer_1_correct" @click="toggleAnswerCorrectness(0)" v-bind:checked="answers_correct[0]">
+              <span class="slider round"><span class="tooltip" v-text="answers_correct_text[0]"></span></span>
+            </label>
+          </div>
+          <div id="answer_2-container" class="answer-container">
+            <label for="answer_2" class="txt_answer">Antwort 2:</label>
+            <input type="text" id="answer_2" name="answer_2" class="input-field" ref="answer_2_input" v-model="answer_2_entry"><br>
+            <label class="switch">
+              <input type="checkbox" id="answer_2_correct" @click="toggleAnswerCorrectness(1)" v-bind:checked="answers_correct[1]">
+              <span class="slider round"><span class="tooltip" v-text="answers_correct_text[1]"></span></span>
+            </label>
+          </div>
+          <div id="answer_3-container" class="answer-container">
+            <label for="answer_3" class="txt_answer">Antwort 3:</label>
+            <input type="text" id="answer_3" name="answer_3" class="input-field" ref="answer_3_input" v-model="answer_3_entry"><br>
+            <label class="switch">
+              <input type="checkbox" id="answer_3_correct" @click="toggleAnswerCorrectness(2)" v-bind:checked="answers_correct[2]">
+              <span class="slider round"><span class="tooltip" v-text="answers_correct_text[2]"></span></span>
+            </label>
+          </div>
+          <div id="answer_4-container" class="answer-container">
+            <label for="answer_4" class="txt_answer">Antwort 4:</label>
+            <input type="text" id="answer_4" name="answer_4" class="input-field" ref="answer_4_input" v-model="answer_4_entry"><br>
+            <label class="switch">
+              <input type="checkbox" id="answer_4_correct" @click="toggleAnswerCorrectness(3)" v-bind:checked="answers_correct[3]">
+              <span class="slider round"><span class="tooltip" v-text="answers_correct_text[3]"></span></span>
+            </label>
+          </div>
+          <br>
+        </div>
+
+        <div id="control-button-container">
+          <button class="control-button" id="add_question" v-text="add_text" @click="addQuestion"></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -109,25 +109,25 @@ const url = "http://localhost:8000/api/questions/";
  * @returns {JSON} the json Object
  */
 function makeJson(question_text, entered_answers, correct_answers) {
-    let json_str = '{"question_text": "' + question_text + '", ';
-    json_str += '"url": "' + url + '", ';
-    json_str += '"question_type": "multiple_choice", ';
+  let json_str = '{"question_text": "' + question_text + '", ';
+  json_str += '"url": "' + url + '", ';
+  json_str += '"question_type": "multiple_choice", ';
 
-    json_str += '"question": {"question": {"question":"' + question_text + '"}, "answers":[';
+  json_str += '"question": {"question": {"question":"' + question_text + '"}, "answers":[';
 
-    let len = entered_answers.length;
-    for(let i = 0; i < len; i++){
-        json_str += '{"answer":"' + entered_answers[i] + '","correct":';
-        if(correct_answers.includes((i+1))) json_str += 'true}';
-        else json_str += 'false}';
-        if(i !== len-1) json_str += ',';
-    }
+  let len = entered_answers.length;
+  for(let i = 0; i < len; i++){
+    json_str += '{"answer":"' + entered_answers[i] + '","correct":';
+    if(correct_answers.includes((i+1))) json_str += 'true}';
+    else json_str += 'false}';
+    if(i !== len-1) json_str += ',';
+  }
 
-    json_str += ']}}';
+  json_str += ']}}';
 
-    let json = JSON.parse(json_str);
+  let json = JSON.parse(json_str);
 
-    return json;
+  return json;
 }
 
 
@@ -139,12 +139,12 @@ function makeJson(question_text, entered_answers, correct_answers) {
  * @returns {null}
  */
 function transferQuestion(question_text, entered_answers, correct_answers){
-    let json = makeJson(question_text, entered_answers, correct_answers);
+  let json = makeJson(question_text, entered_answers, correct_answers);
 
-    if(action === ADD_QUESTION) emit('addQuestion', json);
-    else if(action === EDIT_QUESTION) emit('editQuestion', json);
+  if(action === ADD_QUESTION) emit('addQuestion', json);
+  else if(action === EDIT_QUESTION) emit('editQuestion', json);
 
-    return;
+  return;
 }
 
 
@@ -155,15 +155,15 @@ function transferQuestion(question_text, entered_answers, correct_answers){
  * @returns {null}
  */
 function setAction(a){
-    if(a === ADD_QUESTION){
-        action = ADD_QUESTION;
-        add_text.value = ADD_QUESTION_TEXT;
-    }
-    else if(a === EDIT_QUESTION){
-        action = EDIT_QUESTION;
-        add_text.value = EDIT_QUESTION_TEXT;
-    }
-    return;
+  if(a === ADD_QUESTION){
+    action = ADD_QUESTION;
+    add_text.value = ADD_QUESTION_TEXT;
+  }
+  else if(a === EDIT_QUESTION){
+    action = EDIT_QUESTION;
+    add_text.value = EDIT_QUESTION_TEXT;
+  }
+  return;
 }
 
 
@@ -172,49 +172,49 @@ function setAction(a){
  * @returns {null}
  */
 function addQuestion(){
-    // construct the list of correct answers and the list of inputted questions
-    let correct_answers_arr = [];
+  // construct the list of correct answers and the list of inputted questions
+  let correct_answers_arr = [];
 
-    let entered_answers = [];
-    if(answer_1_entry.value !== ""){
-        entered_answers.push(answer_1_entry.value);
-        if(answers_correct.value[0]) correct_answers_arr.push(entered_answers.length);
-    }
-    if(answer_2_entry.value !== ""){
-        entered_answers.push(answer_2_entry.value);
-        if(answers_correct.value[1]) correct_answers_arr.push(entered_answers.length);
-    }
-    if(answer_3_entry.value !== ""){
-        entered_answers.push(answer_3_entry.value);
-        if(answers_correct.value[2]) correct_answers_arr.push(entered_answers.length);
-    }
-    if(answer_4_entry.value !== ""){
-        entered_answers.push(answer_4_entry.value);
-        if(answers_correct.value[3]) correct_answers_arr.push(entered_answers.length);
-    }
+  let entered_answers = [];
+  if(answer_1_entry.value !== ""){
+    entered_answers.push(answer_1_entry.value);
+    if(answers_correct.value[0]) correct_answers_arr.push(entered_answers.length);
+  }
+  if(answer_2_entry.value !== ""){
+    entered_answers.push(answer_2_entry.value);
+    if(answers_correct.value[1]) correct_answers_arr.push(entered_answers.length);
+  }
+  if(answer_3_entry.value !== ""){
+    entered_answers.push(answer_3_entry.value);
+    if(answers_correct.value[2]) correct_answers_arr.push(entered_answers.length);
+  }
+  if(answer_4_entry.value !== ""){
+    entered_answers.push(answer_4_entry.value);
+    if(answers_correct.value[3]) correct_answers_arr.push(entered_answers.length);
+  }
 
-    if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
-    console.log(correct_answers_arr);
-
-
-
-    // the question and at least two answers mut be inputted
-    if(question_entry.value === "" || entered_answers.length < 2){
-        emit('error', 'Die Frage und mind. zwei Antworten müssen eingegeben werden!');
-        return;
-    }
+  if(correct_answers_arr.length === 0) correct_answers_arr.push(1);
+  console.log(correct_answers_arr);
 
 
-    // transfer the question to the parent view and clean up
-    console.log("question: " + question_entry.value);
-    transferQuestion(question_entry.value, entered_answers, correct_answers_arr);
 
-    clearQuestion();
-    if(action === EDIT_QUESTION) setAction(ADD_QUESTION); // change to the standard action
-
-    question_input.value.focus();
-
+  // the question and at least two answers mut be inputted
+  if(question_entry.value === "" || entered_answers.length < 2){
+    emit('error', 'Die Frage und mind. zwei Antworten müssen eingegeben werden!');
     return;
+  }
+
+
+  // transfer the question to the parent view and clean up
+  console.log("question: " + question_entry.value);
+  transferQuestion(question_entry.value, entered_answers, correct_answers_arr);
+
+  clearQuestion();
+  if(action === EDIT_QUESTION) setAction(ADD_QUESTION); // change to the standard action
+
+  question_input.value.focus();
+
+  return;
 }
 
 
@@ -225,24 +225,24 @@ function addQuestion(){
  * @returns {null}
  */
 function editQuestion(json){
-    let question = json.question;
+  let question = json.question;
 
-    setAction(EDIT_QUESTION);
+  setAction(EDIT_QUESTION);
 
-    let num_answers = question.answers.length
+  let num_answers = question.answers.length
 
-    question_entry.value = question.question.question;
-    answer_1_entry.value = question.answers[0].answer;
-    answer_2_entry.value = question.answers[1].answer;
-    if(num_answers > 2) answer_3_entry.value = question.answers[2].answer;
-    if(num_answers > 3) answer_4_entry.value = question.answers[3].answer;
+  question_entry.value = question.question.question;
+  answer_1_entry.value = question.answers[0].answer;
+  answer_2_entry.value = question.answers[1].answer;
+  if(num_answers > 2) answer_3_entry.value = question.answers[2].answer;
+  if(num_answers > 3) answer_4_entry.value = question.answers[3].answer;
 
-    for(let i = 0; i < num_answers; i++) {
-        if(question.answers[i].correct) setAnswerCorrectness(i, true);
-        else setAnswerCorrectness(i, false);
-    }
+  for(let i = 0; i < num_answers; i++) {
+    if(question.answers[i].correct) setAnswerCorrectness(i, true);
+    else setAnswerCorrectness(i, false);
+  }
 
-    return;
+  return;
 }
 
 
@@ -253,14 +253,14 @@ function editQuestion(json){
  * @returns {null}
  */
 function setAnswerCorrectness(answer, correct){
-    if(answer < 0 || answer >= MAX_ANSWERS) return;
-    
-    answers_correct.value[answer] = correct;
+  if(answer < 0 || answer >= MAX_ANSWERS) return;
+  
+  answers_correct.value[answer] = correct;
 
-    if(correct) answers_correct_text.value[answer] = RIGHT_TEXT;
-    else answers_correct_text.value[answer] = FALSE_TEXT;
+  if(correct) answers_correct_text.value[answer] = RIGHT_TEXT;
+  else answers_correct_text.value[answer] = FALSE_TEXT;
 
-    return;
+  return;
 }
 
 /**
@@ -269,10 +269,10 @@ function setAnswerCorrectness(answer, correct){
  * @returns {null}
  */
 function toggleAnswerCorrectness(answer){
-    if(answers_correct.value[answer] === false) setAnswerCorrectness(answer, true);
-    else setAnswerCorrectness(answer, false);
+  if(answers_correct.value[answer] === false) setAnswerCorrectness(answer, true);
+  else setAnswerCorrectness(answer, false);
 
-    return;
+  return;
 }
 
 
@@ -282,16 +282,16 @@ function toggleAnswerCorrectness(answer){
  * @returns {null}
  */
 function clearQuestion(){
-    question_entry.value = "";
-    answer_1_entry.value = "";
-    answer_2_entry.value = "";
-    answer_3_entry.value = "";
-    answer_4_entry.value = "";
+  question_entry.value = "";
+  answer_1_entry.value = "";
+  answer_2_entry.value = "";
+  answer_3_entry.value = "";
+  answer_4_entry.value = "";
 
-    for(let i = 0; i < MAX_ANSWERS; i++) setAnswerCorrectness(i, false);
+  for(let i = 0; i < MAX_ANSWERS; i++) setAnswerCorrectness(i, false);
 
-    setAction(ADD_QUESTION);
-    return;
+  setAction(ADD_QUESTION);
+  return;
 }
 
 </script>

@@ -1,195 +1,195 @@
 #mc-quiz-entry-body {
-    width: 100%;
-    margin-left: 0;
+  width: 100%;
+  margin-left: 0;
 }
 
 h1 {
-    font-size: 1.5em;
-    border: 0;
-    margin-left: 1em;
+  font-size: 1.5em;
+  border: 0;
+  margin-left: 1em;
 }
 hr {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
 }
 
 button {
-    font-size: 1em;
-    cursor: pointer;
+  font-size: 1em;
+  cursor: pointer;
 
-    border: none;
-    border-radius: 0.25em;
+  border: none;
+  border-radius: 0.25em;
 }
 
 #mc-quiz-entry-main {
-    display: flex;
+  display: flex;
 }
 
 #mc-quiz-entry-main > * {
-    margin: 0.25em;
-    border-radius: 0.5em;
+  margin: 0.25em;
+  border-radius: 0.5em;
 }
 
 #input {
-    order: 1;
-    padding: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-    flex: 2 2 0%;
+  order: 1;
+  padding: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  flex: 2 2 0%;
 }
 #input-container {
-    order: 1;
-    display: inline;
+  order: 1;
+  display: inline;
 }
 #input-container > div {
-    width: 75%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5em;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
 }
 label {
-    order: 1;
+  order: 1;
 }
 
 .input-field {
-    background-color: var(--color-background-mute);
-    color: var(--color-text);
-    font-size: 1em;
-    order: 2;
-    flex: 1 1 0%;
-    width: 100%;
-    border: 0;
-    border-radius: 0.25em;
-    margin-left: 1em;
+  background-color: var(--color-background-mute);
+  color: var(--color-text);
+  font-size: 1em;
+  order: 2;
+  flex: 1 1 0%;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25em;
+  margin-left: 1em;
 }
 
 .switch {
-    order: 3;
-    margin-left: 0.5em;
-    position: relative;
-    display: inline-block;
-    width: 2.5em;
-    height: 1.5em;
+  order: 3;
+  margin-left: 0.5em;
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 1.5em;
 }
 .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--light-red);
-    -webkit-transition: .2s;
-    transition: .2s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-red);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 1em;
-    width: 1em;
-    left: 0.25em;
-    bottom: 0.25em;
-    background-color: white;
-    -webkit-transition: .2s;
-    transition: .2s;
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 input:checked + .slider {
-    background-color: var(--light-green);
+  background-color: var(--light-green);
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(1em);
-    -ms-transform: translateX(1em);
-    transform: translateX(1em);
+  -webkit-transform: translateX(1em);
+  -ms-transform: translateX(1em);
+  transform: translateX(1em);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 0.75em;
+  border-radius: 0.75em;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .tooltip {
-    visibility: hidden;
-    width: fit-content;
-    height: fit-content;
-    text-align: center;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    left: 105%;
+  visibility: hidden;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  left: 105%;
 }
 .slider.round:hover .tooltip {
-    visibility: visible;
+  visibility: visible;
 }
 
 
 #question {
-    width: 75%;
+  width: 75%;
 }
 
 #correct_answers-container {
-    width: auto;
-    display: inline;
+  width: auto;
+  display: inline;
 }
 #correct_answers {
-    width: 6em;
-    max-width: 6em;
-    margin-right: 0.5em;
+  width: 6em;
+  max-width: 6em;
+  margin-right: 0.5em;
 }
 #example {
-    order: 3;
+  order: 3;
 }
 
 
 #control-button-container {
-    order: 2;
-    display: flex;
+  order: 2;
+  display: flex;
 }
 .control-button {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-    width: 50%;
-    padding: 0.5em;
-    border: 0px;
-    border-radius: 0.25em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+  width: 50%;
+  padding: 0.5em;
+  border: 0px;
+  border-radius: 0.25em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 
 @media (max-width: 1000px) {
-    #mc-quiz-entry-body {width: 100%;}
-    #mc-quiz-entry-main {flex-direction: column;}
-    #input-container > div {width: 100%;}
-    #question {width: 100%;}
-    #control-button-container {
-        flex-direction: column;
-    }
-    .control-button {
-        width: 100%;
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    #cancel-popup {left: 50%;}
-    aside {max-width: 100%}
+  #mc-quiz-entry-body {width: 100%;}
+  #mc-quiz-entry-main {flex-direction: column;}
+  #input-container > div {width: 100%;}
+  #question {width: 100%;}
+  #control-button-container {
+    flex-direction: column;
+  }
+  .control-button {
+    width: 100%;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #cancel-popup {left: 50%;}
+  aside {max-width: 100%}
 }

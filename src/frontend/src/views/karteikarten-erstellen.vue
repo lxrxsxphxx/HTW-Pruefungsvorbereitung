@@ -1,29 +1,29 @@
 <template>
-    <div id="index-cards-entry-body">
-        <div id="index-cards-entry-header">
-            <hr>
-        </div>
-
-        <div id="index-cards-entry-main">
-            <div id="input">
-                <div id="input-container">
-                    <div id="front-container">
-                        <textarea type="text" id="front" name="front" class="input-field" ref="front_input" v-model="front" placeholder="Vorderseite"></textarea><br>
-                    </div>
-                    
-
-                    <div id="back-container" class="answer-container">
-                        <textarea type="text" id="back" name="back" class="input-field" ref="back_input" v-model="back" placeholder="Rückseite"></textarea><br>
-                    </div>
-                    <br>
-                </div>
-
-                <div id="control-button-container">
-                    <button class="control-button" id="add_card" v-text="add_text" @click="addQuestion"></button>
-                </div>
-            </div>
-        </div>
+  <div id="index-cards-entry-body">
+    <div id="index-cards-entry-header">
+      <hr>
     </div>
+
+    <div id="index-cards-entry-main">
+      <div id="input">
+        <div id="input-container">
+          <div id="front-container">
+            <textarea type="text" id="front" name="front" class="input-field" ref="front_input" v-model="front" placeholder="Vorderseite"></textarea><br>
+          </div>
+          
+
+          <div id="back-container" class="answer-container">
+            <textarea type="text" id="back" name="back" class="input-field" ref="back_input" v-model="back" placeholder="Rückseite"></textarea><br>
+          </div>
+          <br>
+        </div>
+
+        <div id="control-button-container">
+          <button class="control-button" id="add_card" v-text="add_text" @click="addQuestion"></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -68,15 +68,15 @@ let action = ADD_QUESTION;
  * @returns {null}
  */
 function setAction(a){
-    if(a === ADD_QUESTION){
-        action = ADD_QUESTION;
-        add_text.value = ADD_QUESTION_TEXT;
-    }
-    else if(a === EDIT_QUESTION){
-        action = EDIT_QUESTION;
-        add_text.value = EDIT_QUESTION_TEXT;
-    }
-    return;
+  if(a === ADD_QUESTION){
+    action = ADD_QUESTION;
+    add_text.value = ADD_QUESTION_TEXT;
+  }
+  else if(a === EDIT_QUESTION){
+    action = EDIT_QUESTION;
+    add_text.value = EDIT_QUESTION_TEXT;
+  }
+  return;
 }
 
 
@@ -85,21 +85,21 @@ function setAction(a){
  * @returns {null}
  */
 function addQuestion(){
-    if(front.value === "" || back.value === ""){
-        emit('error', 'Vorder- und Rückseite müssen eingegeben werden!');
-        return;
-    }
-    
-    // transfer the card to the parent view and clean up
-    console.log("question: " + front.value);
-    transferCard(front.value, back.value);
-
-    clearQuestion();
-    if(action === EDIT_QUESTION) setAction(ADD_QUESTION);
-
-    front_input.value.focus();
-
+  if(front.value === "" || back.value === ""){
+    emit('error', 'Vorder- und Rückseite müssen eingegeben werden!');
     return;
+  }
+  
+  // transfer the card to the parent view and clean up
+  console.log("question: " + front.value);
+  transferCard(front.value, back.value);
+
+  clearQuestion();
+  if(action === EDIT_QUESTION) setAction(ADD_QUESTION);
+
+  front_input.value.focus();
+
+  return;
 }
 
 
@@ -111,14 +111,14 @@ function addQuestion(){
  * @returns {null}
  */
 function editQuestion(json){
-    let card = json.question[0];
+  let card = json.question[0];
 
-    setAction(EDIT_QUESTION);
-    front.value = card.front;
-    back.value = card.back;
-    console.log(card.front);
+  setAction(EDIT_QUESTION);
+  front.value = card.front;
+  back.value = card.back;
+  console.log(card.front);
 
-    return;
+  return;
 }
 
 
@@ -129,12 +129,12 @@ function editQuestion(json){
  * @returns {null}
  */
 function transferCard(front_text, back_text){
-    let json = makeJson(front_text, back_text);
+  let json = makeJson(front_text, back_text);
 
-    if(action === ADD_QUESTION) emit('addQuestion', json);
-    else if(action === EDIT_QUESTION) emit('editQuestion', json);
+  if(action === ADD_QUESTION) emit('addQuestion', json);
+  else if(action === EDIT_QUESTION) emit('editQuestion', json);
 
-    return;
+  return;
 }
 
 
@@ -146,15 +146,15 @@ function transferCard(front_text, back_text){
  * @returns {JSON} the json Object
  */
 function makeJson(front_text, back_text){
-    let json_str = '{"question_text": "' + front_text + '", ';
-    json_str += '"url": "' + url + '", ';
-    json_str += '"question_type": "index_card", ';
+  let json_str = '{"question_text": "' + front_text + '", ';
+  json_str += '"url": "' + url + '", ';
+  json_str += '"question_type": "index_card", ';
 
-    json_str += '"question": [{"front": "' + front_text + '", "back": "' + back_text + '"}]}';
+  json_str += '"question": [{"front": "' + front_text + '", "back": "' + back_text + '"}]}';
 
-    let json = JSON.parse(json_str);
+  let json = JSON.parse(json_str);
 
-    return json;
+  return json;
 }
 
 
@@ -163,11 +163,11 @@ function makeJson(front_text, back_text){
  * @returns {null}
  */
 function clearQuestion(){
-    front.value = "";
-    back.value = "";
+  front.value = "";
+  back.value = "";
 
-    setAction(ADD_QUESTION);
-    return;
+  setAction(ADD_QUESTION);
+  return;
 }
 
 </script>

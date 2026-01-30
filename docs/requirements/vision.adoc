@@ -35,7 +35,7 @@ Miro-Board (https://miro.com/app/board/uXjVIClMOm0=/)
 == Positionierung
 
 === Fachliche Motivation
-Die Prüfungsvorbereitung von Studenten basiert häufig über inoffizielle und verstreute Quellen wie veraltete Altklasuren, Übungen oder Zusammenfassungen, die über allgemeine Lernplattformen sowie Kommunikationskanäe wie Whatsapp oder Discord geteilt werden.
+Die Prüfungsvorbereitung von Studenten basiert häufig auf inoffizielle und verstreute Quellen wie veraltete Altklasuren, Übungen oder Zusammenfassungen, die über allgemeine Lernplattformen sowie Kommunikationskanäe wie Whatsapp oder Discord geteilt werden.
 
 Studierende müssen relevante Materialien eigenständig suchen und deren Aktualität, Relevanz sowie fachliche Zuordnung selbst einschätzen, Dies führt häufig zu Unsicherheit, hohem Rechercheaufwand und einer ineffizienten Prüfungsvorbereitung.
 
@@ -49,7 +49,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 | die | sich auf Prüfungen vorbereiten möchten
 | ist der  | HTW-Prüfungsvorbereiter
 | eine  | webbasierte Lernplattform
-| die durch | eine hochschulspezifische und modulbezogene Struktur die Prüfungsvorbereitung unterstützt
+| die durch | eine auf die Studiengänge und Module der HTW Dresden zugeschnittene Struktur mit aktuellen, semesterbezogenen Lernsets die Prüfungsvorbereitung unterstützt
 | anders als | allgemeine Lernplattformen wie Quizlet
 | speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
@@ -65,7 +65,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 
 | Studierende
 | Studierende der HTW Dresden, die die Lernplattform zur Unterstützung ihrer Prüfungsvorbereitung nutzen
-| Sorgen für die Nutzung und Befüllung von Inhalten zur Prüfungsvorbereitung.
+| Nutzen die Lernplattform zur Prüfungsvorbereitung und können eigene Lerninhalte erstellen.
 
 | Dozierende / Tutor:innen / Assistierende
 | Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden
@@ -77,7 +77,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 | Sorgt für die Verwaltung von Benutzerkonten und Zugriffsrechten sowie den ordnungsgemäßen Ablauf der Anwendung
 
 
-| HTWD (Institution)
+| HTW Dresden (Institution)
 | Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
 | Sorgt für die Bereitstellung der notwendigen Infrastruktur
 
@@ -156,10 +156,10 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 | Anforderung | Priorität | Geplantes Release 
 | Webbasierte Anwendung für Desktop-Browser | Hoch | mvp
 | Nutzung der Lernplattform auf mobilen Endgeräten | Mittel | -
+| Angemessene Reaktionszeiten ohne spürbare Ladezeiten bei Standardaktionen | Mittel | -
 | Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | mvp
 | Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | mvp  
-| Angemessene Reaktionszeiten für eine flüssige Nutzung| Mittel | - 
-| Stabiler und robuster Betrieb der Lernplattform | Mittel | -
-| Vermeidung von Datenverlusten | Hoch | -
+| Stabiler und zuverlässiger Betrieb der Lernplattform im regulären Nutzungsbetrieb | Mittel | -
+| Zuverlässige Speicherung von Lerninhalten und Nutzerdaten ohne unbeabsichtigten Verlust | Hoch | -
 | Verständliche Projektdokumentation | Hoch | mvp
 |===

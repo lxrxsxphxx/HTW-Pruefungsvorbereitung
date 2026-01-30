@@ -3,6 +3,7 @@
 == 1. Ziel des Dokuments
 
 Dieses Dokument beschreibt den gemeinsamen Umgang des Teams mit GitHub, um eine klare, nachvollziehbare und konsistente Arbeitsweise sicherzustellen.
+Diese Standards sind verbindlich für alle Beiträge zu diesem Repository.
 Es regelt:
 
 * Branching-Strategie
@@ -15,7 +16,7 @@ Es regelt:
 == 2. Grundprinzipien
 
 1. *Alle Änderungen erfolgen über Branches und Pull Requests*
-** Kein direktes Arbeiten auf dem main- oder develop-Branch
+** Kein direktes Arbeiten auf dem main- oder dev-Branch
 
 2. *Jede Änderung basiert auf einem Issue*
 ** Keine Commits ohne zugehöriges Issue
@@ -32,9 +33,9 @@ Es regelt:
 
 | main
 | Stabile, getestete Version
-| nach Review werden alle abgenommen Items verschoben
+| Merge nur aus dev nach erfolgreichem Review
 
-| develop
+| dev
 | Aktuelle Entwicklungsbasis (integrierte Features)
 | Alle über PRs
 |===
@@ -52,6 +53,14 @@ Es regelt:
 | bugfix/<issue-id>-<kurze-beschreibung>
 | Korrektur von Fehlern
 
+| Chore
+| chore/<issue-id>-<kurze-beschreibung>
+| Refactoring, Anpassung an Code-Standards
+
+| Test
+| test/<issue-id>-<kurze-beschreibung>
+| Hinzufügen oder Anpassen von Tests
+
 | Docs
 | docs/<issue-id>-<kurze-beschreibung>
 | Änderungen an Dokumentation
@@ -61,7 +70,9 @@ Beispiel:
 ----
 feature/2-login-system
 bugfix/1-validation-error
-docs/3-gitworkflow
+chore/3-refactor
+test/4-add-unit-tests
+docs/5-gitworkflow
 ----
 
 
@@ -69,7 +80,7 @@ docs/3-gitworkflow
 
 === Erstellung von Issues
 
-Jede Aufgabe, Story oder Fehlermeldung wird über ein GitHub Issue erstellt  
+Jede Aufgabe, Story oder Fehlermeldung wird über ein GitHub Issue erstellt
 Das Issue soll mindestens enthalten:
 
 * Titel: prägnant und beschreibend
@@ -80,7 +91,7 @@ Das Issue soll mindestens enthalten:
 
 === Issue-Templates
 
-Alle Issues sollen dem Label zugehörigen Template folgen.
+Alle Issues sollen dem Label zugehörigen Template folgen sofern es vorhanden ist.
 
 
 == 5. Branching & Workflow
@@ -88,15 +99,15 @@ Alle Issues sollen dem Label zugehörigen Template folgen.
 === Standardablauf
 
 . *Issue auswählen oder erstellen*
-z. B. #1 „Login implementieren“
+z. B. 1 „Login implementieren“
 
 . *Branch anlegen*
 +
 [source,bash]
 ----
-git checkout develop
+git checkout dev
 git pull
-git checkout -b feature/login
+git checkout -b feature/1-login-system
 ----
 
 . *Entwicklung durchführen*
@@ -107,9 +118,9 @@ git checkout -b feature/login
 +
 [source,bash]
 ----
-git push origin feature/login
+git push origin feature/1-login-system
 ----
-danach über GitHub einen PR auf develop eröffnen.
+danach über GitHub einen PR auf dev eröffnen.
 
 . *Code Review*
 ** Mindestens 1 Approval eines anderen Teammitglieds
@@ -156,8 +167,9 @@ Commit-Typen
 
 | feat | neue Funktionalität
 | fix  | Bugfix
-| docs | Dokumentationsänderung
+| chore | Refactoring/Code-Standards
 | test | Hinzufügen/Ändern von Tests
+| docs | Dokumentationsänderung
 |===
 
 
@@ -165,5 +177,5 @@ Commit-Typen
 
 * PR eröffnen, Reviewer zuweisen
 * Reviewer prüft Änderungen, gibt Feedback oder Approval
-* Nach mindestens einem Approval: Merge in develop
+* Nach mindestens einem Approval: Merge in dev
 * Branch löschen (lokal und remote)

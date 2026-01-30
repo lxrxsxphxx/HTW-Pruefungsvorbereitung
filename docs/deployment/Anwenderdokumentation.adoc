@@ -1,0 +1,162 @@
+= Anwenderdokumentation
+
+== Einstieg
+
+=== Zweck der Software
+
+Der HTW-Prüfungsvorbereiter ist eine webbasierte Lernanwendung für Studierende der HTW Dresden.
+Die App unterstützt dabei Lerninhalte strukturiert, modulbezogen und zentral zu organisieren und für Prüfungen gezielt zu wiederholen.
+
+Viele Studierende lernen mit verteilten Materialien und ohne klare Struktur.
+Der HTW-Prüfungsvorbereiter bündelt diese Inhalte an einem Ort und hilft dabei den Lernfortschritt übersichtlich zu planen und nachzuverfolgen.
+
+Die Anwendung richtet sich primär an Studierende der HTW Dresden, die sich eigenständig oder ergänzend zu Lehrveranstaltungen auf Prüfungen vorbereiten möchten.
+
+=== Schnellstart
+
+Die Anwendung ist webbasiert und kann direkt im Browser genutzt werden.
+
+**Demo-Zugang**
+
+--
+* E-Mail: test@htw.de
+* Passwort: 1234
+--
+
+Die Anwendung wird über einen Docker-Container bereitgestellt und benötigt keine lokale Installation.
+
+Mehr dazu in der Betriebsdokumentation.adoc
+
+**Voraussetzungen**
+
+--
+* Aktueller Webbrowser (z. B. Chrome, Firefox, Edge)
+* Keine besonderen Hardware-Anforderungen
+--
+
+== Überblick über die Benutzeroberfläche
+
+=== Grundaufbau der Oberfläche
+
+Nach dem Starten gelangt der User auf die Startansicht der Anwendung.
+Die Benutzeroberfläche ist in drei zentrale Bereiche gegliedert.
+
+`Module` – Übersicht und Auswahl der Lernmodule
+
+`Jetzt lernen` – Tatsächlicher Lernbereich
+
+`Statistik` – Übersicht über Lernfortschritt und Aktivität
+
+Der persönliche Bereich des User (z. B. Logout oder Login) befindet sich in der rechten oberen Ecke der Oberfläche.
+
+=== Navigation & zentrale Bedienelemente
+
+Das HTW-Logo dient als zentrale Navigation und führt jederzeit zurück zur Startseite.
+Darüber hinaus erfolgt die Navigation überwiegend kontextabhängig innerhalb der einzelnen Bereiche. Eine durchgehend einheitliche globale Navigation ist nicht vorgesehen.
+
+== Zentrale Nutzung
+
+=== Modulbezogenes Lernen
+
+**Ziel der Aufgabe**
+Studierende sollen studiengangsbezogene Module finden, auswählen und die zugehörigen Lernsets verwenden können.
+
+**Voraussetzungen**
+
+--
+* Nutzer ist eingeloggt.
+* Mindestens ein Modul ist im System vorhanden.
+--
+
+**Schritte**
+
+--
+1. Öffne die Startseite und klicke auf `Module`.
+2. Durchsuche die Liste welche nach Semestern sortiert sind.
+3. Klicke auf ein Modul um es anzuwählen.
+4. Nach Auswahl: Klicke auf `Hinzufügen` oder `Abwählen` um es zu speichern
+--
+
+**Erwartetes Ergebnis**
+
+--
+* Das ausgewählte Modul erscheint im persönlichen Bereich.
+* Zugehörige Lernsets sind verfügbar und können im Lernmodus geöffnet werden.
+--
+
+=== Lernmodus
+
+**Ziel der Aufgabe**
+Studierende sollen ein ausgewähltes Lernset im ausgewählten Lernmodus nutzen können.
+
+**Voraussetzungen**
+
+--
+* Mindestens ein Modul ist dem User hinzugefügt.
+* Mindestens ein Lernset zu dem Modul existiert.
+* User ist eingeloggt.
+--
+
+**Schritte**
+
+--
+1. Klicke in der Startseite auf `Jetzt lernen`.
+2. Wähle das gewünschte Lernset aus der Übersicht
+3. Wähle ggf. eine Lernmethode (z.B.: Karteikarten, Multiple Choice, ...).
+4. Arbeite die Fragen nacheinander durch. Nutze Buttons wie `gewusst`, `teilweise gewusst`, `nicht gewusst` oder `frage überspringen`.
+5. Nach Abschluss eines Lernsets: Statistiks werden angezeigt
+--
+
+=== Lernset erstellen
+
+**Ziel der Aufgabe**
+Studierende sollen eigene Lernsets anlegen und mit Inhalten füllen können.
+
+**Voraussetzungen**
+
+--
+* Nutzer ist eingeloggt.
+* Rechte zum Erstellen sind vorhanden.
+--
+
+**Schritte**
+
+--
+1. Öffne `Jetzt lernen` und klicke auf `Neues Lernset erstellen`.
+2. Vergib einen Titel und optional Beschreibung.
+3. Wähle den Visualisierungstyp (Karteikarten oder Quiz).
+4. Füge Inhalte hinzu.
+5. Wiederhole Schritte zum Hinzufügen weiterer Fragen und Antworten
+6. Speichern des Lernsets.
+--
+
+**Fehlerbehebung**
+
+Speichern schlägt fehl:
+
+--
+* Eingabefelder auf ungültige Zeichen prüfen
+* Seite neu laden
+* Antworten richtig gesetzt?
+--
+
+=== Login
+
+**Ziel der Aufgabe:**
+Nutzer können sich anmelden und abmelden.
+
+**Schritte**
+
+--
+1. Öffne Startseite dann Klick auf `Login`.
+2. Eingabe: E-Mail und Passwort danach `Login`.
+3. Abmelden über Benutzer-Icon.
+--
+
+== FAQ
+
+**Funktioniert es auch auf dem Handy?**
+Ja, die Anwendung ist nutzbar auf Mobilgeräten, ist aber derzeit nicht vollständig „mobile-first“. Eine mobile Optimierung ist geplant.
+
+**Muss ich mich einloggen?**
+Ja, Lerninhalte sind nur für eingeloggte User sichtbar.

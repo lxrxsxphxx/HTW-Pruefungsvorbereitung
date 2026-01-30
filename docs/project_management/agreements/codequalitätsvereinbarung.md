@@ -67,19 +67,18 @@ Gemeinsame Erwartungen, Regeln und Praktiken zur Sicherstellung von lesbarem, wa
 
 ## 4. Dokumentation & Kommentare
 
-### 4.2 Kommentarregeln
+### 4.1 Kommentarregeln
 
 * Kommentare erklären präzise und verständlich
   * warum, wenn die Intention nicht sofort klar ist
-  * was, wenn der Codeblock länger ist
-  * was, in jedem abgegrenzten logischen abschnitt
+  * was, wenn der Code nicht selbsterklärend ist
 * keine doppelten Kommentare
 * Workcomments klar markieren: (vor pushen auf main löschen)
 
   * `// TODO:`
   * `// FIXME:`
 
-### 4.1 DocStringregeln 
+### 4.2 DocStringregeln 
 
 * am Anfang einer Datei:
   * Zweck der Datei
@@ -104,7 +103,7 @@ Gemeinsame Erwartungen, Regeln und Praktiken zur Sicherstellung von lesbarem, wa
   * Args/Parameters: Typ + Beschreibung
   * Returns: Typ + Bedeutung
 
-### 4.2 Python Docstrings
+### 4.3 Python Docstrings
 
 ```python
 
@@ -120,7 +119,6 @@ def some_function(argument1):
 
    """
 
-    return argument1
 ```
 
 Beispiel:
@@ -140,7 +138,7 @@ def load_user(id: int) -> User:
     """
 ```
 
-### 4.3 JavaScript JSDoc
+### 4.4 JavaScript JSDoc
 
 ```js
 /**
@@ -148,13 +146,6 @@ def load_user(id: int) -> User:
  * @param {int} name - Description of arg1
  * @returns {(Object|null)} Description of Returncases
  */
-function parseJSON(jsonString) {
-  try {
-    return JSON.parse(jsonString);
-  } catch (e) {
-    return null;
-  }
-}
 ```
 
 Beispiel:

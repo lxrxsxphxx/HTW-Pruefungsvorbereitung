@@ -51,7 +51,7 @@ Darüber hinaus wirkte sich die Situation direkt auf die Motivation des Teams au
 
 Dieser Zustand machte deutlich, wie stark die Qualität der Rollenbesetzung die Effektivität eines Teams beeinflussen kann. Die unstrukturierte Führung führte zu Ineffizienzen, blockierte Fortschritte und verhinderte eine zielgerichtete Weiterentwicklung des Produkts. Gleichzeitig zeigte sich hier ein Lernpotenzial. Ohne eine klar definierte, organisierte und reflektierte Rollenübernahme entstehen schnell Engpässe, die sich direkt auf Motivation, Teamdynamik und Produktqualität auswirken.
 
-
+Rückblickend wäre es sinnvoll gewesen, früher das offene Gespräch mit dem PO zu suchen, um die Probleme transparent anzusprechen. Eine frühzeitige, konstruktive Konfliktbearbeitung hätte dazu beitragen können, Rollen und Verantwortlichkeiten schneller zu klären, die Planung zu strukturieren und die Motivation des Teams rechtzeitig zu stabilisieren.
 
 
 Neben den Problemen durch die unstrukturierte Rollenbesetzung des Product Owners wurde das Projekt zusätzlich durch mangelhafte Teamkommunikation erschwert. Zu Beginn des Projekts gab es keine gezielten Maßnahmen zum Teambuilding, wodurch die Zusammenarbeit noch nicht gefestigt war. Die Teammitglieder kannten die Arbeitsweisen und Stärken der anderen nur unzureichend, was die Abstimmung von Aufgaben und die gemeinsame Problemlösung erschwerte.
@@ -73,6 +73,8 @@ Auch die Abstimmung innerhalb des Teams wurde dadurch erschwert. Ohne eine gemei
 Darüber hinaus wirkte sich die ungleiche Wissensverteilung direkt auf die Motivation und Eigenverantwortung des Teams aus. Teammitglieder fühlten sich teilweise ausgeschlossen oder überfordert, weil sie sich nicht sicher waren, welche Entscheidungen sinnvoll waren oder wie ihre Arbeit in den Gesamtkontext passte. Gleichzeitig erhöhte dies den Druck auf die wenigen „wissenden“ Personen, was zu zusätzlicher Belastung und Stress führte.
 
 Insgesamt zeigte sich, dass die mangelnde Wissensverteilung ein zentrales Hindernis für Effizienz, Qualität und Teamdynamik darstellte. Erst im späteren Verlauf des Projekts wurden Maßnahmen zur besseren Verteilung von Wissen eingeführt, aber der späte Beginn verdeutlichte, wie stark das Projekt in seinen Anfangsphasen durch fehlende kollektive Kompetenz gebremst wurde.
+
+Um diese Probleme zu vermeiden, hätte das Team von Anfang an eine aktivere Einforderung von Wissenstransfer betreiben sollen. Regelmäßige Wissensaustausch-Sessions, Pairing oder verpflichtende Dokumentationen hätten dazu beitragen können, das Wissen breiter zu verteilen, Abhängigkeiten zu reduzieren und die Transparenz im Team zu erhöhen. Eine frühere und konsequentere Umsetzung solcher Maßnahmen hätte die Produktivität und Eigenverantwortung des gesamten Teams deutlich gestärkt.
 
 
 

@@ -87,9 +87,9 @@ Mehr dazu im Architecture Notebook
 === Hardwareanforderungen
 
 --
-* CPU: ?
-* RAM: ?
-* Festplatte: ?
+* CPU: 2 Kerne
+* RAM: 4 GB
+* Festplatte: 30 GB
 * Netzwerk: stabile Internetverbindung
 --
 
@@ -107,17 +107,31 @@ Mehr dazu im Architecture Notebook
 
 === Bereitstellung der Software
 
-* Über Docker?
+docker-compose.yml
 
-=== Konfiguration des Systems
+```yaml
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=test@htw.de
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=learndb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
-?
+volumes:
+  pgdata:
+```
 
 === Voraussetzungen für die Nutzung
 
 --
 * Browser-Einstellungen: Cookies und Local Storage erlaubt
-* ?
+* Docker muss installiert sein
 --
 
 == Systembetreuung
@@ -150,13 +164,13 @@ docker compose logs backend
 Beispiel:
 
 ```bash
-docker exec db pg_dump -U test@htw.de learndb > backup.sql
+docker exec db pg_dump -U [username] learndb > backup.sql
 ```
 
 **Wiederherstellung**
 
 ```bash
-docker exec -i db psql -U test@htw.de learndb < backup.sql
+docker exec -i db psql -U [username] learndb < backup.sql
 ```
 
 === Test & Wartung

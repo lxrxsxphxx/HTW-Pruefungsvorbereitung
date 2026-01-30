@@ -104,8 +104,8 @@ const url = "http://localhost:8000/api/questions/";
  * @description Construct a JSON Object which contains all the important information of the entered question.
  * This information includes the question with all the question-parameters, the URL the question will be sent to and the type of question (multiple_choice).
  * @param {String} question_text the actual question
- * @param {list[String]} entered_answers the list of entered answers
- * @param {list[Number]} correct_answers a list that contains the numbers of all correct answers
+ * @param {Array[String]} entered_answers the list of entered answers
+ * @param {Array[Number]} correct_answers a list that contains the numbers of all correct answers
  * @returns {JSON} the json Object
  */
 function makeJson(question_text, entered_answers, correct_answers) {
@@ -134,8 +134,8 @@ function makeJson(question_text, entered_answers, correct_answers) {
 /**
  * @description Transfer a question to the parent-view in the JSON-format via an emitted event.
  * @param {String} question_text the actual question
- * @param {list[String]} entered_answers the list of entered answers
- * @param {list[Number]} correct_answers a list that contains the numbers of all correct answers
+ * @param {Array[String]} entered_answers the list of entered answers
+ * @param {Array[Number]} correct_answers a list that contains the numbers of all correct answers
  * @returns {null}
  */
 function transferQuestion(question_text, entered_answers, correct_answers){

@@ -181,7 +181,7 @@ async function saveLearningSet(){
  * @description Post a JSON Object to the given url.
  * @param {JSON} json the JSON Object to be posted
  * @param {String} url the URL to post the JSON to
- * @returns {null/JSON} the data from the POST-response
+ * @returns {null|JSON} the data from the POST-response
  */
 async function postJsonToURL(json, url){
     const json_str = JSON.stringify(json);
@@ -273,7 +273,7 @@ function learningSetDone(){
 /**
  * @description Hide the entry-views and clear their inputted values.
  * Set one of the Views visible again.
- * @param {String/null} choice if not null determines the view that will be set visible again
+ * @param {String|null} choice if not null determines the view that will be set visible again
  * @returns {null}
  */
 function hideEntryViews(view){

@@ -23,6 +23,12 @@ let visible = ref(false);
 let text = ref('');
 let buttons = ref([]);
 
+/**
+ * @description Set the text and Buttons to the provided values.
+ * @param {String} new_text The text to be shown at the top of the popup.
+ * @param {Array[String]} new_buttons The Strings to be shown in the buttons.
+ * @returns {null}
+ */
 function setTextAndButtons(new_text, new_buttons){
     text = new_text;
     buttons = new_buttons;

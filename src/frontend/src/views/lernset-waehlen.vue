@@ -13,11 +13,12 @@
     <div class="Content-Container">
       <div class="module-container" v-for="module in modules" :key="module.module_id">
         <h2>{{ module.module_name }}</h2>
-        <div class="scroll-row" v-for="set in module.learning_sets" :key="set.id">
-          <RouterLink :to="'/lernen/' + set.id">
-            <LernsetCard :title="set.name"/>
-          </RouterLink>
-            
+        <div class="scroll-row">
+          <template v-for="set in module.learning_sets" :key="set.id">
+            <RouterLink :to="'/lernen/' + set.id">
+              <LernsetCard :title="set.name"/>
+            </RouterLink>
+          </template>  
         </div>
       </div> <!--scroll section ende-->
     </div>

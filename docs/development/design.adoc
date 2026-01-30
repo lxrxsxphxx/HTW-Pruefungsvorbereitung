@@ -105,6 +105,9 @@ Dokumentiert werden hier die Models aus xref:../src/backend/models.py[models.py]
 ** learning_sets (list[LearningSet]): Die Lernsets, die es zu diesem Modul gibt.
 
 * *ModuleResponse:* Repräsentiert ein Modul. Objekte dieser Klasse werden genutzt, wenn inhaltliche Attribute zu Modulen angefragt werden und Beziehungsattribute nicht benötigt werden. Erbt von *ModuleBase*.
+** id (int): Die eindeutige ID des Moduls.
+** learning_sets (list[LearningSetResponse]): Die Lernsets, die zu diesem Modul gehören.
+
 
 === Models zu Nutzern
 * *UserBase:* Hält die Basisinformationen, um einen Nutzer zu beschreiben.

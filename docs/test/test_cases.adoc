@@ -24,7 +24,7 @@ Installation und Benutzung sind in der xref:../../src/testing/README.md[README] 
 Für die Integrationstests werden verschiedene Anfragen an die Endpunkte der API geschickt und Asserts auf den Antworten überprüft. Bei Änderungen in der Datenbank folgen noch GET-Requests, die den Erfolg der Request prüfen sollen.
 
 === Vorbereitung
-Seit dem Einbauen der Loginfunktion muss ein Nutzer sich erst einloggen, bevor er mit den anderen Endpunkten interagieren kann. Damit die bisherigen Integrationstests also funktionieren muss álso gewährleistet werden, dass der Cookie, der einen eingeloggten Nutzer identifiziert, im Client vorhaben ist.
+Seit dem Einbauen der Loginfunktion muss ein Nutzer sich erst einloggen, bevor er mit den anderen Endpunkten interagieren kann. Damit die bisherigen Integrationstests also funktionieren muss gewährleistet werden, dass der Cookie, der einen eingeloggten Nutzer identifiziert, im Client vorhaben ist.
 
 ===== initial_login
 POST-Request, die einen Loginversuch beim Standardnutzer durchführt.

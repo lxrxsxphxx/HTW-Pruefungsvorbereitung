@@ -1,0 +1,26 @@
+@startuml
+
+title Klassenkonzept
+
+interface SQLModel <<Basisklasse>> {
+  Basisattribute für ORM
+}
+
+class NameBase{
+    grundlegenste Attribute,
+    um das Objekt zu beschreiben
+}
+class Name{
+    alle in der Datenbank
+    gespeicherten Attribute
+}
+class NameResponse{
+    relevante Daten für Interaktion mit Objekt,
+    nur ausgewählte Beziehungsattribute
+}
+
+SQLModel <|-- NameBase
+NameBase <|-- Name
+NameBase <|-- NameResponse
+
+@enduml

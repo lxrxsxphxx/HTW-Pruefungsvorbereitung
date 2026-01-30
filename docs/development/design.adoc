@@ -1,8 +1,8 @@
 = Design: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Lara-Sophie Liebold <s86444@htw-dresden.de>; Philipp Burkhardt <s87197@htw-dresden.de>; Tobias Kroll <s87094@htw-dresden.de>; Marius Thomas Hoffmann <s86306@htw-dresden.de>; Johann Schöley <s86438@htw-dresden.de>; Frederic Niklas Egle <s86431@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
-// Platzhalter für weitere Dokumenten-Attribute
+:plantumlsdir: plantuml
 
 
 == Zweck
@@ -10,9 +10,27 @@ Dieses Dokument beschreibt wesentliche Entwurfsentscheidungen auf Ebene der Komp
  
 == Ausgewählte Sichten
 //Entwurfsklassendiagramme, Sequenzdiagramme
+=== Grundlegendes Klassenkonzept
+Dieses Diagramm veranschaulicht das grundlegende Konzept der verschiedenen Klassentypen.
+
+[plantuml, "{plantumlsdir}/class_hierarchy",svg]
+....
+include::{plantumlsdir}/class_concept.puml[]
+....
+
+=== Klassenhierarchie
+Dieses Diagramm veranschaulicht die Hierarchie bzw die Vererbungsbeziehungen zwischen den einzelnen Klassen aus der xref:../src/backend/models.py[models.py]
+
+[plantuml, "{plantumlsdir}/class_hierarchy",svg]
+....
+include::{plantumlsdir}/class_hierarchy.puml[]
+....
+
+=== ER-Modell
+Auf ein Entity-Relationship-Modell, was die Datenbank beschreibt, wird verzichtet, da dieses sich aus dem ORM ergibt und nicht von den Entwickelnden umgesetzt werden muss.
 
 == Datenmodell
-Dokumentiert werden hier die Models aus _models.py_. Die Models sind Klassen, die vom verwendeten ORM benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
+Dokumentiert werden hier die Models aus xref:../src/backend/models.py[models.py]. Die Models sind Klassen, die vom verwendeten ORM benutzt werden. Manche von ihnen werden als Tabelle in der Datenbank gespeichert. Wenn eine Klasse von einer anderen Klasse erbt, werden die geerbten Attribute nicht extra angegeben.
 
 === Models zu Karteikarten
 
@@ -143,14 +161,14 @@ Die hier aufgeführten Klassen dienen der Bündelung von Daten. Sie werden nicht
 ** passwd (String): Das Klartextpasswort, das zum Nutzernamen gehört.
 
 == Schnittstellen
-Eine detailierte, interaktive Dokumentation durch Swagger kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern die Anfragen erfolgreich abgelaufen sind, ist der HTTP-Statuscode der Antwort 200. Es ist ratsam, jede Antwort darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
+Eine detailierte, interaktive Dokumentation durch Swagger kann auf dem API Server im development mode (siehe /src/backend/README.md) unter /docs gefunden werden. Sofern eine Request erfolgreich abgelaufen ist, ist der HTTP-Statuscode der Response 200. Es ist ratsam, jede Response darauf zu überprüfen. Die hier folgenden aufgeführten Rückgabewerte der einzelnen Funktionen gelten für den Erfolgsfall.
 
 === Begriffsdefinition
-* *body*: benötigter Inhalt im Body der HTTP-Request. Vor allem relevant für *POST* und *PUT* Anfragen.
+* *body*: benötigter Inhalt im Body der HTTP-Request. Vor allem relevant für *POST* und *PUT* Requests.
 * *path variable*: Die Pfadvariable, die in jedem Fall mit angegeben werden muss.
-** Bsp.: Will man eine Karteikarte der ID 4 löschen, schickt man eine *DELETE* Anfrage an den Endpoint __/api/cards/4__.
-* *returns*: Beschreibung des Rückgabewertes der Anfrage. Der Rückgabewert ist im Body der Antwort zu finden.
-* *variable*: Variable, die der Anfrage mitgegeben wird. Diese kann optional sein, in diesem Fall wird das mit angegeben.
+** Bsp.: Will man eine Karteikarte der ID 4 löschen, schickt man eine *DELETE* Request an den Endpoint __/api/cards/4__.
+* *returns*: Beschreibung des Rückgabewertes der Request. Der Rückgabewert ist im Body der Response zu finden.
+* *variable*: Variable, die der Request mitgegeben wird. Diese kann optional sein, in diesem Fall wird das mit angegeben.
 ** Anwendung: Variablen werden ähnlich wie Pfadvariablen mit in den Pfad geschrieben. Sie stehen jedoch am Ende, außerdem sieht ihre Angabe etwas anders aus: "<Path>/?<variable name>=<value>".
 
 === Wichtige Hinweise

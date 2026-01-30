@@ -1,0 +1,57 @@
+@startuml
+
+title Vererbungsbeziehungen
+
+interface SQLModel <<Basisklasse>> {
+  Basisattribute für ORM
+}
+
+class CardBase
+class Card
+class CardResponse
+
+class QuestionBase
+class Question
+class QuestionResponse
+
+class LearningSetBase
+class LearningSet
+class LearningSetResponse
+
+class UserBase
+class User
+class UserResponse
+
+class CourseBase
+class Course
+class CourseResponse
+
+class ModuleBase
+class Module
+class ModuleResponse
+
+SQLModel <|-- CardBase
+SQLModel <|-- QuestionBase
+SQLModel <|-- LearningSetBase
+SQLModel <|-- UserBase
+SQLModel <|-- CourseBase
+SQLModel <|-- ModuleBase
+CardBase <|-- Card
+CardBase <|-- CardResponse
+
+QuestionBase <|-- Question
+QuestionBase <|-- QuestionResponse
+
+LearningSetBase <|-- LearningSet
+LearningSetBase <|-- LearningSetResponse
+
+UserBase <|-- User
+UserBase <|-- UserResponse
+
+CourseBase <|-- Course
+CourseBase <|-- CourseResponse
+
+ModuleBase <|-- Module
+ModuleBase <|-- ModuleResponse
+
+@enduml

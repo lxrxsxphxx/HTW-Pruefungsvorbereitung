@@ -9,7 +9,7 @@ include::../_includes/default-attributes.inc.adoc[]
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems HTW-Prüfungsvorbereiter überblicksartig zu beschreiben. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System {project-system-name} diese Bedarfe erfüllt, werden durch User Stories im Product Backlog sowie dem UX-Konzept beschrieben.
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an die Lernplattform aus Sicht der Nutzer zu beschreiben und ein gemeinsames Verständnis der Inhalte zu schaffen.
+Diese Vision hat den Zweck, ein gemeinsames Verständnis über Ziel, Nutzen und Ausrichtung des Systems HTW-Prüfungsvorbereiter zu schaffen und als Leitlinie für die weitere Projektarbeit zu dienen.
 
 === Gültigkeitsbereich (Scope)
 Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, hochschulspezifische und modulbezogene Lerninhalte zu nutzen, um die Prüfungsvorbereitung gezielt zu unterstützen. 
@@ -22,21 +22,22 @@ Siehe <<#glossary, Glossar>>.
 //Siehe <<./glossary.adoc#glossary, Glossar>>.
 
 === Referenzen
-Scrum Guide (hochgeladene pdf's)
+Scrum Guide (hochgeladene pdfs)
 
-ISO 9241 (Usability-Standards)
-
-Thema2_HTW-Prüfungsvorbereiter.pdf
+Aufgabenstellung zum Projekt "Thema2_HTW-Prüfungsvorbereiter"
 
 Vorlesungsskript Software Engineering I I152
 
 Vorlesungsskript Software Engineering II I151
 
+Miro-Board (https://miro.com/app/board/uXjVIClMOm0=/)
+
 == Positionierung
 
 === Fachliche Motivation
-Die Prüfungsvorbereitung erfolgt auf vielen Lernplattformen über inoffizielle und verstreute Quellen wie Altklausuren, Übungen oder Zusammenfassungen.
-Studierende müssen relevante Materialien eigenständig suchen und deren Aktualität, Relevanz sowie fachliche Zuordnung selbst einschätzen, was häufig zu Unsicherheit und ineffizientem Lernaufwand führt.
+Die Prüfungsvorbereitung von Studenten basiert häufig über inoffizielle und verstreute Quellen wie veraltete Altklasuren, Übungen oder Zusammenfassungen, die über allgemeine Lernplattformen sowie Kommunikationskanäe wie Whatsapp oder Discord geteilt werden.
+
+Studierende müssen relevante Materialien eigenständig suchen und deren Aktualität, Relevanz sowie fachliche Zuordnung selbst einschätzen, Dies führt häufig zu Unsicherheit, hohem Rechercheaufwand und einer ineffizienten Prüfungsvorbereitung.
 
 Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene Struktur für die HTW Dresden sowie zugehörige Lernsets eine strukturierte, transparente und effiziente Prüfungsvorbereitung zu ermöglichen.
 
@@ -57,19 +58,6 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 == Stakeholder Beschreibungen
 
 === Zusammenfassung der Stakeholder
-// Unklare Trennung der Rollen
-// Die Rollen Dozierende und Tutor\:in/Assistierende überschneiden sich stark, beide helfen den Studierenden, beide sind irgendwie inhaltlich involviert.
-
-// Widersprüchliche / unrealistische Verantwortlichkeiten
-// Dozierende werden hier als stark operative User beschrieben ("Validierung, Lernempfehlungen, Rechtvergabe"), was in der Realität vermutlich nicht passieren wird.
-
-// Admin-Rolle sehr technisch gehalten
-// Diese Rolle ist okay, aber die Ziele könnten nutzerorientierter formuliert sein
-
-// Ziele zu allgemein
-// Viele Ziele sind eher Allgemeine Ziele. Hier könnte man nutzungsnähere Ziele formulieren
-
-
 
 [%header, cols="1,3,3"]
 |===
@@ -81,7 +69,7 @@ Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene
 
 | Dozierende / Tutor:innen / Assistierende
 | Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden
-| Sorgen durch ihre fachliche Expertise für einen Mehrwert der Lernsets 
+| können optional durch ihre fachliche Expertise zu einem Mehrwert der Lernsets beitragen, z. B. durch das Bereitstellen von Materialien oder inhaltliche Hinweise.
 
 
 | Admin
@@ -117,11 +105,21 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 [%header, cols="4,1,4,1"] 
 |=== 
 | Bedarf | Priorität | Features / Funktionen | Geplantes Release 
-| Übersichtliche Organisation von Lerninhalten | Hoch | Zuordnung von Lerninhalten zu den Studiengängen und Modulen der HTW Dresden.| mvp / 6.Sprint 
+
+| Grundsätzliches Lernen und Wiederholen von Inhalten
+| Hoch
+| Bereitstellung von Lernsets mit Karteikarten und Multiple-Choice-Fragen zum    
+  eigenständigen Lernen.
+| mvp 
+
+| Übersichtliche Organisation von Lerninhalten 
+| Hoch 
+| Zuordnung von Lerninhalten zu den Studiengängen und Modulen der HTW Dresden.
+| 6.Sprint 
 
 | Prüfungsvorbereitung mit modulspezifischen Lerninhalten
 | Hoch | Bereitstellung strukturierter Lernsets passend zu Modulen.
-| mvp / 6.Sprint
+| 6.Sprint
 
 | Überblick über den Lernfortschritt
 | Hoch |  Visualisierung des Lernfortschritts zur Einschätzung des Lernbedarfs.
@@ -134,6 +132,12 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 | Motivation für langfristiges und effizientes Lernen
 | Mittel | Einsatz von motivierenden und lernunterstützenden Mechanismen für nachhaltiges Lernen.
 | -
+
+| Unterstützung durch fachlich qualifizierte Inhalte
+| Hoch
+| Möglichkeit zur Bereitstellung, Empfehlung oder Qualitätssicherung von Lerninhalten durch Dozierende oder Tutor:innen.
+| -
+
 |===
 
 

@@ -48,8 +48,8 @@ function buttonClicked(index){
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--light-menu);
-    color: var(--light-text-color);
+    background-color: var(--color-background-soft);
+    border: 2px solid var(--color-border-hover);
     text-align: center;
     padding: 0.5em;
     border-radius: 0.5em;
@@ -68,15 +68,11 @@ p {
     flex: 1 1 0;
     width: 100%;
     font-size: 1em;
-    background-color: var(--light-button);
     border: none;
     border-radius: 0.25em;
     white-space: nowrap;
     margin-top: 1em;
     cursor: pointer;
-}
-.button:hover {
-    background-color: var(--light-button-hover);
 }
 
 

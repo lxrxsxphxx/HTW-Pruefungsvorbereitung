@@ -1,15 +1,11 @@
 #learning-set-choice-body {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
-    color: var(--light-text-color);
     margin: 0;
     padding: 0 20px;
 }
 
 button {
     font-size: 1em;
-    background-color: var(--light-button);
-    color: var(--light-text-color);
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
@@ -18,23 +14,19 @@ button {
     border: 0;
     border-radius: 0.25em;
 }
-button:hover {
-    background-color: var(--light-button-hover);
-}
-button:active {
-    background-color: var(--light-button-active);
-}
 
 #learning-set-choice-header {
     border-radius: 10px;
     padding: 30px 40px;
+    padding-top: 0;
+    padding-bottom: 0;
     text-align: center;
     margin-bottom: 20px;
 }
 
 #learning-set-choice-header > h1 {
+    color: var(--color-heading);
     margin-top: -5px;
-    color: #ec852c;
     font-size: 32px;
     font-weight: bold;
     text-align: center;
@@ -47,6 +39,7 @@ button:active {
     height: auto;
 }
 #learning-set-entry-main > * {
+    overflow: hidden;
     margin: 0.25em;
     border-radius: 0.5em;
 }
@@ -59,8 +52,8 @@ button:active {
 }
 
 #quiz_name {
-    color: var(--light-text-color);
-    background-color: var(--light-input);
+    background-color: var(--color-background-mute);
+    color: var(--color-text);
     font-size: 1em;
     order: 2;
     flex: 1 1 0%;
@@ -70,8 +63,8 @@ button:active {
     margin-left: 1em;
 }
 #module {
-    color: var(--light-text-color);
-    background-color: var(--light-input);
+    background-color: var(--color-background-mute);
+    color: var(--color-text);
     font-size: 1em;
     order: 2;
     flex: 1 1 0%;
@@ -98,10 +91,12 @@ button:active {
     flex: 1 1 0%;
     max-width: calc(33.33% - 0.5em - 8px);
     height: 100%;
+    overflow: hidden;
 }
 
 #question_type {
-    background-color: var(--light-button);
+    background-color: var(--color-background-mute);
+    color: var(--color-text);
     font-size: 1em;
     border-radius: 0.25em;
     padding: 0.25em;
@@ -110,8 +105,10 @@ button:active {
 
 
 #entered_questions {
-    background-color: var(--light-aside);
+    background-color: var(--color-background-mute);
     border-radius: 0.5em;
+    height: 100%;
+    overflow-y: auto;
 }
 #entered_questions > h3 {
     padding: 0.5em;
@@ -122,10 +119,11 @@ button:active {
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    border-radius: inherit;
 
     padding: 0.2em;
 }
-.entered_question:hover {background-color: var(--light-aside-hover);}
+.entered_question:hover {background-color: var(--color-border-hover);}
 .question_text{
     flex: 1 1 0%;
     overflow: hidden;

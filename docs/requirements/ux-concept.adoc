@@ -15,344 +15,240 @@ In diesem Dokument werden die Benutzeroberflächen des Systems {project-system-n
 * Angaben über die Gestaltung der Benutzeroberfläche, z.B. Styling, Bedienbarkeit, ...
 
 == Personas
-//Struktur und Lesefluss:
-//Eine etwas klarere Unterteilung (z. B. nach Stakholder, und Name) könnte den Lesefluss verbessern und die Verständlichkeit der Personas erhöhen.
-//Wohnorte:
-//Die Wahl der Wohnorte wirkt momentan eher beliebig – eventuell könnten wir hier realistischere oder für die Nutzung der App relevantere Angaben wählen, oder Wohnorte ganz weglassen, falls sie keinen Mehrwert bieten.
-//Verhaltensvariablen:
-//Die Verhaltensvariablen scheinen bei allen Personas sehr ähnlich zu sein – vielleicht könnten wir diese stärker differenzieren oder besser an die jeweilige Persona anpassen, damit sie die Vielfalt der späteren Nutzer:innen besser abbilden.
-//Akzeptanzkriterien:
-//Akzeptanzkriterien gehören nicht in die Beschreibung der Persona – diese sollten besser im Kontext von User Stories definiert werden.
-//Studierende aus nicht-technischem Bereich:
-//Es könnte sinnvoll sein, auch eine Persona aus einem nicht-technischen Studiengang (z. B. Sozialwissenschaften, BWL, Design) einzubauen
-=== 1. Studierende: Isabell Berger
-[%hardbreaks]
-// Technologische Nutzung mit den Bedürfnissen und Zielen nicht konform
-*Leitspruch*: „Es ist nicht wichtig lange zu lernen, sondern effizient zu lernen.“
 
-*Demographie*
+=== Studierende
 
-*Alter:* 25
+==== Isabell Berger
 
-*Geschlecht:* weiblich
+**Alter:** 21
+**Studiengang:** Wirtschaftsinformatik (3. Semester)
+**Lebenssituation:** Wohnt in einer WG, arbeitet nebenbei 10 h/Woche im Büro
+**Technische Erfahrung:** gut, routiniert
 
-*Familienstand:* ledig
+===== Ziele & Motivation
 
-*Beruf:* Studentin der Wirtschaftsingenieurswesen, Werkstudentin bei Infineon
+* Prüfungen im ersten Versuch bestehen
+* Lernstoff klar strukturiert und nachvollziehbar aufbereitet haben
+* Lernzeit effizient nutzen
 
-*Verhaltensvariablen*
+===== Frustrationen & Probleme
 
-*Lernstil:* Strukturiert ——————⬤—— Spontan
+* Unübersichtliche Lernplattformen
+* Inhalte ohne klare Modulzuordnung
+* Zeitverlust durch schlecht formulierte Fragen
 
-*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+===== Lernverhalten
 
-*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
+* Lernt regelmäßig, nicht auf den letzten Drücker
+* Arbeitet mit Lernplänen & To-Do-Listen
+* Bevorzugt klare Lernziele pro Session
 
-*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+===== Erwartungen an die Plattform
 
-*Teamarbeit:* Unabhängig —⬤————— Kollaborativ
+* Klare Modulstruktur
+* Fortschrittsanzeige
+* Verlässliche, qualitativ geprüfte Inhalte
+* Keine Ablenkung durch unnötige Spielmechaniken
 
-*Technologische Nutzung:*
+===== Typisches Nutzungsszenario
 
-Nutzt Computer v. a. beruflich und im Studium (Recherche, Programmieren).
-Smartphone nur für Termine und Kommunikation.
-Aktiv auf Social Media, hohe Sensibilität für Datenschutz.
+Isabell lernt abends 45–60 Minuten für ein konkretes Modul, arbeitet gezielt Lernsets durch und überprüft ihren Fortschritt vor der Prüfung.
 
-*Bedürfnisse/Ziele:*
 
-Möchte kurze, interaktive Lernmodule, die effizientes Lernen fördern
+==== Max König
 
-Erwartet Gamification-Elemente als Motivation
+**Alter:** 21
+**Studiengang:** Medieninformatik (5. Semester)
+**Lebenssituation:** Wohnt allein, viele Nebenprojekte, unregelmäßiger Alltag
+**Technische Erfahrung:** sehr hoch
 
-Will nicht durch lange Lerneinheiten gebremst werden
+===== Ziele & Motivation
 
-*Hindernisse/Frustrationen:*
+* Prüfungen mit minimalem Aufwand bestehen
+* Lernen soll Spaß machen
+* Schneller Überblick statt Detailtiefe
 
-Frustriert, wenn Lernmodule monoton oder zu lang sind
+===== Frustrationen & Probleme
 
-Misstraut, wenn das System keine ausreichende Datenschutzsicherheit bietet
+* Lange und unverständliche Texte
+* Starre Lernpläne
+* Zu akademische Darstellung ohne Praxisbezug
 
-=== 2. Studierende: Max König
-[%hardbreaks]
+===== Lernverhalten
 
-*Leitspruch:* „Lernen heißt nicht nur Wissen anhäufen, sondern Zusammenhänge verstehen.“
+* Lernt impulsiv und oft kurzfristig
+* Springt zwischen Themen
+* Nutzt Lernphasen stark abhängig von Motivation
 
-*Demographie*
+===== Erwartungen an die Plattform
 
-*Alter:* 24
+* Kurze Quizformate
+* Belohnungen, Streaks oder Fortschrittsfeedback
+* Schneller Einstieg ohne lange Erklärungen
+* Mobile Nutzung zwischendurch
 
-*Geschlecht:* männlich
+===== Typisches Nutzungsszenario
 
-*Familienstand:* ledig
+Max lernt 2–3 Tage vor der Prüfung intensiv, nutzt Quizformate auf dem Handy und konzentriert sich auf prüfungsrelevante Kernfragen.
 
-*Beruf:* Student der Elektrotechnik, Teilzeitkraft in einem Ingenieurbüro
 
-*Verhaltensvariablen*
+==== Elsa Stein
 
-*Lernstil:* Strukturiert ———⬤——— Spontan
+**Alter:** 25
+**Studiengang:** Elektrotechnik (7. Semester)
+**Lebenssituation:** Pendelt, familiäre Verpflichtungen
+**Technische Erfahrung:** solide, aber vorsichtig
 
-*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
+===== Ziele & Motivation
 
-*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
+* Stoff wirklich verstehen, nicht nur auswendig lernen
+* Sicherheit vor Prüfungen gewinnen
+* Wissenslücken frühzeitig erkennen
 
-*Motivation:* Extern (Noten) ———⬤——— Intern (Interesse)
+===== Frustrationen & Probleme
 
-*Teamarbeit:* Unabhängig ———⬤——— Kollaborativ
+* LUnklare oder widersprüchliche Lerninhalte
+* Fehlende Erklärungen zu Lösungen
+* Zeitdruck kurz vor Prüfungen
 
-*Technologische Nutzung:*
+===== Lernverhalten
 
-Nutzt Laptop hauptsächlich für Simulationen, Programmieren und Recherche.
-Smartphone für Organisation und Kommunikation.
-Wenig aktiv auf Social Media, bevorzugt datenschutzfreundliche Apps.
+* Lernt frühzeitig, wiederholt Inhalte mehrfach
+* Nutzt gerne Karteikarten & Wiederholungsmodi
+* Bevorzugt ruhige, konzentrierte Lernumgebung
 
-*Bedürfnisse/Ziele:*
+===== Erwartungen an die Plattform
 
-Nutzerfreundliche Strukturierung der Lerninhalte
+* Wiederholungsfunktionen
+* Erklärungen zu richtigen und falschen Antworten
+* Verlässliche Inhalte
+* Klare Struktur und ruhiges Design
 
-Personalisierte Lernpfade und gezielte Prüfungsfragen
+===== Typisches Nutzungsszenario
 
-Verständnis komplexer Zusammenhänge erleichtern
+Elsa plant mehrere Wochen vor der Prüfung feste Lernzeiten ein, nutzt Lernsets wiederholt und prüft gezielt ihren Wissensstand.
 
-*Hindernisse/Frustrationen:*
+=== Lehrende
 
-Verliert Motivation bei irrelevanten Inhalten und unübersichtlicher Navigation
+==== Prof. Katrin Vogel
 
+**Alter:** 37
+**Fakultät:** Informatik/Mathematik
+**Technische Erfahrung:** hoch
 
-=== 3.Dozierende: Prof. Dr. Klaus Becker
-[%hardbreaks]
-*Leitspruch:* „Gute Vorbereitung ist der Schlüssel zum Erfolg.“
+===== Ziele & Motivation
 
-*Demographie*
+* Hohe fachliche Qualität der Lerninhalte sicherstellen
+* Studierende gezielt auf Prüfungen vorbereiten, ohne Inhalte zu verwässern
+* Einheitliche Standards in der Lehre wahren
 
-*Alter:* 52
+===== Frustrationen & Probleme
 
-*Geschlecht:* männlich
+* Inoffizielle Lernmaterialien mit fachlichen Fehlern
+* Prüfungsfragen, die den Stoff verzerren oder verkürzen
+* Hoher Zeitaufwand für Pflege von Zusatzmaterialien
 
-*Familienstand:* verheiratet
+===== Erwartungen an die Plattform
 
-*Beruf:* Professor für Psychologie
+* Klare Modul- und Lernset-Zuordnung
+* Möglichkeit zur Bereitstellung von Inhalten
+* Transparenz darüber, welche Inhalte Studierende nutzen
+* Keine inhaltliche Verfälschung durch Spielmechaniken
 
-*Verhaltensvariablen*
+===== Typisches Nutzungsszenario
 
-*Lernstil:* Strukturiert —⬤————— Spontan
+Prof. Vogel stellt vor Semesterbeginn offizielle Lernsets und Beispielaufgaben bereit, überprüft deren Aktualität und verweist in der Vorlesung gezielt auf die Plattform.
 
-*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
 
-*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
+==== Martin Lehmann
 
-*Motivation:* Extern (Noten) ———————⬤— Intern (Interesse)
+**Alter:** 33
+**Rolle:** Wissenschaftlicher Mitarbeiter
+**Fakultät:** Elektrotechnik
+**Technische Erfahrung:** mittel bis wenig
 
-*Teamarbeit:* Unabhängig ——————⬤— Kollaborativ
+===== Ziele & Motivation
 
-*Technologische Nutzung:*
+* Studierenden den Einstieg in komplexe Themen erleichtern
+* Lerninhalte praxisnah und verständlich vermitteln
 
-Nutzt den Computer hauptsächlich für Lehre und Forschung.
-Smartphone für E-Mails und Kalenderverwaltung.
 
-*Bedürfnisse/Ziele:*
+===== Frustrationen & Probleme
 
-Inhalte schnell und unkompliziert einpflegen
+* Große Leistungsunterschiede in den Gruppen
+* Wiederkehrende Verständnisprobleme
+* Fehlende Rückmeldung, ob Inhalte wirklich helfen
 
-Effiziente Prüfungsdurchführung ermöglichen
+===== Erwartungen an die Plattform
 
-*Hindernisse/Frustrationen:*
+* Einfache Erstellung von Lernsets und Quizfragen
+* Statistiken zu häufigen Fehlern
+* Möglichkeit, Inhalte schnell anzupassen
+* Niedrige Einstiegshürde ohne Schulungsaufwand
 
-Zeitaufwand für Erstellung und Pflege von Lernmaterialien
+===== Typisches Nutzungsszenario
 
-Skepsis gegenüber Qualität von Community-Inhalten
-
-
-
-=== 4.Tutor:in / Assistierende: Anna Schmidt
-[%hardbreaks]
-*Leitspruch:* „Gemeinsam lernen wir besser.“
-
-*Demographie*
-
-*Alter:* 26
-
-*Geschlecht:* weiblich
-
-*Familienstand:* in einer Beziehung
-
-*Beruf:* Wissenschaftliche Hilfskraft im Fachbereich Kryotechnik 
-
-*Verhaltensvariablen*
-
-*Lernstil:* Strukturiert ———⬤——— Spontan
-
-*Technologische Offenheit:* Skeptisch —————⬤— Begeistert
-
-*Kommunikationspräferenz:* Chat ———⬤——— E-Mail ———— Telefon
-
-*Motivation:* Extern (Noten) ——————⬤— Intern (Interesse)
-
-*Teamarbeit:* Unabhängig —⬤————— Kollaborativ
-
-*Technologische Nutzung:*
-
-Laptop und Smartphone für Studium und Arbeit.
-Erfahren im Umgang mit Lernplattformen und digitalen Tools.
-
-*Bedürfnisse/Ziele:*
-
-Effektive Unterstützung der Studierenden bei Prüfungsvorbereitung
-
-*Hindernisse/Frustrationen:*
-
-Zeitdruck durch parallele Aufgaben.
-
-
-=== 5. Admin: Markus Weber
-[%hardbreaks]
-*Leitspruch:* „Stabilität und Sicherheit stehen an erster Stelle.“
-
-*Demographie*
-
-*Alter:* 35
-
-*Geschlecht:* männlich
-
-*Familienstand:* verheiratet
-
-*Beruf:* IT-Administrator
-
-*Verhaltensvariablen*
-
-*Lernstil:* Strukturiert ———⬤——— Spontan
-
-*Technologische Offenheit:* Skeptisch —————⬤——— Begeistert
-
-*Kommunikationspräferenz:* Chat ——————⬤— E-Mail ———— Telefon
-
-*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
-
-*Teamarbeit:* Unabhängig ———————⬤— Kollaborativ
-
-*Technologische Nutzung:*
-
-Experte für Server- und Systemadministration.
-
-*Bedürfnisse/Ziele:*
-
-Einfache, wartbare Systemlösung ohne komplexe Eingriffe
-
-Stabilität im laufenden Betrieb
-
-*Hindernisse/Frustrationen:*
-
-Unsicherheit bezüglich Systemstabilität
-
-=== 6.HTW (Institution): Dr. Petra Wagner
-//Interesse an Noten:
-//Diese Persona hat wirklich keine Relevanz für Noten
-//Integration neuer Systeme:
-//Die Integration von neuen Systemen scheint für diese Persona nicht direkt relevant zu sein – eventuell passt dieses Thema eher zu einer technischen oder administrativen Persona
-[%hardbreaks]
-*Leitspruch:* „Exzellenz in Bildung und Lehre.“
-
-*Demographie*
-
-*Alter:* 45
-
-*Geschlecht:* weiblich
-
-*Familienstand:* verheiratet
-
-*Beruf:* Leiterin des Prüfungsamtes
-
-*Verhaltensvariablen*
-
-*Lernstil:* Strukturiert ——⬤—————— Spontan
-
-*Technologische Offenheit:* Skeptisch ———⬤——— Begeistert
-
-*Kommunikationspräferenz:* Chat —⬤—————— E-Mail ———— Telefon
-
-*Motivation:* Extern (Noten) —————⬤——— Intern (Interesse)
-
-*Teamarbeit:* Unabhängig ——————⬤— Kollaborativ
-
-*Technologische Nutzung:*
-
-Nutzt Computer für Verwaltungsaufgaben und Datenanalyse.
-
-*Bedürfnisse/Ziele:*
-
-Praktikable Lösung für Prüfungsprozess mit geringem Administrationsaufwand
-
-*Hindernisse/Frustrationen:*
-
-Begrenzte Zeit und Ressourcen
+Martin ergänzt seine Lehrveranstaltung während des Semesters um kurze Quizformate, analysiert typische Fehler und passt Übungen gezielt an.
 
 Bedenken zur Vollständigkeit und Nutzeranforderungserfüllung
 
 == Nutzungskontext
-//Zu technisch und MVP-lastig:
-//Der Nutzungskontext beschreibt überwiegend den technischen Stand und MVP-Abgrenzungen, eigentlich sollte er den realen Nutzungskontext der Zielgruppe im Alltag erklären (Was machen die Studierenden? In welcher Situation? Mit welchem Ziel?).
-//Wenig nutzerzentriert:
-//Der Fokus liegt momentan sehr stark auf der System- und Plattformbeschreibung, anstatt auf dem tatsächlichen Verhalten, den Bedürfnissen und der Umgebung der Nutzer:innen (z.B. wann, wo, warum lernen sie? Welche Hürden gibt es dabei?).
-//Redundanz & Aufblähung:
-//Viele Punkte wiederholen sich unnötig (z. B. "Lernen zu Hause, unterwegs, in Bibliotheken") – hier könnte man kürzer und klarer zusammenfassen, ohne dabei Informationen zu verlieren.
-//MVP-Abgrenzungen unnötig im Nutzungskontext:
-//Hinweise wie „nicht im MVP“ gehören besser in die Roadmap – im Nutzungskontext verwirren sie eher und lenken vom eigentlichen Verständnis der Nutzung ab.
-//Fehlende echte Nutzungsszenarien:
-//Es fehlt der Blick auf typische Lernsituationen:
-//z. B. "Vor der Vorlesung kurz Karteikarten lernen", "in der Bib mit Kommilitonen Quiz machen", "abends vor der Prüfung gezielt Modul XY durchgehen".
-//Solche konkreten Bilder helfen, den Nutzungskontext greifbarer zu machen.
-//Systemplattformen und Integration:
-//Dieser Teil ist zu detailliert für den Nutzungskontext – was Studierende bisher nutzen, könnte in den "bestehenden Hilfsmitteln" kurz erwähnt werden, aber nicht als technische Aufzählung.
-
 
 Der Nutzungskontext beschreibt, wie und unter welchen Bedingungen die Anwendung "HTW-Prüfungsvorbereiter" von den Zielgruppen verwendet wird.
 
-=== 1. Wer nutzt die Anwendung, und wie?
-Die Anwendung richtet sich in erster Linie an einzelne Studierende, die sich selbstständig auf Prüfungen vorbereiten. Sie nutzen das Tool, um gezielt für einzelne Module zu lernen, ihren Lernfortschritt zu verfolgen und Wissenslücken zu schließen. Die Nutzung erfolgt meist individuell, sowohl zuhause als auch unterwegs oder in der Hochschule.
+=== Zielgruppen und Nutzungssituationen
 
-*Typische Situationen:*
+Die Anwendung wird hauptsächlich von Studierenden genutzt, die sich eigenständig und modulbezogen auf Prüfungen vorbereiten. Sie dient als ergänzendes Werkzeug zum Vorlesungsbesuch und zu bestehenden Lernmaterialien.
 
-Kurz vor der Vorlesung: Studierende wiederholen auf dem Smartphone noch schnell ein paar Karteikarten, um vorbereitet in die Veranstaltung zu gehen.
+Studierende nutzen die Anwendung, um:
 
-Gemeinsam lernen: In der Bibliothek oder in Lerngruppen werden Quizfragen genutzt, um sich gegenseitig abzufragen und Wissen zu festigen.
+* Lerninhalte strukturiert zu wiederholen
+* Wissenslücken gezielt zu identifizieren
+* den eigenen Lernfortschritt einzuschätzen
+* Prüfungssituationen realistisch zu simulieren
 
-Abends vor der Prüfung: Studierende gehen gezielt schwierige Module oder Themenbereiche durch, um sich optimal vorzubereiten.
+Die Nutzung erfolgt überwiegend individuell, kann aber auch in Lerngruppen stattfinden, etwa beim gemeinsamen Bearbeiten von Quizfragen.
 
-=== 2. Wie lange und wie oft wird die Anwendung genutzt?
-*Die Nutzungsdauer ist flexibel und orientiert sich an den individuellen Lernbedürfnissen:*
+**Typische Nutzungsszenarien:**
 
-Kurze Lerneinheiten (5–15 Minuten): Für das Wiederholen einzelner Themen, z.B. in der Bahn oder zwischen Vorlesungen.
+* *Kurz vor einer Vorlesung:* Wiederholung zentraler Begriffe oder Formeln auf dem Smartphone
+* *In Lerngruppen:* Gegenseitiges Abfragen mit Quizformaten
+* *In der Prüfungsphase:* Fokussierte Wiederholung einzelner Module oder Themenbereiche
 
-Regelmäßige Lernphasen (15–45 Minuten): Für gezielte Übungseinheiten an Schwerpunktthemen.
+=== Nutzungsdauer und -häufigkeit
 
-Intensive Vorbereitung (bis zu 90 Minuten): Besonders in der Prüfungsphase, wenn viele Inhalte wiederholt werden müssen.
+Die Anwendung ist auf flexible Nutzungseinheiten ausgelegt, die sich in unterschiedliche Tagesabläufe integrieren lassen.
 
-Die Nutzungshäufigkeit variiert im Semesterverlauf: Anfangs wird die App sporadisch genutzt, vor Prüfungen steigt die Intensität deutlich an.
+* **Kurze Lerneinheiten (5–15 Minuten):**
+Zum schnellen Wiederholen einzelner Inhalte, z. B. auf dem Weg zur Uni
+* **Mittlere Lernphasen (15–45 Minuten):**
+Für gezielte Übungen und thematische Vertiefungen
+* **Längere Lerneinheiten (bis ca. 90 Minuten):**
+In intensiven Lernphasen kurz vor Prüfungen
 
+Die Nutzungshäufigkeit ist stark zeitabhängig:
+Während der Vorlesungszeit wird die Anwendung punktuell genutzt, in der Prüfungsphase steigt die Nutzungsintensität deutlich an.
 
-=== 3. In welchen Umgebungen wird gelernt?
-*Studierende nutzen die Anwendung in ganz unterschiedlichen Kontexten:*
+=== Lernumgebungen und Rahmenbedingungen
 
-Zuhause am Laptop, um konzentriert längere Lerneinheiten durchzuführen.
+Studierende lernen in sehr unterschiedlichen Kontexten, auf die die Anwendung Rücksicht nehmen muss:
 
-Unterwegs auf dem Smartphone, z.B. in Bus und Bahn oder in Wartezeiten.
+* **Zuhause** am Laptop oder Tablet für konzentriertes, längeres Lernen
+* **Unterwegs** auf dem Smartphone, z. B. in öffentlichen Verkehrsmitteln
+* **In der Hochschule**, etwa Lernräumen oder Bibliotheken
 
-In der Hochschule, etwa in Pausen zwischen Vorlesungen oder in Lernräumen und Bibliotheken.
+Die Anwendung ist so konzipiert, dass sie geräteunabhängig, übersichtlich und auch bei kurzen Nutzungsspannen effektiv einsetzbar ist.
 
-Die Anwendung ist so gestaltet, dass sie sich flexibel an verschiedene Endgeräte und Lernorte anpasst.
+=== Eingesetzte Hilfsmittel
 
-=== 4. Welche Hilfsmittel und Plattformen werden genutzt?
-*Studierende kombinieren digitale und analoge Hilfsmittel:*
+Der HTW-Prüfungsvorbereiter wird nicht isoliert genutzt, sondern ergänzt bestehende Lernmittel:
 
-Vorlesungsskripte, Mitschriften und Bücher als Basis.
+* Vorlesungsskripte, Mitschriften und Fachliteratur
+* Digitale Materialien wie PDFs oder Präsentationen
+* Altklausuren
 
-PDFs, Präsentationen und Lernplattformen der HTW zur Informationsbeschaffung.
+Die Anwendung bietet strukturierte, interaktive Lernformate die diese Materialien zusammenführen und gezielt auf Prüfungen ausrichten.
 
-Der Prüfungsvorbereiter ergänzt diese Materialien durch interaktive Lernformate wie Quizfragen und Karteikarten.
-
-=== 5. Integration mit anderen Systemen?
-*Im aktuellen Stand ist die Anwendung eigenständig nutzbar;*
-
-Studierende wählen ihre Module und Lerninhalte selbst aus. Für die Zukunft sind Integrationen mit bestehenden Hochschulsystemen (z.B. automatischer Import von Moduldaten) denkbar, stehen aber nicht im Vordergrund des aktuellen Nutzungskontexts.
 
 == Wireframes und Wireflow
 // Fügen Sie Wireframes als Bilder oder als Link (z.B. zu einem Miroboard) ein

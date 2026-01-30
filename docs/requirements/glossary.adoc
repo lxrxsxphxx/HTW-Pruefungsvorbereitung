@@ -12,6 +12,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 
 [%header]
 |===
+
 | Begriff | Definition und Erläuterung | Synonyme 
 | Studierende | Eine Person, die an der HTW Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
 
@@ -58,6 +59,7 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
+
 //
 | ECTS | European Credit Transfer and Accumulation System | Leistungspunkte
 | HTW Dresden | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
@@ -76,7 +78,6 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 [%header]
 |===
 | Bezeichnung | Definition | Format | Gültigkeitsregeln | Alias
-
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
 | username : Sting +
@@ -133,8 +134,6 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
   correct: Boolean
 | Multiple-Choice-Antwort ist genau einer Multiple-Choice-Frage zugeordnet.
 | Answer
-
-
 |===
 
 == Domänenmodell

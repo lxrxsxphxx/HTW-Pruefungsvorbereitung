@@ -14,7 +14,8 @@ router = APIRouter(
 )
 
 @router.post("/")
-def create_learning_set(learning_set: LearningSetBase, session: Session = Depends(get_session),
+def create_learning_set(learning_set: LearningSetBase,
+                        session: Session = Depends(get_session),
                         modul_id:int | None = None,
                         username:str = Depends(validate_jwt)) -> LearningSetResponse:
     """ 
@@ -60,13 +61,14 @@ def get_learning_sets(session: Session = Depends(get_session),
         return session.exec(select(LearningSet).where(LearningSet.module_id == modul)).all()
     return session.exec(select(LearningSet)).all()
 
-@router.get("/{learning_set_id}")
-def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_session),
+@router.get("/{id}")
+def get_single_learning_set(id:int,
+                            session: Session = Depends(get_session),
                             username:str = Depends(validate_jwt)) -> LearningSetResponse:
     """
     Get a single learning set by its id
     Args:
-        learning_set_id (int): the id of the learning set you're looking for
+        id (int): the id of the learning set you're looking for
         session (Session): the database session
         username (str): Username of the current user - extracted from jwt
         
@@ -74,13 +76,14 @@ def get_single_learning_set(learning_set_id:int,session: Session = Depends(get_s
         LearningSetResponse: The wanted learning set
     """
 
-    learning_set = session.get(LearningSet, learning_set_id)
+    learning_set = session.get(LearningSet, id)
     if not learning_set:
         raise HTTPException(status_code=404, detail="Learning set not found")
     return learning_set
 
 @router.delete("/{id}")
-def delete_learning_set(id: int, session: Session = Depends(get_session),
+def delete_learning_set(id: int,
+                        session: Session = Depends(get_session),
                         username:str = Depends(validate_jwt)):
     """
     Deletes a learning set from DB

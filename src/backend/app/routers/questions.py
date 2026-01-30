@@ -14,7 +14,9 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=QuestionResponse)
-def create_question(question: QuestionBase, answers: list[AnswerBase],learning_set_id:int,
+def create_question(question: QuestionBase,
+                    answers: list[AnswerBase],
+                    learning_set_id:int,
                     session: Session = Depends(get_session),
                     username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
@@ -50,7 +52,8 @@ def create_question(question: QuestionBase, answers: list[AnswerBase],learning_s
 
 
 @router.get("/")
-def read_questions(learning_set_id:int | None = None,session: Session = Depends(get_session),
+def read_questions(learning_set_id:int | None = None,
+                   session: Session = Depends(get_session),
                    username:str = Depends(validate_jwt)) -> list[QuestionResponse]:
     """
     Reads all questions from the database
@@ -69,7 +72,8 @@ def read_questions(learning_set_id:int | None = None,session: Session = Depends(
     return session.exec(select(Question)).all()
 
 @router.get("/{id}")
-def read_question(id: int, session: Session = Depends(get_session), 
+def read_question(id: int,
+                  session: Session = Depends(get_session),
                   username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
     Reads a single question by its id
@@ -89,7 +93,9 @@ def read_question(id: int, session: Session = Depends(get_session),
     return question
 
 @router.put("/{id}")
-def update_question(id: int, question: QuestionBase, session: Session = Depends(get_session),
+def update_question(id: int,
+                    question: QuestionBase,
+                    session: Session = Depends(get_session),
                     username:str = Depends(validate_jwt)) -> QuestionResponse:
     """
     update a question, but not its answers!
@@ -115,7 +121,8 @@ def update_question(id: int, question: QuestionBase, session: Session = Depends(
     return db_question
 
 @router.delete("/{id}")
-def delete_question(id: int, session: Session = Depends(get_session),
+def delete_question(id: int,
+                    session: Session = Depends(get_session),
                     username:str = Depends(validate_jwt)):
     """
     deletes a question
@@ -137,7 +144,9 @@ def delete_question(id: int, session: Session = Depends(get_session),
     return
 
 @router.put("/answers/{id}")
-def update_answer(id: int, answer: AnswerBase ,session: Session = Depends(get_session),
+def update_answer(id: int,
+                  answer: AnswerBase,
+                  session: Session = Depends(get_session),
                   username:str = Depends(validate_jwt)) -> AnswerResponse:
     """
     Updates an answer

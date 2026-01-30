@@ -1,0 +1,195 @@
+= Betriebsdokumentation
+
+== Ziel
+
+Diese Betriebsdokumentation richtet sich an Administratoren und Betreuer des Systems.
+Sie beschreibt wie der HTW-Prüfungsvorbereiter installiert, konfiguriert, betrieben und gewartet wird.
+
+Ziel ist es, das System anhand dieser Anleitung eigenständig in Betrieb nehmen, überwachen und bei Fehlern warten zu können.
+
+== Systemübersicht
+
+Der HTW-Prüfungsvorbereiter ist eine webbasierte Anwendung mit folgender Architektur:
+
+--
+* Frontend: Vue (Single Page Application)
+* Backend: FastAPI (RESTful API)
+* Datenbank: PostgreSQL
+* Deployment: Docker / Docker Compose
+* ORM: SQLModel
+* Testing: Bruno (API-Tests)
+--
+
+Mehr dazu im Architecture Notebook
+
+=== Projektstruktur
+
+```text
+.
+├── belegabgabe_se1
+├── docs
+│   ├── architecture
+│   ├── deployment
+│   ├── development
+│   ├── environment
+│   ├── project_management
+│   │   └── meeting_notes
+│   ├── requirements
+│   └── test
+└── src
+    ├── backend
+    │   └── app
+    │       └── routers
+    ├── database
+    ├── frontend
+    │   ├── imgs
+    │   ├── public
+    │   └── src
+    │       ├── assets
+    │       │   ├── icons
+    │       │   ├── img
+    │       │   └── styles
+    │       ├── components
+    │       │   └── icons
+    │       ├── router
+    │       └── views
+    └── testing
+        ├── reports
+        └── testing_backend
+            ├── Deleting
+            │   ├── Cards
+            │   ├── Learning Sets
+            │   └── Questions
+            ├── Getting
+            │   ├── Cards
+            │   ├── Learning Sets
+            │   └── Questions
+            ├── Posting
+            │   ├── Cards
+            │   ├── LearningSets
+            │   └── Questions
+            ├── preparation
+            └── Putting
+                ├── Cards
+                ├── Learning Sets
+                └── Questions
+```
+
+--
+* `docs/deployment` – Deployment-Informationen
+* `src/backend` – API-Logik
+* `src/database` – Datenbank-bezogene Dateien
+* `src/testing/testing_backend` – API-Tests mit Bruno
+--
+
+== Mindestanforderungen
+
+=== Hardwareanforderungen
+
+--
+* CPU: 2 Kerne
+* RAM: 4 GB
+* Festplatte: 30 GB
+* Netzwerk: stabile Internetverbindung
+--
+
+=== Softwareanforderungen
+
+--
+* Betriebssystem: uneingeschränkt
+* Docker: 24.x
+* Docker Compose: 2.x
+* PostgreSQL: 17
+* Browser: Aktuelle Version von Firefox, Chrome, ...
+--
+
+== Systemeinrichtung
+
+=== Bereitstellung der Software
+
+docker-compose.yml
+
+```yaml
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=test@htw.de
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=learndb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
+```
+
+=== Voraussetzungen für die Nutzung
+
+--
+* Browser-Einstellungen: Cookies und Local Storage erlaubt
+* Docker muss installiert sein
+--
+
+== Systembetreuung
+
+=== Fehlerdiagnosen
+
+**Logquellen**
+
+* Docker-Logs:
+
+```bash
+docker compose logs db
+```
+
+* Backend-Logs (FastAPI):
+
+```bash
+docker compose logs backend
+```
+
+=== Datensicherung & Wiederherstellung
+
+**Datensicherung**
+
+--
+* PostgreSQL-Daten werden im Docker-Volume `pgdata` gespeichert
+* Backup per `pg_dump` empfohlen
+--
+
+Beispiel:
+
+```bash
+docker exec db pg_dump -U [username] learndb > backup.sql
+```
+
+**Wiederherstellung**
+
+```bash
+docker exec -i db psql -U [username] learndb < backup.sql
+```
+
+=== Test & Wartung
+
+--
+* API-Tests erfolgen mit Bruno
+* Testsammlungen befinden sich unter:
+--
+
+```bash
+src/testing/testing_backend
+```
+
+CRUD-Operationen werden separat getestet:
+
+--
+* GET
+* POST
+* PUT
+* DELETE
+--
+

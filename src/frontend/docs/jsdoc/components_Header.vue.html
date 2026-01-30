@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Header.vue</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Header.vue</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+  &lt;header>
+    &lt;RouterLink to="/">
+      &lt;img v-if="dark_mode" src="@/assets/img/HtwLogo_white.png" alt="HtwLogo" />
+      &lt;img v-else src="@/assets/img/HtwLogo.png" alt="HtwLogo" />
+    &lt;/RouterLink>
+    &lt;div class="login-wrapper">
+      &lt;template v-if="!isLoggedIn">
+        &lt;button @click="openLogin">Login&lt;/button>
+      &lt;/template>
+      &lt;template v-else>
+        &lt;RouterLink to="/user" style="padding: 0px;">
+          &lt;div class="user-area">👤 {{ username }}&lt;/div>
+        &lt;/RouterLink>
+      &lt;/template>
+
+      &lt;LoginDialog v-if="showLogin" @login="handleLogin" @close="showLogin = false" />
+    &lt;/div>
+  &lt;/header>
+&lt;/template>
+
+&lt;script>
+import { ref } from 'vue';
+import LoginDialog from './LoginDialog.vue';
+
+/**
+ * @component Header
+ * @description Application header component with login/logout functionality and adaptive logo
+ * Manages user authentication state and displays user information
+ */
+export default {
+  name: 'Header',
+  components: { LoginDialog },
+  
+  /**
+   * Component data properties
+   * @returns {Object} Reactive data properties
+   * @property {boolean} showLogin - Controls visibility of login dialog
+   * @property {boolean} isLoggedIn - User authentication status
+   * @property {string} username - Currently logged in username
+   */
+  data() {
+    return {
+      showLogin: false,
+      isLoggedIn: false,
+      username: ''
+    };
+  },
+  
+  /**
+   * Lifecycle hook - checks authentication status on component mount
+   * Fetches user data from backend if valid session exists
+   */
+  mounted() {
+    fetch('http://localhost:8000/api/users/data', {
+      credentials: "include"
+    })
+      .then(response => {
+        if (response.status == 200) {
+          response.json().then(
+            data => {
+              this.username = data.name;
+              this.isLoggedIn = true;
+            }
+          )
+        }
+      })
+  },
+  
+  /**
+   * Component methods
+   */
+  methods: {
+    /**
+     * Opens the login dialog
+     * Displays modal overlay and prevents body scrolling
+     */
+    openLogin() {
+      this.showLogin = true;
+      document.body.classList.add('modal-open');
+    },
+    
+    /**
+     * Handles user login
+     * Sends credentials to backend and fetches user data on success
+     * @param {Object} credentials - User login credentials
+     * @param {string} credentials.email - User email address
+     * @param {string} credentials.password - User password
+     * @throws {Error} When login fails
+     */
+    handleLogin({ email, password }) {
+      fetch('http://localhost:8000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'accept': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          username: email,
+          passwd: password
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Login fehlgeschlagen');
+          }
+          return response.json();
+        })
+        .then(data => {
+          fetch('http://localhost:8000/api/users/data', {
+            credentials: "include"
+          })
+            .then(response => {
+              if (response.status == 200) {
+                response.json().then(
+                  data => {
+                    this.username = data.name;
+                    this.isLoggedIn = true;
+                  }
+                )
+              }
+            })
+          this.showLogin = false;
+          document.body.classList.remove('modal-open');
+        })
+        .catch(error => {
+          console.error('Login-Fehler:', error);
+          alert('Login fehlgeschlagen. Bitte prüfe deine Zugangsdaten.');
+        });
+    },
+    
+    /**
+     * Logs out the current user
+     * Clears user session and resets authentication state
+     * Note: Currently only clears frontend state, no backend logout call
+     */
+    logout() {
+      this.isLoggedIn = false;
+      this.username = '';
+      document.body.classList.remove('modal-open');
+    }
+  },
+  
+  /**
+   * Composition API setup function
+   * Handles dark mode detection and automatic theme switching
+   * @returns {Object} Reactive properties for template
+   * @property {Ref} dark_mode - Current dark mode state (boolean)
+   */
+  setup() {
+    const dark_mode = ref(true);
+    dark_mode.value = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      dark_mode.value = event.matches;
+    })
+
+    return { dark_mode }
+  }
+};
+&lt;/script>
+
+&lt;style scoped>
+/* Basis-Layout */
+header {
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.login-wrapper button {
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.login-form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.user-area {
+  color: var(--color-text);
+}
+
+
+
+/* Mittlere Bildschirme (Tablet) */
+@media screen and (min-width: 769px) and (max-width: 1079px) {
+  header {
+    padding: 25px 30px;
+  }
+
+  header img {
+    width: 220px;
+  }
+
+  .login-wrapper button {
+    padding: 9px 18px;
+    font-size: 1rem;
+  }
+}
+
+/* Große Bildschirme (Desktop &amp; größer) */
+@media screen and (min-width: 1080px) {
+  header {
+    padding: 30px 50px;
+  }
+
+  header img {
+    width: 250px;
+  }
+
+  .login-wrapper button {
+    padding: 10px 20px;
+    font-size: 1.05rem;
+  }
+}
+&lt;/style>
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-LernsetCard.html">LernsetCard</a></li><li><a href="module-LoginDialog.html">LoginDialog</a></li><li><a href="module-StartseiteView.html">StartseiteView</a></li><li><a href="module-modul-waehlen.html">modul-waehlen</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri Jan 30 2026 21:03:24 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

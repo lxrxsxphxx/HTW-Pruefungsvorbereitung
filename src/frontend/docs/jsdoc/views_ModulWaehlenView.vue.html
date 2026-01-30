@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/ModulWaehlenView.vue</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/ModulWaehlenView.vue</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+  &lt;div class="module-selection-container">
+    &lt;div class="sidebar">
+      &lt;div class="user-info-section" v-if="user">
+        &lt;div class="studiengang">{{ user.faculty || 'Informatik' }}&lt;/div>
+        &lt;div class="semester-info">{{ user.curr_semester }}. Semester&lt;/div>
+      &lt;/div>
+      
+      &lt;button 
+        class="sidebar-action-button" 
+        :class="{ 'is-remove': isAssigned(selectedModuleId) }"
+        :disabled="!selectedModuleId"
+        @click="handleAction"
+      >
+        {{ isAssigned(selectedModuleId) ? 'Abwählen' : 'Hinzufügen' }}
+      &lt;/button>
+    &lt;/div>
+
+    &lt;div class="semesters-grid">
+      &lt;div v-for="group in sortedSemesterGroups" :key="group.name" class="semester-card">
+        &lt;div class="semester-header">
+           &lt;h2 class="semester-title">{{ group.name }}&lt;/h2>
+        &lt;/div>
+        &lt;div class="module-list">
+          &lt;div 
+            v-for="module in group.modules" 
+            :key="module.id" 
+            class="module-item"
+            :class="{ 
+              'is-selected': selectedModuleId === module.id,
+              'is-assigned': isAssigned(module.id)
+            }"
+            @click="selectModule(module.id)"
+          >
+            &lt;div class="module-content">
+              &lt;h3>{{ module.name }}&lt;/h3>
+              &lt;p class="dozent">{{ module.lecturer }}&lt;/p>
+              &lt;div class="module-meta">{{ module.learning_sets?.length || 0 }} vorhandene Lernsets&lt;/div>
+            &lt;/div>
+            &lt;div class="selection-indicator">&lt;/div>
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="semester-footer-placeholder">&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/template>
+
+&lt;script>
+export default {
+  name: "ModulWaehlenView",
+  data() {
+    return {
+      user: null,
+      allModules: [],
+      userModules: [],
+      selectedModuleId: null
+    }
+  },
+  computed: {
+    /**
+     * Groups all available modules by their semester property.
+     * Returns an array sorted by a predefined order:
+     * 1. 1st Semester
+     * 2. 3rd Semester
+     * 3. 5th Semester
+     * 4. 2nd Semester
+     * 5. 4th Semester
+     * 6. Electives (Wahlpflicht Module)
+     */
+    sortedSemesterGroups() {
+      const groups = {};
+      this.allModules.forEach(module => {
+        const semesterKey = typeof module.semester === 'number' 
+          ? `${module.semester}. Semester` 
+          : module.semester;
+        
+        if (!groups[semesterKey]) {
+          groups[semesterKey] = [];
+        }
+        groups[semesterKey].push(module);
+      });
+      
+      const order = [
+        "1. Semester", "3. Semester", "5. Semester",
+        "2. Semester", "4. Semester", "6. Semester", "Wahlpflicht Module"
+      ];
+      
+      return order
+        .filter(key => groups[key])
+        .map(key => ({
+          name: key,
+          modules: groups[key]
+        }));
+    },
+    selectedModule() {
+      return this.allModules.find(m => m.id === this.selectedModuleId);
+    }
+  },
+  async mounted() {
+    await this.fetchData();
+  },
+  methods: {
+    /**
+     * Fetches the current user and list of all modules from the backend.
+     * Populates 'user' and 'allModules' data properties.
+     */
+    async fetchData() {
+      try {
+        const [usersRes, modulesRes, userModulesRes] = await Promise.all([
+          fetch("http://localhost:8000/api/users/data", { 
+            credentials: 'include',
+            headers: { 'accept': 'application/json' }
+          }),
+          fetch("http://localhost:8000/api/modules/", { 
+            credentials: 'include',
+            headers: { 'accept': 'application/json' }
+          }),
+          fetch("http://localhost:8000/api/users/modules", { 
+            credentials: 'include',
+            headers: { 'accept': 'application/json' }
+          })
+        ]);
+        
+        if (usersRes.ok) {
+          const user = await usersRes.json();
+          this.user = user;
+        }
+        if (modulesRes.ok) this.allModules = await modulesRes.json();
+        if (userModulesRes.ok) this.userModules = await userModulesRes.json();
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    /**
+     * Checks if the given module ID exists in the user's list of assigned modules.
+     * @param {number} moduleId - The ID of the module to check.
+     * @returns {boolean} True if the module is already assigned to the user.
+     */
+    isAssigned(moduleId) {
+      if (!this.user || !this.userModules) return false;
+      return this.userModules.some(m => m.id === moduleId);
+    },
+    selectModule(id) {
+      this.selectedModuleId = this.selectedModuleId === id ? null : id;
+    },
+    /**
+     * Handles the 'Add' or 'Remove' action for the selected module.
+     * - Determines if the action is DELETE (remove) or POST (add) based on current assignment.
+     * - Refreshs data on success.
+     */
+    async handleAction() {
+      if (!this.selectedModuleId || !this.user) return;
+      
+      const isRemoving = this.isAssigned(this.selectedModuleId);
+      const url = `http://localhost:8000/api/modules/${this.selectedModuleId}/user`;
+      const method = isRemoving ? 'DELETE' : 'POST';
+
+      try {
+        const res = await fetch(url, { 
+          method, 
+          credentials: 'include',
+          headers: { 'accept': 'application/json' }
+        });
+        if (res.ok) {
+          await this.fetchData();
+        }
+      } catch(e) {
+        console.error(e);
+      }
+    }
+  }
+}
+&lt;/script>
+
+&lt;style scoped>
+.module-selection-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 6rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  gap: 3rem;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 0;
+}
+
+.user-info-section {
+  text-align: left;
+}
+
+.studiengang {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.semester-info {
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.sidebar-action-button {
+  background-color: var(--htw-orange); 
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.1s, background-color 0.2s;
+  width: 70%;
+  margin-top: auto;
+  align-self: center;
+}
+
+.sidebar-action-button:hover:not(:disabled) {
+  background-color: var(--htw-orange);
+  transform: scale(1.02);
+}
+
+.sidebar-action-button:disabled {
+  background-color: var(--htw-orange);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sidebar-action-button.is-remove {
+  background-color: #d32f2f;
+}
+
+.sidebar-action-button.is-remove:hover:not(:disabled) {
+  background-color: #b71c1c;
+}
+
+.semesters-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .semesters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .module-selection-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex: none;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .user-info-section {
+    text-align: center;
+  }
+  
+  .sidebar-action-button {
+    max-width: 300px;
+  }
+  
+  .semesters-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .semesters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.semester-card {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.semester-header {
+  background-color: var(--htw-orange);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.semester-title {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.8rem;
+  background-color: #fff;
+  flex-grow: 1;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.module-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.module-item:hover {
+  border-color: #aaa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.module-item.is-selected {
+  background-color: #fff8e1;
+  border-color: var(--htw-orange);
+  box-shadow: 0 0 0 1px var(--htw-orange);
+}
+
+.module-item.is-assigned {
+  border-color: #76B900;
+  background-color: rgba(118, 185, 0, 0.05);
+}
+
+.module-content {
+  flex: 1;
+}
+
+.module-content h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.dozent {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.module-meta {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 0.2rem;
+}
+
+.module-item.is-assigned .selection-indicator::after {
+  content: '✓';
+  color: #76B900;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.semester-footer-placeholder {
+  min-height: 1rem;
+}
+&lt;/style></code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-LernsetCard.html">LernsetCard</a></li><li><a href="module-LoginDialog.html">LoginDialog</a></li><li><a href="module-StartseiteView.html">StartseiteView</a></li><li><a href="module-modul-waehlen.html">modul-waehlen</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri Jan 30 2026 21:03:24 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

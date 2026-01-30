@@ -199,7 +199,6 @@ function answerChoice(answer, index){
 
   if(chosen_answers.length > 0){  // One or more answers chosen
     setAction(ACTION_CHECK_ANSWERS);
-    
   }
   else{                           // no answers chosen
     if(end_of_quiz) setAction(ACTION_SHOW_STATISTIC);

@@ -301,10 +301,35 @@ Unsere Zusammenarbeit hat an mehreren Stellen nicht so funktioniert, wie wir es 
 
 === Wintersemester 2025/2026
 
-==== Erreichte Erfolge--
+==== Erreichte Erfolge
+
+===== Prozesse ausgereifter und Meetings effektiver
+
+Im Verlauf des Projekts konnten unsere Arbeitsprozesse deutlich verbessert werden. Meetings wurden strukturierter vorbereitet und zielgerichteter durchgeführt, wodurch Entscheidungen schneller getroffen und Aufgaben klarer verteilt werden konnten.
+
+===== Vorstellung der Ergebnisse im Weekly
+
+Die regelmäßige Präsentation der Zwischenergebnisse im Weekly hatte einen positiven Effekt auf die Teamdynamik. Fortschritte wurden sichtbar gemacht, was die Motivation im Team gesteigert und das gemeinsame Ziel stärker in den Fokus gerückt hat.
+
+===== Sinnvolle Rollenumverteilung
+
+Der Tausch der Product-Owner-Rolle erwies sich als sinnvoll. Die neue Rollenverteilung brachte neue Impulse, klarere Prioritäten und führte insgesamt zu einer spürbaren Steigerung der Motivation und Produktivität im Team.
 
 ==== Misserfolge & Herausforderungen
 
+===== Wenige neue Features durch hohen Refactoring- und Testing-Aufwand
+
+Ein großer Teil der verfügbaren Zeit floss in Refactoring und Testing. Obwohl diese Maßnahmen die Codequalität verbesserten, konnten dadurch nur wenige neue Features umgesetzt werden.
+
+===== Lange Lebensdauer von Pull Requests als Blocker
+
+Pull Requests blieben meist über einen längeren Zeitraum offen. Dies führte zu Abhängigkeiten, blockierte weitere Arbeitsschritte und wirkte sich stellenweise demotivierend auf das Team aus.
+
+===== Zu späte Anpassung der Rollenumverteilung
+
+Die Anpassung der Rollen erfolgte vergleichsweise spät im Projektverlauf. Dadurch gingen Potenziale verloren, die bei einer früheren Umverteilung bereits hätten genutzt werden können.
+
 ==== Fazit
 
+Insgesamt hat das Projekt gezeigt, wie wichtig klare Rollen, effiziente Prozesse und transparente Kommunikation für die Zusammenarbeit im Team sind. Trotz der Herausforderungen, insbesondere durch späte Rollenänderungen und zeitintensive Qualitätssicherungsmaßnahmen, konnten wir wertvolle Erfahrungen sammeln und unsere Arbeitsweise nachhaltig verbessern. Die gewonnenen Erkenntnisse bilden eine gute Grundlage für zukünftige Projekte und eine frühzeitigere, strukturiertere Teamorganisation
 

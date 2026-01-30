@@ -1,0 +1,83 @@
+= Reflexion
+
+Im Rahmen dieses Projekts arbeitete unser Team über einen längeren Zeitraum gemeinsam an der Planung, Entwicklung und Umsetzung einer Softwarelösung.
+Ziel war es dabei nicht nur, fachliche Anforderungen zu erfüllen, sondern auch agile Arbeitsweisen im Team praktisch anzuwenden. 
+Während des Projektverlaufs durchliefen wir verschiedene Phasen, in denen sich sowohl unsere Zusammenarbeit als auch unsere Prozesse kontinuierlich weiterentwickelten.
+
+Die folgende Reflexion betrachtet rückblickend die Zusammenarbeit im Team, die Organisation der Arbeit sowie getroffene Entscheidungen und deren Auswirkungen. 
+Dabei werden sowohl erreichte Erfolge als auch aufgetretene Herausforderungen analysiert, um daraus Erkenntnisse für zukünftige Projekte abzuleiten.
+
+
+Ein wesentlicher positiver Erfolg des Projekts war die kontinuierliche Weiterentwicklung und Reife unserer Arbeitsprozesse sowie der eingesetzten Methodiken. Über das Sommersemester 2025 hinweg wurden zunächst grundlegende agile Praktiken etabliert, die im Wintersemester 2025/2026 gezielt erweitert und verbessert wurden. Dieser iterative Ausbau der Methodik führte zu einer deutlich strukturierteren Zusammenarbeit und einer spürbaren Steigerung der Teamzufriedenheit.
+
+Bereits im Sommersemester arbeiteten wir mit inkrementeller Entwicklung, regelmäßigen Scrum-Meetings und einer zentralen Dokumentation über Discord. Diese Basis ermöglichte es, Fortschritte transparent zu machen und Anforderungen schrittweise umzusetzen. Ergänzend dazu unterstützten Praktiken wie Mob Programming bei komplexen Aufgaben sowie regelmäßige Produkt-Demonstrationen im Sprint Review den gemeinsamen Wissensaufbau und ein einheitliches Verständnis des Projektstands.
+
+Im Wintersemester wurden mehrere neue Methoden eingeführt, die sich als besonders wirkungsvoll erwiesen. Hervorzuheben ist insbesondere die Vorstellung der aktuellen Arbeitsergebnisse im Weekly, welche die Transparenz im Team deutlich erhöhte. Durch die Visualisierung und die Eigenverantwortung, z. B. das selbstständige Eintragen von erledigten Aufgaben in das Weekly-Form im Miro-Board, musste sich jedes Teammitglied vorab ernsthaft überlegen, welche Fortschritte es erzielt hatte. Dies führte zu starken Produktivitätssteigerungen im Weekly, da die Meetings gezielter, fokussierter und inhaltlich gehaltvoller verliefen. Zusätzlich förderten neue Tools wie Planning Poker eine aktive Mitarbeit bei Schätzungen und Diskussionen, wodurch die Teammitglieder stärker involviert wurden und die gemeinsame Arbeit produktivitätssteigernd wirkte.
+
+Auch die Einführung eines Branching-Modells verbesserte die Codequalität und strukturierte die Zusammenarbeit im Repository. In Kombination mit der weiterhin genutzten Versionsverwaltung über GitHub führte dies zu klareren Verantwortlichkeiten und einer nachvollziehbaren Entwicklungshistorie. Ergänzend dazu unterstützte der Einsatz ausgewählter Elemente der Core Protocols eine effizientere Entscheidungsfindung und trug zu einer offeneren Kommunikation im Team bei.
+
+Insgesamt zeigte sich, dass die bewusste Weiterentwicklung unserer Prozesse nicht nur die Qualität der Arbeitsergebnisse erhöhte, sondern auch einen maßgeblichen Einfluss auf Motivation, Eigenverantwortung, aktive Mitarbeit und Teamdynamik hatte. Die etablierten Methodiken bilden damit eine stabile Grundlage für den weiteren Projektverlauf und zukünftige gemeinsame Projekte.
+
+
+
+Ein weiterer positiver Erfolg des Projekts war die zunehmende Verteilung von Wissen innerhalb des Teams. Zu Beginn des Projekts war Fach- und Systemwissen stark auf wenige Personen konzentriert, was dazu führte, dass Entscheidungen und Umsetzungsschritte häufig von einzelnen Teammitgliedern abhängig waren. Dies führte teilweise zu Engpässen und verlangsamte die Arbeit, wenn diese Personen nicht verfügbar waren oder ihre Kapazitäten ausgelastet waren.
+
+Im Verlauf des Projekts konnte diese Situation jedoch deutlich verbessert werden. Durch bewusst geplante Wissensaustausch-Momente, z. B. innerhalb des Technik Meetings und über das Miro-Board, wurden Informationen zunehmend auf mehrere Teammitglieder verteilt. Auch wenn dieser Prozess zunächst spät im Projekt begann und noch nicht vollständig abgeschlossen ist, zeigte sich bereits eine deutliche Steigerung der kollektiven Wissensbasis, mehr Teammitglieder verstanden zentrale Zusammenhänge, konnten Aufgaben selbstständig bearbeiten und auf Fragen anderer Teammitglieder reagieren.
+
+Parallel dazu verbesserten sich Absprachen und die Planung von Umsetzungsschritten. Aufgaben und Anforderungen wurden gezielter besprochen, Prioritäten gemeinsam festgelegt und potenzielle Unsicherheiten vorab geklärt. Dies führte zu einer höheren Präzision in der Umsetzung, weniger Rückfragen und einer effizienteren Arbeit innerhalb der Sprints. Auch die Dokumentation von Entscheidungen im Miro-Board trug dazu bei, dass Wissen nicht nur im Gespräch, sondern nachvollziehbar festgehalten wurde, was die Transparenz im Team erhöhte und die Eigenverantwortung jedes Einzelnen stärkte.
+
+Insgesamt zeigte sich, dass die breitere Wissensverteilung und die präziseren Abstimmungen nicht nur die Qualität der Arbeit verbesserten, sondern auch die Teamdynamik positiv beeinflussten. Aufgaben konnten flexibler verteilt werden, Abhängigkeiten von einzelnen Personen wurden reduziert und die kollektive Kompetenz des Teams wuchs spürbar.
+
+
+
+Ein weiterer bedeutender Erfolg des Projekts war die gezielte Anpassung der Rollenverteilung, insbesondere der Wechsel der Product-Owner-Rolle. Anfangs zeigte sich, dass die ursprüngliche Rollenbesetzung nicht optimal funktionierte, Anforderungen wurden teilweise unklar kommuniziert, Entscheidungen verzögerten sich und dies wirkte sich auf die Motivation und Effizienz des Teams aus.
+
+Nach einem offenen Konfliktgespräch und konstruktiver Reflexion innerhalb des Teams wurde die Entscheidung getroffen, die Rolle des Product Owners zu wechseln. Trotz der späten Umsetzung dieses Wechsels hatten die Maßnahmen einen unmittelbaren positiven Effekt: Die Anforderungen wurden klarer formuliert, Prioritäten nachvollziehbarer und die Zusammenarbeit insgesamt strukturierter.
+
+Der Wechsel führte zudem zu einem deutlichen Motivationsboost im Team. Die Teammitglieder fühlten sich wieder stärker eingebunden, hatten klarere Orientierung und konnten eigenständiger an den Aufgaben arbeiten. Gleichzeitig förderte der Rollentausch eine neue Dynamik und zeigte, dass konfliktbewusste Kommunikation und flexible Rollenanpassung effektive Mittel sind, um die Teamleistung nachhaltig zu verbessern.
+
+Insgesamt verdeutlichte dieser Schritt, dass auch spät eingeführte Änderungen einen großen positiven Einfluss auf Zusammenarbeit, Motivation und die Qualität der Ergebnisse haben können, wenn sie transparent und lösungsorientiert umgesetzt werden
+
+
+
+
+
+
+Ein zentraler negativer Aspekt im Projektverlauf war die anfängliche Besetzung der Product-Owner-Rolle. Der ursprüngliche PO agierte leider sehr unstrukturiert, wodurch das Team über einen längeren Zeitraum stark beeinträchtigt wurde. Es fehlte eine klare Roadmap für die Entwicklung, und das Product Backlog war weder ausgereift noch durchdacht. Viele Ideen blieben unausgereift und verfolgten kein erkennbares Ziel, was dazu führte, dass das Team häufig ohne klaren Fokus arbeitete.
+
+Die fehlende Struktur äußerte sich auf mehreren Ebenen. Aufgaben waren oft unklar formuliert, Prioritäten wurden nicht transparent gesetzt und die Abstimmungen in Refinements waren ineffektiv. Entscheidungen wurden teilweise ad hoc getroffen oder gar nicht, sodass aneinander vorbeientwickelt wurde. Dies führte nicht nur zu Verzögerungen, sondern erschwerte auch die gemeinsame Planung von Sprints und die Nachverfolgung von Fortschritten erheblich.
+
+Darüber hinaus wirkte sich die Situation direkt auf die Motivation des Teams aus. Wenn die Arbeit weder klar priorisiert noch zielgerichtet war, entstand ein Gefühl von Orientierungslosigkeit. Teammitglieder waren gezwungen, eigene Annahmen über Prioritäten und Vorgehensweisen zu treffen, was zusätzlichen Abstimmungsaufwand erzeugte. Die fehlende Transparenz führte zu Unsicherheiten bei der Umsetzung und zu Frustration, da Fortschritte oft nicht messbar oder nachvollziehbar waren.
+
+Dieser Zustand machte deutlich, wie stark die Qualität der Rollenbesetzung die Effektivität eines Teams beeinflussen kann. Die unstrukturierte Führung führte zu Ineffizienzen, blockierte Fortschritte und verhinderte eine zielgerichtete Weiterentwicklung des Produkts. Gleichzeitig zeigte sich hier ein Lernpotenzial. Ohne eine klar definierte, organisierte und reflektierte Rollenübernahme entstehen schnell Engpässe, die sich direkt auf Motivation, Teamdynamik und Produktqualität auswirken.
+
+
+
+
+Neben den Problemen durch die unstrukturierte Rollenbesetzung des Product Owners wurde das Projekt zusätzlich durch mangelhafte Teamkommunikation erschwert. Zu Beginn des Projekts gab es keine gezielten Maßnahmen zum Teambuilding, wodurch die Zusammenarbeit noch nicht gefestigt war. Die Teammitglieder kannten die Arbeitsweisen und Stärken der anderen nur unzureichend, was die Abstimmung von Aufgaben und die gemeinsame Problemlösung erschwerte.
+
+Die Kommunikation beschränkte sich oft auf formale Kanäle wie Discord oder Meetings, war jedoch häufig oberflächlich und wenig zielführend. Wichtige Informationen wurden nicht immer rechtzeitig geteilt, Nachfragen blieben teilweise unbeantwortet, und Diskussionen fanden selten auf einer klaren, lösungsorientierten Basis statt. Dies führte dazu, dass Missverständnisse aufkamen, Aufgaben unterschiedlich interpretiert wurden und Entscheidungen verzögert getroffen werden mussten.
+
+In Kombination mit der fehlenden Struktur des Product Owners führte dies zu einer geringen Motivation im Team. Ohne klare Orientierung, gemeinsame Ziele und erlebbare Fortschritte entstand ein Gefühl von Orientierungslosigkeit und Frustration. Die Teammitglieder waren oft unsicher, welche Arbeit wirklich Priorität hatte, wodurch Engagement und Eigeninitiative beeinträchtigt wurden. Gleichzeitig erschwerte die fehlende persönliche Bindung zwischen den Teammitgliedern eine offene und produktive Kommunikation, da Teammitglieder zögerlicher waren, Probleme oder Verbesserungsvorschläge anzusprechen.
+
+Dieses Zusammenspiel aus fehlender Struktur und unzureichender Kommunikation verdeutlichte, dass effektive Teamarbeit nicht nur von Rollenbesetzung, sondern auch von gelebter Kommunikation, Vertrauen und Motivation abhängt. Ohne gezielte Maßnahmen zur Förderung von Teamdynamik und klarer Informationsweitergabe können selbst technisch kompetente Teams in ihrer Produktivität und Effizienz stark eingeschränkt sein.
+
+
+
+Ein weiterer signifikanter negativer Aspekt im Projekt war die unzureichende Verteilung von Wissen innerhalb des Teams. Zu Beginn war Fach- und Systemwissen stark auf wenige Personen konzentriert. Diese Situation führte dazu, dass viele Entscheidungen und Umsetzungsschritte von einzelnen Schlüsselpersonen abhängig waren. Wenn diese Personen nicht verfügbar waren oder andere Aufgaben priorisieren mussten, entstand sofort ein Engpass, der die Weiterarbeit des Teams hemmte.
+
+Die ungleiche Wissensverteilung hatte mehrere negative Folgen. Zum einen konnten Teammitglieder, die weniger Einblick hatten, Aufgaben nur eingeschränkt eigenständig bearbeiten. Dadurch entstand eine hohe Abhängigkeit von einzelnen Experten, und das Team arbeitete häufig aneinander vorbeigerichtet, weil Verständnis für Zusammenhänge fehlte. Zum anderen führte die Konzentration von Wissen auf wenige Personen zu geringer Transparenz: andere Teammitglieder hatten keinen vollständigen Überblick über den Stand von Anforderungen, Code oder Entscheidungen.
+
+Auch die Abstimmung innerhalb des Teams wurde dadurch erschwert. Ohne eine gemeinsame Wissensbasis konnten Aufgaben, Prioritäten und Lösungen nicht immer effizient besprochen werden. Refinements und Sprintplanungen verliefen teilweise unstrukturiert, da viele Teammitglieder noch nicht ausreichend informiert waren, um fundierte Beiträge zu leisten. Dies führte zu Verzögerungen und zusätzlichen Rückfragen, die den Projektfortschritt hemmten.
+
+Darüber hinaus wirkte sich die ungleiche Wissensverteilung direkt auf die Motivation und Eigenverantwortung des Teams aus. Teammitglieder fühlten sich teilweise ausgeschlossen oder überfordert, weil sie sich nicht sicher waren, welche Entscheidungen sinnvoll waren oder wie ihre Arbeit in den Gesamtkontext passte. Gleichzeitig erhöhte dies den Druck auf die wenigen „wissenden“ Personen, was zu zusätzlicher Belastung und Stress führte.
+
+Insgesamt zeigte sich, dass die mangelnde Wissensverteilung ein zentrales Hindernis für Effizienz, Qualität und Teamdynamik darstellte. Erst im späteren Verlauf des Projekts wurden Maßnahmen zur besseren Verteilung von Wissen eingeführt, aber der späte Beginn verdeutlichte, wie stark das Projekt in seinen Anfangsphasen durch fehlende kollektive Kompetenz gebremst wurde.
+
+
+
+Rückblickend zeigt das Projekt deutlich, wie stark Struktur, Rollenklärung, Wissensverteilung und Kommunikation die Effizienz, Motivation und Zusammenarbeit eines Teams beeinflussen. Die anfänglichen Herausforderungen ein unstrukturierter Product Owner, unzureichende Teamkommunikation und eine ungleiche Wissensverteilung führten zu Verzögerungen, Orientierungslosigkeit und geringer Motivation.
+
+Durch gezielte Anpassungen, wie den Rollentausch, die Einführung klarer Prozesse, neue Praktiken wie Planning Poker, Visualisierung von Aufgaben und eine schrittweise Verteilung von Wissen, konnte das Team diese Probleme erfolgreich adressieren. Dies führte zu klareren Anforderungen, höherer Eigenverantwortung, besserer Transparenz und einer deutlichen Steigerung der Produktivität.
+
+Insgesamt hat das Projekt gezeigt, dass sowohl strukturierte Arbeitsprozesse als auch gelebte Teamdynamik entscheidend für den Projekterfolg sind. Die gewonnenen Erkenntnisse bilden eine solide Grundlage für zukünftige Projekte: Frühzeitige Rollenklärung, transparente Kommunikation und aktive Wissensverteilung sind zentrale Faktoren, um Motivation, Qualität und Effizienz nachhaltig zu sichern.

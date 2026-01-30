@@ -9,35 +9,19 @@ include::../_includes/default-attributes.inc.adoc[]
 In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der <Projektthema-Systems> definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
 
 == Begriffe
-//Übungsmodus und Blitz-Quiz:
-//Aktuell gibt es in unserem Konzept noch keinen Übungsmodus oder Blitz-Quiz – vielleicht sollten wir das nochmal gemeinsam klären, ob wir diese Features wirklich vorsehen möchten.
-//Push-Benachrichtigungen:
-//Push-Benachrichtigungen sind an sich keine täglichen Erinnerungen – hier wäre es gut, den Unterschied zwischen Funktion und technischer Umsetzung noch etwas klarer zu trennen.
-//Kollaboratives Lernen:
-//Die Beschreibung zum kollaborativen Lernen ist vielleicht noch etwas zu ausführlich – eventuell könnten wir das Ziel hier präziser und kürzer formulieren.
-//High Score:
-//Das Thema High Score haben wir bisher noch nicht genauer besprochen – eventuell ist es für unser Konzept noch gar nicht relevant oder kann später betrachtet werden.
-//Adaptiver Lernmodus / Lernalgorithmus:
-//Diese beiden Begriffe meinen vermutlich dasselbe – wir könnten sie vielleicht zusammenfassen.
-//Freitextfragen:
-//Freitextfragen sind vielleicht nicht der beste Lernmodus für unsere App – lass uns dazu gerne nochmal über alternative Lernformate sprechen.
-//Quiz-App:
-//Quiz App wirkt aktuell noch etwas allgemein für einen Glossareintrag – eventuell könnten wir hier eine genauere Definition überlegen oder dieses Wort entfernen.
-
-
 
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme 
-| Student | Eine Person, die an der Htw Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
+| Student | Eine Person, die an der HTW Dresden immatrikuliert ist und dort eine akademische Ausbildung bestrebt. |  Hochschüler |
 
- Dozierende | Lehrende Personen an der Htw Dresden, die Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt und Prüfungsleistungen bewerten. | Lehrende |
+ Dozierende | Lehrende Personen an der HTW Dresden, die Fachwissen in Vorlesungen, Seminare oder Übungen vermittelt und Prüfungsleistungen bewerten. | Lehrende |
 
- Tutor:innen | Studierende der HTW Dresden, die unter fachlicher Anleitung von Dozierenden Tutorien (begleitende Lehrveranstaltungen) durchführen und andere Studierende beim Lernen unterstützen. |  Studentische Hilfskraft |
+ Tutor:innen | Studierende der HTW Dresden, die unter fachlicher Anleitung von Dozierenden Tutorien (begleitende Lehrveranstaltungen) durchführen und andere Studierende beim Lernen unterstützen. |  - |
 
- HTW-Mitglied | Personen, die der HTW Dresden angehören und berechtigt sind, die Lernplattform zu nutzen. | Angehörige der HTW |
+ HTW-Mitglied | Personen, die der HTW Dresden angehören und berechtigt sind, die Lernplattform zu nutzen. Dazu zählen insbesondere Studierende sowie Dozierende, Tutor:innen und Assistierende. | Angehörige der HTW |
 
- Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, die mit einer Prüfung abgeschlossen wird. | Lehreinheit |
+ Modul | Ein Modul ist eine thematische Lerneinheit an der Uni, kann mit einer Prüfung abgeschlossen werden. | Lehreinheit |
 
  Studiengang | Ein strukturiertes Bildungsprogramm an Hochschulen, das durch Studien- und Prüfungsordnungen geregelt ist und zu einem berufsqualifizierenden akademischen Abschluss führt. | Studienprogramm |
 
@@ -76,19 +60,19 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 | Abkürzung | Bedeutung | Erläuterung
 //
 | ECTS | European Credit Transfer and Accumulation System | Leistungspunkte
-| HTW | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
+| HTW Dresden | Hochschule für Technik und Wirtschaft Dresden | Name der Hochschule
 | WiSe | Wintersemester | Winterhalbjahr eines Jahres
 | SoSe | Sommersemester | Sommerhalbjahr eines Jahres
 | B.Sc. | Bachelor of Science	| Ein akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
 | Dipl. | Diplom|  Ein traditioneller akademischer Grad, der in naturwissenschaftlichen und technischen Studiengängen verliehen wird.
 | M.Sc. | Master of Science	| Ein weiterführender akademischer Grad, der auf einem Bachelor-Studium aufbaut und in naturwissenschaftlichen und technischen Studiengängen erworben wird.
 | SWS	| Semesterwochenstunden | Eine Maßeinheit für den Umfang von Lehrveranstaltungen pro Semester.
-| PO | Prüfungsordnung	| Das Regelwerk, das die Anforderungen und Abläufe von Prüfungen festlegt.
+| LP | Leistungspunkte	| Ein Maß für den Workload eines Studierenden, basierend auf dem ECTS-System.
 | QIS | Qualitätssicherung in Studium und Lehre	| Ein System zur Verwaltung von Studienleistungen und Prüfungen an Hochschulen. | 
 |===
 
 == Verzeichnis der Datenstrukturen
-// Die Ausarbeitung der Datenstruktur wäre vermutlich besser von den Developern in Abstimmung mit dem Domänenmodell zu erstellen
+
 [%header]
 |===
 | Bezeichnung | Definition | Format | Gültigkeitsregeln | Alias
@@ -98,7 +82,7 @@ Lernaufwand |  Die investierten Ressourcen – primär Zeit, kognitive Energie u
 | username : Sting +
   passwort : String
 | Keine zusätzlichen formalen Vorgaben definiert.
-| Login / LoginData
+| LoginData
 
 | Benutzer
 | Registrierter Nutzer des Systems mit persönlichen Daten sowie Anmeldedaten.

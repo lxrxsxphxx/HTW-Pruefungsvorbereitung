@@ -1,5 +1,5 @@
-#mc-quiz-entry-body {
-    font-family: Arial, Helvetica, sans-serif;
+#index-cards-entry-body {
+    font-family: var(--standard-font-family);
     color: var(--light-text-color);
     width: 100%;
     margin-left: 0;
@@ -28,11 +28,11 @@ button {
 button:hover {background-color: var(--light-button-hover);}
 button:active {background-color: var(--light-button-active);}
 
-#mc-quiz-entry-main {
+#index-cards-entry-main {
     display: flex;
 }
 
-#mc-quiz-entry-main > * {
+#index-cards-entry-main > * {
     margin: 0.25em;
     border-radius: 0.5em;
 }
@@ -61,93 +61,16 @@ label {
 }
 
 .input-field {
+    font-family: var(--standard-font-family);
     color: var(--light-text-color);
     background-color: var(--light-input);
     font-size: 1em;
-    order: 2;
-    flex: 1 1 0%;
     width: 100%;
+    height: 5em;
     border: 0;
     border-radius: 0.25em;
-    margin-left: 1em;
+    resize: none;
 }
-
-.switch {
-    order: 3;
-    margin-left: 0.5em;
-    position: relative;
-    display: inline-block;
-    width: 2.5em;
-    height: 1.5em;
-}
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--light-red);
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 1em;
-    width: 1em;
-    left: 0.25em;
-    bottom: 0.25em;
-    background-color: white;
-    -webkit-transition: .2s;
-    transition: .2s;
-}
-
-input:checked + .slider {
-    background-color: var(--light-green);
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(1em);
-    -ms-transform: translateX(1em);
-    transform: translateX(1em);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 0.75em;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.tooltip {
-    visibility: hidden;
-    width: fit-content;
-    height: fit-content;
-    background-color: #ffffff;
-    color: #000;
-    text-align: center;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    left: 105%;
-}
-.slider.round:hover .tooltip {
-    visibility: visible;
-}
-
-
 #question {
     width: 75%;
 }
@@ -215,42 +138,10 @@ input:checked + .slider:before {
 #cancel_cancel {margin-left: 0.25em;}
 
 
-aside {
-    background-color: var(--light-aside);
-    order: 2;
-    flex: 1 1 0%;
-    max-width: calc(33.33% - 0.5em - 8px);
-}
-aside > h3 {
-    padding: 0.5em;
-    margin: 0;
-    text-align: left;
-}
-
-
-.entered_question {
-    display: flex;
-    flex-direction: row;
-
-    padding: 0.2em;
-}
-.entered_question:hover {background-color: var(--light-aside-hover);}
-.question_text{
-    flex: 1 1 0%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-wrap: nowrap;
-}
-
-.entered_question > button {
-    flex: 0 0 2em;
-    border-radius: 0;
-}
-
 
 @media (max-width: 1000px) {
-    #mc-quiz-entry-body {width: 100%;}
-    #mc-quiz-entry-main {flex-direction: column;}
+    #index-cards-entry-body {width: 100%;}
+    #index-cards-entry-main {flex-direction: column;}
     #input-container > div {width: 100%;}
     #question {width: 100%;}
     #control-button-container {

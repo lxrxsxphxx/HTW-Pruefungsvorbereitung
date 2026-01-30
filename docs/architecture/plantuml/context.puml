@@ -1,0 +1,17 @@
+@startuml
+!include <c4/C4_Context.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Kontextdiagramm für HTW Prüfungsvorbereiter
+
+Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
+Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
+
+System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studierenden sich für Prüfungen vorzubereiten, sich in Foren auszutauschen und Inhalte zu prüfen; ermöglicht Dozierenden Module zu verwalten, Lerninhalte einzustellen, zu überprüfen")
+
+Rel(student, vorbereiter, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
+Rel(doz, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+@enduml

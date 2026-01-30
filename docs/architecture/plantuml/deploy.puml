@@ -1,0 +1,12 @@
+@startuml
+actor Nutzer
+node "Docker Daemon" {
+    artifact Frontend
+    artifact Backend
+    database Database
+}
+
+Nutzer -- Frontend : HTTP
+Frontend -(0- Backend : REST API
+Backend -(0- Database : SQL
+@enduml

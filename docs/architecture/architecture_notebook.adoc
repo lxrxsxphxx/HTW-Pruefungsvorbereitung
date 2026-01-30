@@ -2,6 +2,7 @@
 Frederic_Niklas Egle <s86431@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
+:plantumldir: plantuml
 // Platzhalter für weitere Dokumenten-Attribute
 
 
@@ -96,21 +97,7 @@ Für zusätzliche Einsicht in die Datenbank steht ein Webinterface zur Verfügun
 .Kontext Diagramm
 [plantuml, "{diagramsdir}/Context", svg]
 ....
-!include <c4/C4_Context.puml>  
-
-'ref http://plantuml.com/stdlib
-!include <office/Users/user.puml>
-!include <office/Users/mobile_user.puml>
-
-title Kontextdiagramm für HTW Prüfungsvorbereiter
-
-Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
-Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
-
-System(vorbereiter, "HTW Prüfungsvorbereiter", "Ermöglicht Studierenden sich für Prüfungen vorzubereiten, sich in Foren auszutauschen und Inhalte zu prüfen; ermöglicht Dozierenden Module zu verwalten, Lerninhalte einzustellen, zu überprüfen")
-
-Rel(student, vorbereiter, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
-Rel(doz, vorbereiter, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+include::{plantumldir}/context.puml[]
 ....
 
 Das Kontext Diagramm zeigt die Beziehungen zwischen dem zu entwickelnden System und den Nutzergruppen "Studierende" und "Dozierende".
@@ -126,29 +113,7 @@ Das zu entwickelnde System interagiert nicht mit externen Systemen.
 .Container Diagramm
 [plantuml, "{diagramsdir}/Container", svg]
 ....
-!include <c4/C4_Container.puml>  
-
-'ref http://plantuml.com/stdlib
-!include <office/Users/user.puml>
-!include <office/Users/mobile_user.puml>
-
-title Containerdiagramm für HTW Prüfungsvorbereiter
-
-Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
-Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
-
-System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
-    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studierende und Dozierende über deren Browser bereit")
-    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
-    Container(api, "API App", "Python, FastAPI", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
-}
-
-Rel(student, spa, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
-Rel(doz, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
-
-
-Rel(spa, api, "nutzt", "JSON/HTTP")
-Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "SQLModel")
+include::{plantumldir}/container.puml[]
 ....
 
 Das Container Diagramm zeigt den internen Aufbau des zu entwickelnden Systems.
@@ -162,62 +127,37 @@ Die API Application wiederum kommuniziert mittels eines ORMs mit der Datenbank.
 Die Datenbank wird für die persistente Speicherung von Daten wie Karteikarten verwendet.
 
 === Components
-//Level 3 im C4-Modell
-.Component Diagram Backend
+.Component Diagramm Frontend
+[plantuml, "{diagramsdir}/Component_Frontend", svg]
+....
+include::{plantumldir}/components_frontend.puml[]
+....
+
+Das Component Diagramm des Frontends zeigt die Komponenten und welche von diesen auf die API Applikation zugreifen.
+Hierbei ist sichtbar, dass die Startseite selbst nur als Einstiegspunkt für den Nutzer dient und selbst nicht mit der API Applikation interagiert.
+Alle andern Komponenten verfolgen eine bestimmte Funktion, wie beispielsweise das erstellen von Lernsets oder das Lernen mit den Karteikarten.
+Diese Komponenten laden jeweils die nötigen Daten aus der API Applikation und stellen diese dann dem Nutzer bereit.
+
+.Component Diagramm Backend
 [plantuml, "{diagramsdir}/Component_Backend", svg]
 ....
-!include <c4/C4_Component.puml>  
-
-'ref http://plantuml.com/stdlib
-!include <office/Users/user.puml>
-!include <office/Users/mobile_user.puml>
-
-title Component Diagramm für HTW Prüfungsvorbereiter Backend
-
-System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
-    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studierende und Dozierende über deren Browser bereit")
-    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
-    Container_Boundary(api, "API App") {
-        Component(cards, "Cards API", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Karteikarten bereit")
-        Component(quiz, "Multiple Choice API", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Multiple Choice Fragen bereit")
-        Component(learning_set, "Learning set API", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Lernsets bereit")
-        Component(module, "Modules API", "stellt Erstellung und Abfrage der Module bereit")
-        Component(user, "User API", "stellt Login und Abfrage eines Nutzer bereit")
-        Component(courses, "Courses API", "stellt Erstellung und Abfrage von Studienrichtungen bereit")
-        Component(models, "Models", "stellt die Datenmodelle und Persistierung der Daten bereit")
-    }
-}
-
-Rel(cards, models, "verwendet Datenmodel")
-Rel(quiz, models, "verwendet Datenmodel")
-Rel(learning_set, models, "verwendet Datenmodel")
-Rel(module, models, "verwendet Datenmodel")
-Rel(user, models, "verwendet Datenmodel")
-Rel(courses, models, "verwendet Datenmodel")
-
-Rel(spa, cards, "nutzt", "JSON/HTTP")
-Rel(spa, quiz, "nutzt", "JSON/HTTP")
-Rel(spa, learning_set, "nutzt", "JSON/HTTP")
-Rel(spa, module, "nutzt", "JSON/HTTP")
-Rel(spa, user, "nutzt", "JSON/HTTP")
-Rel(spa, courses, "nutzt", "JSON/HTTP")
-Rel_Back_Neighbor(db, models, "liest von und schreibt nach", "SQLModel")
+include::{plantumldir}/components_backend.puml[]
 ....
 
+Das Component Diagramm des Backend zeigt die Komponenten und wie diese aufgerufen werden und mit den Datenmodell interagieren.
+Alle Komponenten benötigen für ihre Aufgaben bestimmte Datenmodelle, diese werden in der models.py bereitgestellt.
+Durch Verwendung eines ORM stellt die models.py ebenfalls die Verbindung zu Datenbank und damit die Persistierung der Daten bereit.
 
 === Verteilungsdiagramm (Deployment Diagramm)
 //Beschreibt die physischen Knoten (Rechner) des Systems und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
+.Verteilungsdiagramm
 [plantuml, "{diagramsdir}/Deployment", svg]
 ....
-actor Nutzer
-node "Docker Daemon" {
-    artifact Frontend
-    artifact Backend
-    database Database
-}
-
-Nutzer -- Frontend : HTTP
-Frontend -(0- Backend : REST API
-Backend -(0- Database : SQL
+include::{plantumldir}/deploy.puml[]
 ....
+
+Das Verteilungsdiagramm zeigt wie die Anwendung verteilt ist.
+Da die Anwendung mittels Docker Images ausgeliefert wird, läuft das Frontend und Backend getrennt in zwei Docker Containern auf dem Docker Daemon.
+Es bietet sich an die Datenbank wie im Diagramm zu sehen auch direkt als Container zu nutzten.
+Durch die Container ist es ebenfalls möglich, die Anwendung verteilt zu betreiben.

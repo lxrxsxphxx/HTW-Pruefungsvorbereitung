@@ -1,0 +1,35 @@
+@startuml
+!include <c4/C4_Component.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Component Diagramm für HTW Prüfungsvorbereiter Backend
+
+System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
+    Container_Boundary(spa, "Single-Page App") {
+        Component(home, "Startseite", "StartseiteView.vue")
+        Component(module, "Modul Auswahl", "ModulWaehlenView.vue")
+        Component(login, "LoginDialog", "LoginDialog.vue")
+        Component(person, "Persönlicher Bereich", "persoenlicher-bereich.vue")
+        Component(learnset, "Lernset Übersicht", "lernset_waehlen.vue")
+        Component(learn, "Lernset Detailansicht", "JetztlernenView.vue")
+        Component(cards, "Karteikarten", "karteikarten.vue")
+        Component(quiz, "Multiple Choice Quiz", "quiz-loesen.vue")
+        Component(create, "Lernset Erstellung", "lernset-erstellen.vue")
+    }
+    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
+    Container(api, "API App", "Python, FastAPI", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
+}
+
+Rel(login, api, "nutzt", "JSON/HTTP")
+Rel(module, api, "nutzt", "JSON/HTTP")
+Rel(person, api, "nutzt", "JSON/HTTP")
+Rel(learnset, api, "nutzt", "JSON/HTTP")
+Rel(learn, api, "nutzt", "JSON/HTTP")
+Rel(cards, api, "nutzt", "JSON/HTTP")
+Rel(quiz, api, "nutzt", "JSON/HTTP")
+Rel(create, api, "nutzt", "JSON/HTTP")
+Rel(api, db, "liest von und schreibt nach", "SQLModel")
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+!include <c4/C4_Container.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Containerdiagramm für HTW Prüfungsvorbereiter
+
+Person(student, "Studierende", "Studierender der sich für Prüfung vorbereiten will")
+Person(doz, "Dozierende", "Dozierender der Inhalte für ein Modul anbietet")
+
+System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
+    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studierende und Dozierende über deren Browser bereit")
+    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
+    Container(api, "API App", "Python, FastAPI", "stellt Funktionalitäten zum Abfragen von Daten via API bereit")
+}
+
+Rel(student, spa, "lernt mit Karteikarten, Multiple-Choice Fragen; tauscht sich über Inhalte aus; schaut sich eigenen Lernstand an")
+Rel(doz, spa, "stellt Inhalte zu eigenen Modulen ein; überprüft vorhandene Inhalte; schaut sich Lernstände an")
+
+
+Rel(spa, api, "nutzt", "JSON/HTTP")
+Rel_Back_Neighbor(db, api, "liest von und schreibt nach", "SQLModel")
+@enduml

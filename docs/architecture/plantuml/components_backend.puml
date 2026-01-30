@@ -1,0 +1,38 @@
+@startuml
+!include <c4/C4_Component.puml>  
+
+'ref http://plantuml.com/stdlib
+!include <office/Users/user.puml>
+!include <office/Users/mobile_user.puml>
+
+title Component Diagramm für HTW Prüfungsvorbereiter Backend
+
+System_Boundary(vorbereiter, "HTW Prüfungsvorbereiter") {
+    Container(spa, "Single-Page App", "Vue.JS", "stellt alle Funktionalitäten des Prüfungsvorbereiters an Studierende und Dozierende über deren Browser bereit")
+    ContainerDb(db, "Datenbank", "PostgreSQL", "speichert Karteikarten, Fragen, Forumeintäge, etc.")
+    Container_Boundary(api, "API App") {
+        Component(cards, "Cards API", "cards.py", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Karteikarten bereit")
+        Component(quiz, "Multiple Choice API", "questions.py", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Multiple Choice Fragen bereit")
+        Component(learning_set, "Learning set API", "learning_sets.py", "stellt Erstellung, Bearbeitung, Abfrage und Löschen der Lernsets bereit")
+        Component(module, "Modules API", "modules.py", "stellt Erstellung und Abfrage der Module bereit")
+        Component(user, "User API", "users.py", "stellt Login und Abfrage eines Nutzer bereit")
+        Component(courses, "Courses API", "courses.py", "stellt Erstellung und Abfrage von Studienrichtungen bereit")
+        Component(models, "Models", "models.py", "stellt die Datenmodelle und Persistierung der Daten bereit")
+    }
+}
+
+Rel(cards, models, "verwendet Datenmodel")
+Rel(quiz, models, "verwendet Datenmodel")
+Rel(learning_set, models, "verwendet Datenmodel")
+Rel(module, models, "verwendet Datenmodel")
+Rel(user, models, "verwendet Datenmodel")
+Rel(courses, models, "verwendet Datenmodel")
+
+Rel(spa, cards, "nutzt", "JSON/HTTP")
+Rel(spa, quiz, "nutzt", "JSON/HTTP")
+Rel(spa, learning_set, "nutzt", "JSON/HTTP")
+Rel(spa, module, "nutzt", "JSON/HTTP")
+Rel(spa, user, "nutzt", "JSON/HTTP")
+Rel(spa, courses, "nutzt", "JSON/HTTP")
+Rel_Back_Neighbor(db, models, "liest von und schreibt nach", "SQLModel")
+@enduml

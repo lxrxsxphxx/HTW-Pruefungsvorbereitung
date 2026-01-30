@@ -9,10 +9,12 @@ include::../_includes/default-attributes.inc.adoc[]
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems HTW-Prüfungsvorbereiter überblicksartig zu beschreiben. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System {project-system-name} diese Bedarfe erfüllt, werden durch User Stories im Product Backlog sowie dem UX-Konzept beschrieben.
 
 === Zweck
-Ziel dieses Dokuments ist es, das System konsequent aus Nutzersicht zu denken und die Anforderungen so zu formulieren, dass sie den realen Studienalltag widerspiegeln.
+Diese Vision hat den Zweck, ein gemeinsames Verständnis über Ziel, Nutzen und Ausrichtung des Systems HTW-Prüfungsvorbereiter zu schaffen und als Leitlinie für die weitere Projektarbeit zu dienen.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, strukturierte, modulspezifische und spielerisch unterstützte Lerninhalte zu nutzen, um damit die individuelle Prüfungsvorbereitung zu verbessern, Lernfortschritte zu analysieren und in einer Community Wissen zu teilen und zu validieren.
+Dieses Visions-Dokument bezieht sich auf das System HTW-Prüfungsvorbereiter, das vom Projektteam 2.B Software Engineering entwickelt wird. Das System wird es Studierenden der HTW Dresden erlauben, hochschulspezifische und modulbezogene Lerninhalte zu nutzen, um die Prüfungsvorbereitung gezielt zu unterstützen. 
+
+Die Lernplattform dient ausschließlich der Unterstützung der Prüfungsvorbereitung und ersetzt weder das eigenständige Lernen noch andere Aspekte des Studienalltags.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -20,18 +22,24 @@ Siehe <<#glossary, Glossar>>.
 //Siehe <<./glossary.adoc#glossary, Glossar>>.
 
 === Referenzen
-Scrum Guide (hochgeladene pdf's)
+Scrum Guide (hochgeladene pdfs)
 
-ISO 9241 (Usability-Standards)
-
-Thema2_HTW-Prüfungsvorbereiter.pdf
+Aufgabenstellung zum Projekt "Thema2_HTW-Prüfungsvorbereiter"
 
 Vorlesungsskript Software Engineering I I152
+
+Vorlesungsskript Software Engineering II I151
+
+Miro-Board (https://miro.com/app/board/uXjVIClMOm0=/)
 
 == Positionierung
 
 === Fachliche Motivation
-Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Plattform soll Lernen strukturierter, interaktiver und motivierender gestalten.
+Die Prüfungsvorbereitung von Studenten basiert häufig auf inoffizielle und verstreute Quellen wie veraltete Altklasuren, Übungen oder Zusammenfassungen, die über allgemeine Lernplattformen sowie Kommunikationskanäe wie Whatsapp oder Discord geteilt werden.
+
+Studierende müssen relevante Materialien eigenständig suchen und deren Aktualität, Relevanz sowie fachliche Zuordnung selbst einschätzen, Dies führt häufig zu Unsicherheit, hohem Rechercheaufwand und einer ineffizienten Prüfungsvorbereitung.
+
+Ziel der Lernplattform ist es, durch eine hochschulspezifische und modulbezogene Struktur für die HTW Dresden sowie zugehörige Lernsets eine strukturierte, transparente und effiziente Prüfungsvorbereitung zu ermöglichen.
 
 === Produktvision
 
@@ -41,8 +49,8 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 | die | sich auf Prüfungen vorbereiten möchten
 | ist der  | HTW-Prüfungsvorbereiter
 | eine  | webbasierte Lernplattform
-| die durch | einen Lernalgorithmus und Gamification Elementen
-| anders als | bpsw. quizlet
+| die durch | eine auf die Studiengänge und Module der HTW Dresden zugeschnittene Struktur mit aktuellen, semesterbezogenen Lernsets die Prüfungsvorbereitung unterstützt
+| anders als | allgemeine Lernplattformen wie Quizlet
 | speziell | auf die Inhalte und Anforderungen der HTW zugeschnitten ist
 |===
 
@@ -50,44 +58,38 @@ Studierende bereiten sich oft isoliert und ineffektiv auf Prüfungen vor. Die Pl
 == Stakeholder Beschreibungen
 
 === Zusammenfassung der Stakeholder
-// Unklare Trennung der Rollen
-// Die Rollen Dozierende und Tutor\:in/Assistierende überschneiden sich stark, beide helfen den Studierenden, beide sind irgendwie inhaltlich involviert.
 
-// Widersprüchliche / unrealistische Verantwortlichkeiten
-// Dozierende werden hier als stark operative User beschrieben ("Validierung, Lernempfehlungen, Rechtvergabe"), was in der Realität vermutlich nicht passieren wird.
-
-// Admin-Rolle sehr technisch gehalten
-// Diese Rolle ist okay, aber die Ziele könnten nutzerorientierter formuliert sein
-
-// Ziele zu allgemein
-// Viele Ziele sind eher Allgemeine Ziele. Hier könnte man nutzungsnähere Ziele formulieren
-
-
-
-[%header, cols="1,3,3,3"]
+[%header, cols="1,3,3"]
 |===
-| Name | Beschreibung | Verantwortlichkeiten | Ziele 
+| Name | Beschreibung | Verantwortlichkeiten 
 
 | Studierende
-| Studierende an der HTW, Hauptnutzer:innen der Anwendung, die sich auf Prüfungen vorbereiten 
-| Nutzung der Lernplattform zur Vorbereitung auf Prüfungen, Interaktion mit Inhalten (Fragen erstellen, beantworten, bewerten), Analyse des Lernfortschritts, Teilnahme an spielerischen Formaten
-| Erfolgreiches Bestehen von Prüfungen, Wissenslücken gezielt schließen,
+| Studierende der HTW Dresden, die die Lernplattform zur Unterstützung ihrer Prüfungsvorbereitung nutzen
+| Nutzen die Lernplattform zur Prüfungsvorbereitung und können eigene Lerninhalte erstellen.
 
-| Dozierende / Tutor:in / Assistierende
-| Lehrende der HTW, die Inhalte verantworten, aber nicht operativ in das System eingreifen
-| Bereitstellung und Kontrolle von Inhalten, Rolle eher beratend oder unterstützend im Hintergrund
-| indirekte Qualitätskontrolle der Inhalte
+| Dozierende / Tutor:innen / Assistierende
+| Lehrende der HTW Dresden mit Interesse an der Qualität der Prüfungsvorbereitung der Studierenden
+| können optional durch ihre fachliche Expertise zu einem Mehrwert der Lernsets beitragen, z. B. durch das Bereitstellen von Materialien oder inhaltliche Hinweise.
 
 
 | Admin
-| Technisch Verantwortliche für Betrieb, Sicherheit und Benutzerverwaltung
-| Systemwartung, Rollenmanagement, Monitoring der Systemstabilität, technischer Support
-| Gewährleistung eines reibungslosen und fehlerfreien Betriebs der Lernplattform, Minimaler Wartungsaufwand bei maximaler Nutzbarkeit
+| Verantwortlich für die administrative Verwaltung der Lernplattform
+| Sorgt für die Verwaltung von Benutzerkonten und Zugriffsrechten sowie den ordnungsgemäßen Ablauf der Anwendung
 
-| HTWD (Institution)
+
+| HTW Dresden (Institution)
 | Institutioneller Träger und Förderer, unterstützt das Projekt mit Infrastruktur
-| Stellt Infrastruktur bereit, achtet auf Datenschutz und rechtliche Konformität
-| Förderung digitaler Bildung, Verbesserung von Lernqualität und Prüfungsergebnissen an der HTW
+| Sorgt für die Bereitstellung der notwendigen Infrastruktur
+
+
+| Projektteam 2.B
+| Studierendenteam mit dem Ziel, im Rahmen von Software Engineering I/II eine Lernplattform zu entwickeln
+| Sorgen für die Entwicklung, Dokumentation und Qualitätssicherung des Systems
+
+
+| Datenschutzbeauftragte / Gesetzgeber
+| Regulatorische Instanzen mit Interesse an der Einhaltung datenschutzrechtlicher Vorgaben
+| Sorgen für die Vorgabe und Einhaltung rechtlicher Rahmenbedingungen zum Datenschutz
 |===
 
 
@@ -98,18 +100,44 @@ Die Verfeinerung der Stakeholder, die das System benutzen, wird im UX-Konzept mi
 == Produktüberblick
 
 === Bedarfe und Hauptfunktionen
-Intelligenter Lernalgorithmus mit Gamification Elementen 
+
 
 [%header, cols="4,1,4,1"] 
 |=== 
 | Bedarf | Priorität | Features / Funktionen | Geplantes Release 
-| Strukturierte Prüfungsvorbereitung | Hoch | Modulspezifische Fragenkataloge, Multiple-Choice-Verfahren, Freitextantworten mit automatischer Bewertung, Zuordnungsaufgaben mit Drag-and-Drop-Funktionalität | mvp 
-| Kollaboratives Lernen | Mittel | Benutzer-generierte Fragen mit Upload-Funktion, Chat-Funktionalität | mvp, xx
-| Adaptiver Lernalgorithmus | Hoch | Spaced-Repetition-System basierend auf Ebbinghaus-Vergessenskurve, automatische Wiederholung schwieriger Inhalte nach 1, 3, 7 und 14 Tagen, personalisierte Lernpfade basierend auf individuellen Schwächen | xx
-| Motivation durch Gamification | Hoch | Abzeichen-System für erreichte Meilensteine (Bronze/Silber/Gold), Highscore-Listen pro Modul und Semester, Levelsystem mit Erfahrungspunkten für korrekte Antworten | xx
-| Lernfortschritt-Tracking | Hoch | Detaillierte Statistiken über Antwortgenauigkeit, Schwächenanalyse mit Empfehlungen für Vertiefung, visuelle Darstellung des Fortschritts durch Diagramme und Heatmaps | xx
-| Flexibles Lernen | Mittel | Offline-Modus mit Synchronisation bei Internetverbindung, responsive Design für mobile Endgeräte, Progressive Web App (PWA) für App-ähnliche Nutzung | xx
-| Dozierenden-Bereich | Mittel | Erstellung und Verwaltung von Probeklausuren, Veröffentlichung modulspezifischer Inhalte, Moderationstools für Community-Beiträge, Einsicht in Lernstatistiken der Studierenden | xx 
+
+| Grundsätzliches Lernen und Wiederholen von Inhalten
+| Hoch
+| Bereitstellung von Lernsets mit Karteikarten und Multiple-Choice-Fragen zum    
+  eigenständigen Lernen.
+| mvp 
+
+| Übersichtliche Organisation von Lerninhalten 
+| Hoch 
+| Zuordnung von Lerninhalten zu den Studiengängen und Modulen der HTW Dresden.
+| 6.Sprint 
+
+| Prüfungsvorbereitung mit modulspezifischen Lerninhalten
+| Hoch | Bereitstellung strukturierter Lernsets passend zu Modulen.
+| 6.Sprint
+
+| Überblick über den Lernfortschritt
+| Hoch |  Visualisierung des Lernfortschritts zur Einschätzung des Lernbedarfs.
+| 7. Sprint
+
+| Austausch und Zusammenarbeit bei Lerninhalten
+| Hoch | Ermöglichung gemeinschaftlicher Lernaktivitäten und des Austauschs zu Lerninhalten
+| -
+
+| Motivation für langfristiges und effizientes Lernen
+| Mittel | Einsatz von motivierenden und lernunterstützenden Mechanismen für nachhaltiges Lernen.
+| -
+
+| Unterstützung durch fachlich qualifizierte Inhalte
+| Hoch
+| Möglichkeit zur Bereitstellung, Empfehlung oder Qualitätssicherung von Lerninhalten durch Dozierende oder Tutor:innen.
+| -
+
 |===
 
 
@@ -126,13 +154,12 @@ Intelligenter Lernalgorithmus mit Gamification Elementen
 [%header, cols="4,1,1"] 
 |=== 
 | Anforderung | Priorität | Geplantes Release 
-| Webbasierte Lösung (mobil und Desktop) | Hoch | xx
-| Kompatibilität mit HTW-Login und Authentifizierung (Single Sign-On) | Hoch | mvp
-| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | xx
-| Benutzerfreundliches Interface mit Barrierefreiheit (WCAG 2.1) | Hoch | mvp
-| Skalierbarkeit für neue Module und Studiengänge | Mittel | xx 
-| Administrator-Dashboard zur Benutzer- und Inhaltsverwaltung | Mittel | xx
-| Umfassende Dokumentation und technischer Support | Mittel | xx
-| Application Programming Interface (API) für Drittanbieter-Integration | Niedrig | xx
-| Mehrsprachige Unterstützung (Deutsch/Englisch) | Niedrig | xx
+| Webbasierte Anwendung für Desktop-Browser | Hoch | mvp
+| Nutzung der Lernplattform auf mobilen Endgeräten | Mittel | -
+| Angemessene Reaktionszeiten ohne spürbare Ladezeiten bei Standardaktionen | Mittel | -
+| Datensicherheit nach Datenschutz-Grundverordnung (DSGVO) | Hoch | mvp
+| Berücksichtigung von Barrierefreiheitsstandards (WCAG 2.1) | Hoch | mvp  
+| Stabiler und zuverlässiger Betrieb der Lernplattform im regulären Nutzungsbetrieb | Mittel | -
+| Zuverlässige Speicherung von Lerninhalten und Nutzerdaten ohne unbeabsichtigten Verlust | Hoch | -
+| Verständliche Projektdokumentation | Hoch | mvp
 |===
